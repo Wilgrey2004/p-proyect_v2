@@ -204,7 +204,7 @@
                         this.Listado_De_Cursos_dg = new System.Windows.Forms.DataGridView();
                         this.bunifuLabel6 = new Bunifu.UI.WinForms.BunifuLabel();
                         this.materialButton6 = new MaterialSkin.Controls.MaterialButton();
-                        this.materialMaskedTextBox1 = new MaterialSkin.Controls.MaterialMaskedTextBox();
+                        this.Buscar_Cursos_txt = new MaterialSkin.Controls.MaterialMaskedTextBox();
                         this.bunifuPanel2 = new Bunifu.UI.WinForms.BunifuPanel();
                         this.bunifuLabel14 = new Bunifu.UI.WinForms.BunifuLabel();
                         this.Profesor_Que_Imparte_El_Curso_com = new MaterialSkin.Controls.MaterialComboBox();
@@ -226,7 +226,7 @@
                         this.tabPage3 = new System.Windows.Forms.TabPage();
                         this.bunifuLabel4 = new Bunifu.UI.WinForms.BunifuLabel();
                         this.materialButton11 = new MaterialSkin.Controls.MaterialButton();
-                        this.materialMaskedTextBox3 = new MaterialSkin.Controls.MaterialMaskedTextBox();
+                        this.Estudiantes_Busqueda_txt = new MaterialSkin.Controls.MaterialMaskedTextBox();
                         this.bunifuPictureBox4 = new Bunifu.UI.WinForms.BunifuPictureBox();
                         this.Estudiantes_dataview = new System.Windows.Forms.DataGridView();
                         this.bunifuPanel3 = new Bunifu.UI.WinForms.BunifuPanel();
@@ -258,7 +258,7 @@
                         this.bunifuPictureBox5 = new Bunifu.UI.WinForms.BunifuPictureBox();
                         this.bunifuLabel25 = new Bunifu.UI.WinForms.BunifuLabel();
                         this.materialButton16 = new MaterialSkin.Controls.MaterialButton();
-                        this.materialMaskedTextBox2 = new MaterialSkin.Controls.MaterialMaskedTextBox();
+                        this.Pagos_Estudiantes_Buscador_txt = new MaterialSkin.Controls.MaterialMaskedTextBox();
                         this.Adeudo_data_Grid = new System.Windows.Forms.DataGridView();
                         this.bunifuPanel4 = new Bunifu.UI.WinForms.BunifuPanel();
                         this.bunifuLabel9 = new Bunifu.UI.WinForms.BunifuLabel();
@@ -281,7 +281,7 @@
                         this.bunifuPictureBox7 = new Bunifu.UI.WinForms.BunifuPictureBox();
                         this.bunifuLabel23 = new Bunifu.UI.WinForms.BunifuLabel();
                         this.materialButton25 = new MaterialSkin.Controls.MaterialButton();
-                        this.materialMaskedTextBox4 = new MaterialSkin.Controls.MaterialMaskedTextBox();
+                        this.Usuarios_Busqueda_txt = new MaterialSkin.Controls.MaterialMaskedTextBox();
                         this.Usuarios_Empleados_DG = new System.Windows.Forms.DataGridView();
                         this.bunifuPanel5 = new Bunifu.UI.WinForms.BunifuPanel();
                         this.bunifuLabel22 = new Bunifu.UI.WinForms.BunifuLabel();
@@ -650,6 +650,7 @@
                         this.Buscar_Profesor_txt.TrailingIcon = global::p_proyect.Properties.Resources.busqueda_de_lupa;
                         this.Buscar_Profesor_txt.UseSystemPasswordChar = false;
                         this.Buscar_Profesor_txt.ValidatingType = null;
+                        this.Buscar_Profesor_txt.TextChanged += new System.EventHandler(this.Buscar_Profesor_txt_TextChanged);
                         // 
                         // bunifuPanel1
                         // 
@@ -699,7 +700,7 @@
                         this.materialButton18.Depth = 0;
                         this.materialButton18.HighEmphasis = true;
                         this.materialButton18.Icon = global::p_proyect.Properties.Resources.Aceprtar;
-                        this.materialButton18.Location = new System.Drawing.Point(140, 528);
+                        this.materialButton18.Location = new System.Drawing.Point(16, 528);
                         this.materialButton18.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
                         this.materialButton18.MouseState = MaterialSkin.MouseState.HOVER;
                         this.materialButton18.Name = "materialButton18";
@@ -739,7 +740,7 @@
                         this.materialButton3.Depth = 0;
                         this.materialButton3.HighEmphasis = true;
                         this.materialButton3.Icon = global::p_proyect.Properties.Resources.Cancelar;
-                        this.materialButton3.Location = new System.Drawing.Point(16, 528);
+                        this.materialButton3.Location = new System.Drawing.Point(247, 432);
                         this.materialButton3.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
                         this.materialButton3.MouseState = MaterialSkin.MouseState.HOVER;
                         this.materialButton3.Name = "materialButton3";
@@ -1046,7 +1047,7 @@
                         this.tabPage2.Controls.Add(this.Listado_De_Cursos_dg);
                         this.tabPage2.Controls.Add(this.bunifuLabel6);
                         this.tabPage2.Controls.Add(this.materialButton6);
-                        this.tabPage2.Controls.Add(this.materialMaskedTextBox1);
+                        this.tabPage2.Controls.Add(this.Buscar_Cursos_txt);
                         this.tabPage2.Controls.Add(this.bunifuPanel2);
                         this.tabPage2.ImageKey = "Curso.png";
                         this.tabPage2.Location = new System.Drawing.Point(4, 23);
@@ -1115,7 +1116,7 @@
                         this.bunifuLabel6.CursorType = System.Windows.Forms.Cursors.Default;
                         this.bunifuLabel6.Font = new System.Drawing.Font("Tahoma", 9F);
                         this.bunifuLabel6.ForeColor = System.Drawing.Color.DodgerBlue;
-                        this.bunifuLabel6.Location = new System.Drawing.Point(443, 18);
+                        this.bunifuLabel6.Location = new System.Drawing.Point(443, 72);
                         this.bunifuLabel6.Name = "bunifuLabel6";
                         this.bunifuLabel6.RightToLeft = System.Windows.Forms.RightToLeft.No;
                         this.bunifuLabel6.Size = new System.Drawing.Size(103, 14);
@@ -1143,46 +1144,48 @@
                         this.materialButton6.UseAccentColor = false;
                         this.materialButton6.UseVisualStyleBackColor = true;
                         // 
-                        // materialMaskedTextBox1
+                        // Buscar_Cursos_txt
                         // 
-                        this.materialMaskedTextBox1.AllowPromptAsInput = true;
-                        this.materialMaskedTextBox1.AnimateReadOnly = false;
-                        this.materialMaskedTextBox1.AsciiOnly = false;
-                        this.materialMaskedTextBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-                        this.materialMaskedTextBox1.BeepOnError = false;
-                        this.materialMaskedTextBox1.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.IncludeLiterals;
-                        this.materialMaskedTextBox1.Depth = 0;
-                        this.materialMaskedTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-                        this.materialMaskedTextBox1.HidePromptOnLeave = false;
-                        this.materialMaskedTextBox1.HideSelection = true;
-                        this.materialMaskedTextBox1.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Default;
-                        this.materialMaskedTextBox1.LeadingIcon = null;
-                        this.materialMaskedTextBox1.Location = new System.Drawing.Point(443, 92);
-                        this.materialMaskedTextBox1.Mask = "";
-                        this.materialMaskedTextBox1.MaxLength = 32767;
-                        this.materialMaskedTextBox1.MouseState = MaterialSkin.MouseState.OUT;
-                        this.materialMaskedTextBox1.Name = "materialMaskedTextBox1";
-                        this.materialMaskedTextBox1.PasswordChar = '\0';
-                        this.materialMaskedTextBox1.PrefixSuffixText = null;
-                        this.materialMaskedTextBox1.PromptChar = '_';
-                        this.materialMaskedTextBox1.ReadOnly = false;
-                        this.materialMaskedTextBox1.RejectInputOnFirstFailure = false;
-                        this.materialMaskedTextBox1.ResetOnPrompt = true;
-                        this.materialMaskedTextBox1.ResetOnSpace = true;
-                        this.materialMaskedTextBox1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-                        this.materialMaskedTextBox1.SelectedText = "";
-                        this.materialMaskedTextBox1.SelectionLength = 0;
-                        this.materialMaskedTextBox1.SelectionStart = 0;
-                        this.materialMaskedTextBox1.ShortcutsEnabled = true;
-                        this.materialMaskedTextBox1.Size = new System.Drawing.Size(519, 48);
-                        this.materialMaskedTextBox1.SkipLiterals = true;
-                        this.materialMaskedTextBox1.TabIndex = 32;
-                        this.materialMaskedTextBox1.TabStop = false;
-                        this.materialMaskedTextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-                        this.materialMaskedTextBox1.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludeLiterals;
-                        this.materialMaskedTextBox1.TrailingIcon = global::p_proyect.Properties.Resources.busqueda_de_lupa;
-                        this.materialMaskedTextBox1.UseSystemPasswordChar = false;
-                        this.materialMaskedTextBox1.ValidatingType = null;
+                        this.Buscar_Cursos_txt.AllowPromptAsInput = true;
+                        this.Buscar_Cursos_txt.AnimateReadOnly = false;
+                        this.Buscar_Cursos_txt.AsciiOnly = false;
+                        this.Buscar_Cursos_txt.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+                        this.Buscar_Cursos_txt.BeepOnError = false;
+                        this.Buscar_Cursos_txt.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.IncludeLiterals;
+                        this.Buscar_Cursos_txt.Depth = 0;
+                        this.Buscar_Cursos_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+                        this.Buscar_Cursos_txt.HidePromptOnLeave = false;
+                        this.Buscar_Cursos_txt.HideSelection = true;
+                        this.Buscar_Cursos_txt.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Default;
+                        this.Buscar_Cursos_txt.LeadingIcon = null;
+                        this.Buscar_Cursos_txt.Location = new System.Drawing.Point(443, 92);
+                        this.Buscar_Cursos_txt.Mask = "";
+                        this.Buscar_Cursos_txt.MaxLength = 32767;
+                        this.Buscar_Cursos_txt.MouseState = MaterialSkin.MouseState.OUT;
+                        this.Buscar_Cursos_txt.Name = "Buscar_Cursos_txt";
+                        this.Buscar_Cursos_txt.PasswordChar = '\0';
+                        this.Buscar_Cursos_txt.PrefixSuffixText = null;
+                        this.Buscar_Cursos_txt.PromptChar = '_';
+                        this.Buscar_Cursos_txt.ReadOnly = false;
+                        this.Buscar_Cursos_txt.RejectInputOnFirstFailure = false;
+                        this.Buscar_Cursos_txt.ResetOnPrompt = true;
+                        this.Buscar_Cursos_txt.ResetOnSpace = true;
+                        this.Buscar_Cursos_txt.RightToLeft = System.Windows.Forms.RightToLeft.No;
+                        this.Buscar_Cursos_txt.SelectedText = "";
+                        this.Buscar_Cursos_txt.SelectionLength = 0;
+                        this.Buscar_Cursos_txt.SelectionStart = 0;
+                        this.Buscar_Cursos_txt.ShortcutsEnabled = true;
+                        this.Buscar_Cursos_txt.Size = new System.Drawing.Size(519, 48);
+                        this.Buscar_Cursos_txt.SkipLiterals = true;
+                        this.Buscar_Cursos_txt.TabIndex = 32;
+                        this.Buscar_Cursos_txt.TabStop = false;
+                        this.Buscar_Cursos_txt.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+                        this.Buscar_Cursos_txt.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludeLiterals;
+                        this.Buscar_Cursos_txt.TrailingIcon = global::p_proyect.Properties.Resources.busqueda_de_lupa;
+                        this.Buscar_Cursos_txt.UseSystemPasswordChar = false;
+                        this.Buscar_Cursos_txt.ValidatingType = null;
+                        this.Buscar_Cursos_txt.TextAlignChanged += new System.EventHandler(this.Buscar_Cursos_txt_TextAlignChanged);
+                        this.Buscar_Cursos_txt.TextChanged += new System.EventHandler(this.Buscar_Cursos_txt_TextChanged);
                         // 
                         // bunifuPanel2
                         // 
@@ -1580,7 +1583,7 @@
                         this.materialButton7.Depth = 0;
                         this.materialButton7.HighEmphasis = true;
                         this.materialButton7.Icon = global::p_proyect.Properties.Resources.Descripcion;
-                        this.materialButton7.Location = new System.Drawing.Point(115, 518);
+                        this.materialButton7.Location = new System.Drawing.Point(34, 518);
                         this.materialButton7.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
                         this.materialButton7.MouseState = MaterialSkin.MouseState.HOVER;
                         this.materialButton7.Name = "materialButton7";
@@ -1751,7 +1754,7 @@
                         // 
                         this.tabPage3.Controls.Add(this.bunifuLabel4);
                         this.tabPage3.Controls.Add(this.materialButton11);
-                        this.tabPage3.Controls.Add(this.materialMaskedTextBox3);
+                        this.tabPage3.Controls.Add(this.Estudiantes_Busqueda_txt);
                         this.tabPage3.Controls.Add(this.bunifuPictureBox4);
                         this.tabPage3.Controls.Add(this.Estudiantes_dataview);
                         this.tabPage3.Controls.Add(this.bunifuPanel3);
@@ -1800,46 +1803,47 @@
                         this.materialButton11.UseAccentColor = false;
                         this.materialButton11.UseVisualStyleBackColor = true;
                         // 
-                        // materialMaskedTextBox3
+                        // Estudiantes_Busqueda_txt
                         // 
-                        this.materialMaskedTextBox3.AllowPromptAsInput = true;
-                        this.materialMaskedTextBox3.AnimateReadOnly = false;
-                        this.materialMaskedTextBox3.AsciiOnly = false;
-                        this.materialMaskedTextBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-                        this.materialMaskedTextBox3.BeepOnError = false;
-                        this.materialMaskedTextBox3.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.IncludeLiterals;
-                        this.materialMaskedTextBox3.Depth = 0;
-                        this.materialMaskedTextBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-                        this.materialMaskedTextBox3.HidePromptOnLeave = false;
-                        this.materialMaskedTextBox3.HideSelection = true;
-                        this.materialMaskedTextBox3.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Default;
-                        this.materialMaskedTextBox3.LeadingIcon = null;
-                        this.materialMaskedTextBox3.Location = new System.Drawing.Point(633, 68);
-                        this.materialMaskedTextBox3.Mask = "";
-                        this.materialMaskedTextBox3.MaxLength = 32767;
-                        this.materialMaskedTextBox3.MouseState = MaterialSkin.MouseState.OUT;
-                        this.materialMaskedTextBox3.Name = "materialMaskedTextBox3";
-                        this.materialMaskedTextBox3.PasswordChar = '\0';
-                        this.materialMaskedTextBox3.PrefixSuffixText = null;
-                        this.materialMaskedTextBox3.PromptChar = '_';
-                        this.materialMaskedTextBox3.ReadOnly = false;
-                        this.materialMaskedTextBox3.RejectInputOnFirstFailure = false;
-                        this.materialMaskedTextBox3.ResetOnPrompt = true;
-                        this.materialMaskedTextBox3.ResetOnSpace = true;
-                        this.materialMaskedTextBox3.RightToLeft = System.Windows.Forms.RightToLeft.No;
-                        this.materialMaskedTextBox3.SelectedText = "";
-                        this.materialMaskedTextBox3.SelectionLength = 0;
-                        this.materialMaskedTextBox3.SelectionStart = 0;
-                        this.materialMaskedTextBox3.ShortcutsEnabled = true;
-                        this.materialMaskedTextBox3.Size = new System.Drawing.Size(341, 48);
-                        this.materialMaskedTextBox3.SkipLiterals = true;
-                        this.materialMaskedTextBox3.TabIndex = 47;
-                        this.materialMaskedTextBox3.TabStop = false;
-                        this.materialMaskedTextBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-                        this.materialMaskedTextBox3.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludeLiterals;
-                        this.materialMaskedTextBox3.TrailingIcon = global::p_proyect.Properties.Resources.busqueda_de_lupa;
-                        this.materialMaskedTextBox3.UseSystemPasswordChar = false;
-                        this.materialMaskedTextBox3.ValidatingType = null;
+                        this.Estudiantes_Busqueda_txt.AllowPromptAsInput = true;
+                        this.Estudiantes_Busqueda_txt.AnimateReadOnly = false;
+                        this.Estudiantes_Busqueda_txt.AsciiOnly = false;
+                        this.Estudiantes_Busqueda_txt.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+                        this.Estudiantes_Busqueda_txt.BeepOnError = false;
+                        this.Estudiantes_Busqueda_txt.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.IncludeLiterals;
+                        this.Estudiantes_Busqueda_txt.Depth = 0;
+                        this.Estudiantes_Busqueda_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+                        this.Estudiantes_Busqueda_txt.HidePromptOnLeave = false;
+                        this.Estudiantes_Busqueda_txt.HideSelection = true;
+                        this.Estudiantes_Busqueda_txt.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Default;
+                        this.Estudiantes_Busqueda_txt.LeadingIcon = null;
+                        this.Estudiantes_Busqueda_txt.Location = new System.Drawing.Point(633, 68);
+                        this.Estudiantes_Busqueda_txt.Mask = "";
+                        this.Estudiantes_Busqueda_txt.MaxLength = 32767;
+                        this.Estudiantes_Busqueda_txt.MouseState = MaterialSkin.MouseState.OUT;
+                        this.Estudiantes_Busqueda_txt.Name = "Estudiantes_Busqueda_txt";
+                        this.Estudiantes_Busqueda_txt.PasswordChar = '\0';
+                        this.Estudiantes_Busqueda_txt.PrefixSuffixText = null;
+                        this.Estudiantes_Busqueda_txt.PromptChar = '_';
+                        this.Estudiantes_Busqueda_txt.ReadOnly = false;
+                        this.Estudiantes_Busqueda_txt.RejectInputOnFirstFailure = false;
+                        this.Estudiantes_Busqueda_txt.ResetOnPrompt = true;
+                        this.Estudiantes_Busqueda_txt.ResetOnSpace = true;
+                        this.Estudiantes_Busqueda_txt.RightToLeft = System.Windows.Forms.RightToLeft.No;
+                        this.Estudiantes_Busqueda_txt.SelectedText = "";
+                        this.Estudiantes_Busqueda_txt.SelectionLength = 0;
+                        this.Estudiantes_Busqueda_txt.SelectionStart = 0;
+                        this.Estudiantes_Busqueda_txt.ShortcutsEnabled = true;
+                        this.Estudiantes_Busqueda_txt.Size = new System.Drawing.Size(341, 48);
+                        this.Estudiantes_Busqueda_txt.SkipLiterals = true;
+                        this.Estudiantes_Busqueda_txt.TabIndex = 47;
+                        this.Estudiantes_Busqueda_txt.TabStop = false;
+                        this.Estudiantes_Busqueda_txt.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+                        this.Estudiantes_Busqueda_txt.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludeLiterals;
+                        this.Estudiantes_Busqueda_txt.TrailingIcon = global::p_proyect.Properties.Resources.busqueda_de_lupa;
+                        this.Estudiantes_Busqueda_txt.UseSystemPasswordChar = false;
+                        this.Estudiantes_Busqueda_txt.ValidatingType = null;
+                        this.Estudiantes_Busqueda_txt.TextChanged += new System.EventHandler(this.materialMaskedTextBox3_TextChanged);
                         // 
                         // bunifuPictureBox4
                         // 
@@ -1936,7 +1940,7 @@
                         this.materialButton17.Depth = 0;
                         this.materialButton17.HighEmphasis = true;
                         this.materialButton17.Icon = global::p_proyect.Properties.Resources.Aceprtar1;
-                        this.materialButton17.Location = new System.Drawing.Point(249, 468);
+                        this.materialButton17.Location = new System.Drawing.Point(18, 516);
                         this.materialButton17.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
                         this.materialButton17.MouseState = MaterialSkin.MouseState.HOVER;
                         this.materialButton17.Name = "materialButton17";
@@ -2633,7 +2637,7 @@
                         this.materialButton12.Depth = 0;
                         this.materialButton12.HighEmphasis = true;
                         this.materialButton12.Icon = global::p_proyect.Properties.Resources.Descripcion;
-                        this.materialButton12.Location = new System.Drawing.Point(142, 516);
+                        this.materialButton12.Location = new System.Drawing.Point(233, 516);
                         this.materialButton12.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
                         this.materialButton12.MouseState = MaterialSkin.MouseState.HOVER;
                         this.materialButton12.Name = "materialButton12";
@@ -2653,7 +2657,7 @@
                         this.materialButton13.Depth = 0;
                         this.materialButton13.HighEmphasis = true;
                         this.materialButton13.Icon = global::p_proyect.Properties.Resources.Cancelar;
-                        this.materialButton13.Location = new System.Drawing.Point(18, 516);
+                        this.materialButton13.Location = new System.Drawing.Point(249, 468);
                         this.materialButton13.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
                         this.materialButton13.MouseState = MaterialSkin.MouseState.HOVER;
                         this.materialButton13.Name = "materialButton13";
@@ -2958,7 +2962,7 @@
                         this.tabPage5.Controls.Add(this.bunifuPictureBox5);
                         this.tabPage5.Controls.Add(this.bunifuLabel25);
                         this.tabPage5.Controls.Add(this.materialButton16);
-                        this.tabPage5.Controls.Add(this.materialMaskedTextBox2);
+                        this.tabPage5.Controls.Add(this.Pagos_Estudiantes_Buscador_txt);
                         this.tabPage5.Controls.Add(this.Adeudo_data_Grid);
                         this.tabPage5.Controls.Add(this.bunifuPanel4);
                         this.tabPage5.Controls.Add(this.materialButton22);
@@ -2995,7 +2999,7 @@
                         this.bunifuLabel25.CursorType = System.Windows.Forms.Cursors.Default;
                         this.bunifuLabel25.Font = new System.Drawing.Font("Tahoma", 9F);
                         this.bunifuLabel25.ForeColor = System.Drawing.Color.DodgerBlue;
-                        this.bunifuLabel25.Location = new System.Drawing.Point(363, 37);
+                        this.bunifuLabel25.Location = new System.Drawing.Point(341, 44);
                         this.bunifuLabel25.Name = "bunifuLabel25";
                         this.bunifuLabel25.RightToLeft = System.Windows.Forms.RightToLeft.No;
                         this.bunifuLabel25.Size = new System.Drawing.Size(103, 14);
@@ -3011,7 +3015,7 @@
                         this.materialButton16.Depth = 0;
                         this.materialButton16.HighEmphasis = true;
                         this.materialButton16.Icon = global::p_proyect.Properties.Resources.Aceprtar1;
-                        this.materialButton16.Location = new System.Drawing.Point(980, 64);
+                        this.materialButton16.Location = new System.Drawing.Point(969, 76);
                         this.materialButton16.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
                         this.materialButton16.MouseState = MaterialSkin.MouseState.HOVER;
                         this.materialButton16.Name = "materialButton16";
@@ -3023,46 +3027,47 @@
                         this.materialButton16.UseAccentColor = false;
                         this.materialButton16.UseVisualStyleBackColor = true;
                         // 
-                        // materialMaskedTextBox2
+                        // Pagos_Estudiantes_Buscador_txt
                         // 
-                        this.materialMaskedTextBox2.AllowPromptAsInput = true;
-                        this.materialMaskedTextBox2.AnimateReadOnly = false;
-                        this.materialMaskedTextBox2.AsciiOnly = false;
-                        this.materialMaskedTextBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-                        this.materialMaskedTextBox2.BeepOnError = false;
-                        this.materialMaskedTextBox2.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.IncludeLiterals;
-                        this.materialMaskedTextBox2.Depth = 0;
-                        this.materialMaskedTextBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-                        this.materialMaskedTextBox2.HidePromptOnLeave = false;
-                        this.materialMaskedTextBox2.HideSelection = true;
-                        this.materialMaskedTextBox2.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Default;
-                        this.materialMaskedTextBox2.LeadingIcon = null;
-                        this.materialMaskedTextBox2.Location = new System.Drawing.Point(363, 64);
-                        this.materialMaskedTextBox2.Mask = "";
-                        this.materialMaskedTextBox2.MaxLength = 32767;
-                        this.materialMaskedTextBox2.MouseState = MaterialSkin.MouseState.OUT;
-                        this.materialMaskedTextBox2.Name = "materialMaskedTextBox2";
-                        this.materialMaskedTextBox2.PasswordChar = '\0';
-                        this.materialMaskedTextBox2.PrefixSuffixText = null;
-                        this.materialMaskedTextBox2.PromptChar = '_';
-                        this.materialMaskedTextBox2.ReadOnly = false;
-                        this.materialMaskedTextBox2.RejectInputOnFirstFailure = false;
-                        this.materialMaskedTextBox2.ResetOnPrompt = true;
-                        this.materialMaskedTextBox2.ResetOnSpace = true;
-                        this.materialMaskedTextBox2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-                        this.materialMaskedTextBox2.SelectedText = "";
-                        this.materialMaskedTextBox2.SelectionLength = 0;
-                        this.materialMaskedTextBox2.SelectionStart = 0;
-                        this.materialMaskedTextBox2.ShortcutsEnabled = true;
-                        this.materialMaskedTextBox2.Size = new System.Drawing.Size(610, 48);
-                        this.materialMaskedTextBox2.SkipLiterals = true;
-                        this.materialMaskedTextBox2.TabIndex = 41;
-                        this.materialMaskedTextBox2.TabStop = false;
-                        this.materialMaskedTextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-                        this.materialMaskedTextBox2.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludeLiterals;
-                        this.materialMaskedTextBox2.TrailingIcon = global::p_proyect.Properties.Resources.busqueda_de_lupa;
-                        this.materialMaskedTextBox2.UseSystemPasswordChar = false;
-                        this.materialMaskedTextBox2.ValidatingType = null;
+                        this.Pagos_Estudiantes_Buscador_txt.AllowPromptAsInput = true;
+                        this.Pagos_Estudiantes_Buscador_txt.AnimateReadOnly = false;
+                        this.Pagos_Estudiantes_Buscador_txt.AsciiOnly = false;
+                        this.Pagos_Estudiantes_Buscador_txt.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+                        this.Pagos_Estudiantes_Buscador_txt.BeepOnError = false;
+                        this.Pagos_Estudiantes_Buscador_txt.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.IncludeLiterals;
+                        this.Pagos_Estudiantes_Buscador_txt.Depth = 0;
+                        this.Pagos_Estudiantes_Buscador_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+                        this.Pagos_Estudiantes_Buscador_txt.HidePromptOnLeave = false;
+                        this.Pagos_Estudiantes_Buscador_txt.HideSelection = true;
+                        this.Pagos_Estudiantes_Buscador_txt.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Default;
+                        this.Pagos_Estudiantes_Buscador_txt.LeadingIcon = null;
+                        this.Pagos_Estudiantes_Buscador_txt.Location = new System.Drawing.Point(341, 64);
+                        this.Pagos_Estudiantes_Buscador_txt.Mask = "";
+                        this.Pagos_Estudiantes_Buscador_txt.MaxLength = 32767;
+                        this.Pagos_Estudiantes_Buscador_txt.MouseState = MaterialSkin.MouseState.OUT;
+                        this.Pagos_Estudiantes_Buscador_txt.Name = "Pagos_Estudiantes_Buscador_txt";
+                        this.Pagos_Estudiantes_Buscador_txt.PasswordChar = '\0';
+                        this.Pagos_Estudiantes_Buscador_txt.PrefixSuffixText = null;
+                        this.Pagos_Estudiantes_Buscador_txt.PromptChar = '_';
+                        this.Pagos_Estudiantes_Buscador_txt.ReadOnly = false;
+                        this.Pagos_Estudiantes_Buscador_txt.RejectInputOnFirstFailure = false;
+                        this.Pagos_Estudiantes_Buscador_txt.ResetOnPrompt = true;
+                        this.Pagos_Estudiantes_Buscador_txt.ResetOnSpace = true;
+                        this.Pagos_Estudiantes_Buscador_txt.RightToLeft = System.Windows.Forms.RightToLeft.No;
+                        this.Pagos_Estudiantes_Buscador_txt.SelectedText = "";
+                        this.Pagos_Estudiantes_Buscador_txt.SelectionLength = 0;
+                        this.Pagos_Estudiantes_Buscador_txt.SelectionStart = 0;
+                        this.Pagos_Estudiantes_Buscador_txt.ShortcutsEnabled = true;
+                        this.Pagos_Estudiantes_Buscador_txt.Size = new System.Drawing.Size(610, 48);
+                        this.Pagos_Estudiantes_Buscador_txt.SkipLiterals = true;
+                        this.Pagos_Estudiantes_Buscador_txt.TabIndex = 41;
+                        this.Pagos_Estudiantes_Buscador_txt.TabStop = false;
+                        this.Pagos_Estudiantes_Buscador_txt.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+                        this.Pagos_Estudiantes_Buscador_txt.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludeLiterals;
+                        this.Pagos_Estudiantes_Buscador_txt.TrailingIcon = global::p_proyect.Properties.Resources.busqueda_de_lupa;
+                        this.Pagos_Estudiantes_Buscador_txt.UseSystemPasswordChar = false;
+                        this.Pagos_Estudiantes_Buscador_txt.ValidatingType = null;
+                        this.Pagos_Estudiantes_Buscador_txt.TextChanged += new System.EventHandler(this.Pagos_Estudiantes_Buscador_txt_TextChanged);
                         // 
                         // Adeudo_data_Grid
                         // 
@@ -3078,7 +3083,7 @@
                         dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
                         this.Adeudo_data_Grid.DefaultCellStyle = dataGridViewCellStyle10;
                         this.Adeudo_data_Grid.GridColor = System.Drawing.Color.Wheat;
-                        this.Adeudo_data_Grid.Location = new System.Drawing.Point(363, 117);
+                        this.Adeudo_data_Grid.Location = new System.Drawing.Point(341, 117);
                         this.Adeudo_data_Grid.Name = "Adeudo_data_Grid";
                         this.Adeudo_data_Grid.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
                         dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -3094,7 +3099,7 @@
                         dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Black;
                         dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.DarkOrange;
                         this.Adeudo_data_Grid.RowsDefaultCellStyle = dataGridViewCellStyle12;
-                        this.Adeudo_data_Grid.Size = new System.Drawing.Size(722, 433);
+                        this.Adeudo_data_Grid.Size = new System.Drawing.Size(760, 433);
                         this.Adeudo_data_Grid.TabIndex = 40;
                         this.Adeudo_data_Grid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Adeudo_data_Grid_CellClick);
                         // 
@@ -4002,7 +4007,7 @@
                         this.tabPage6.Controls.Add(this.bunifuPictureBox7);
                         this.tabPage6.Controls.Add(this.bunifuLabel23);
                         this.tabPage6.Controls.Add(this.materialButton25);
-                        this.tabPage6.Controls.Add(this.materialMaskedTextBox4);
+                        this.tabPage6.Controls.Add(this.Usuarios_Busqueda_txt);
                         this.tabPage6.Controls.Add(this.Usuarios_Empleados_DG);
                         this.tabPage6.Controls.Add(this.bunifuPanel5);
                         this.tabPage6.ImageKey = "usuario_.png";
@@ -4022,9 +4027,9 @@
                         this.bunifuPictureBox7.BorderRadius = 0;
                         this.bunifuPictureBox7.Image = global::p_proyect.Properties.Resources.logo_si_hd_removebg;
                         this.bunifuPictureBox7.IsCircle = true;
-                        this.bunifuPictureBox7.Location = new System.Drawing.Point(1019, 11);
+                        this.bunifuPictureBox7.Location = new System.Drawing.Point(1055, 11);
                         this.bunifuPictureBox7.Name = "bunifuPictureBox7";
-                        this.bunifuPictureBox7.Size = new System.Drawing.Size(58, 58);
+                        this.bunifuPictureBox7.Size = new System.Drawing.Size(45, 45);
                         this.bunifuPictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
                         this.bunifuPictureBox7.TabIndex = 50;
                         this.bunifuPictureBox7.TabStop = false;
@@ -4066,46 +4071,47 @@
                         this.materialButton25.UseAccentColor = false;
                         this.materialButton25.UseVisualStyleBackColor = true;
                         // 
-                        // materialMaskedTextBox4
+                        // Usuarios_Busqueda_txt
                         // 
-                        this.materialMaskedTextBox4.AllowPromptAsInput = true;
-                        this.materialMaskedTextBox4.AnimateReadOnly = false;
-                        this.materialMaskedTextBox4.AsciiOnly = false;
-                        this.materialMaskedTextBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-                        this.materialMaskedTextBox4.BeepOnError = false;
-                        this.materialMaskedTextBox4.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.IncludeLiterals;
-                        this.materialMaskedTextBox4.Depth = 0;
-                        this.materialMaskedTextBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-                        this.materialMaskedTextBox4.HidePromptOnLeave = false;
-                        this.materialMaskedTextBox4.HideSelection = true;
-                        this.materialMaskedTextBox4.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Default;
-                        this.materialMaskedTextBox4.LeadingIcon = null;
-                        this.materialMaskedTextBox4.Location = new System.Drawing.Point(379, 74);
-                        this.materialMaskedTextBox4.Mask = "";
-                        this.materialMaskedTextBox4.MaxLength = 32767;
-                        this.materialMaskedTextBox4.MouseState = MaterialSkin.MouseState.OUT;
-                        this.materialMaskedTextBox4.Name = "materialMaskedTextBox4";
-                        this.materialMaskedTextBox4.PasswordChar = '\0';
-                        this.materialMaskedTextBox4.PrefixSuffixText = null;
-                        this.materialMaskedTextBox4.PromptChar = '_';
-                        this.materialMaskedTextBox4.ReadOnly = false;
-                        this.materialMaskedTextBox4.RejectInputOnFirstFailure = false;
-                        this.materialMaskedTextBox4.ResetOnPrompt = true;
-                        this.materialMaskedTextBox4.ResetOnSpace = true;
-                        this.materialMaskedTextBox4.RightToLeft = System.Windows.Forms.RightToLeft.No;
-                        this.materialMaskedTextBox4.SelectedText = "";
-                        this.materialMaskedTextBox4.SelectionLength = 0;
-                        this.materialMaskedTextBox4.SelectionStart = 0;
-                        this.materialMaskedTextBox4.ShortcutsEnabled = true;
-                        this.materialMaskedTextBox4.Size = new System.Drawing.Size(610, 48);
-                        this.materialMaskedTextBox4.SkipLiterals = true;
-                        this.materialMaskedTextBox4.TabIndex = 47;
-                        this.materialMaskedTextBox4.TabStop = false;
-                        this.materialMaskedTextBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-                        this.materialMaskedTextBox4.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludeLiterals;
-                        this.materialMaskedTextBox4.TrailingIcon = global::p_proyect.Properties.Resources.busqueda_de_lupa;
-                        this.materialMaskedTextBox4.UseSystemPasswordChar = false;
-                        this.materialMaskedTextBox4.ValidatingType = null;
+                        this.Usuarios_Busqueda_txt.AllowPromptAsInput = true;
+                        this.Usuarios_Busqueda_txt.AnimateReadOnly = false;
+                        this.Usuarios_Busqueda_txt.AsciiOnly = false;
+                        this.Usuarios_Busqueda_txt.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+                        this.Usuarios_Busqueda_txt.BeepOnError = false;
+                        this.Usuarios_Busqueda_txt.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.IncludeLiterals;
+                        this.Usuarios_Busqueda_txt.Depth = 0;
+                        this.Usuarios_Busqueda_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+                        this.Usuarios_Busqueda_txt.HidePromptOnLeave = false;
+                        this.Usuarios_Busqueda_txt.HideSelection = true;
+                        this.Usuarios_Busqueda_txt.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Default;
+                        this.Usuarios_Busqueda_txt.LeadingIcon = null;
+                        this.Usuarios_Busqueda_txt.Location = new System.Drawing.Point(379, 74);
+                        this.Usuarios_Busqueda_txt.Mask = "";
+                        this.Usuarios_Busqueda_txt.MaxLength = 32767;
+                        this.Usuarios_Busqueda_txt.MouseState = MaterialSkin.MouseState.OUT;
+                        this.Usuarios_Busqueda_txt.Name = "Usuarios_Busqueda_txt";
+                        this.Usuarios_Busqueda_txt.PasswordChar = '\0';
+                        this.Usuarios_Busqueda_txt.PrefixSuffixText = null;
+                        this.Usuarios_Busqueda_txt.PromptChar = '_';
+                        this.Usuarios_Busqueda_txt.ReadOnly = false;
+                        this.Usuarios_Busqueda_txt.RejectInputOnFirstFailure = false;
+                        this.Usuarios_Busqueda_txt.ResetOnPrompt = true;
+                        this.Usuarios_Busqueda_txt.ResetOnSpace = true;
+                        this.Usuarios_Busqueda_txt.RightToLeft = System.Windows.Forms.RightToLeft.No;
+                        this.Usuarios_Busqueda_txt.SelectedText = "";
+                        this.Usuarios_Busqueda_txt.SelectionLength = 0;
+                        this.Usuarios_Busqueda_txt.SelectionStart = 0;
+                        this.Usuarios_Busqueda_txt.ShortcutsEnabled = true;
+                        this.Usuarios_Busqueda_txt.Size = new System.Drawing.Size(610, 48);
+                        this.Usuarios_Busqueda_txt.SkipLiterals = true;
+                        this.Usuarios_Busqueda_txt.TabIndex = 47;
+                        this.Usuarios_Busqueda_txt.TabStop = false;
+                        this.Usuarios_Busqueda_txt.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+                        this.Usuarios_Busqueda_txt.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludeLiterals;
+                        this.Usuarios_Busqueda_txt.TrailingIcon = global::p_proyect.Properties.Resources.busqueda_de_lupa;
+                        this.Usuarios_Busqueda_txt.UseSystemPasswordChar = false;
+                        this.Usuarios_Busqueda_txt.ValidatingType = null;
+                        this.Usuarios_Busqueda_txt.TextChanged += new System.EventHandler(this.Usuarios_Busqueda_txt_TextChanged);
                         // 
                         // Usuarios_Empleados_DG
                         // 
@@ -4765,7 +4771,7 @@
                 private Bunifu.UI.WinForms.BunifuLabel bunifuLabel5;
                 private Bunifu.UI.WinForms.BunifuLabel bunifuLabel6;
                 private MaterialSkin.Controls.MaterialButton materialButton6;
-                private MaterialSkin.Controls.MaterialMaskedTextBox materialMaskedTextBox1;
+                private MaterialSkin.Controls.MaterialMaskedTextBox Buscar_Cursos_txt;
                 private Bunifu.UI.WinForms.BunifuPanel bunifuPanel2;
                 private MaterialSkin.Controls.MaterialButton materialButton7;
                 private MaterialSkin.Controls.MaterialButton materialButton8;
@@ -4846,10 +4852,10 @@
                 private System.Windows.Forms.DataGridView Adeudo_data_Grid;
                 private Bunifu.UI.WinForms.BunifuLabel bunifuLabel25;
                 private MaterialSkin.Controls.MaterialButton materialButton16;
-                private MaterialSkin.Controls.MaterialMaskedTextBox materialMaskedTextBox2;
+                private MaterialSkin.Controls.MaterialMaskedTextBox Pagos_Estudiantes_Buscador_txt;
                 private Bunifu.UI.WinForms.BunifuLabel bunifuLabel4;
                 private MaterialSkin.Controls.MaterialButton materialButton11;
-                private MaterialSkin.Controls.MaterialMaskedTextBox materialMaskedTextBox3;
+                private MaterialSkin.Controls.MaterialMaskedTextBox Estudiantes_Busqueda_txt;
                 private Bunifu.UI.WinForms.BunifuPictureBox bunifuPictureBox5;
                 private Bunifu.UI.WinForms.BunifuTextBox Cutota_Adeudo_txt;
                 private Bunifu.UI.WinForms.BunifuLabel bunifuLabel9;
@@ -4872,6 +4878,6 @@
                 private Bunifu.UI.WinForms.BunifuPictureBox bunifuPictureBox7;
                 private Bunifu.UI.WinForms.BunifuLabel bunifuLabel23;
                 private MaterialSkin.Controls.MaterialButton materialButton25;
-                private MaterialSkin.Controls.MaterialMaskedTextBox materialMaskedTextBox4;
+                private MaterialSkin.Controls.MaterialMaskedTextBox Usuarios_Busqueda_txt;
         }
 }

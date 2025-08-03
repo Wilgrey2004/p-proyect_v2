@@ -13,7 +13,7 @@ namespace p_proyect.Utils
                 public static DbContextOptionsBuilder<AppDbContext> getConnection() {
                         
                         var optionsBuilder = new DbContextOptionsBuilder<AppDbContext>();
-                        optionsBuilder.UseSqlServer("Server=WILDESK\\SQLEXPRESS;Database=p_proyect;Trusted_Connection=True;Encrypt=True;TrustServerCertificate=True;MultipleActiveResultSets=true;");
+                        optionsBuilder.UseSqlServer("Server=.;Database=p_proyect;Trusted_Connection=True;Encrypt=True;TrustServerCertificate=True;MultipleActiveResultSets=true;");
 
 
                         return optionsBuilder;

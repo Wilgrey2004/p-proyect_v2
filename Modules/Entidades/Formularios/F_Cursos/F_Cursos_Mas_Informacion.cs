@@ -5,6 +5,7 @@ using p_proyect.Modules.Entidades.responses;
 using p_proyect.Modules.Enums;
 using p_proyect.Utils;
 using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Linq;
@@ -80,6 +81,27 @@ namespace p_proyect.Modules.Entidades.Formularios.F_Cursos
                         Profesor_Que_Imparte_El_Curso_com.SelectedValue = Curso_Seleccionado.Profesor_Id;
                         //Estado_Actual_Del_Curso_com.SelectedItem = Curso_Seleccionado.Estado_Actual_Del_Curso;
 
+                }
+
+                List<String> cabeceras = new List<string>() { "Nombre del estudiante",
+                    "Apellido del estudiante",
+                    "Edad",
+                    "Genero",
+                    "Nombre del curso",
+                    "Descripcion del curso",
+                    "Dia en el que se imparte el curso",
+                    "Hoara de inicio",
+                    "Hora de finalizacion" };
+
+                private void materialButton7_Click( object sender, EventArgs e ) {
+                         try
+                        {
+                                GeneradorDePdf.GeneradorDePDFS<R_Relacion_Cursos_Estudiantes>(Lista_De_Estudiantes, cabeceras, "Lista_De_Estudiantes", "PlantillaFactura","Lista de estudiantes " + Curso_Seleccionado.Nombre);
+                                MessageBox.Show("Reporte generado exitosamente");
+                        } catch (Exception ex)
+                        {
+                                MessageBox.Show("Ocurrio un error al generar el reporte de estudiantes\n" + ex);
+                        }
                 }
         }
 }

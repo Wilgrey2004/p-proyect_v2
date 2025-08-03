@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace p_proyect.Modules.Entidades.BindinLists
 {
-        public class Cursos_BindingList
+        public class    Cursos_BindingList
         {
                 private BindingList<Cursos_Response> Cursos_Lista = new BindingList<Cursos_Response>();
 

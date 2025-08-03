@@ -9,6 +9,8 @@ using p_proyect.Modules.Entidades.Formularios.Estudiantes;
 using p_proyect.Modules.Entidades.Formularios.F_Cursos;
 using p_proyect.Modules.Entidades.Formularios.Profesores;
 using p_proyect.Modules.Entidades.Formularios.Usuario_Empleado;
+using p_proyect.Modules.Entidades.request;
+
 
 //using p_proyect.Modules.Entidades.Formularios
 using p_proyect.Modules.Entidades.responses;
@@ -42,24 +44,29 @@ namespace p_proyect
                         CargarTabla_De_Cursos();
 
                 }
+
+                BindingList<Estudiantes_Response> estudiantes_Responses = new BindingList<Estudiantes_Response>();
                 private void Cargar_Tabla_De_Estudiantes() {
                         Estudiantes_BindingList estudiantes_BindingList = new Estudiantes_BindingList();
+                        estudiantes_Responses = estudiantes_BindingList.GetList();
                         Lista_De_Estudiantes.Clear();
-                        Lista_De_Estudiantes = estudiantes_BindingList.GetList();
+                        Lista_De_Estudiantes = estudiantes_Responses;
                         Estudiantes_dataview.DataSource = Lista_De_Estudiantes;
                 }
 
 
 
                 BindingList<Estudiantes_Response> Lista_De_Estudiantes = new BindingList<Estudiantes_Response>();
-                BindingList<Cursos> Cursos_Lista = new BindingList<Cursos>();
+                BindingList<Cursos_Response> Cursos_Lista = new BindingList<Cursos_Response>();
 
                 private void CargarTabla_De_Cursos() {
                         try
                         {
                                 Cursos_BindingList cursos_BindingList = new Cursos_BindingList();
+
                                 Cursos_Lista.Clear();
-                                Listado_De_Cursos_dg.DataSource = cursos_BindingList.GetList();
+                                Cursos_Lista = cursos_BindingList.GetList();
+                                Listado_De_Cursos_dg.DataSource = Cursos_Lista;
 
 
 
@@ -1126,6 +1133,121 @@ namespace p_proyect
                         administrador_Empleado_Editar.ShowDialog();
 
 
+                }
+
+                private void Buscar_Profesor_txt_TextChanged( object sender, EventArgs e ) {
+                        string textoBusqueda = Buscar_Profesor_txt.Text.Trim();
+
+                        if (textoBusqueda == "" || Lista_De_Profesores_Blindada.Count == 0)
+                        {
+                                Cargar_Tabla_Profesores();
+                                return;
+                        }
+
+                        var query = Lista_De_Profesores_Blindada.Where(x => x.Nombre.IndexOf(textoBusqueda, StringComparison.OrdinalIgnoreCase) >= 0).ToList();
+
+                        if (query == null)
+                        {
+                                MessageBox.Show("No se encontraron productos con el nombre proporcionado.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                return;
+                        }
+
+                        Lista_De_Profesores_Blindada.Clear();
+                        Lista_De_Profesores_Blindada = new BindingList<Profesores_Response>(query);
+                        Profesores_dg.DataSource = Lista_De_Profesores_Blindada;
+
+                }
+
+                private void Buscar_Cursos_txt_TextAlignChanged( object sender, EventArgs e ) {
+                        
+                }
+
+                private void Buscar_Cursos_txt_TextChanged( object sender, EventArgs e ) {
+                        string textoBusqueda = Buscar_Cursos_txt.Text.Trim();
+
+                        if (textoBusqueda == "" || Cursos_Lista.Count == 0)
+                        {
+                                CargarTabla_De_Cursos();
+                                return;
+                        }
+
+                        var query = Cursos_Lista.Where(x => x.Nombre.IndexOf(textoBusqueda, StringComparison.OrdinalIgnoreCase) >= 0).ToList();
+
+                        if (query == null)
+                        {
+                                MessageBox.Show("No se encontraron Curso con el nombre proporcionado.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                return;
+                        }
+
+                        Cursos_Lista.Clear();
+                        Cursos_Lista = new BindingList<Cursos_Response>(query);
+                        Listado_De_Cursos_dg.DataSource = Cursos_Lista;
+                }
+
+                private void materialMaskedTextBox3_TextChanged( object sender, EventArgs e ) {
+                        string textoBusqueda = Estudiantes_Busqueda_txt.Text.Trim();
+
+                        if (textoBusqueda == "" || estudiantes_Responses.Count == 0)
+                        {
+                                Cargar_Tabla_De_Estudiantes();
+                                return;
+                        }
+
+                        var query = estudiantes_Responses.Where(x => x.Nombre.IndexOf(textoBusqueda, StringComparison.OrdinalIgnoreCase) >= 0).ToList();
+
+                        if (query == null)
+                        {
+                                MessageBox.Show("No se encontraron Curso con el nombre proporcionado.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                return;
+                        }
+
+                        estudiantes_Responses.Clear();
+                        estudiantes_Responses = new BindingList<Estudiantes_Response>(query);
+                        Estudiantes_dataview.DataSource = estudiantes_Responses;
+                }
+
+                private void Pagos_Estudiantes_Buscador_txt_TextChanged( object sender, EventArgs e ) {
+                        string textoBusqueda = Pagos_Estudiantes_Buscador_txt.Text.Trim();
+
+                        if (textoBusqueda == "" || adeudo_Responses.Count == 0)
+                        {
+                                Cargar_Tabala_Adeudos();
+                                return;
+                        }
+
+                        var query = adeudo_Responses.Where(x => x.Nombre_Curso.IndexOf(textoBusqueda, StringComparison.OrdinalIgnoreCase) >= 0 || x.Nombre_Estudiante.IndexOf(textoBusqueda, StringComparison.OrdinalIgnoreCase) >= 0).ToList();
+
+                        if (query == null)
+                        {
+                                MessageBox.Show("No se encontraron Curso con el nombre proporcionado.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                return;
+                        }
+
+                        adeudo_Responses.Clear();
+                        adeudo_Responses = new BindingList<Adeudo_Response>(query);
+                        Adeudo_data_Grid.DataSource = adeudo_Responses;
+                }
+
+                private void Usuarios_Busqueda_txt_TextChanged( object sender, EventArgs e ) {
+                        string textoBusqueda = Usuarios_Busqueda_txt.Text.Trim();
+
+                        if (textoBusqueda == "" || Usuarios_admins_List.Count == 0)
+                        {
+                                Cargar_Tabla_De_Usuarios_Admins();
+                                return;
+                        }
+
+                        var query = Usuarios_admins_List.Where(x => x.Nombre_del_Administrador.IndexOf(textoBusqueda, StringComparison.OrdinalIgnoreCase) >= 0 || x.Apellido_del_Administrador.IndexOf(textoBusqueda, StringComparison.OrdinalIgnoreCase) >= 0).ToList();
+
+                        if (query == null)
+                        {
+                                MessageBox.Show("No se encontraron Curso con el nombre proporcionado.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                return;
+                        }
+
+                        Usuarios_admins_List.Clear();
+                        Usuarios_admins_List = new BindingList<Empleado_Admin_Response>(query);
+                        Usuarios_Empleados_DG.DataSource = Usuarios_admins_List;
                 }
         }
 }
