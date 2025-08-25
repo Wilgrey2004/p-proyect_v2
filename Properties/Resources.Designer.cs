@@ -153,6 +153,16 @@ namespace p_proyect.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Descripcion1 {
+            get {
+                object obj = ResourceManager.GetObject("Descripcion1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Direccion {
             get {
                 object obj = ResourceManager.GetObject("Direccion", resourceCulture);
@@ -186,6 +196,16 @@ namespace p_proyect.Properties {
         internal static System.Drawing.Bitmap firma {
             get {
                 object obj = ResourceManager.GetObject("firma", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap lista_de_verificacion {
+            get {
+                object obj = ResourceManager.GetObject("lista-de-verificacion", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

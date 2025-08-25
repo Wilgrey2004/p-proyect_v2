@@ -17,6 +17,7 @@ using p_proyect.Modules.Entidades.responses;
 using p_proyect.Modules.Enums;
 using p_proyect.Utils;
 using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
 using System.Linq;
@@ -341,9 +342,11 @@ namespace p_proyect
                         {
                                 return;
                         }
+
                         Profesor_Editar profesor_Editar = new Profesor_Editar();
                         profesor_Editar.profesor = profesor_Seleccionado;
                         profesor_Editar.ShowDialog();
+                        CargarTabla_De_Cursos();
                 }
 
                 private void materialButton3_Click( object sender, EventArgs e ) {
@@ -1036,13 +1039,13 @@ namespace p_proyect
                 }
 
                 private async void materialButton21_Click( object sender, EventArgs e ) {
-                        if(empleado_admin_seleccionado == null)
+                        if (empleado_admin_seleccionado == null)
                         {
                                 MessageBox.Show("no has seleccionando al empleado", "mensaje de busqueda");
                                 return;
                         }
                         var mensaje = MessageBox.Show($"Quieres eliminar al usuario admin {empleado_admin_seleccionado}?", "Mensaje de confirmacion para el agregado.", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                        
+
                         if (mensaje == DialogResult.No)
                         {
                                 return;
@@ -1069,8 +1072,8 @@ namespace p_proyect
 
                 }
 
-               Empleado_Admin empleado_admin_seleccionado = new Empleado_Admin();
-               long empleado_admin_seleccionado_id = 0;
+                Empleado_Admin empleado_admin_seleccionado = new Empleado_Admin();
+                long empleado_admin_seleccionado_id = 0;
 
                 private void Usuarios_Empleados_DG_CellClick( object sender, DataGridViewCellEventArgs e ) {
                         try
@@ -1159,7 +1162,7 @@ namespace p_proyect
                 }
 
                 private void Buscar_Cursos_txt_TextAlignChanged( object sender, EventArgs e ) {
-                        
+
                 }
 
                 private void Buscar_Cursos_txt_TextChanged( object sender, EventArgs e ) {
@@ -1248,6 +1251,141 @@ namespace p_proyect
                         Usuarios_admins_List.Clear();
                         Usuarios_admins_List = new BindingList<Empleado_Admin_Response>(query);
                         Usuarios_Empleados_DG.DataSource = Usuarios_admins_List;
+                }
+
+
+                List<String> cabeceras_En_Profesores = new List<string>() {
+                "ID",
+                "Nombre del profesor",
+                "Apellido del profesor",
+                "Tel. Profeosr",
+                "Porcentaje de comision",
+                "Pago total de comision",
+                "Cursos impartidos",
+                "Fecha de agregado",
+                "Fecha de integracion al sistema"
+                };
+
+                private void materialButton19_Click( object sender, EventArgs e ) {
+                        try
+                        {
+                                GeneradorDePdf.GeneradorDePDFS<Profesores_Response>(Lista_De_Profesores_Blindada, cabeceras_En_Profesores, "Lista_De_Profesores", "PlantillaFactura", "Lista de Profesores");
+                                MessageBox.Show("Reporte de profesores generado");
+                                return;
+                        } catch (Exception ex)
+                        {
+                                MessageBox.Show("Ocurrio un error al generar el reporte de Profesores\n" + ex);
+                                return;
+                        }
+                }
+                List<String> cabeceras_En_Cursos = new List<string>() {
+                "ID",
+                "Nombre del curso",
+                "Descripcion del curso",
+                "Dia en el que se imparte el curso",
+                "Hoara de inicio",
+                "Hora de finalizacion",
+                "Nombre del Profesor",
+                "Cantidad De estudiantes",
+                "Costo del curso total",
+                "Costo de inscripcion",
+                "Estado del curso"
+                };
+                private void materialButton20_Click( object sender, EventArgs e ) {
+                        try
+                        {
+                                GeneradorDePdf.GeneradorDePDFS<Cursos_Response>(Cursos_Lista, cabeceras_En_Cursos, "Lista_De_Cursos", "PlantillaFactura", "Lista de Cursos");
+                                MessageBox.Show("Reporte de Cursos generado");
+                                return;
+                        } catch (Exception ex)
+                        {
+                                MessageBox.Show("Ocurrio un error al generar el reporte de Cursos\n" + ex);
+                                return;
+                        }
+                }
+                List<String> cabeceras_En_Estudiantes = new List<string>() {
+                "ID",
+                "Nombre del estudiante",
+                "Apellido del estudiante",
+                "Edad",
+                "Genero",
+                "Apodo / Sobre nombre",
+                "Numero de cedula",
+                "Direccion",
+                "Municipio",
+                "Secctor",
+                "Nombre del tutor",
+                "Tel. Tutor",
+                "Estudia en la actualidad",
+                "Nivel de Educacion",
+                "Fecha de Inscripcion",
+                "Fecha de Insercion Al sistema",
+                "Cantidad De cursos inscritos",
+                "Empleado que lo inscribio"
+                };
+                private void materialButton26_Click( object sender, EventArgs e ) {
+                        try
+                        {
+                                GeneradorDePdf.GeneradorDePDFS<Estudiantes_Response>(estudiantes_Responses, cabeceras_En_Estudiantes, "Reporte_De_Estudiantes", "PlantillaFactura", "Lista de Estudiantes");
+                                MessageBox.Show("Reporte de Cursos generado");
+                                return;
+                        } catch (Exception ex)
+                        {
+                                MessageBox.Show("Ocurrio un error al generar el reporte de Cursos\n" + ex);
+                                return;
+                        }
+                }
+                List<String> cabeceras_En_Adeudos = new List<string>() {
+                "Codigo De la Deuda",
+                "Id del estudiante",
+                "Nombre del estudiante",
+                "Apellido del estudiante",
+                "Edad",
+                "Numero de cedula",
+                "Total pagado",
+                "Restante a pagar",
+                "Deudo total",
+                "Estado del adeudo",
+                "Codigo del curso",
+                "Nombre del curso",
+                "Descripcion del curso",
+                "Fecha del ultimo pago",
+                "Fecha del siguiente pago"
+                };
+                private void materialButton27_Click( object sender, EventArgs e ) {
+                        try
+                        {
+                                GeneradorDePdf.GeneradorDePDFS<Adeudo_Response>(adeudo_Responses, cabeceras_En_Adeudos, "Lista_De_Adeudos", "PlantillaFactura", "Lista de Adeudos");
+                                MessageBox.Show("Reporte de adeudos generados");
+                                return;
+                        } catch (Exception ex)
+                        {
+                                MessageBox.Show("Ocurrio un error al generar el reporte de adeudos\n" + ex);
+                                return;
+                        }
+                }
+                List<String> cabeceras_En_Empleado_Admin = new List<string>() {
+                "ID",
+               "Nombre del Empleado",
+                    "Apellido del Empleado",
+                    "Numero de telefono",
+                    "Cotraseña",
+                    "Contraseña confirmada",
+                    "Estado del Empleado",
+                    "Cargo del usuario"
+                };
+
+                private void materialButton28_Click( object sender, EventArgs e ) {
+                        try
+                        {
+                                GeneradorDePdf.GeneradorDePDFS<Empleado_Admin_Response>(Usuarios_admins_List, cabeceras_En_Empleado_Admin, "Reporte_Empleado_administrador", "PlantillaFactura", "Lista de Empleados_usuarios");
+                                MessageBox.Show("Reporte de Empleado/usuario generados");
+                                return;
+                        } catch (Exception ex)
+                        {
+                                MessageBox.Show("Ocurrio un error al generar el reporte de Empleados/usuarios\n" + ex);
+                                return;
+                        }
                 }
         }
 }

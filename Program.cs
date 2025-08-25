@@ -18,8 +18,9 @@ namespace p_proyect
                         Application.EnableVisualStyles();
                         Application.SetCompatibleTextRenderingDefault(false);
                        
+                        string connString = ConfigurationManager.ConnectionStrings["p_proyect_c"].ConnectionString;
                         var optionsBuilder = new DbContextOptionsBuilder<AppDbContext>();
-                        optionsBuilder.UseSqlServer("Server=.;Database=p_proyect;Trusted_Connection=True;Encrypt=True;TrustServerCertificate=True;MultipleActiveResultSets=true;");
+                        optionsBuilder.UseSqlServer(connString);
 
                         try
                         {
