@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using p_proyect.Modules;
 
 namespace p_proyect.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250826171255_new_migration___1")]
+    partial class new_migration___1
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -115,7 +117,6 @@ namespace p_proyect.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("Cargo")
-                        .HasColumnName("Cargo")
                         .HasColumnType("int");
 
                     b.Property<int>("Estado")
@@ -142,7 +143,7 @@ namespace p_proyect.Migrations
                         {
                             Id = 1L,
                             Apellido_del_Administrador = "admin",
-                            Cargo = 1,
+                            Cargo_Empleado = 1,
                             Estado = 1,
                             Nombre_del_Administrador = "Administrador",
                             Numero_de_Telefono = "8494061420",

@@ -61,26 +61,28 @@
                         this.Apellido_Del_Profesor_txt = new Bunifu.UI.WinForms.BunifuTextBox();
                         this.Nombre_Del_Profesor_txt = new Bunifu.UI.WinForms.BunifuTextBox();
                         this.ID_Del_Profesor_txt = new Bunifu.UI.WinForms.BunifuTextBox();
-                        this.Cursos_Impartidos = new Bunifu.UI.WinForms.BunifuDataGridView();
-                        this.bunifuLabel3 = new Bunifu.UI.WinForms.BunifuLabel();
-                        this.bunifuLabel1 = new Bunifu.UI.WinForms.BunifuLabel();
-                        this.bunifuLabel4 = new Bunifu.UI.WinForms.BunifuLabel();
+                        this.Cursos_Impartidos = new System.Windows.Forms.DataGridView();
+                        this.bunifuLabel6 = new Bunifu.UI.WinForms.BunifuLabel();
+                        this.bunifuLabel7 = new Bunifu.UI.WinForms.BunifuLabel();
+                        this.bunifuLabel8 = new Bunifu.UI.WinForms.BunifuLabel();
+                        this.bunifuLabel9 = new Bunifu.UI.WinForms.BunifuLabel();
+                        this.bunifuLabel10 = new Bunifu.UI.WinForms.BunifuLabel();
+                        this.bunifuPictureBox2 = new Bunifu.UI.WinForms.BunifuPictureBox();
                         this.materialCard1.SuspendLayout();
                         this.materialCard2.SuspendLayout();
                         ((System.ComponentModel.ISupportInitialize)(this.Cursos_Impartidos)).BeginInit();
+                        ((System.ComponentModel.ISupportInitialize)(this.bunifuPictureBox2)).BeginInit();
                         this.SuspendLayout();
                         // 
                         // materialCard1
                         // 
                         this.materialCard1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+                        this.materialCard1.Controls.Add(this.bunifuPictureBox2);
+                        this.materialCard1.Controls.Add(this.Cursos_Impartidos);
                         this.materialCard1.Controls.Add(this.materialButton2);
                         this.materialCard1.Controls.Add(this.materialButton1);
                         this.materialCard1.Controls.Add(this.bunifuLabel5);
                         this.materialCard1.Controls.Add(this.materialCard2);
-                        this.materialCard1.Controls.Add(this.Cursos_Impartidos);
-                        this.materialCard1.Controls.Add(this.bunifuLabel3);
-                        this.materialCard1.Controls.Add(this.bunifuLabel1);
-                        this.materialCard1.Controls.Add(this.bunifuLabel4);
                         this.materialCard1.Depth = 0;
                         this.materialCard1.Dock = System.Windows.Forms.DockStyle.Fill;
                         this.materialCard1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
@@ -140,7 +142,7 @@
                         this.bunifuLabel5.CursorType = System.Windows.Forms.Cursors.Default;
                         this.bunifuLabel5.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
                         this.bunifuLabel5.ForeColor = System.Drawing.Color.Orange;
-                        this.bunifuLabel5.Location = new System.Drawing.Point(497, 46);
+                        this.bunifuLabel5.Location = new System.Drawing.Point(434, 95);
                         this.bunifuLabel5.Name = "bunifuLabel5";
                         this.bunifuLabel5.RightToLeft = System.Windows.Forms.RightToLeft.No;
                         this.bunifuLabel5.Size = new System.Drawing.Size(291, 19);
@@ -152,6 +154,11 @@
                         // materialCard2
                         // 
                         this.materialCard2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+                        this.materialCard2.Controls.Add(this.bunifuLabel10);
+                        this.materialCard2.Controls.Add(this.bunifuLabel9);
+                        this.materialCard2.Controls.Add(this.bunifuLabel8);
+                        this.materialCard2.Controls.Add(this.bunifuLabel7);
+                        this.materialCard2.Controls.Add(this.bunifuLabel6);
                         this.materialCard2.Controls.Add(this.bunifuLabel2);
                         this.materialCard2.Controls.Add(this.Comision_Del_Profesor);
                         this.materialCard2.Controls.Add(this.Numero_Del_Profesor_txt);
@@ -160,7 +167,7 @@
                         this.materialCard2.Controls.Add(this.ID_Del_Profesor_txt);
                         this.materialCard2.Depth = 0;
                         this.materialCard2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-                        this.materialCard2.Location = new System.Drawing.Point(17, 88);
+                        this.materialCard2.Location = new System.Drawing.Point(14, 138);
                         this.materialCard2.Margin = new System.Windows.Forms.Padding(14);
                         this.materialCard2.MouseState = MaterialSkin.MouseState.HOVER;
                         this.materialCard2.Name = "materialCard2";
@@ -175,7 +182,7 @@
                         this.bunifuLabel2.CursorType = null;
                         this.bunifuLabel2.Font = new System.Drawing.Font("Segoe Print", 9F);
                         this.bunifuLabel2.ForeColor = System.Drawing.Color.DodgerBlue;
-                        this.bunifuLabel2.Location = new System.Drawing.Point(68, 17);
+                        this.bunifuLabel2.Location = new System.Drawing.Point(133, 14);
                         this.bunifuLabel2.Name = "bunifuLabel2";
                         this.bunifuLabel2.RightToLeft = System.Windows.Forms.RightToLeft.No;
                         this.bunifuLabel2.Size = new System.Drawing.Size(148, 21);
@@ -571,113 +578,132 @@
                         // 
                         // Cursos_Impartidos
                         // 
-                        this.Cursos_Impartidos.AccessibleDescription = "Lista de todos los profesores";
-                        this.Cursos_Impartidos.AllowCustomTheming = false;
-                        this.Cursos_Impartidos.AllowUserToOrderColumns = true;
-                        dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(232)))), ((int)(((byte)(191)))));
-                        dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-                        this.Cursos_Impartidos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-                        this.Cursos_Impartidos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-                        this.Cursos_Impartidos.BorderStyle = System.Windows.Forms.BorderStyle.None;
-                        this.Cursos_Impartidos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-                        this.Cursos_Impartidos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+                        this.Cursos_Impartidos.BackgroundColor = System.Drawing.Color.Wheat;
+                        this.Cursos_Impartidos.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+                        this.Cursos_Impartidos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+                        dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+                        dataGridViewCellStyle1.BackColor = System.Drawing.Color.Orange;
+                        dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                        dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+                        dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DarkOrange;
+                        dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+                        dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+                        this.Cursos_Impartidos.DefaultCellStyle = dataGridViewCellStyle1;
+                        this.Cursos_Impartidos.GridColor = System.Drawing.Color.Wheat;
+                        this.Cursos_Impartidos.Location = new System.Drawing.Point(434, 138);
+                        this.Cursos_Impartidos.Name = "Cursos_Impartidos";
+                        this.Cursos_Impartidos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
                         dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
                         dataGridViewCellStyle2.BackColor = System.Drawing.Color.Orange;
-                        dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
-                        dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-                        dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(132)))), ((int)(((byte)(0)))));
-                        dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+                        dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                        dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.Menu;
+                        dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.DarkOrange;
+                        dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Snow;
                         dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-                        this.Cursos_Impartidos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-                        this.Cursos_Impartidos.ColumnHeadersHeight = 40;
-                        this.Cursos_Impartidos.CurrentTheme.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(232)))), ((int)(((byte)(191)))));
-                        this.Cursos_Impartidos.CurrentTheme.AlternatingRowsStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-                        this.Cursos_Impartidos.CurrentTheme.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Black;
-                        this.Cursos_Impartidos.CurrentTheme.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(201)))), ((int)(((byte)(102)))));
-                        this.Cursos_Impartidos.CurrentTheme.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Black;
-                        this.Cursos_Impartidos.CurrentTheme.BackColor = System.Drawing.Color.Orange;
-                        this.Cursos_Impartidos.CurrentTheme.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(226)))), ((int)(((byte)(173)))));
-                        this.Cursos_Impartidos.CurrentTheme.HeaderStyle.BackColor = System.Drawing.Color.Orange;
-                        this.Cursos_Impartidos.CurrentTheme.HeaderStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
-                        this.Cursos_Impartidos.CurrentTheme.HeaderStyle.ForeColor = System.Drawing.Color.White;
-                        this.Cursos_Impartidos.CurrentTheme.HeaderStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(132)))), ((int)(((byte)(0)))));
-                        this.Cursos_Impartidos.CurrentTheme.HeaderStyle.SelectionForeColor = System.Drawing.Color.White;
-                        this.Cursos_Impartidos.CurrentTheme.Name = null;
-                        this.Cursos_Impartidos.CurrentTheme.RowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(237)))), ((int)(((byte)(204)))));
-                        this.Cursos_Impartidos.CurrentTheme.RowsStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-                        this.Cursos_Impartidos.CurrentTheme.RowsStyle.ForeColor = System.Drawing.Color.Black;
-                        this.Cursos_Impartidos.CurrentTheme.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(201)))), ((int)(((byte)(102)))));
-                        this.Cursos_Impartidos.CurrentTheme.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
-                        dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-                        dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(237)))), ((int)(((byte)(204)))));
-                        dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+                        this.Cursos_Impartidos.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+                        dataGridViewCellStyle3.BackColor = System.Drawing.Color.Orange;
+                        dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
                         dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-                        dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(201)))), ((int)(((byte)(102)))));
-                        dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-                        dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-                        this.Cursos_Impartidos.DefaultCellStyle = dataGridViewCellStyle3;
-                        this.Cursos_Impartidos.EnableHeadersVisualStyles = false;
-                        this.Cursos_Impartidos.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(226)))), ((int)(((byte)(173)))));
-                        this.Cursos_Impartidos.HeaderBackColor = System.Drawing.Color.Orange;
-                        this.Cursos_Impartidos.HeaderBgColor = System.Drawing.Color.Empty;
-                        this.Cursos_Impartidos.HeaderForeColor = System.Drawing.Color.White;
-                        this.Cursos_Impartidos.Location = new System.Drawing.Point(448, 71);
-                        this.Cursos_Impartidos.Name = "Cursos_Impartidos";
-                        this.Cursos_Impartidos.RowHeadersVisible = false;
-                        this.Cursos_Impartidos.RowTemplate.Height = 40;
-                        this.Cursos_Impartidos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-                        this.Cursos_Impartidos.Size = new System.Drawing.Size(602, 418);
-                        this.Cursos_Impartidos.TabIndex = 31;
-                        this.Cursos_Impartidos.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Orange;
+                        dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.DarkOrange;
+                        this.Cursos_Impartidos.RowsDefaultCellStyle = dataGridViewCellStyle3;
+                        this.Cursos_Impartidos.Size = new System.Drawing.Size(601, 401);
+                        this.Cursos_Impartidos.TabIndex = 40;
                         // 
-                        // bunifuLabel3
+                        // bunifuLabel6
                         // 
-                        this.bunifuLabel3.AllowParentOverrides = false;
-                        this.bunifuLabel3.AutoEllipsis = false;
-                        this.bunifuLabel3.CursorType = null;
-                        this.bunifuLabel3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-                        this.bunifuLabel3.ForeColor = System.Drawing.Color.MediumAquamarine;
-                        this.bunifuLabel3.Location = new System.Drawing.Point(17, 59);
-                        this.bunifuLabel3.Name = "bunifuLabel3";
-                        this.bunifuLabel3.RightToLeft = System.Windows.Forms.RightToLeft.No;
-                        this.bunifuLabel3.Size = new System.Drawing.Size(124, 15);
-                        this.bunifuLabel3.TabIndex = 28;
-                        this.bunifuLabel3.Text = "Restaurando los valores ";
-                        this.bunifuLabel3.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-                        this.bunifuLabel3.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+                        this.bunifuLabel6.AllowParentOverrides = false;
+                        this.bunifuLabel6.AutoEllipsis = false;
+                        this.bunifuLabel6.CursorType = null;
+                        this.bunifuLabel6.Font = new System.Drawing.Font("Segoe Print", 9F);
+                        this.bunifuLabel6.ForeColor = System.Drawing.Color.DodgerBlue;
+                        this.bunifuLabel6.Location = new System.Drawing.Point(77, 291);
+                        this.bunifuLabel6.Name = "bunifuLabel6";
+                        this.bunifuLabel6.RightToLeft = System.Windows.Forms.RightToLeft.No;
+                        this.bunifuLabel6.Size = new System.Drawing.Size(51, 21);
+                        this.bunifuLabel6.TabIndex = 39;
+                        this.bunifuLabel6.Text = "comision";
+                        this.bunifuLabel6.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+                        this.bunifuLabel6.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
                         // 
-                        // bunifuLabel1
+                        // bunifuLabel7
                         // 
-                        this.bunifuLabel1.AllowParentOverrides = false;
-                        this.bunifuLabel1.AutoEllipsis = false;
-                        this.bunifuLabel1.CursorType = null;
-                        this.bunifuLabel1.Font = new System.Drawing.Font("Segoe Print", 9F);
-                        this.bunifuLabel1.ForeColor = System.Drawing.Color.DodgerBlue;
-                        this.bunifuLabel1.Location = new System.Drawing.Point(17, 32);
-                        this.bunifuLabel1.Name = "bunifuLabel1";
-                        this.bunifuLabel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-                        this.bunifuLabel1.Size = new System.Drawing.Size(114, 21);
-                        this.bunifuLabel1.TabIndex = 27;
-                        this.bunifuLabel1.Text = "Sumando vidas inc";
-                        this.bunifuLabel1.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-                        this.bunifuLabel1.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+                        this.bunifuLabel7.AllowParentOverrides = false;
+                        this.bunifuLabel7.AutoEllipsis = false;
+                        this.bunifuLabel7.CursorType = null;
+                        this.bunifuLabel7.Font = new System.Drawing.Font("Segoe Print", 9F);
+                        this.bunifuLabel7.ForeColor = System.Drawing.Color.DodgerBlue;
+                        this.bunifuLabel7.Location = new System.Drawing.Point(77, 225);
+                        this.bunifuLabel7.Name = "bunifuLabel7";
+                        this.bunifuLabel7.RightToLeft = System.Windows.Forms.RightToLeft.No;
+                        this.bunifuLabel7.Size = new System.Drawing.Size(122, 21);
+                        this.bunifuLabel7.TabIndex = 40;
+                        this.bunifuLabel7.Text = "numero del profesor";
+                        this.bunifuLabel7.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+                        this.bunifuLabel7.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
                         // 
-                        // bunifuLabel4
+                        // bunifuLabel8
                         // 
-                        this.bunifuLabel4.AllowParentOverrides = false;
-                        this.bunifuLabel4.AutoEllipsis = false;
-                        this.bunifuLabel4.Cursor = System.Windows.Forms.Cursors.Default;
-                        this.bunifuLabel4.CursorType = System.Windows.Forms.Cursors.Default;
-                        this.bunifuLabel4.Font = new System.Drawing.Font("Tahoma", 9F);
-                        this.bunifuLabel4.ForeColor = System.Drawing.Color.Orange;
-                        this.bunifuLabel4.Location = new System.Drawing.Point(17, 12);
-                        this.bunifuLabel4.Name = "bunifuLabel4";
-                        this.bunifuLabel4.RightToLeft = System.Windows.Forms.RightToLeft.No;
-                        this.bunifuLabel4.Size = new System.Drawing.Size(55, 14);
-                        this.bunifuLabel4.TabIndex = 26;
-                        this.bunifuLabel4.Text = "Fundacion";
-                        this.bunifuLabel4.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-                        this.bunifuLabel4.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+                        this.bunifuLabel8.AllowParentOverrides = false;
+                        this.bunifuLabel8.AutoEllipsis = false;
+                        this.bunifuLabel8.CursorType = null;
+                        this.bunifuLabel8.Font = new System.Drawing.Font("Segoe Print", 9F);
+                        this.bunifuLabel8.ForeColor = System.Drawing.Color.DodgerBlue;
+                        this.bunifuLabel8.Location = new System.Drawing.Point(77, 163);
+                        this.bunifuLabel8.Name = "bunifuLabel8";
+                        this.bunifuLabel8.RightToLeft = System.Windows.Forms.RightToLeft.No;
+                        this.bunifuLabel8.Size = new System.Drawing.Size(121, 21);
+                        this.bunifuLabel8.TabIndex = 41;
+                        this.bunifuLabel8.Text = "apellido del profesor";
+                        this.bunifuLabel8.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+                        this.bunifuLabel8.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+                        // 
+                        // bunifuLabel9
+                        // 
+                        this.bunifuLabel9.AllowParentOverrides = false;
+                        this.bunifuLabel9.AutoEllipsis = false;
+                        this.bunifuLabel9.CursorType = null;
+                        this.bunifuLabel9.Font = new System.Drawing.Font("Segoe Print", 9F);
+                        this.bunifuLabel9.ForeColor = System.Drawing.Color.DodgerBlue;
+                        this.bunifuLabel9.Location = new System.Drawing.Point(77, 104);
+                        this.bunifuLabel9.Name = "bunifuLabel9";
+                        this.bunifuLabel9.RightToLeft = System.Windows.Forms.RightToLeft.No;
+                        this.bunifuLabel9.Size = new System.Drawing.Size(122, 21);
+                        this.bunifuLabel9.TabIndex = 42;
+                        this.bunifuLabel9.Text = "nombre del profesor";
+                        this.bunifuLabel9.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+                        this.bunifuLabel9.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+                        // 
+                        // bunifuLabel10
+                        // 
+                        this.bunifuLabel10.AllowParentOverrides = false;
+                        this.bunifuLabel10.AutoEllipsis = false;
+                        this.bunifuLabel10.CursorType = null;
+                        this.bunifuLabel10.Font = new System.Drawing.Font("Segoe Print", 9F);
+                        this.bunifuLabel10.ForeColor = System.Drawing.Color.DodgerBlue;
+                        this.bunifuLabel10.Location = new System.Drawing.Point(77, 41);
+                        this.bunifuLabel10.Name = "bunifuLabel10";
+                        this.bunifuLabel10.RightToLeft = System.Windows.Forms.RightToLeft.No;
+                        this.bunifuLabel10.Size = new System.Drawing.Size(130, 21);
+                        this.bunifuLabel10.TabIndex = 43;
+                        this.bunifuLabel10.Text = "codigo id del profesor";
+                        this.bunifuLabel10.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+                        this.bunifuLabel10.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+                        // 
+                        // bunifuPictureBox2
+                        // 
+                        this.bunifuPictureBox2.AllowFocused = false;
+                        this.bunifuPictureBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
+                        this.bunifuPictureBox2.AutoSizeHeight = true;
+                        this.bunifuPictureBox2.BorderRadius = 0;
+                        this.bunifuPictureBox2.Image = global::p_proyect.Properties.Resources.logo_si_hd_removebg;
+                        this.bunifuPictureBox2.IsCircle = true;
+                        this.bunifuPictureBox2.Location = new System.Drawing.Point(18, 15);
+                        this.bunifuPictureBox2.Name = "bunifuPictureBox2";
+                        this.bunifuPictureBox2.Size = new System.Drawing.Size(106, 106);
+                        this.bunifuPictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+                        this.bunifuPictureBox2.TabIndex = 41;
+                        this.bunifuPictureBox2.TabStop = false;
+                        this.bunifuPictureBox2.Type = Bunifu.UI.WinForms.BunifuPictureBox.Types.Square;
                         // 
                         // Profesor_Editar
                         // 
@@ -695,6 +721,7 @@
                         this.materialCard2.ResumeLayout(false);
                         this.materialCard2.PerformLayout();
                         ((System.ComponentModel.ISupportInitialize)(this.Cursos_Impartidos)).EndInit();
+                        ((System.ComponentModel.ISupportInitialize)(this.bunifuPictureBox2)).EndInit();
                         this.ResumeLayout(false);
 
                 }
@@ -702,10 +729,6 @@
                 #endregion
 
                 private MaterialSkin.Controls.MaterialCard materialCard1;
-                private Bunifu.UI.WinForms.BunifuLabel bunifuLabel3;
-                private Bunifu.UI.WinForms.BunifuLabel bunifuLabel1;
-                private Bunifu.UI.WinForms.BunifuLabel bunifuLabel4;
-                private Bunifu.UI.WinForms.BunifuDataGridView Cursos_Impartidos;
                 private Bunifu.UI.WinForms.BunifuLabel bunifuLabel5;
                 private MaterialSkin.Controls.MaterialCard materialCard2;
                 private Bunifu.UI.WinForms.BunifuLabel bunifuLabel2;
@@ -716,5 +739,12 @@
                 private Bunifu.UI.WinForms.BunifuTextBox ID_Del_Profesor_txt;
                 private MaterialSkin.Controls.MaterialButton materialButton2;
                 private MaterialSkin.Controls.MaterialButton materialButton1;
+                private System.Windows.Forms.DataGridView Cursos_Impartidos;
+                private Bunifu.UI.WinForms.BunifuLabel bunifuLabel10;
+                private Bunifu.UI.WinForms.BunifuLabel bunifuLabel9;
+                private Bunifu.UI.WinForms.BunifuLabel bunifuLabel8;
+                private Bunifu.UI.WinForms.BunifuLabel bunifuLabel7;
+                private Bunifu.UI.WinForms.BunifuLabel bunifuLabel6;
+                private Bunifu.UI.WinForms.BunifuPictureBox bunifuPictureBox2;
         }
 }

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Configuration;
+using System.Data.SqlClient;
 
 namespace p_proyect
 {
@@ -22,13 +23,29 @@ namespace p_proyect
                         var optionsBuilder = new DbContextOptionsBuilder<AppDbContext>();
                         optionsBuilder.UseSqlServer(connString);
 
+
+
+                        try
+                        {
+                                using (SqlConnection conn = new SqlConnection(connString))
+                                {
+                                        conn.Open();
+                                }
+                        } catch (SqlException ex)
+                        {
+                                Console.WriteLine("Error SQL: " + ex.Message);
+                        }
+
+
                         try
                         {
                                 using (var context = new AppDbContext(optionsBuilder.Options))
                                 {
                                         context.Database.Migrate();
+                                        context.Database.EnsureCreated();
+
                                 }
-                                
+
                         } catch(Exception ex)
                         {
                                 MessageBox.Show(ex.Message);

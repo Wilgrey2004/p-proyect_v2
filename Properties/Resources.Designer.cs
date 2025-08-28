@@ -253,6 +253,16 @@ namespace p_proyect.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap logotipo_de_whatsapp {
+            get {
+                object obj = ResourceManager.GetObject("logotipo-de-whatsapp", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap producto_de_codigo_de_barras {
             get {
                 object obj = ResourceManager.GetObject("producto-de-codigo-de-barras", resourceCulture);
