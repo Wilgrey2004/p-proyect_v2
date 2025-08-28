@@ -1,6 +1,7 @@
 ﻿using Bunifu.UI.WinForms;
 using MaterialSkin;
 using MaterialSkin.Controls;
+using Microsoft.EntityFrameworkCore;
 using p_proyect.Modules;
 using p_proyect.Modules.Entidades;
 using p_proyect.Modules.Entidades.BindinLists;
@@ -161,6 +162,7 @@ namespace p_proyect
                         Adeudo_data_Grid.DataSource = adeudo_Responses;
                 }
 
+                
                 private async void Cargar_Labels() {
                         try
                         {
@@ -185,10 +187,11 @@ namespace p_proyect
 
                         } catch (Exception ex)
                         {
-                                MessageBox.Show("Ha ocurrido un error al contar a los estudiantes y cursos...\n" + ex);
+                                MessageBox.Show("Ha ocurrido un error al contar a los estudiantes, cursos y maestros\n" + ex);
                         }
                 }
 
+                
                 private async Task Contador_Label( BunifuLabel label, int hasta ) {
                         label.Invoke((MethodInvoker)(() => {
                                 label.AutoSize = false;
@@ -346,7 +349,8 @@ namespace p_proyect
                         Profesor_Editar profesor_Editar = new Profesor_Editar();
                         profesor_Editar.profesor = profesor_Seleccionado;
                         profesor_Editar.ShowDialog();
-                        CargarTabla_De_Cursos();
+                        Cargar_Tabla_Profesores();
+                        
                 }
 
                 private void materialButton3_Click( object sender, EventArgs e ) {
@@ -1386,6 +1390,62 @@ namespace p_proyect
                                 MessageBox.Show("Ocurrio un error al generar el reporte de Empleados/usuarios\n" + ex);
                                 return;
                         }
+                }
+
+                private void materialFloatingActionButton1_Click( object sender, EventArgs e ) {
+                        if (profesor_Seleccionado == null)
+                        {
+                                MessageBox.Show("No hay profesor seleccionado", "mensaje de busqueda");
+                                return;
+                        }
+
+                        var mensaje = MessageBox.Show($"Quieres Ecribirle por whatsApp al profesor {profesor_Seleccionado.Nombre}? ", "Mensaje de confirmacion para el agregado.", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                        if (mensaje == DialogResult.No)
+                        {
+                                return;
+                        }
+
+                        Enviar_Mensaje_A_Ws.EnviarMensaje(profesor_Seleccionado.Numero_De_Telefono);
+                }
+
+                private void materialFloatingActionButton2_Click( object sender, EventArgs e ) {
+                        if (Estudiante_Seleccionado == null)
+                        {
+                                MessageBox.Show("No hay Estudiante seleccionado", "mensaje de busqueda");
+                                return;
+                        }
+
+                        var mensaje = MessageBox.Show($"Quieres Ecribirle por whatsApp al estudiante {Estudiante_Seleccionado.Nombre}? ", "Mensaje de confirmacion para el agregado.", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                        if (mensaje == DialogResult.No)
+                        {
+                                return;
+                        }
+
+                        Enviar_Mensaje_A_Ws.EnviarMensaje(Estudiante_Seleccionado.Telefono_del_tutor);
+                }
+
+                private void materialFloatingActionButton3_Click( object sender, EventArgs e ) {
+                        if (empleado_admin_seleccionado == null)
+                        {
+                                MessageBox.Show("No hay Empelado seleccionado", "mensaje de busqueda");
+                                return;
+                        }
+
+                        var mensaje = MessageBox.Show($"Quieres Ecribirle por whatsApp al Empleado {empleado_admin_seleccionado.Nombre_del_Administrador}? ", "Mensaje de confirmacion para el agregado.", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                        if (mensaje == DialogResult.No)
+                        {
+                                return;
+                        }
+
+                        Enviar_Mensaje_A_Ws.EnviarMensaje(empleado_admin_seleccionado.Numero_de_Telefono);
+                }
+
+                private void materialButton29_Click( object sender, EventArgs e ) {
+                   Pestaña_De_Pago pestala_De_Pago = new Pestaña_De_Pago();
+
+                        pestala_De_Pago.Profesor_Seleccionado = profesor_Seleccionado;
+
+                        pestala_De_Pago.ShowDialog();
                 }
         }
 }

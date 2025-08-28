@@ -61,5 +61,14 @@ namespace p_proyect.Modules.Entidades.Formularios.Profesores
                                 MessageBox.Show("Ocurrio un error al cargar los cursos\n" + ex);
                         }
                 }
+
+                private void materialFloatingActionButton1_Click( object sender, EventArgs e ) {
+                        var mensaje = MessageBox.Show($"Quieres enviar un mensaje al profesor {Nombre_Profesor_txt.Text}?", "Mensaje de confirmacion para enviar mensaje via whattsap.", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                        if (mensaje == DialogResult.No)
+                        {
+                                return;
+                        }
+                        Enviar_Mensaje_A_Ws.EnviarMensaje(Profesor_Seleccionado.Numero_De_Telefono);
+                }
         }
 }

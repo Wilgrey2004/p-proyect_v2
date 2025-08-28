@@ -135,7 +135,12 @@ namespace p_proyect.Modules.Entidades.Formularios.Estudiantes
                                                 return;
                                         }
 
-                                        
+
+                                        var curso_seleccionado_query = context.Cursos.FirstOrDefault(x => x.Id == Curso_Seleccionado.Id);
+
+                                        curso_seleccionado_query.Cantidad_De_Estudiantes += 1;
+
+                                        context.Cursos.Update(curso_seleccionado_query);
                                         context.R_Estudiantes_Cursos.Add(Nuevo_Estudiante_Curso);
                                         context.Adeudos_Cursos.Add(nuevo_Adeudo_Curso);
                                         context.SaveChanges();

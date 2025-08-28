@@ -66,7 +66,14 @@ namespace p_proyect.Modules.Entidades.Formularios.Profesores
 
                                 using (var context = new AppDbContext(OpcionsBuilder_c.getConnection().Options))
                                 {
-
+                                        profesor.Nombre = Nombre_Del_Profesor_txt.Text.Trim();
+                                        profesor.Apellido = Apellido_Del_Profesor_txt.Text.Trim();
+                                        profesor.Numero_De_Telefono = Numero_Del_Profesor_txt.Text.Trim();
+                                        profesor.Porcentaje_De_Comision = Convert.ToInt32(Comision_Del_Profesor.Text.Trim());
+                                        context.Profesors.Update(profesor);
+                                        context.SaveChanges();
+                                        MessageBox.Show($"El profesor ha sido editado correctamente.", "Mensaje de agregado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                        this.Close();
                                 }
 
 

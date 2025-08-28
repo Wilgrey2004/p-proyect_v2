@@ -117,68 +117,16 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="Cancelar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\src\Iconos\Cancelar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="label_Total_A_Pagar.BaseStylesheet" xml:space="preserve">
+    <value>#bunifu-label { padding: 0px; font-family: 'Segoe UI'; font-size: 14,25pt; width: 100%; height: 100%; font-style: italic; font-weight: bold; text-decoration: underline; color: rgb(255, 140, 0); text-align: left; }</value>
   </data>
-  <data name="cedula" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\src\Iconos\cedula.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="label_Cursos_impartidos.BaseStylesheet" xml:space="preserve">
+    <value>#bunifu-label { padding: 0px; font-family: 'Segoe UI'; font-size: 14,25pt; width: 100%; height: 100%; font-style: italic; font-weight: bold; text-decoration: underline; color: rgb(32, 178, 170); text-align: left; }</value>
   </data>
-  <data name="logo_si_hd-removebg" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\src\logo\logo_si_hd-removebg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="label_cantidad_estudiantes.BaseStylesheet" xml:space="preserve">
+    <value>#bunifu-label { padding: 0px; font-family: 'Segoe UI'; font-size: 14,25pt; width: 100%; height: 100%; font-style: italic; font-weight: bold; text-decoration: underline; color: rgb(255, 128, 0); text-align: left; }</value>
   </data>
-  <data name="Aceprtar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\src\Iconos\Aceprtar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="bruto" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\src\Iconos\bruto.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Edad" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\src\Iconos\Edad.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Aceprtar1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\src\Iconos\Aceprtar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="avatar-de-usuario" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\src\Iconos\avatar-de-usuario.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Descripcion1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\src\Iconos\Descripcion.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Direccion" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\src\Iconos\Direccion.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="firma" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\src\Iconos\firma.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ListaDeCompras" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\src\Iconos\ListaDeCompras.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="busqueda-de-lupa" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\src\Iconos\busqueda-de-lupa.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="agregar-producto" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\src\Iconos\agregar-producto.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="llamada-telefonica1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\src\Iconos\llamada-telefonica.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="llamada-telefonica" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\src\Iconos\llamada-telefonica.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="producto-de-codigo-de-barras" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\src\Iconos\producto-de-codigo-de-barras.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Descripcion" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\src\Iconos\Descripcion.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="etiquetas-de-productos" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\src\Iconos\etiquetas-de-productos.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="lista-de-verificacion" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\src\Iconos\lista-de-verificacion.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="logotipo-de-whatsapp" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\logotipo-de-whatsapp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="label_nombre.BaseStylesheet" xml:space="preserve">
+    <value>#bunifu-label { padding: 0px; font-family: 'Segoe UI'; font-size: 14,25pt; width: 100%; height: 100%; font-style: italic; font-weight: bold; text-decoration: underline; color: rgb(72, 209, 204); text-align: left; }</value>
   </data>
 </root>

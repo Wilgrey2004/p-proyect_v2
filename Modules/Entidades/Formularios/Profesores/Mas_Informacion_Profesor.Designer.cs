@@ -44,6 +44,7 @@
                         Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties12 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
                         this.Listado_De_Cursos_dg = new System.Windows.Forms.DataGridView();
                         this.bunifuPanel1 = new Bunifu.UI.WinForms.BunifuPanel();
+                        this.materialFloatingActionButton1 = new MaterialSkin.Controls.MaterialFloatingActionButton();
                         this.bunifuPictureBox1 = new Bunifu.UI.WinForms.BunifuPictureBox();
                         this.bunifuLabel2 = new Bunifu.UI.WinForms.BunifuLabel();
                         this.Numero_Del_Profesor_txt = new Bunifu.UI.WinForms.BunifuTextBox();
@@ -95,6 +96,7 @@
                         this.bunifuPanel1.BorderColor = System.Drawing.Color.Orange;
                         this.bunifuPanel1.BorderRadius = 30;
                         this.bunifuPanel1.BorderThickness = 1;
+                        this.bunifuPanel1.Controls.Add(this.materialFloatingActionButton1);
                         this.bunifuPanel1.Controls.Add(this.bunifuPictureBox1);
                         this.bunifuPanel1.Controls.Add(this.bunifuLabel2);
                         this.bunifuPanel1.Controls.Add(this.Numero_Del_Profesor_txt);
@@ -105,6 +107,19 @@
                         this.bunifuPanel1.ShowBorders = true;
                         this.bunifuPanel1.Size = new System.Drawing.Size(367, 590);
                         this.bunifuPanel1.TabIndex = 4;
+                        // 
+                        // materialFloatingActionButton1
+                        // 
+                        this.materialFloatingActionButton1.Depth = 0;
+                        this.materialFloatingActionButton1.Icon = global::p_proyect.Properties.Resources.logotipo_de_whatsapp;
+                        this.materialFloatingActionButton1.Location = new System.Drawing.Point(16, 498);
+                        this.materialFloatingActionButton1.MouseState = MaterialSkin.MouseState.HOVER;
+                        this.materialFloatingActionButton1.Name = "materialFloatingActionButton1";
+                        this.materialFloatingActionButton1.Size = new System.Drawing.Size(60, 59);
+                        this.materialFloatingActionButton1.TabIndex = 41;
+                        this.materialFloatingActionButton1.Text = "Escribir a whattsap";
+                        this.materialFloatingActionButton1.UseVisualStyleBackColor = true;
+                        this.materialFloatingActionButton1.Click += new System.EventHandler(this.materialFloatingActionButton1_Click);
                         // 
                         // bunifuPictureBox1
                         // 
@@ -376,6 +391,7 @@
                         this.ClientSize = new System.Drawing.Size(1128, 753);
                         this.Controls.Add(this.Listado_De_Cursos_dg);
                         this.Controls.Add(this.bunifuPanel1);
+                        this.MaximizeBox = false;
                         this.Name = "Mas_Informacion_Profesor";
                         this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
                         this.Text = "Mas informacion del profesor";
@@ -397,5 +413,6 @@
                 private Bunifu.UI.WinForms.BunifuTextBox Nombre_Profesor_txt;
                 private System.Windows.Forms.DataGridView Listado_De_Cursos_dg;
                 private Bunifu.UI.WinForms.BunifuPictureBox bunifuPictureBox1;
+                private MaterialSkin.Controls.MaterialFloatingActionButton materialFloatingActionButton1;
         }
 }
