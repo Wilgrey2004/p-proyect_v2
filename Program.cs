@@ -52,7 +52,7 @@ namespace p_proyect
                         }
 
                         
-                        Application.Run(new Inicio_De_Secion());
+                        Application.Run(new Main());
                 }
         }
 }
