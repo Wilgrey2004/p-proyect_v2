@@ -1,4 +1,4 @@
-﻿using p_proyect.Modules.Entidades.responses;
+﻿
 using System;
 using System.Drawing;
 using System.Drawing.Printing;
@@ -58,65 +58,65 @@ public class ImpresionRecibo
         /// Método para imprimir un recibo de adeudo de un estudiante.
         /// También abre el diálogo para seleccionar impresora.
         /// </summary>
-        public void ImprimirReciboDeAdeudoEstudianteCurso( Adeudo_Response adeudoInfo, string cuota ) {
-                using (PrintDocument printDocument = new PrintDocument())
-                {
-                        printDocument.DefaultPageSettings.PaperSize = new PaperSize("Custom80mm", 300, 600);
-                        printDocument.DefaultPageSettings.Margins = new Margins(0, 0, 0, 0);
+        //public void ImprimirReciboDeAdeudoEstudianteCurso( Adeudo_Response adeudoInfo, string cuota ) {
+        //        using (PrintDocument printDocument = new PrintDocument())
+        //        {
+        //                printDocument.DefaultPageSettings.PaperSize = new PaperSize("Custom80mm", 300, 600);
+        //                printDocument.DefaultPageSettings.Margins = new Margins(0, 0, 0, 0);
 
-                        // Evento inline para dibujar la página
-                        printDocument.PrintPage += ( sender, e ) =>
-                        {
-                                Graphics g = e.Graphics;
-                                int margenIzquierdo = 10;
-                                int margenSuperior = 20;
-                                int espacioLinea = 25;
-                                int pageWidth = e.PageBounds.Width;
-                                int y = margenSuperior;
+        //                // Evento inline para dibujar la página
+        //                printDocument.PrintPage += ( sender, e ) =>
+        //                {
+        //                        Graphics g = e.Graphics;
+        //                        int margenIzquierdo = 10;
+        //                        int margenSuperior = 20;
+        //                        int espacioLinea = 25;
+        //                        int pageWidth = e.PageBounds.Width;
+        //                        int y = margenSuperior;
 
-                                // Encabezado
-                                string empresa = "S.E.T.E.A";
-                                float textWidth = g.MeasureString(empresa, fuente).Width;
-                                g.DrawString(empresa, fuente, Brushes.Black, pageWidth - textWidth - 10, y);
-                                y += espacioLinea;
+        //                        // Encabezado
+        //                        string empresa = "S.E.T.E.A";
+        //                        float textWidth = g.MeasureString(empresa, fuente).Width;
+        //                        g.DrawString(empresa, fuente, Brushes.Black, pageWidth - textWidth - 10, y);
+        //                        y += espacioLinea;
 
-                                g.DrawString("Tel: ", fuente, Brushes.Black, margenIzquierdo, y); y += espacioLinea;
-                                g.DrawString("Fecha: " + DateTime.Now.ToString("dd-MM-yyyy HH:mm"), fuente, Brushes.Black, margenIzquierdo, y);
-                                y += espacioLinea + 10;
+        //                        g.DrawString("Tel: ", fuente, Brushes.Black, margenIzquierdo, y); y += espacioLinea;
+        //                        g.DrawString("Fecha: " + DateTime.Now.ToString("dd-MM-yyyy HH:mm"), fuente, Brushes.Black, margenIzquierdo, y);
+        //                        y += espacioLinea + 10;
 
-                                // Detalles del adeudo
-                                g.DrawString("Estudiante: " + adeudoInfo.Nombre_Estudiante, fuente, Brushes.Black, margenIzquierdo, y); y += espacioLinea;
-                                g.DrawString("Curso: " + adeudoInfo.Nombre_Curso, fuente, Brushes.Black, margenIzquierdo, y); y += espacioLinea;
-                                g.DrawString("Fecha del pago: " + adeudoInfo.Fecha_Del_Ultimo_Pago.ToString("dd-MM-yyyy"), fuente, Brushes.Black, margenIzquierdo, y); y += espacioLinea;
-                                g.DrawString("Siguiente pago: " + adeudoInfo.Fecha_Del_Siguiente_Pago.ToString("dd-MM-yyyy"), fuente, Brushes.Black, margenIzquierdo, y); y += espacioLinea;
-                                g.DrawString("Costo total: " + adeudoInfo.Adeudo, fuente, Brushes.Black, margenIzquierdo, y); y += espacioLinea;
-                                g.DrawString("Restante a pagar: " + adeudoInfo.Restante_A_Pagar, fuente, Brushes.Black, margenIzquierdo, y); y += espacioLinea;
+        //                        // Detalles del adeudo
+        //                        g.DrawString("Estudiante: " + adeudoInfo.Nombre_Estudiante, fuente, Brushes.Black, margenIzquierdo, y); y += espacioLinea;
+        //                        g.DrawString("Curso: " + adeudoInfo.Nombre_Curso, fuente, Brushes.Black, margenIzquierdo, y); y += espacioLinea;
+        //                        g.DrawString("Fecha del pago: " + adeudoInfo.Fecha_Del_Ultimo_Pago.ToString("dd-MM-yyyy"), fuente, Brushes.Black, margenIzquierdo, y); y += espacioLinea;
+        //                        g.DrawString("Siguiente pago: " + adeudoInfo.Fecha_Del_Siguiente_Pago.ToString("dd-MM-yyyy"), fuente, Brushes.Black, margenIzquierdo, y); y += espacioLinea;
+        //                        g.DrawString("Costo total: " + adeudoInfo.Adeudo, fuente, Brushes.Black, margenIzquierdo, y); y += espacioLinea;
+        //                        g.DrawString("Restante a pagar: " + adeudoInfo.Restante_A_Pagar, fuente, Brushes.Black, margenIzquierdo, y); y += espacioLinea;
 
-                                y += 10;
-                                g.DrawString("*---------------------------------------------*", fuente, Brushes.Black, margenIzquierdo, y); y += espacioLinea;
-                                g.DrawString("Cuota: " + cuota, new Font("Arial", 11, FontStyle.Bold), Brushes.Black, margenIzquierdo, y);
-                                y += espacioLinea;
-                                g.DrawString("¡Gracias por confiar en S.E.T.E.A!", fuente, Brushes.Black, margenIzquierdo, y);
-                        };
+        //                        y += 10;
+        //                        g.DrawString("*---------------------------------------------*", fuente, Brushes.Black, margenIzquierdo, y); y += espacioLinea;
+        //                        g.DrawString("Cuota: " + cuota, new Font("Arial", 11, FontStyle.Bold), Brushes.Black, margenIzquierdo, y);
+        //                        y += espacioLinea;
+        //                        g.DrawString("¡Gracias por confiar en S.E.T.E.A!", fuente, Brushes.Black, margenIzquierdo, y);
+        //                };
 
-                        // Mostrar el diálogo de impresión
-                        using (PrintDialog printDialog = new PrintDialog())
-                        {
-                                printDialog.Document = printDocument;
-                                if (printDialog.ShowDialog() == DialogResult.OK)
-                                {
-                                        try
-                                        {
-                                                printDocument.PrinterSettings = printDialog.PrinterSettings;
-                                                printDocument.Print();
-                                        } catch (Exception ex)
-                                        {
-                                                MessageBox.Show("Error al imprimir: " + ex.Message);
-                                        }
-                                }
-                        }
-                }
-        }
+        //                // Mostrar el diálogo de impresión
+        //                using (PrintDialog printDialog = new PrintDialog())
+        //                {
+        //                        printDialog.Document = printDocument;
+        //                        if (printDialog.ShowDialog() == DialogResult.OK)
+        //                        {
+        //                                try
+        //                                {
+        //                                        printDocument.PrinterSettings = printDialog.PrinterSettings;
+        //                                        printDocument.Print();
+        //                                } catch (Exception ex)
+        //                                {
+        //                                        MessageBox.Show("Error al imprimir: " + ex.Message);
+        //                                }
+        //                        }
+        //                }
+        //        }
+        //}
 
         /// <summary>
         /// Lógica para dibujar la página de impresión con datos de DataGridView.

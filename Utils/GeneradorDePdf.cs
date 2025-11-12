@@ -14,7 +14,7 @@ namespace p_proyect.Utils
         {
                 // string resourcesPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Resources");
                 //string filePath = Path.Combine(resourcesPath, "MiReporte.pdf");
-                public static void GeneradorDePDFS<T>( BindingList<T> usl, List<string> Cabeceras_, string Reporte, string NombreDeLaPlantilla, string nombre_del_Reporte )
+                public static void  GeneradorDePDFS<T>( List<T> usl, List<string> Cabeceras_, string Reporte, string NombreDeLaPlantilla, string nombre_del_Reporte )
                     where T : class {
 
 
@@ -33,7 +33,7 @@ namespace p_proyect.Utils
 
                         GenerarPdf(usl, Cabeceras_, rutaPlantilla, rutaSalida);
                 }
-                public static void GeneradorDePDFS<T>( BindingList<T> usl, List<string> Cabeceras_, string Reporte, string NombreDeLaPlantilla, decimal? total )
+                public static void GeneradorDePDFS<T>( List<T> usl, List<string> Cabeceras_, string Reporte, string NombreDeLaPlantilla, decimal? total )
                     where T : class {
                         GeneradorDePdf generador = new GeneradorDePdf();
 
@@ -52,7 +52,7 @@ namespace p_proyect.Utils
 
                         GenerarPdf(usl, Cabeceras_, rutaPlantilla, rutaSalida, total.ToString());
                 }
-                private static void GenerarPdf<T>( BindingList<T> datos, List<string> cabeceras, string rutaPlantilla, string rutaSalida ) {
+                private static void GenerarPdf<T>( List<T> datos, List<string> cabeceras, string rutaPlantilla, string rutaSalida ) {
                         // Verificar la existencia de la plantilla HTML
                         if (!File.Exists(rutaPlantilla))
                         {
@@ -107,7 +107,7 @@ namespace p_proyect.Utils
                         documento.Save(rutaSalida);
                         documento.Close();
                 }
-                private static void GenerarPdf<T>( BindingList<T> datos, List<string> cabeceras, string rutaPlantilla, string rutaSalida, string total ) {
+                private static void GenerarPdf<T>( List<T> datos, List<string> cabeceras, string rutaPlantilla, string rutaSalida, string total ) {
                         // Verificar la existencia de la plantilla HTML
                         if (!File.Exists(rutaPlantilla))
                         {

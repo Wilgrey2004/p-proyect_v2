@@ -180,36 +180,62 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller\UsuarioController\UsuarioControllerC.cs" />
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\20251110225736_usuarios_add.cs" />
+    <Compile Include="Migrations\20251110225736_usuarios_add.Designer.cs">
+      <DependentUpon>20251110225736_usuarios_add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\AppDbContextModelSnapshot.cs" />
     <Compile Include="Modules\AppDbContext.cs" />
     <Compile Include="Modules\AppDbContextFactory.cs" />
-    <Compile Include="Modules\Entidades\responses\Adeudo_Response.cs" />
-    <Compile Include="Modules\Entidades\responses\Cursos_Response.cs" />
-    <Compile Include="Modules\Entidades\responses\Empleado_Admin_Response.cs" />
-    <Compile Include="Modules\Entidades\responses\Estudiantes_Response.cs" />
-    <Compile Include="Modules\Entidades\responses\Profesores_Response.cs" />
-    <Compile Include="Modules\Entidades\responses\R_Relacion_Cursos_Estudiantes.cs" />
-    <Compile Include="Modules\Enums\Cargos_Empleados_admins.cs" />
-    <Compile Include="Modules\Enums\Dias_De_La_Semana.cs" />
-    <Compile Include="Modules\Enums\Estado_Del_Estudiante_En_El_Curso.cs" />
-    <Compile Include="Modules\Enums\Estados_Generales.cs" />
-    <Compile Include="Modules\Enums\Estado_De_Deudas.cs" />
-    <Compile Include="Modules\Enums\Nivel_Educacional.cs" />
-    <Compile Include="Modules\Enums\Sexo.cs" />
-    <Compile Include="Modules\Enums\Si_No_Enums.cs" />
+    <Compile Include="Modules\Entidades\dtos\dtoProductos\ProductoCreateDto.cs" />
+    <Compile Include="Modules\Entidades\dtos\dtoProductos\ProductoEditarDto.cs" />
+    <Compile Include="Modules\Entidades\dtos\dtoProductos\ProductoMapper.cs" />
+    <Compile Include="Modules\Entidades\dtos\dtoProductos\ProductoMostrarDto.cs" />
+    <Compile Include="Modules\Entidades\dtos\dtoUsuarios\EditarUsuarioDto.cs" />
+    <Compile Include="Modules\Entidades\dtos\dtoUsuarios\UsuarioCreacionDto.cs" />
+    <Compile Include="Modules\Entidades\dtos\dtoUsuarios\UsuarioMostrarDto.cs" />
+    <Compile Include="Modules\Entidades\Formularios\UsuarioForms\AgregarEditarUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\Entidades\Formularios\UsuarioForms\AgregarEditarUsuarios.Designer.cs">
+      <DependentUpon>AgregarEditarUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Entidades\Proveedor.cs" />
+    <Compile Include="Modules\Entidades\Usuarios.cs" />
+    <Compile Include="Modules\Enums\TipoDeVenta.cs" />
+    <Compile Include="Modules\Enums\UnidadMedida.cs" />
+    <Compile Include="Modules\Enums\UserRole.cs" />
+    <Compile Include="Modules\Entidades\Producto.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utils\ComboHelper.cs" />
+    <Compile Include="Utils\DataGridHelper.cs" />
     <Compile Include="Utils\Enviar_Mensaje_A_Ws.cs" />
     <Compile Include="Utils\GeneradorDePdf.cs" />
     <Compile Include="Utils\ImpresionRecibo.cs" />
+    <Compile Include="Utils\ListHelper.cs" />
     <Compile Include="Utils\OpcionsBuilder_c.cs" />
+    <Compile Include="Utils\Reportes\ReportesHelperForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Utils\Reportes\ReportesHelperForm.Designer.cs">
+      <DependentUpon>ReportesHelperForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Main.es.resx">
+      <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Entidades\Formularios\UsuarioForms\AgregarEditarUsuarios.resx">
+      <DependentUpon>AgregarEditarUsuarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -222,6 +248,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Utils\Reportes\ReportesHelperForm.resx">
+      <DependentUpon>ReportesHelperForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -282,16 +311,13 @@
     <None Include="src\Iconos\Direccion.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="src\logo\logo_si_hd-removebg.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="src\Iconos\lista-de-verificacion.png" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Migrations\" />
-    <Folder Include="Modules\Entidades\Formularios\" />
-    <Folder Include="Modules\Entidades\request\" />
-    <Folder Include="Resources\" />
+    <None Include="src\Iconos\gmail.png" />
+    <Content Include="src\logo\logo_si_hd-removebg.png" />
+    <Content Include="Resources\logotipo-de-whatsapp.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="packages\Microsoft.Data.SqlClient.SNI.1.1.0\build\net46\Microsoft.Data.SqlClient.SNI.targets" Condition="Exists('packages\Microsoft.Data.SqlClient.SNI.1.1.0\build\net46\Microsoft.Data.SqlClient.SNI.targets')" />
