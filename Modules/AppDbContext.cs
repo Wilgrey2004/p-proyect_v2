@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Identity.Client;
 using p_proyect.Modules.Entidades;
 using System.Configuration;
 
@@ -12,6 +13,10 @@ namespace p_proyect.Modules
         }
 
         public DbSet<Usuarios> Usuarios { get; set; }
+
+        public DbSet<Producto> Productos { get; set; }
+
+        public DbSet<Proveedor> Provedores { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

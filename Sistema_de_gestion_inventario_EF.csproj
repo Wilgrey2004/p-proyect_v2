@@ -180,6 +180,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller\ProductosController\ProductosControllerC.cs" />
+    <Compile Include="Controller\ProveedorController\ProveedorControllerC.cs" />
+    <Compile Include="Controller\ProveedorController\ProveedorCrearDto.cs" />
     <Compile Include="Controller\UsuarioController\UsuarioControllerC.cs" />
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
@@ -191,6 +194,14 @@
     <Compile Include="Migrations\20251110225736_usuarios_add.Designer.cs">
       <DependentUpon>20251110225736_usuarios_add.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\20251112130234_products-provedors.cs" />
+    <Compile Include="Migrations\20251112130234_products-provedors.Designer.cs">
+      <DependentUpon>20251112130234_products-provedors.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20251114131606_alter-proveedores-add-fechaDeCreacion.cs" />
+    <Compile Include="Migrations\20251114131606_alter-proveedores-add-fechaDeCreacion.Designer.cs">
+      <DependentUpon>20251114131606_alter-proveedores-add-fechaDeCreacion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\AppDbContextModelSnapshot.cs" />
     <Compile Include="Modules\AppDbContext.cs" />
     <Compile Include="Modules\AppDbContextFactory.cs" />
@@ -198,9 +209,29 @@
     <Compile Include="Modules\Entidades\dtos\dtoProductos\ProductoEditarDto.cs" />
     <Compile Include="Modules\Entidades\dtos\dtoProductos\ProductoMapper.cs" />
     <Compile Include="Modules\Entidades\dtos\dtoProductos\ProductoMostrarDto.cs" />
+    <Compile Include="Modules\Entidades\dtos\dtoProveedor\ProveedorMapper.cs" />
+    <Compile Include="Modules\Entidades\dtos\dtoProveedor\ProveedorMostrarDto.cs" />
     <Compile Include="Modules\Entidades\dtos\dtoUsuarios\EditarUsuarioDto.cs" />
     <Compile Include="Modules\Entidades\dtos\dtoUsuarios\UsuarioCreacionDto.cs" />
     <Compile Include="Modules\Entidades\dtos\dtoUsuarios\UsuarioMostrarDto.cs" />
+    <Compile Include="Modules\Entidades\Formularios\ProductosForms\AgregarEditarProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\Entidades\Formularios\ProductosForms\AgregarEditarProductos.Designer.cs">
+      <DependentUpon>AgregarEditarProductos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Entidades\Formularios\ProveedorForms\AgregarEditarProveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\Entidades\Formularios\ProveedorForms\AgregarEditarProveedor.Designer.cs">
+      <DependentUpon>AgregarEditarProveedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Entidades\Formularios\ProveedorForms\MasInformacionProveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\Entidades\Formularios\ProveedorForms\MasInformacionProveedor.Designer.cs">
+      <DependentUpon>MasInformacionProveedor.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modules\Entidades\Formularios\UsuarioForms\AgregarEditarUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -234,6 +265,15 @@
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Entidades\Formularios\ProductosForms\AgregarEditarProductos.resx">
+      <DependentUpon>AgregarEditarProductos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Entidades\Formularios\ProveedorForms\AgregarEditarProveedor.resx">
+      <DependentUpon>AgregarEditarProveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Entidades\Formularios\ProveedorForms\MasInformacionProveedor.resx">
+      <DependentUpon>MasInformacionProveedor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Modules\Entidades\Formularios\UsuarioForms\AgregarEditarUsuarios.resx">
       <DependentUpon>AgregarEditarUsuarios.cs</DependentUpon>
     </EmbeddedResource>
@@ -252,6 +292,9 @@
       <DependentUpon>ReportesHelperForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\p_proyect.Modules.Entidades.dtos.dtoProductos.ProductoMostrarDto.datasource" />
+    <None Include="Properties\DataSources\p_proyect.Modules.Entidades.dtos.dtoUsuarios.UsuarioMostrarDto.datasource" />
+    <None Include="Properties\DataSources\p_proyect.Modules.Entidades.Proveedor.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

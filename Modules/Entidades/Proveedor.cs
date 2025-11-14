@@ -21,6 +21,8 @@ namespace p_proyect.Modules.Entidades
 
         public DateTime? UltimaCompra { get; set; }
 
+        public DateTime? FechaDeCreacion { get; set; } = DateTime.MinValue;
+
         // Relación 1:N → Un proveedor tiene muchos productos
         public List<Producto> Productos { get; set; }
     }

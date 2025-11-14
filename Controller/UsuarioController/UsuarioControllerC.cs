@@ -152,55 +152,9 @@ namespace p_proyect.Controller.UsuarioController
         }
 
 
-        //public async Task<bool> EditarUsuarioAsync(EditUsuarioDto dto)
-        //{
 
-        //    using (var context = new AppDbContext(new DbContextOptions<AppDbContext>()))
-        //    {
-        //        // 1. Buscar usuario por ID
-        //        var usuario = await TraerUsuarioPorId(dto.Id);
-
-        //        if (usuario == null)
-        //        {
-        //            return false; // No existe
-        //        }
-
-        //        // 2. Actualizar SOLO los campos que vengan en el dto
-        //        if (!string.IsNullOrEmpty(dto.Nombre))
-        //            usuario.Nombre = dto.Nombre;
-
-        //        if (!string.IsNullOrEmpty(dto.Apellido))
-        //            usuario.Apellido = dto.Apellido;
-
-        //        if (!string.IsNullOrEmpty(dto.Cedula))
-        //            usuario.Cedula = dto.Cedula;
-
-        //        if (!string.IsNullOrEmpty(dto.Correo))
-        //            usuario.Correo = dto.Correo;
-
-        //        if (!string.IsNullOrEmpty(dto.Contrasena))
-        //            usuario.Contrasena = dto.Contrasena;  // Recuerda encriptar si aplica
-
-        //        if (dto.Rol.HasValue)
-        //            usuario.Rol = (Modules.Enums.UserRole)dto.Rol.Value;
-
-        //        if (dto.Activo.HasValue)
-        //            usuario.Activo = dto.Activo.Value;
-
-        //        // 3. Actualizar la fecha de edición
-        //        usuario.FechaEdicion = DateTime.Now;
-
-        //        // 4. Guardar cambios
-        //        await context.SaveChangesAsync();
-
-        //        return true;
-        //    }
-        //}
         public async Task<bool> EliminarUsuarioAsync(int id)
         {
-
-
-
 
             using (var context = new AppDbContext(new DbContextOptions<AppDbContext>()))
             {
@@ -222,8 +176,6 @@ namespace p_proyect.Controller.UsuarioController
                 return true; // Eliminado
             }
         }
-
-
 
     }
 }

@@ -1,6 +1,7 @@
 ﻿using p_proyect.Modules.Enums;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
@@ -10,61 +11,64 @@ namespace p_proyect.Modules.Entidades.dtos.dtoProductos
 {
     public class ProductoMostrarDto
     {
-        [Display(Name = "ID")]
+        [DisplayName("ID")]
         public int Id { get; set; }
 
-        [Display(Name = "Nombre del Producto")]
+        [DisplayName("Nombre del Producto")]
         public string Nombre { get; set; }
 
-        [Display(Name = "Descripción")]
+        [DisplayName("Descripción")]
         public string Descripcion { get; set; }
 
-        [Display(Name = "Código de Barra")]
+        [DisplayName("Código de Barra")]
         public string CodigoBarra { get; set; }
 
-        [Display(Name = "Marca")]
+        [DisplayName("Marca")]
         public string Marca { get; set; }
 
-        [Display(Name = "Modelo")]
+        [DisplayName("Modelo")]
         public string Modelo { get; set; }
 
-        [Display(Name = "Tipo de Venta")]
+        [DisplayName("Tipo de Venta")]
         public TipoDeVenta TipoDeDeSalida { get; set; }
 
-        [Display(Name = "Cantidad Disponible")]
+        [DisplayName("Cantidad Disponible")]
         public int Cantidad { get; set; }
 
-        [Display(Name = "Stock Mínimo")]
+        [DisplayName("Stock Mínimo")]
         public int StockMinimo { get; set; }
 
-        [Display(Name = "Stock Máximo")]
+        [DisplayName("Stock Máximo")]
         public int StockMaximo { get; set; }
 
-        [Display(Name = "Unidad de Medida")]
+        [DisplayName("Unidad de Medida")]
         public UnidadMedida UnidadMedida { get; set; }
 
-        [Display(Name = "Precio de Compra")]
+        [DisplayName("Precio de Compra")]
         public decimal PrecioCompra { get; set; }
 
-        [Display(Name = "Precio de Venta")]
+        [DisplayName("Precio de Venta")]
         public decimal PrecioVenta { get; set; }
 
-        [Display(Name = "Ganancia")]
+        [DisplayName("Ganancia")]
         public decimal Ganancia { get; set; }
 
-        [Display(Name = "Fecha de Expiración")]
+        [DisplayName( "Fecha de Expiración")]
         public DateTime? FechaExpiracion { get; set; }
+        [DisplayName("Fecha en la que se agrego al inventario")]
 
-        [Display(Name = "Ubicación en Almacén")]
+        public DateTime? FechaCreacion { get; set; }
+
+        [DisplayName( "Ubicación en Almacén")]
         public string Ubicacion { get; set; }
 
-        [Display(Name = "Activo")]
+        [DisplayName( "Esta disponible")]
         public bool Activo { get; set; }
 
-        [Display(Name = "ID del Proveedor")]
-        public int ProveedorId { get; set; }
+        //[Display(Name = "ID del Proveedor")]
+        //public int ProveedorId { get; set; }
 
-        [Display(Name = "Proveedor")]
+        [DisplayName("Nombre del proveedor")]
         public string NombreProveedor { get; set; }
     }
 }

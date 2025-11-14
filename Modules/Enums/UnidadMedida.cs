@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,6 +9,7 @@ namespace p_proyect.Modules.Enums
 {
     public enum UnidadMedida
     {
+        NingunaMedida = 0,
         // Unidades generales
         Unidad = 1,
         Caja = 2,
@@ -24,6 +26,7 @@ namespace p_proyect.Modules.Enums
         Mililitro = 11,
 
         // Pinturas – fracciones estándar
+       
         CuartoGalon = 20,      // 1/4 de galón
         MedioGalon = 21,       // 1/2 galón
         TresCuartosGalon = 22, // 3/4 de galón

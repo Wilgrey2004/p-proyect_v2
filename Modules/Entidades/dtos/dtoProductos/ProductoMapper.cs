@@ -1,9 +1,10 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using p_proyect.Modules.Entidades;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using p_proyect.Modules.Entidades;
 
 namespace p_proyect.Modules.Entidades.dtos.dtoProductos
 {
@@ -11,32 +12,39 @@ namespace p_proyect.Modules.Entidades.dtos.dtoProductos
     {
         public static ProductoMostrarDto DeProductoAProductoDtoMostrar(this Producto p)
         {
-            return new ProductoMostrarDto
+            using (var context = new AppDbContext(new DbContextOptions<AppDbContext>()))
             {
-                Id = p.Id,
-                Nombre = p.Nombre,
-                Descripcion = p.Descripcion,
-                CodigoBarra = p.CodigoBarra,
-                Marca = p.Marca,
-                Modelo = p.Modelo,
-                TipoDeDeSalida = p.TipoDeDeSalida,
+                Proveedor nombreProvedor = context.Provedores.FirstOrDefault(provedor => provedor.Id == p.ProveedorId);
 
-                Cantidad = p.Cantidad,
-                StockMinimo = p.StockMinimo,
-                StockMaximo = p.StockMaximo,
-                UnidadMedida = p.UnidadMedida,
+                return new ProductoMostrarDto
+                {
+                    Id = p.Id,
+                    Nombre = p.Nombre,
+                    Descripcion = p.Descripcion,
+                    CodigoBarra = p.CodigoBarra,
+                    Marca = p.Marca,
+                    Modelo = p.Modelo,
+                    TipoDeDeSalida = p.TipoDeDeSalida,
 
-                PrecioCompra = p.PrecioCompra,
-                PrecioVenta = p.PrecioVenta,
-                Ganancia = p.Ganancia,
+                    Cantidad = p.Cantidad,
+                    StockMinimo = p.StockMinimo,
+                    StockMaximo = p.StockMaximo,
+                    UnidadMedida = p.UnidadMedida,
 
-                FechaExpiracion = p.FechaExpiracion,
-                Ubicacion = p.Ubicacion,
-                Activo = p.Activo,
+                    PrecioCompra = p.PrecioCompra,
+                    PrecioVenta = p.PrecioVenta,
+                    Ganancia = p.Ganancia,
 
-                ProveedorId = p.ProveedorId,
-                NombreProveedor = p.Proveedor_ != null ? p.Proveedor_.Nombre : null
-            };
+                    FechaCreacion = p.FechaCreacion,
+                    FechaExpiracion = p.FechaExpiracion,
+                    Ubicacion = p.Ubicacion,
+                    Activo = p.Activo,
+
+                    //ProveedorId = p.ProveedorId,
+                    NombreProveedor = nombreProvedor.Nombre ?? "Nombre no espesificado"
+                };
+            }
+            
         }
 
         // CREATE DTO → Entidad
