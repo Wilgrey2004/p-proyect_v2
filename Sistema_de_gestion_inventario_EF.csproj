@@ -180,6 +180,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller\AdeudoController\AdeudoControllerC.cs" />
+    <Compile Include="Controller\ClienteEspecialController\ClienteEspecialControlerC.cs" />
+    <Compile Include="Controller\ClienteNormalController\ClienteNormalControllerC.cs" />
+    <Compile Include="Controller\CompraControler\CompraControlerC.cs" />
     <Compile Include="Controller\ProductosController\ProductosControllerC.cs" />
     <Compile Include="Controller\ProveedorController\ProveedorControllerC.cs" />
     <Compile Include="Controller\ProveedorController\ProveedorCrearDto.cs" />
@@ -202,9 +206,37 @@
     <Compile Include="Migrations\20251114131606_alter-proveedores-add-fechaDeCreacion.Designer.cs">
       <DependentUpon>20251114131606_alter-proveedores-add-fechaDeCreacion.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\20251115150534_add_ClienteEspecial_Compra_Adeudo_news_entityes.cs" />
+    <Compile Include="Migrations\20251115150534_add_ClienteEspecial_Compra_Adeudo_news_entityes.Designer.cs">
+      <DependentUpon>20251115150534_add_ClienteEspecial_Compra_Adeudo_news_entityes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20251115151447_clienteNormal.cs" />
+    <Compile Include="Migrations\20251115151447_clienteNormal.Designer.cs">
+      <DependentUpon>20251115151447_clienteNormal.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\AppDbContextModelSnapshot.cs" />
     <Compile Include="Modules\AppDbContext.cs" />
     <Compile Include="Modules\AppDbContextFactory.cs" />
+    <Compile Include="Modules\Entidades\Adeudo.cs" />
+    <Compile Include="Modules\Entidades\ClienteEspecial.cs" />
+    <Compile Include="Modules\Entidades\ClienteNormal.cs" />
+    <Compile Include="Modules\Entidades\Compra.cs" />
+    <Compile Include="Modules\Entidades\dtos\dtoAdeudos\AdeudoCrearDto.cs" />
+    <Compile Include="Modules\Entidades\dtos\dtoAdeudos\AdeudoEditarDto.cs" />
+    <Compile Include="Modules\Entidades\dtos\dtoAdeudos\AdeudoMapper.cs" />
+    <Compile Include="Modules\Entidades\dtos\dtoAdeudos\AdeudoMostrarDto.cs" />
+    <Compile Include="Modules\Entidades\dtos\dtoClienteEspecial\ClienteEspecialCrearDto.cs" />
+    <Compile Include="Modules\Entidades\dtos\dtoClienteEspecial\ClienteEspecialEditarDto.cs" />
+    <Compile Include="Modules\Entidades\dtos\dtoClienteEspecial\ClienteEspecialMapper.cs" />
+    <Compile Include="Modules\Entidades\dtos\dtoClienteEspecial\ClienteEspecialMostrarDto.cs" />
+    <Compile Include="Modules\Entidades\dtos\dtoClienteNormal\ClienteNormalCrearDto.cs" />
+    <Compile Include="Modules\Entidades\dtos\dtoClienteNormal\ClienteNormalEditarDto.cs" />
+    <Compile Include="Modules\Entidades\dtos\dtoClienteNormal\ClienteNormalMapper.cs" />
+    <Compile Include="Modules\Entidades\dtos\dtoClienteNormal\ClienteNormalMostrarDto.cs" />
+    <Compile Include="Modules\Entidades\dtos\dtoCompras\CompraCrearDto.cs" />
+    <Compile Include="Modules\Entidades\dtos\dtoCompras\CompraEditarDto.cs" />
+    <Compile Include="Modules\Entidades\dtos\dtoCompras\CompraMapper.cs" />
+    <Compile Include="Modules\Entidades\dtos\dtoCompras\CompraMostrarDto.cs" />
     <Compile Include="Modules\Entidades\dtos\dtoProductos\ProductoCreateDto.cs" />
     <Compile Include="Modules\Entidades\dtos\dtoProductos\ProductoEditarDto.cs" />
     <Compile Include="Modules\Entidades\dtos\dtoProductos\ProductoMapper.cs" />
@@ -214,6 +246,18 @@
     <Compile Include="Modules\Entidades\dtos\dtoUsuarios\EditarUsuarioDto.cs" />
     <Compile Include="Modules\Entidades\dtos\dtoUsuarios\UsuarioCreacionDto.cs" />
     <Compile Include="Modules\Entidades\dtos\dtoUsuarios\UsuarioMostrarDto.cs" />
+    <Compile Include="Modules\Entidades\Formularios\ClienteEspecialForms\AgregarClienteEspecial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\Entidades\Formularios\ClienteEspecialForms\AgregarClienteEspecial.Designer.cs">
+      <DependentUpon>AgregarClienteEspecial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Entidades\Formularios\ClienteEspecialForms\ClienteEspecialEditar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\Entidades\Formularios\ClienteEspecialForms\ClienteEspecialEditar.Designer.cs">
+      <DependentUpon>ClienteEspecialEditar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modules\Entidades\Formularios\ProductosForms\AgregarEditarProductos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -249,6 +293,7 @@
     <Compile Include="Utils\ComboHelper.cs" />
     <Compile Include="Utils\DataGridHelper.cs" />
     <Compile Include="Utils\Enviar_Mensaje_A_Ws.cs" />
+    <Compile Include="Utils\FindForNameHelper.cs" />
     <Compile Include="Utils\GeneradorDePdf.cs" />
     <Compile Include="Utils\ImpresionRecibo.cs" />
     <Compile Include="Utils\ListHelper.cs" />
@@ -264,6 +309,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Entidades\Formularios\ClienteEspecialForms\AgregarClienteEspecial.resx">
+      <DependentUpon>AgregarClienteEspecial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Entidades\Formularios\ClienteEspecialForms\ClienteEspecialEditar.resx">
+      <DependentUpon>ClienteEspecialEditar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modules\Entidades\Formularios\ProductosForms\AgregarEditarProductos.resx">
       <DependentUpon>AgregarEditarProductos.cs</DependentUpon>
@@ -356,7 +407,11 @@
   <ItemGroup>
     <None Include="src\Iconos\lista-de-verificacion.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Modules\Entidades\Formularios\AdeudosForms\" />
+    <Folder Include="Modules\Entidades\Formularios\ClienteNormalForms\" />
+    <Folder Include="Modules\Entidades\Formularios\CompraForms\" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="src\Iconos\gmail.png" />
     <Content Include="src\logo\logo_si_hd-removebg.png" />

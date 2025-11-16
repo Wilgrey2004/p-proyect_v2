@@ -1,5 +1,6 @@
 ﻿using MaterialSkin;
 using MaterialSkin.Controls;
+using p_proyect.Modules.Entidades.dtos.dtoClienteEspecial;
 using p_proyect.Modules.Entidades.dtos.dtoProductos;
 using p_proyect.Modules.Entidades.dtos.dtoProveedor;
 using p_proyect.Modules.Entidades.dtos.dtoUsuarios;
@@ -21,6 +22,9 @@ namespace p_proyect.Utils.Reportes
 
         public List<ProveedorMostrarDto> ListadoParaImprimirProveedor = new List<ProveedorMostrarDto>();
         public List<ProveedorMostrarDto> ListadoParaImprimirProveedor_Copia = new List<ProveedorMostrarDto>();
+
+        public List<ClienteEspecialMostrarDto> ListadoParaImprimirClienteEspecial = new List<ClienteEspecialMostrarDto>();
+        public List<ClienteEspecialMostrarDto> ListadoParaImprimirClienteEspecial_Copia = new List<ClienteEspecialMostrarDto>();
         public ReportesHelperForm()
         {
             InitializeComponent();
@@ -63,7 +67,62 @@ namespace p_proyect.Utils.Reportes
                 ListadoParaReportesShow.DataSource = ListadoParaImprimirProveedor;
                 return;
             }
+
+            if (ListadoParaImprimirClienteEspecial != null && ListadoParaImprimirClienteEspecial.Count > 0)
+            {
+                ListadoParaImprimirClienteEspecial_Copia = new List<ClienteEspecialMostrarDto>(ListadoParaImprimirClienteEspecial);
+                ListadoParaReportesShow.DataSource = ListadoParaImprimirClienteEspecial;
+                return;
+            }
         }
+
+
+        private void GenerarReportesClientesEspeciales()
+        {
+            if (ListadoParaImprimirClienteEspecial == null || ListadoParaImprimirClienteEspecial.Count == 0)
+                return;
+
+            var respuesta = MessageBox.Show("¿Estás seguro de que quieres generar un reporte de Clientes Especiales?",
+                                            "Generar reporte", MessageBoxButtons.YesNo);
+
+            if (respuesta == DialogResult.No)
+                return;
+
+            List<string> nombresPropiedades = new List<string>
+            {
+                 "Id",
+                "Nombre",
+                "Apellido",
+                "Cedula",
+                "Contacto",
+                "FechaCreacion",
+                "FechaDeEdicion",
+                "FechaUltimaActualizacion",
+                "EsClienteActivo",
+                "UltimaCompra",
+                "CantidadDeCompras",
+                "TotalCompradoHistorico",
+                "LimiteDelCredito",
+                "CreditoGastado",
+                "CreditoDisponible",
+                "FechaUltimoPagoCredito",
+                "MontoUltimoPago",
+                "DescuentoPersonal"
+
+            };
+
+            GeneradorDePdf.GeneradorDePDFS<ClienteEspecialMostrarDto>(
+                ListadoParaImprimirClienteEspecial,
+                nombresPropiedades,
+                "Clientes_Especiales",
+                "ReportesPlantilla",
+                "ReporteDeClientes"
+            );
+
+            MessageBox.Show("Reporte de productos generado con éxito ✅");
+        }
+
+
         private void GenerarReportesProductos()
         {
             if (ListadoParaImprimirProductos == null || ListadoParaImprimirProductos.Count == 0)
@@ -200,6 +259,9 @@ namespace p_proyect.Utils.Reportes
             if (ListadoParaImprimirProductos != null && ListadoParaImprimirProductos.Count > 0) { GenerarReportesProductos(); return; }
 
             if (ListadoParaImprimirProveedor != null && ListadoParaImprimirProveedor.Count > 0) { GenerarReportesProveedores(); return; }
+
+            if (ListadoParaImprimirClienteEspecial != null && ListadoParaImprimirClienteEspecial.Count > 0) { GenerarReportesClientesEspeciales(); return; }
+
         }
         public static List<T> FiltrarPorRangoDeFechas<T>(List<T> datos, DateTime fechaInicio, DateTime fechaFin) where T : class
         {
@@ -270,9 +332,23 @@ namespace p_proyect.Utils.Reportes
                 CargarPorFechasProveedores();
                 return;
             }
+            else if (ListadoParaImprimirClienteEspecial != null && ListadoParaImprimirClienteEspecial.Count > 0)
+            {
+                CargarPorFechasClientesEspeciales();
+            }
         }
 
-
+        private void CargarPorFechasClientesEspeciales()
+        {
+            var filtrados = FiltrarPorRangoDeFechas<ClienteEspecialMostrarDto>(
+                     ListadoParaImprimirClienteEspecial,
+                     FechaDeInicioDelReporte.Value,
+                     FechaDeFinalizacionDelReporte.Value
+                  );
+            ListadoParaReportesShow.DataSource = null;
+            ListadoParaReportesShow.DataSource = filtrados;
+            return;
+        }
 
         private void CargarPorFechasProveedores()
         {
@@ -315,6 +391,12 @@ namespace p_proyect.Utils.Reportes
                 ListadoParaImprimirProveedor = new List<ProveedorMostrarDto>(ListadoParaImprimirProveedor_Copia);
                 ListadoParaReportesShow.DataSource = null;
                 ListadoParaReportesShow.DataSource = ListadoParaImprimirProveedor;
+            }
+            else if (ListadoParaImprimirClienteEspecial != null && ListadoParaImprimirClienteEspecial.Count > 0)
+            {
+                ListadoParaImprimirClienteEspecial = new List<ClienteEspecialMostrarDto>(ListadoParaImprimirClienteEspecial_Copia);
+                ListadoParaReportesShow.DataSource = null;
+                ListadoParaReportesShow.DataSource = ListadoParaImprimirClienteEspecial;
             }
         }
 

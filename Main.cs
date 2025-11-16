@@ -1,12 +1,15 @@
 ﻿using MaterialSkin;
 using MaterialSkin.Controls;
+using p_proyect.Controller.ClienteEspecialController;
 using p_proyect.Controller.ProductosController;
 using p_proyect.Controller.ProveedorController;
 using p_proyect.Controller.UsuarioController;
 using p_proyect.Modules.Entidades;
+using p_proyect.Modules.Entidades.dtos.dtoClienteEspecial;
 using p_proyect.Modules.Entidades.dtos.dtoProductos;
 using p_proyect.Modules.Entidades.dtos.dtoProveedor;
 using p_proyect.Modules.Entidades.dtos.dtoUsuarios;
+using p_proyect.Modules.Entidades.Formularios.ClienteEspecialForms;
 using p_proyect.Modules.Entidades.Formularios.ProductosForms;
 using p_proyect.Modules.Entidades.Formularios.ProveedorForms;
 using p_proyect.Modules.Entidades.Formularios.UsuarioForms;
@@ -51,9 +54,21 @@ namespace p_proyect
         private async void Main_Load(object sender, EventArgs e)
         {
             await CargarTablaDeUsuarios();
-            await CargarTablaProductos();
-            await CargarListaDeProveedores();
+            //await CargarTablaProductos();
+            //await CargarListaDeProveedores();
+            //await CargarListadoDeClientesEspeciales();
 
+        }
+
+
+        ClienteEspecialControllerC clienteEspecialControllerC = new ClienteEspecialControllerC();
+        List<ClienteEspecialMostrarDto> listadoDeClientesEspecialesMostrar = new List<ClienteEspecialMostrarDto>();
+
+        private async Task CargarListadoDeClientesEspeciales()
+        {
+            listadoDeClientesEspecialesMostrar = await clienteEspecialControllerC.ObtenerTodosLosClientesEspecialesAsync();
+            ListadoClienteEspecialDg.DataSource = null;
+            ListadoClienteEspecialDg.DataSource = listadoDeClientesEspecialesMostrar;
         }
 
 
@@ -85,7 +100,7 @@ namespace p_proyect
 
             Usuarios_DataGrid.DataSource = Listado_De_usuarios_Mostrar;
         }
-        
+
         public async Task CargarTablaProductos()
         {
             productoMostrarDtos = await productoController.ObtenerTodosLosProductos();
@@ -164,23 +179,13 @@ namespace p_proyect
             await CargarTablaDeUsuarios();
         }
 
-        
+
 
         private void BuscarUsuarios_TextChanged(object sender, EventArgs e)
         {
-            List<UsuarioMostrarDto> ListaFiltradaPorNombre = new List<UsuarioMostrarDto>();
-            BaseMaskedTextBox txtBox = sender as BaseMaskedTextBox;
-            if (txtBox.Text != string.Empty)
-            {
-                ListaFiltradaPorNombre = Listado_De_usuarios_Mostrar.FindAll(u => u.Nombre.IndexOf(txtBox.Text.Trim(), StringComparison.OrdinalIgnoreCase) >= 0);
-                Usuarios_DataGrid.DataSource = null;
-                Usuarios_DataGrid.DataSource = ListaFiltradaPorNombre;
-            }
-            else
-            {
-                Usuarios_DataGrid.DataSource = null;
-                Usuarios_DataGrid.DataSource = Listado_De_usuarios_Mostrar;
-            }
+            
+
+            FindForNameHelper.BuscarPorNombre<UsuarioMostrarDto>(sender, e, Listado_De_usuarios_Mostrar, Usuarios_DataGrid);
         }
 
         private async void GenerarReportesUsuarios_Click(object sender, EventArgs e)
@@ -225,7 +230,7 @@ namespace p_proyect
 
         private async void materialButton4_Click(object sender, EventArgs e)
         {
-            
+
             if (IdProductoSeleccionado == -1)
             {
                 MessageBox.Show("Seleccione un producto de la tabla");
@@ -245,26 +250,16 @@ namespace p_proyect
 
         private void materialMaskedTextBox1_TextChanged(object sender, EventArgs e)
         {
-            List<ProductoMostrarDto> ListaFiltradaPorNombre = new List<ProductoMostrarDto>();
-            BaseMaskedTextBox txtBox = sender as BaseMaskedTextBox;
-            if (txtBox.Text != string.Empty)
-            {
-                ListaFiltradaPorNombre = productoMostrarDtos.FindAll(u => u.Nombre.IndexOf(materialMaskedTextBox1.Text.Trim(), StringComparison.OrdinalIgnoreCase) >= 0);
-                ListadoDeProductosMostrar.DataSource = null;
-                ListadoDeProductosMostrar.DataSource = ListaFiltradaPorNombre;
-            }
-            else
-            {
-                ListadoDeProductosMostrar.DataSource = null;
-                ListadoDeProductosMostrar.DataSource = productoMostrarDtos;
-            }
+            
+
+            FindForNameHelper.BuscarPorNombre<ProductoMostrarDto>(sender, e, productoMostrarDtos, ListadoDeProductosMostrar);
         }
 
 
         private async void materialButton3_Click(object sender, EventArgs e)
         {
 
-            if(IdProductoSeleccionado == -1)
+            if (IdProductoSeleccionado == -1)
             {
                 MessageBox.Show("Selecciona un producto primero.");
                 return;
@@ -331,7 +326,7 @@ namespace p_proyect
         ProveedorControllerC proveedorControllerC_ = new ProveedorControllerC();
         private async void materialButton8_Click(object sender, EventArgs e)
         {
-            if(IdProveedorSeleccionado == -1)
+            if (IdProveedorSeleccionado == -1)
             {
                 MessageBox.Show("Por favor seleccione un proveedor para editar.");
                 return;
@@ -369,7 +364,7 @@ namespace p_proyect
         {
             ReportesHelperForm reportesHelperForm = new ReportesHelperForm();
 
-            reportesHelperForm.ListadoParaImprimirProveedor = listadoDeProveedoresMostrar; 
+            reportesHelperForm.ListadoParaImprimirProveedor = listadoDeProveedoresMostrar;
 
             reportesHelperForm.ShowDialog();
 
@@ -378,19 +373,9 @@ namespace p_proyect
 
         private void materialMaskedTextBox2_TextChanged(object sender, EventArgs e)
         {
-            List<ProveedorMostrarDto> ListaFiltradaPorNombre = new List<ProveedorMostrarDto>();
-            BaseMaskedTextBox txtBox = sender as BaseMaskedTextBox;
-            if (txtBox.Text != string.Empty)
-            {
-                ListaFiltradaPorNombre = listadoDeProveedoresMostrar.FindAll(u => u.Nombre.IndexOf(materialMaskedTextBox2.Text.Trim(), StringComparison.OrdinalIgnoreCase) >= 0);
-                ProveedoresListadoShow.DataSource = null;
-                ProveedoresListadoShow.DataSource = ListaFiltradaPorNombre;
-            }
-            else
-            {
-                ProveedoresListadoShow.DataSource = null;
-                ProveedoresListadoShow.DataSource = productoMostrarDtos;
-            }
+            
+
+            FindForNameHelper.BuscarPorNombre<ProveedorMostrarDto>(sender, e, listadoDeProveedoresMostrar, ProveedoresListadoShow);
         }
 
         private async void materialButton10_Click(object sender, EventArgs e)
@@ -404,13 +389,129 @@ namespace p_proyect
             }
 
             masInformacionProveedor.proveedorMasinformacion = await proveedorControllerC_.TraerUnProveedorAsync(IdProveedorSeleccionado);
-        
-            
+
+
             masInformacionProveedor.ShowDialog();
 
             await CargarListaDeProveedores();
 
 
         }
+
+        private async void materialButton14_Click(object sender, EventArgs e)
+        {
+            AgregarClienteEspecial agregarClienteEspecial = new AgregarClienteEspecial();
+            agregarClienteEspecial.ShowDialog();
+            await CargarListadoDeClientesEspeciales();
+        }
+
+        int IdClienteEspecialSeleccionado = -1;
+        private void ListadoClienteEspecialDg_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            IdClienteEspecialSeleccionado = DataGridHelper.ObtenerIdSeleccionado(ListadoClienteEspecialDg, e);
+
+            if (IdClienteEspecialSeleccionado != -1)
+            {
+                MessageBox.Show("ID seleccionado: " + IdClienteEspecialSeleccionado);
+            }
+        }
+
+        ClienteEspecialControllerC ClienteEspecialControllerC = new ClienteEspecialControllerC();
+
+        private async void materialButton13_Click(object sender, EventArgs e)
+        {
+            if (IdClienteEspecialSeleccionado == -1)
+            {
+                MessageBox.Show("Necesita seleccionar a un Cliente Especial para editarlo");
+                return;
+            }
+
+            ClienteEspecialEditar clienteEspecialEditar = new ClienteEspecialEditar();
+
+            clienteEspecialEditar.clienteEspecial = await ClienteEspecialControllerC.TraerClienteEspecialPorIdAsync(IdClienteEspecialSeleccionado);
+
+            clienteEspecialEditar.ShowDialog();
+
+            await CargarListadoDeClientesEspeciales();
+
+        }
+
+        private async void materialButton12_Click(object sender, EventArgs e)
+        {
+            if (IdClienteEspecialSeleccionado == -1)
+            {
+                MessageBox.Show("Necesita seleccionar a un Cliente Especial para Eliminarlo");
+                return;
+            }
+
+            var respuesta = MessageBox.Show("Quieres Eliminar a este cliente especial?", "Pregunta sobre Eliminacion", MessageBoxButtons.YesNo);
+            if (respuesta == DialogResult.No)
+            {
+                return;
+            }
+
+
+            var confirmacionEliminacion = await ClienteEspecialControllerC.EliminarClienteEspecialAsync(IdClienteEspecialSeleccionado);
+
+            if (!confirmacionEliminacion)
+            {
+                MessageBox.Show("Error al eliminar el Cliente especial, trate otra vez");
+                return;
+            }
+
+            MessageBox.Show("Se ha realizado correctamente la eliminacion!");
+            await CargarListadoDeClientesEspeciales();
+
+
+
+
+        }
+
+        private async void materialButton11_Click(object sender, EventArgs e)
+        {
+            ReportesHelperForm reportesHelperForm = new ReportesHelperForm();
+
+            reportesHelperForm.ListadoParaImprimirClienteEspecial = listadoDeClientesEspecialesMostrar;
+
+            reportesHelperForm.ShowDialog();
+
+            await CargarListadoDeClientesEspeciales();
+
+
+        }
+
+        private async void Gestion_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch (Gestion.SelectedIndex)
+            {
+                case 0:
+                    this.Text = "Gestión de Usuarios";
+                    await CargarTablaDeUsuarios();
+                    break;
+
+                case 1:
+                    this.Text = "Gestión de Productos";
+                    await CargarTablaProductos();
+                    break;
+                case 2:
+                    this.Text = "Gestión de Proveedores";
+                    await CargarListaDeProveedores();
+                    break;
+                case 3:
+                    this.Text = "Gestión de Clientes Especiales";
+                    await CargarListadoDeClientesEspeciales();
+                    break;
+            }
+        }
+
+        private void NombreDelClienteEspecial_txt_TextChanged(object sender, EventArgs e)
+        {
+
+            FindForNameHelper.BuscarPorNombre<ClienteEspecialMostrarDto>(sender, e, listadoDeClientesEspecialesMostrar, ListadoClienteEspecialDg);
+
+        }
+
+
+
     }
 }

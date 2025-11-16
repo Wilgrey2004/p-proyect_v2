@@ -41,6 +41,9 @@
             this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel5 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialFloatingActionButton1 = new MaterialSkin.Controls.MaterialFloatingActionButton();
+            this.materialButton4 = new MaterialSkin.Controls.MaterialButton();
+            this.materialButton8 = new MaterialSkin.Controls.MaterialButton();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descripcionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -61,9 +64,7 @@
             this.activoDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.nombreProveedorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productoMostrarDtoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.materialFloatingActionButton1 = new MaterialSkin.Controls.MaterialFloatingActionButton();
-            this.materialButton4 = new MaterialSkin.Controls.MaterialButton();
-            this.materialButton8 = new MaterialSkin.Controls.MaterialButton();
+            this.materialButton5 = new MaterialSkin.Controls.MaterialButton();
             ((System.ComponentModel.ISupportInitialize)(this.ListadoDeProductosDeEsteProveedor)).BeginInit();
             this.materialCard1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.productoMostrarDtoBindingSource)).BeginInit();
@@ -94,9 +95,9 @@
             this.activoDataGridViewCheckBoxColumn,
             this.nombreProveedorDataGridViewTextBoxColumn});
             this.ListadoDeProductosDeEsteProveedor.DataSource = this.productoMostrarDtoBindingSource;
-            this.ListadoDeProductosDeEsteProveedor.Location = new System.Drawing.Point(461, 110);
+            this.ListadoDeProductosDeEsteProveedor.Location = new System.Drawing.Point(505, 110);
             this.ListadoDeProductosDeEsteProveedor.Name = "ListadoDeProductosDeEsteProveedor";
-            this.ListadoDeProductosDeEsteProveedor.Size = new System.Drawing.Size(557, 537);
+            this.ListadoDeProductosDeEsteProveedor.Size = new System.Drawing.Size(608, 537);
             this.ListadoDeProductosDeEsteProveedor.TabIndex = 4;
             this.ListadoDeProductosDeEsteProveedor.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ListadoDeProductosDeEsteProveedor_CellClick);
             // 
@@ -105,7 +106,7 @@
             this.ProductosDelProveedoir.AutoSize = true;
             this.ProductosDelProveedoir.Depth = 0;
             this.ProductosDelProveedoir.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.ProductosDelProveedoir.Location = new System.Drawing.Point(458, 88);
+            this.ProductosDelProveedoir.Location = new System.Drawing.Point(553, 88);
             this.ProductosDelProveedoir.MouseState = MaterialSkin.MouseState.HOVER;
             this.ProductosDelProveedoir.Name = "ProductosDelProveedoir";
             this.ProductosDelProveedoir.Size = new System.Drawing.Size(172, 19);
@@ -142,7 +143,7 @@
             this.materialCard1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialCard1.Name = "materialCard1";
             this.materialCard1.Padding = new System.Windows.Forms.Padding(14);
-            this.materialCard1.Size = new System.Drawing.Size(413, 424);
+            this.materialCard1.Size = new System.Drawing.Size(457, 424);
             this.materialCard1.TabIndex = 7;
             // 
             // FechaDeAgregadiDelProveedor
@@ -244,6 +245,63 @@
             this.materialLabel5.Size = new System.Drawing.Size(136, 19);
             this.materialLabel5.TabIndex = 11;
             this.materialLabel5.Text = "Fecha de agregado";
+            // 
+            // materialFloatingActionButton1
+            // 
+            this.materialFloatingActionButton1.Depth = 0;
+            this.materialFloatingActionButton1.Icon = global::p_proyect.Properties.Resources.logotipo_de_whatsapp;
+            this.materialFloatingActionButton1.Location = new System.Drawing.Point(31, 591);
+            this.materialFloatingActionButton1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialFloatingActionButton1.Name = "materialFloatingActionButton1";
+            this.materialFloatingActionButton1.Size = new System.Drawing.Size(56, 56);
+            this.materialFloatingActionButton1.TabIndex = 8;
+            this.materialFloatingActionButton1.Text = "Escribir Por Whattsap";
+            this.materialFloatingActionButton1.UseVisualStyleBackColor = true;
+            this.materialFloatingActionButton1.Click += new System.EventHandler(this.materialFloatingActionButton1_Click);
+            // 
+            // materialButton4
+            // 
+            this.materialButton4.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialButton4.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.materialButton4.Depth = 0;
+            this.materialButton4.HighEmphasis = true;
+            this.materialButton4.Icon = global::p_proyect.Properties.Resources.ListaDeCompras;
+            this.materialButton4.Image = global::p_proyect.Properties.Resources.Aceprtar;
+            this.materialButton4.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.materialButton4.Location = new System.Drawing.Point(93, 572);
+            this.materialButton4.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.materialButton4.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialButton4.Name = "materialButton4";
+            this.materialButton4.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.materialButton4.Size = new System.Drawing.Size(180, 36);
+            this.materialButton4.TabIndex = 13;
+            this.materialButton4.Text = "Editar Producto";
+            this.materialButton4.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.materialButton4.UseAccentColor = true;
+            this.materialButton4.UseVisualStyleBackColor = true;
+            this.materialButton4.Click += new System.EventHandler(this.materialButton4_Click);
+            // 
+            // materialButton8
+            // 
+            this.materialButton8.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialButton8.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.materialButton8.Depth = 0;
+            this.materialButton8.HighEmphasis = true;
+            this.materialButton8.Icon = global::p_proyect.Properties.Resources.ListaDeCompras;
+            this.materialButton8.Image = global::p_proyect.Properties.Resources.Aceprtar;
+            this.materialButton8.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.materialButton8.Location = new System.Drawing.Point(93, 618);
+            this.materialButton8.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.materialButton8.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialButton8.Name = "materialButton8";
+            this.materialButton8.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.materialButton8.Size = new System.Drawing.Size(187, 36);
+            this.materialButton8.TabIndex = 21;
+            this.materialButton8.Text = "Editar Proveedor";
+            this.materialButton8.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.materialButton8.UseAccentColor = true;
+            this.materialButton8.UseVisualStyleBackColor = true;
+            this.materialButton8.Click += new System.EventHandler(this.materialButton8_Click);
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -363,68 +421,34 @@
             // 
             this.productoMostrarDtoBindingSource.DataSource = typeof(p_proyect.Modules.Entidades.dtos.dtoProductos.ProductoMostrarDto);
             // 
-            // materialFloatingActionButton1
+            // materialButton5
             // 
-            this.materialFloatingActionButton1.Depth = 0;
-            this.materialFloatingActionButton1.Icon = global::p_proyect.Properties.Resources.logotipo_de_whatsapp;
-            this.materialFloatingActionButton1.Location = new System.Drawing.Point(31, 591);
-            this.materialFloatingActionButton1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialFloatingActionButton1.Name = "materialFloatingActionButton1";
-            this.materialFloatingActionButton1.Size = new System.Drawing.Size(56, 56);
-            this.materialFloatingActionButton1.TabIndex = 8;
-            this.materialFloatingActionButton1.Text = "Escribir Por Whattsap";
-            this.materialFloatingActionButton1.UseVisualStyleBackColor = true;
-            this.materialFloatingActionButton1.Click += new System.EventHandler(this.materialFloatingActionButton1_Click);
-            // 
-            // materialButton4
-            // 
-            this.materialButton4.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialButton4.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.materialButton4.Depth = 0;
-            this.materialButton4.HighEmphasis = true;
-            this.materialButton4.Icon = global::p_proyect.Properties.Resources.ListaDeCompras;
-            this.materialButton4.Image = global::p_proyect.Properties.Resources.Aceprtar;
-            this.materialButton4.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.materialButton4.Location = new System.Drawing.Point(93, 572);
-            this.materialButton4.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.materialButton4.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialButton4.Name = "materialButton4";
-            this.materialButton4.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.materialButton4.Size = new System.Drawing.Size(180, 36);
-            this.materialButton4.TabIndex = 13;
-            this.materialButton4.Text = "Editar Producto";
-            this.materialButton4.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.materialButton4.UseAccentColor = true;
-            this.materialButton4.UseVisualStyleBackColor = true;
-            this.materialButton4.Click += new System.EventHandler(this.materialButton4_Click);
-            // 
-            // materialButton8
-            // 
-            this.materialButton8.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialButton8.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.materialButton8.Depth = 0;
-            this.materialButton8.HighEmphasis = true;
-            this.materialButton8.Icon = global::p_proyect.Properties.Resources.ListaDeCompras;
-            this.materialButton8.Image = global::p_proyect.Properties.Resources.Aceprtar;
-            this.materialButton8.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.materialButton8.Location = new System.Drawing.Point(93, 618);
-            this.materialButton8.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.materialButton8.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialButton8.Name = "materialButton8";
-            this.materialButton8.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.materialButton8.Size = new System.Drawing.Size(187, 36);
-            this.materialButton8.TabIndex = 21;
-            this.materialButton8.Text = "Editar Proveedor";
-            this.materialButton8.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.materialButton8.UseAccentColor = true;
-            this.materialButton8.UseVisualStyleBackColor = true;
-            this.materialButton8.Click += new System.EventHandler(this.materialButton8_Click);
+            this.materialButton5.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialButton5.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.materialButton5.Depth = 0;
+            this.materialButton5.HighEmphasis = true;
+            this.materialButton5.Icon = global::p_proyect.Properties.Resources.Aceprtar;
+            this.materialButton5.Image = global::p_proyect.Properties.Resources.Aceprtar;
+            this.materialButton5.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.materialButton5.Location = new System.Drawing.Point(279, 572);
+            this.materialButton5.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.materialButton5.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialButton5.Name = "materialButton5";
+            this.materialButton5.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.materialButton5.Size = new System.Drawing.Size(196, 36);
+            this.materialButton5.TabIndex = 22;
+            this.materialButton5.Text = "Agregar producto";
+            this.materialButton5.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.materialButton5.UseAccentColor = true;
+            this.materialButton5.UseVisualStyleBackColor = true;
+            this.materialButton5.Click += new System.EventHandler(this.materialButton5_Click);
             // 
             // MasInformacionProveedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1043, 666);
+            this.ClientSize = new System.Drawing.Size(1135, 666);
+            this.Controls.Add(this.materialButton5);
             this.Controls.Add(this.materialButton8);
             this.Controls.Add(this.materialButton4);
             this.Controls.Add(this.materialFloatingActionButton1);
@@ -481,5 +505,6 @@
         private MaterialSkin.Controls.MaterialFloatingActionButton materialFloatingActionButton1;
         private MaterialSkin.Controls.MaterialButton materialButton4;
         private MaterialSkin.Controls.MaterialButton materialButton8;
+        private MaterialSkin.Controls.MaterialButton materialButton5;
     }
 }

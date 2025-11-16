@@ -360,39 +360,6 @@
   <data name="&gt;&gt;materialLabel1.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
-  <data name="idDataGridViewTextBoxColumn1.HeaderText" xml:space="preserve">
-    <value>Codigo del Usuario</value>
-  </data>
-  <data name="nombreDataGridViewTextBoxColumn1.HeaderText" xml:space="preserve">
-    <value>Nombre</value>
-  </data>
-  <data name="apellidoDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
-    <value>Apellido</value>
-  </data>
-  <data name="cedulaDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
-    <value>Numero De Cedula</value>
-  </data>
-  <data name="correoDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
-    <value>Correo Electrónico</value>
-  </data>
-  <data name="rolDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
-    <value>Cargo del usuario</value>
-  </data>
-  <data name="activoDataGridViewCheckBoxColumn1.HeaderText" xml:space="preserve">
-    <value>Activo</value>
-  </data>
-  <data name="fechaCreacionDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
-    <value>Fecha de Creación</value>
-  </data>
-  <data name="fechaEdicionDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
-    <value>Fecha de Última Edición</value>
-  </data>
-  <data name="ultimaVezActivoDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
-    <value>Última Vez Activo</value>
-  </data>
-  <metadata name="usuarioMostrarDtoBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>257, 17</value>
-  </metadata>
   <data name="Usuarios_DataGrid.Location" type="System.Drawing.Point, System.Drawing">
     <value>47, 11</value>
   </data>
@@ -1155,6 +1122,330 @@
   <data name="&gt;&gt;GestionDeProveedores.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="materialButton11.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="materialButton11.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="materialButton11.Location" type="System.Drawing.Point, System.Drawing">
+    <value>750, 565</value>
+  </data>
+  <data name="materialButton11.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 5, 3, 5</value>
+  </data>
+  <data name="materialButton11.Size" type="System.Drawing.Size, System.Drawing">
+    <value>113, 36</value>
+  </data>
+  <data name="materialButton11.TabIndex" type="System.Int32, mscorlib">
+    <value>23</value>
+  </data>
+  <data name="materialButton11.Text" xml:space="preserve">
+    <value>Reporte</value>
+  </data>
+  <data name="&gt;&gt;materialButton11.Name" xml:space="preserve">
+    <value>materialButton11</value>
+  </data>
+  <data name="&gt;&gt;materialButton11.Type" xml:space="preserve">
+    <value>MaterialSkin.Controls.MaterialButton, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;materialButton11.Parent" xml:space="preserve">
+    <value>GestionDeClientesEspeciales</value>
+  </data>
+  <data name="&gt;&gt;materialButton11.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="NombreDelClienteEspecial_txt.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="NombreDelClienteEspecial_txt.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 16px</value>
+  </data>
+  <data name="NombreDelClienteEspecial_txt.Hint" xml:space="preserve">
+    <value>Buscar Por Nombre o codigo</value>
+  </data>
+  <data name="NombreDelClienteEspecial_txt.Location" type="System.Drawing.Point, System.Drawing">
+    <value>170, 45</value>
+  </data>
+  <data name="NombreDelClienteEspecial_txt.PrefixSuffixText" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="NombreDelClienteEspecial_txt.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
+  </data>
+  <data name="NombreDelClienteEspecial_txt.Size" type="System.Drawing.Size, System.Drawing">
+    <value>872, 48</value>
+  </data>
+  <data name="NombreDelClienteEspecial_txt.TabIndex" type="System.Int32, mscorlib">
+    <value>22</value>
+  </data>
+  <data name="&gt;&gt;NombreDelClienteEspecial_txt.Name" xml:space="preserve">
+    <value>NombreDelClienteEspecial_txt</value>
+  </data>
+  <data name="&gt;&gt;NombreDelClienteEspecial_txt.Type" xml:space="preserve">
+    <value>MaterialSkin.Controls.MaterialMaskedTextBox, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;NombreDelClienteEspecial_txt.Parent" xml:space="preserve">
+    <value>GestionDeClientesEspeciales</value>
+  </data>
+  <data name="&gt;&gt;NombreDelClienteEspecial_txt.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="materialButton12.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="materialButton12.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="materialButton12.Location" type="System.Drawing.Point, System.Drawing">
+    <value>614, 565</value>
+  </data>
+  <data name="materialButton12.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 5, 3, 5</value>
+  </data>
+  <data name="materialButton12.Size" type="System.Drawing.Size, System.Drawing">
+    <value>116, 36</value>
+  </data>
+  <data name="materialButton12.TabIndex" type="System.Int32, mscorlib">
+    <value>21</value>
+  </data>
+  <data name="materialButton12.Text" xml:space="preserve">
+    <value>Eliminar</value>
+  </data>
+  <data name="&gt;&gt;materialButton12.Name" xml:space="preserve">
+    <value>materialButton12</value>
+  </data>
+  <data name="&gt;&gt;materialButton12.Type" xml:space="preserve">
+    <value>MaterialSkin.Controls.MaterialButton, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;materialButton12.Parent" xml:space="preserve">
+    <value>GestionDeClientesEspeciales</value>
+  </data>
+  <data name="&gt;&gt;materialButton12.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="materialButton13.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="materialButton13.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="materialButton13.Location" type="System.Drawing.Point, System.Drawing">
+    <value>495, 565</value>
+  </data>
+  <data name="materialButton13.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 5, 3, 5</value>
+  </data>
+  <data name="materialButton13.Size" type="System.Drawing.Size, System.Drawing">
+    <value>99, 36</value>
+  </data>
+  <data name="materialButton13.TabIndex" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
+  <data name="materialButton13.Text" xml:space="preserve">
+    <value>Editar</value>
+  </data>
+  <data name="&gt;&gt;materialButton13.Name" xml:space="preserve">
+    <value>materialButton13</value>
+  </data>
+  <data name="&gt;&gt;materialButton13.Type" xml:space="preserve">
+    <value>MaterialSkin.Controls.MaterialButton, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;materialButton13.Parent" xml:space="preserve">
+    <value>GestionDeClientesEspeciales</value>
+  </data>
+  <data name="&gt;&gt;materialButton13.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="materialButton14.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="materialButton14.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="materialButton14.Location" type="System.Drawing.Point, System.Drawing">
+    <value>357, 565</value>
+  </data>
+  <data name="materialButton14.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 5, 3, 5</value>
+  </data>
+  <data name="materialButton14.Size" type="System.Drawing.Size, System.Drawing">
+    <value>116, 36</value>
+  </data>
+  <data name="materialButton14.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
+  </data>
+  <data name="materialButton14.Text" xml:space="preserve">
+    <value>Agregar</value>
+  </data>
+  <data name="&gt;&gt;materialButton14.Name" xml:space="preserve">
+    <value>materialButton14</value>
+  </data>
+  <data name="&gt;&gt;materialButton14.Type" xml:space="preserve">
+    <value>MaterialSkin.Controls.MaterialButton, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;materialButton14.Parent" xml:space="preserve">
+    <value>GestionDeClientesEspeciales</value>
+  </data>
+  <data name="&gt;&gt;materialButton14.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="materialLabel7.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="materialLabel7.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 14px</value>
+  </data>
+  <data name="materialLabel7.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="materialLabel7.Location" type="System.Drawing.Point, System.Drawing">
+    <value>354, 541</value>
+  </data>
+  <data name="materialLabel7.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
+  </data>
+  <data name="materialLabel7.Size" type="System.Drawing.Size, System.Drawing">
+    <value>65, 19</value>
+  </data>
+  <data name="materialLabel7.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
+  <data name="materialLabel7.Text" xml:space="preserve">
+    <value>Acciones</value>
+  </data>
+  <data name="&gt;&gt;materialLabel7.Name" xml:space="preserve">
+    <value>materialLabel7</value>
+  </data>
+  <data name="&gt;&gt;materialLabel7.Type" xml:space="preserve">
+    <value>MaterialSkin.Controls.MaterialLabel, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;materialLabel7.Parent" xml:space="preserve">
+    <value>GestionDeClientesEspeciales</value>
+  </data>
+  <data name="&gt;&gt;materialLabel7.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="materialLabel8.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="materialLabel8.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 14px</value>
+  </data>
+  <data name="materialLabel8.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="materialLabel8.Location" type="System.Drawing.Point, System.Drawing">
+    <value>167, 23</value>
+  </data>
+  <data name="materialLabel8.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
+  </data>
+  <data name="materialLabel8.Size" type="System.Drawing.Size, System.Drawing">
+    <value>140, 19</value>
+  </data>
+  <data name="materialLabel8.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="materialLabel8.Text" xml:space="preserve">
+    <value>Listado de usuarios</value>
+  </data>
+  <data name="&gt;&gt;materialLabel8.Name" xml:space="preserve">
+    <value>materialLabel8</value>
+  </data>
+  <data name="&gt;&gt;materialLabel8.Type" xml:space="preserve">
+    <value>MaterialSkin.Controls.MaterialLabel, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;materialLabel8.Parent" xml:space="preserve">
+    <value>GestionDeClientesEspeciales</value>
+  </data>
+  <data name="&gt;&gt;materialLabel8.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="ListadoClienteEspecialDg.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="ListadoClienteEspecialDg.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 11</value>
+  </data>
+  <data name="ListadoClienteEspecialDg.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="ListadoClienteEspecialDg.RowHeadersWidth" type="System.Int32, mscorlib">
+    <value>51</value>
+  </data>
+  <data name="ListadoClienteEspecialDg.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1169, 401</value>
+  </data>
+  <data name="ListadoClienteEspecialDg.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;ListadoClienteEspecialDg.Name" xml:space="preserve">
+    <value>ListadoClienteEspecialDg</value>
+  </data>
+  <data name="&gt;&gt;ListadoClienteEspecialDg.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ListadoClienteEspecialDg.Parent" xml:space="preserve">
+    <value>materialCard4</value>
+  </data>
+  <data name="&gt;&gt;ListadoClienteEspecialDg.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="materialCard4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 107</value>
+  </data>
+  <data name="materialCard4.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>10, 11, 10, 11</value>
+  </data>
+  <data name="materialCard4.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>10, 11, 10, 11</value>
+  </data>
+  <data name="materialCard4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1189, 423</value>
+  </data>
+  <data name="materialCard4.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="&gt;&gt;materialCard4.Name" xml:space="preserve">
+    <value>materialCard4</value>
+  </data>
+  <data name="&gt;&gt;materialCard4.Type" xml:space="preserve">
+    <value>MaterialSkin.Controls.MaterialCard, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;materialCard4.Parent" xml:space="preserve">
+    <value>GestionDeClientesEspeciales</value>
+  </data>
+  <data name="&gt;&gt;materialCard4.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="GestionDeClientesEspeciales.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="GestionDeClientesEspeciales.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="GestionDeClientesEspeciales.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1209, 624</value>
+  </data>
+  <data name="GestionDeClientesEspeciales.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="GestionDeClientesEspeciales.Text" xml:space="preserve">
+    <value>Gestion de clientes especiales</value>
+  </data>
+  <data name="&gt;&gt;GestionDeClientesEspeciales.Name" xml:space="preserve">
+    <value>GestionDeClientesEspeciales</value>
+  </data>
+  <data name="&gt;&gt;GestionDeClientesEspeciales.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GestionDeClientesEspeciales.Parent" xml:space="preserve">
+    <value>Gestion</value>
+  </data>
+  <data name="&gt;&gt;GestionDeClientesEspeciales.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
   <data name="Gestion.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
@@ -1182,6 +1473,9 @@
   <data name="&gt;&gt;Gestion.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <metadata name="usuarioMostrarDtoBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>257, 17</value>
+  </metadata>
   <metadata name="proveedorBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>733, 17</value>
   </metadata>
@@ -1220,66 +1514,6 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Main</value>
-  </data>
-  <data name="&gt;&gt;idDataGridViewTextBoxColumn1.Name" xml:space="preserve">
-    <value>idDataGridViewTextBoxColumn1</value>
-  </data>
-  <data name="&gt;&gt;idDataGridViewTextBoxColumn1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;nombreDataGridViewTextBoxColumn1.Name" xml:space="preserve">
-    <value>nombreDataGridViewTextBoxColumn1</value>
-  </data>
-  <data name="&gt;&gt;nombreDataGridViewTextBoxColumn1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;apellidoDataGridViewTextBoxColumn.Name" xml:space="preserve">
-    <value>apellidoDataGridViewTextBoxColumn</value>
-  </data>
-  <data name="&gt;&gt;apellidoDataGridViewTextBoxColumn.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cedulaDataGridViewTextBoxColumn.Name" xml:space="preserve">
-    <value>cedulaDataGridViewTextBoxColumn</value>
-  </data>
-  <data name="&gt;&gt;cedulaDataGridViewTextBoxColumn.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;correoDataGridViewTextBoxColumn.Name" xml:space="preserve">
-    <value>correoDataGridViewTextBoxColumn</value>
-  </data>
-  <data name="&gt;&gt;correoDataGridViewTextBoxColumn.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;rolDataGridViewTextBoxColumn.Name" xml:space="preserve">
-    <value>rolDataGridViewTextBoxColumn</value>
-  </data>
-  <data name="&gt;&gt;rolDataGridViewTextBoxColumn.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;activoDataGridViewCheckBoxColumn1.Name" xml:space="preserve">
-    <value>activoDataGridViewCheckBoxColumn1</value>
-  </data>
-  <data name="&gt;&gt;activoDataGridViewCheckBoxColumn1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewCheckBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;fechaCreacionDataGridViewTextBoxColumn.Name" xml:space="preserve">
-    <value>fechaCreacionDataGridViewTextBoxColumn</value>
-  </data>
-  <data name="&gt;&gt;fechaCreacionDataGridViewTextBoxColumn.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;fechaEdicionDataGridViewTextBoxColumn.Name" xml:space="preserve">
-    <value>fechaEdicionDataGridViewTextBoxColumn</value>
-  </data>
-  <data name="&gt;&gt;fechaEdicionDataGridViewTextBoxColumn.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ultimaVezActivoDataGridViewTextBoxColumn.Name" xml:space="preserve">
-    <value>ultimaVezActivoDataGridViewTextBoxColumn</value>
-  </data>
-  <data name="&gt;&gt;ultimaVezActivoDataGridViewTextBoxColumn.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;usuarioMostrarDtoBindingSource.Name" xml:space="preserve">
     <value>usuarioMostrarDtoBindingSource</value>

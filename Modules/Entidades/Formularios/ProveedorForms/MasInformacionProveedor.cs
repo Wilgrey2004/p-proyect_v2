@@ -119,6 +119,9 @@ namespace p_proyect.Modules.Entidades.Formularios.ProveedorForms
             await CargarListadoDeProductosDelProveedor();
         }
 
+
+        ProveedorControllerC proveedorControllerC = new ProveedorControllerC();
+
         private async    void materialButton8_Click(object sender, EventArgs e)
         {
 
@@ -135,7 +138,17 @@ namespace p_proyect.Modules.Entidades.Formularios.ProveedorForms
 
             await CargarListadoDeProductosDelProveedor();
 
+            proveedorMasinformacion = await proveedorControllerC.TraerUnProveedorAsync(proveedorMasinformacion.Id);
+
             CargarInformacionDelProveedorEnControles();
+        }
+
+        private async void materialButton5_Click(object sender, EventArgs e)
+        {
+            AgregarEditarProductos aePForms = new AgregarEditarProductos();
+            aePForms.productoSeleccioando = null;
+            aePForms.ShowDialog();
+            await CargarListadoDeProductosDelProveedor();
         }
     }
 }

@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using p_proyect.Modules;
 
 namespace p_proyect.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20251115150534_add_ClienteEspecial_Compra_Adeudo_news_entityes")]
+    partial class add_ClienteEspecial_Compra_Adeudo_news_entityes
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -109,35 +111,6 @@ namespace p_proyect.Migrations
                     b.HasIndex("Compra_Id");
 
                     b.ToTable("Adeudos");
-                });
-
-            modelBuilder.Entity("p_proyect.Modules.Entidades.ClienteNormal", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int?>("Compra_Id")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Contacto")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("FechaCreacion")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Nombre")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("UltimaCompra")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("Compra_Id");
-
-                    b.ToTable("ClientesNormales");
                 });
 
             modelBuilder.Entity("p_proyect.Modules.Entidades.Compra", b =>
@@ -325,13 +298,6 @@ namespace p_proyect.Migrations
                 });
 
             modelBuilder.Entity("p_proyect.Modules.Entidades.Adeudo", b =>
-                {
-                    b.HasOne("p_proyect.Modules.Entidades.Compra", "Compra_")
-                        .WithMany()
-                        .HasForeignKey("Compra_Id");
-                });
-
-            modelBuilder.Entity("p_proyect.Modules.Entidades.ClienteNormal", b =>
                 {
                     b.HasOne("p_proyect.Modules.Entidades.Compra", "Compra_")
                         .WithMany()

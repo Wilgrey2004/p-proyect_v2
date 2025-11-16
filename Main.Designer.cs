@@ -32,46 +32,46 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.Gestion = new MaterialSkin.Controls.MaterialTabControl();
             this.GestionUsers = new System.Windows.Forms.TabPage();
-            this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialCard1 = new MaterialSkin.Controls.MaterialCard();
-            this.Usuarios_DataGrid = new System.Windows.Forms.DataGridView();
-            this.GestionDeInventario = new System.Windows.Forms.TabPage();
-            this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialCard2 = new MaterialSkin.Controls.MaterialCard();
-            this.ListadoDeProductosMostrar = new System.Windows.Forms.DataGridView();
-            this.GestionDeProveedores = new System.Windows.Forms.TabPage();
-            this.materialLabel5 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialLabel6 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialCard3 = new MaterialSkin.Controls.MaterialCard();
-            this.ProveedoresListadoShow = new System.Windows.Forms.DataGridView();
             this.GenerarReportesUsuarios = new MaterialSkin.Controls.MaterialButton();
             this.BuscarUsuarios = new MaterialSkin.Controls.MaterialMaskedTextBox();
             this.Eliminar_Usuario = new MaterialSkin.Controls.MaterialButton();
             this.materialButton1 = new MaterialSkin.Controls.MaterialButton();
             this.Agregar_usuarios = new MaterialSkin.Controls.MaterialButton();
+            this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialCard1 = new MaterialSkin.Controls.MaterialCard();
+            this.Usuarios_DataGrid = new System.Windows.Forms.DataGridView();
+            this.GestionDeInventario = new System.Windows.Forms.TabPage();
             this.materialButton2 = new MaterialSkin.Controls.MaterialButton();
             this.materialMaskedTextBox1 = new MaterialSkin.Controls.MaterialMaskedTextBox();
             this.materialButton3 = new MaterialSkin.Controls.MaterialButton();
             this.materialButton4 = new MaterialSkin.Controls.MaterialButton();
             this.materialButton5 = new MaterialSkin.Controls.MaterialButton();
+            this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialCard2 = new MaterialSkin.Controls.MaterialCard();
+            this.ListadoDeProductosMostrar = new System.Windows.Forms.DataGridView();
+            this.GestionDeProveedores = new System.Windows.Forms.TabPage();
             this.materialButton10 = new MaterialSkin.Controls.MaterialButton();
             this.materialButton6 = new MaterialSkin.Controls.MaterialButton();
             this.materialMaskedTextBox2 = new MaterialSkin.Controls.MaterialMaskedTextBox();
             this.materialButton7 = new MaterialSkin.Controls.MaterialButton();
             this.materialButton8 = new MaterialSkin.Controls.MaterialButton();
             this.materialButton9 = new MaterialSkin.Controls.MaterialButton();
-            this.idDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombreDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.apellidoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cedulaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.correoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rolDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.activoDataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.fechaCreacionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaEdicionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ultimaVezActivoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.materialLabel5 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialLabel6 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialCard3 = new MaterialSkin.Controls.MaterialCard();
+            this.ProveedoresListadoShow = new System.Windows.Forms.DataGridView();
+            this.GestionDeClientesEspeciales = new System.Windows.Forms.TabPage();
+            this.materialButton11 = new MaterialSkin.Controls.MaterialButton();
+            this.NombreDelClienteEspecial_txt = new MaterialSkin.Controls.MaterialMaskedTextBox();
+            this.materialButton12 = new MaterialSkin.Controls.MaterialButton();
+            this.materialButton13 = new MaterialSkin.Controls.MaterialButton();
+            this.materialButton14 = new MaterialSkin.Controls.MaterialButton();
+            this.materialLabel7 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialLabel8 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialCard4 = new MaterialSkin.Controls.MaterialCard();
+            this.ListadoClienteEspecialDg = new System.Windows.Forms.DataGridView();
             this.usuarioMostrarDtoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.proveedorBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.productoMostrarDtoBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
@@ -87,6 +87,9 @@
             this.GestionDeProveedores.SuspendLayout();
             this.materialCard3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ProveedoresListadoShow)).BeginInit();
+            this.GestionDeClientesEspeciales.SuspendLayout();
+            this.materialCard4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ListadoClienteEspecialDg)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usuarioMostrarDtoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.proveedorBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productoMostrarDtoBindingSource1)).BeginInit();
@@ -99,12 +102,14 @@
             this.Gestion.Controls.Add(this.GestionUsers);
             this.Gestion.Controls.Add(this.GestionDeInventario);
             this.Gestion.Controls.Add(this.GestionDeProveedores);
+            this.Gestion.Controls.Add(this.GestionDeClientesEspeciales);
             this.Gestion.Depth = 0;
             resources.ApplyResources(this.Gestion, "Gestion");
             this.Gestion.MouseState = MaterialSkin.MouseState.HOVER;
             this.Gestion.Multiline = true;
             this.Gestion.Name = "Gestion";
             this.Gestion.SelectedIndex = 0;
+            this.Gestion.SelectedIndexChanged += new System.EventHandler(this.Gestion_SelectedIndexChanged);
             // 
             // GestionUsers
             // 
@@ -119,147 +124,6 @@
             resources.ApplyResources(this.GestionUsers, "GestionUsers");
             this.GestionUsers.Name = "GestionUsers";
             this.GestionUsers.UseVisualStyleBackColor = true;
-            // 
-            // materialLabel2
-            // 
-            resources.ApplyResources(this.materialLabel2, "materialLabel2");
-            this.materialLabel2.Depth = 0;
-            this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel2.Name = "materialLabel2";
-            // 
-            // materialLabel1
-            // 
-            resources.ApplyResources(this.materialLabel1, "materialLabel1");
-            this.materialLabel1.Depth = 0;
-            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel1.Name = "materialLabel1";
-            // 
-            // materialCard1
-            // 
-            this.materialCard1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.materialCard1.Controls.Add(this.Usuarios_DataGrid);
-            this.materialCard1.Depth = 0;
-            this.materialCard1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            resources.ApplyResources(this.materialCard1, "materialCard1");
-            this.materialCard1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialCard1.Name = "materialCard1";
-            // 
-            // Usuarios_DataGrid
-            // 
-            this.Usuarios_DataGrid.AutoGenerateColumns = false;
-            this.Usuarios_DataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.Usuarios_DataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn1,
-            this.nombreDataGridViewTextBoxColumn1,
-            this.apellidoDataGridViewTextBoxColumn,
-            this.cedulaDataGridViewTextBoxColumn,
-            this.correoDataGridViewTextBoxColumn,
-            this.rolDataGridViewTextBoxColumn,
-            this.activoDataGridViewCheckBoxColumn1,
-            this.fechaCreacionDataGridViewTextBoxColumn,
-            this.fechaEdicionDataGridViewTextBoxColumn,
-            this.ultimaVezActivoDataGridViewTextBoxColumn});
-            this.Usuarios_DataGrid.DataSource = this.usuarioMostrarDtoBindingSource;
-            resources.ApplyResources(this.Usuarios_DataGrid, "Usuarios_DataGrid");
-            this.Usuarios_DataGrid.Name = "Usuarios_DataGrid";
-            this.Usuarios_DataGrid.RowTemplate.Height = 24;
-            this.Usuarios_DataGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Usuarios_DataGrid_CellClick);
-            this.Usuarios_DataGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Usuarios_DataGrid_CellContentClick);
-            // 
-            // GestionDeInventario
-            // 
-            this.GestionDeInventario.Controls.Add(this.materialButton2);
-            this.GestionDeInventario.Controls.Add(this.materialMaskedTextBox1);
-            this.GestionDeInventario.Controls.Add(this.materialButton3);
-            this.GestionDeInventario.Controls.Add(this.materialButton4);
-            this.GestionDeInventario.Controls.Add(this.materialButton5);
-            this.GestionDeInventario.Controls.Add(this.materialLabel3);
-            this.GestionDeInventario.Controls.Add(this.materialLabel4);
-            this.GestionDeInventario.Controls.Add(this.materialCard2);
-            resources.ApplyResources(this.GestionDeInventario, "GestionDeInventario");
-            this.GestionDeInventario.Name = "GestionDeInventario";
-            this.GestionDeInventario.UseVisualStyleBackColor = true;
-            this.GestionDeInventario.Click += new System.EventHandler(this.GestionDeInventario_Click);
-            // 
-            // materialLabel3
-            // 
-            resources.ApplyResources(this.materialLabel3, "materialLabel3");
-            this.materialLabel3.Depth = 0;
-            this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel3.Name = "materialLabel3";
-            // 
-            // materialLabel4
-            // 
-            resources.ApplyResources(this.materialLabel4, "materialLabel4");
-            this.materialLabel4.Depth = 0;
-            this.materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel4.Name = "materialLabel4";
-            // 
-            // materialCard2
-            // 
-            this.materialCard2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.materialCard2.Controls.Add(this.ListadoDeProductosMostrar);
-            this.materialCard2.Depth = 0;
-            this.materialCard2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            resources.ApplyResources(this.materialCard2, "materialCard2");
-            this.materialCard2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialCard2.Name = "materialCard2";
-            // 
-            // ListadoDeProductosMostrar
-            // 
-            this.ListadoDeProductosMostrar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            resources.ApplyResources(this.ListadoDeProductosMostrar, "ListadoDeProductosMostrar");
-            this.ListadoDeProductosMostrar.Name = "ListadoDeProductosMostrar";
-            this.ListadoDeProductosMostrar.RowTemplate.Height = 24;
-            this.ListadoDeProductosMostrar.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ListadoDeProductosMostrar_CellClick);
-            this.ListadoDeProductosMostrar.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ListadoDeProductosMostrar_CellContentClick);
-            // 
-            // GestionDeProveedores
-            // 
-            this.GestionDeProveedores.Controls.Add(this.materialButton10);
-            this.GestionDeProveedores.Controls.Add(this.materialButton6);
-            this.GestionDeProveedores.Controls.Add(this.materialMaskedTextBox2);
-            this.GestionDeProveedores.Controls.Add(this.materialButton7);
-            this.GestionDeProveedores.Controls.Add(this.materialButton8);
-            this.GestionDeProveedores.Controls.Add(this.materialButton9);
-            this.GestionDeProveedores.Controls.Add(this.materialLabel5);
-            this.GestionDeProveedores.Controls.Add(this.materialLabel6);
-            this.GestionDeProveedores.Controls.Add(this.materialCard3);
-            resources.ApplyResources(this.GestionDeProveedores, "GestionDeProveedores");
-            this.GestionDeProveedores.Name = "GestionDeProveedores";
-            this.GestionDeProveedores.UseVisualStyleBackColor = true;
-            // 
-            // materialLabel5
-            // 
-            resources.ApplyResources(this.materialLabel5, "materialLabel5");
-            this.materialLabel5.Depth = 0;
-            this.materialLabel5.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel5.Name = "materialLabel5";
-            // 
-            // materialLabel6
-            // 
-            resources.ApplyResources(this.materialLabel6, "materialLabel6");
-            this.materialLabel6.Depth = 0;
-            this.materialLabel6.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel6.Name = "materialLabel6";
-            // 
-            // materialCard3
-            // 
-            this.materialCard3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.materialCard3.Controls.Add(this.ProveedoresListadoShow);
-            this.materialCard3.Depth = 0;
-            this.materialCard3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            resources.ApplyResources(this.materialCard3, "materialCard3");
-            this.materialCard3.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialCard3.Name = "materialCard3";
-            // 
-            // ProveedoresListadoShow
-            // 
-            this.ProveedoresListadoShow.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            resources.ApplyResources(this.ProveedoresListadoShow, "ProveedoresListadoShow");
-            this.ProveedoresListadoShow.Name = "ProveedoresListadoShow";
-            this.ProveedoresListadoShow.RowTemplate.Height = 24;
-            this.ProveedoresListadoShow.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ProveedoresListadoShow_CellClick);
             // 
             // GenerarReportesUsuarios
             // 
@@ -361,6 +225,54 @@
             this.Agregar_usuarios.UseVisualStyleBackColor = true;
             this.Agregar_usuarios.Click += new System.EventHandler(this.Agregar_usuarios_Click);
             // 
+            // materialLabel2
+            // 
+            resources.ApplyResources(this.materialLabel2, "materialLabel2");
+            this.materialLabel2.Depth = 0;
+            this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel2.Name = "materialLabel2";
+            // 
+            // materialLabel1
+            // 
+            resources.ApplyResources(this.materialLabel1, "materialLabel1");
+            this.materialLabel1.Depth = 0;
+            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel1.Name = "materialLabel1";
+            // 
+            // materialCard1
+            // 
+            this.materialCard1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.materialCard1.Controls.Add(this.Usuarios_DataGrid);
+            this.materialCard1.Depth = 0;
+            this.materialCard1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            resources.ApplyResources(this.materialCard1, "materialCard1");
+            this.materialCard1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialCard1.Name = "materialCard1";
+            // 
+            // Usuarios_DataGrid
+            // 
+            this.Usuarios_DataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            resources.ApplyResources(this.Usuarios_DataGrid, "Usuarios_DataGrid");
+            this.Usuarios_DataGrid.Name = "Usuarios_DataGrid";
+            this.Usuarios_DataGrid.RowTemplate.Height = 24;
+            this.Usuarios_DataGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Usuarios_DataGrid_CellClick);
+            this.Usuarios_DataGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Usuarios_DataGrid_CellContentClick);
+            // 
+            // GestionDeInventario
+            // 
+            this.GestionDeInventario.Controls.Add(this.materialButton2);
+            this.GestionDeInventario.Controls.Add(this.materialMaskedTextBox1);
+            this.GestionDeInventario.Controls.Add(this.materialButton3);
+            this.GestionDeInventario.Controls.Add(this.materialButton4);
+            this.GestionDeInventario.Controls.Add(this.materialButton5);
+            this.GestionDeInventario.Controls.Add(this.materialLabel3);
+            this.GestionDeInventario.Controls.Add(this.materialLabel4);
+            this.GestionDeInventario.Controls.Add(this.materialCard2);
+            resources.ApplyResources(this.GestionDeInventario, "GestionDeInventario");
+            this.GestionDeInventario.Name = "GestionDeInventario";
+            this.GestionDeInventario.UseVisualStyleBackColor = true;
+            this.GestionDeInventario.Click += new System.EventHandler(this.GestionDeInventario_Click);
+            // 
             // materialButton2
             // 
             resources.ApplyResources(this.materialButton2, "materialButton2");
@@ -460,6 +372,54 @@
             this.materialButton5.UseAccentColor = true;
             this.materialButton5.UseVisualStyleBackColor = true;
             this.materialButton5.Click += new System.EventHandler(this.materialButton5_Click);
+            // 
+            // materialLabel3
+            // 
+            resources.ApplyResources(this.materialLabel3, "materialLabel3");
+            this.materialLabel3.Depth = 0;
+            this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel3.Name = "materialLabel3";
+            // 
+            // materialLabel4
+            // 
+            resources.ApplyResources(this.materialLabel4, "materialLabel4");
+            this.materialLabel4.Depth = 0;
+            this.materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel4.Name = "materialLabel4";
+            // 
+            // materialCard2
+            // 
+            this.materialCard2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.materialCard2.Controls.Add(this.ListadoDeProductosMostrar);
+            this.materialCard2.Depth = 0;
+            this.materialCard2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            resources.ApplyResources(this.materialCard2, "materialCard2");
+            this.materialCard2.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialCard2.Name = "materialCard2";
+            // 
+            // ListadoDeProductosMostrar
+            // 
+            this.ListadoDeProductosMostrar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            resources.ApplyResources(this.ListadoDeProductosMostrar, "ListadoDeProductosMostrar");
+            this.ListadoDeProductosMostrar.Name = "ListadoDeProductosMostrar";
+            this.ListadoDeProductosMostrar.RowTemplate.Height = 24;
+            this.ListadoDeProductosMostrar.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ListadoDeProductosMostrar_CellClick);
+            this.ListadoDeProductosMostrar.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ListadoDeProductosMostrar_CellContentClick);
+            // 
+            // GestionDeProveedores
+            // 
+            this.GestionDeProveedores.Controls.Add(this.materialButton10);
+            this.GestionDeProveedores.Controls.Add(this.materialButton6);
+            this.GestionDeProveedores.Controls.Add(this.materialMaskedTextBox2);
+            this.GestionDeProveedores.Controls.Add(this.materialButton7);
+            this.GestionDeProveedores.Controls.Add(this.materialButton8);
+            this.GestionDeProveedores.Controls.Add(this.materialButton9);
+            this.GestionDeProveedores.Controls.Add(this.materialLabel5);
+            this.GestionDeProveedores.Controls.Add(this.materialLabel6);
+            this.GestionDeProveedores.Controls.Add(this.materialCard3);
+            resources.ApplyResources(this.GestionDeProveedores, "GestionDeProveedores");
+            this.GestionDeProveedores.Name = "GestionDeProveedores";
+            this.GestionDeProveedores.UseVisualStyleBackColor = true;
             // 
             // materialButton10
             // 
@@ -577,65 +537,183 @@
             this.materialButton9.UseVisualStyleBackColor = true;
             this.materialButton9.Click += new System.EventHandler(this.materialButton9_Click);
             // 
-            // idDataGridViewTextBoxColumn1
+            // materialLabel5
             // 
-            this.idDataGridViewTextBoxColumn1.DataPropertyName = "Id";
-            resources.ApplyResources(this.idDataGridViewTextBoxColumn1, "idDataGridViewTextBoxColumn1");
-            this.idDataGridViewTextBoxColumn1.Name = "idDataGridViewTextBoxColumn1";
+            resources.ApplyResources(this.materialLabel5, "materialLabel5");
+            this.materialLabel5.Depth = 0;
+            this.materialLabel5.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel5.Name = "materialLabel5";
             // 
-            // nombreDataGridViewTextBoxColumn1
+            // materialLabel6
             // 
-            this.nombreDataGridViewTextBoxColumn1.DataPropertyName = "Nombre";
-            resources.ApplyResources(this.nombreDataGridViewTextBoxColumn1, "nombreDataGridViewTextBoxColumn1");
-            this.nombreDataGridViewTextBoxColumn1.Name = "nombreDataGridViewTextBoxColumn1";
+            resources.ApplyResources(this.materialLabel6, "materialLabel6");
+            this.materialLabel6.Depth = 0;
+            this.materialLabel6.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel6.Name = "materialLabel6";
             // 
-            // apellidoDataGridViewTextBoxColumn
+            // materialCard3
             // 
-            this.apellidoDataGridViewTextBoxColumn.DataPropertyName = "Apellido";
-            resources.ApplyResources(this.apellidoDataGridViewTextBoxColumn, "apellidoDataGridViewTextBoxColumn");
-            this.apellidoDataGridViewTextBoxColumn.Name = "apellidoDataGridViewTextBoxColumn";
+            this.materialCard3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.materialCard3.Controls.Add(this.ProveedoresListadoShow);
+            this.materialCard3.Depth = 0;
+            this.materialCard3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            resources.ApplyResources(this.materialCard3, "materialCard3");
+            this.materialCard3.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialCard3.Name = "materialCard3";
             // 
-            // cedulaDataGridViewTextBoxColumn
+            // ProveedoresListadoShow
             // 
-            this.cedulaDataGridViewTextBoxColumn.DataPropertyName = "Cedula";
-            resources.ApplyResources(this.cedulaDataGridViewTextBoxColumn, "cedulaDataGridViewTextBoxColumn");
-            this.cedulaDataGridViewTextBoxColumn.Name = "cedulaDataGridViewTextBoxColumn";
+            this.ProveedoresListadoShow.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            resources.ApplyResources(this.ProveedoresListadoShow, "ProveedoresListadoShow");
+            this.ProveedoresListadoShow.Name = "ProveedoresListadoShow";
+            this.ProveedoresListadoShow.RowTemplate.Height = 24;
+            this.ProveedoresListadoShow.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ProveedoresListadoShow_CellClick);
             // 
-            // correoDataGridViewTextBoxColumn
+            // GestionDeClientesEspeciales
             // 
-            this.correoDataGridViewTextBoxColumn.DataPropertyName = "Correo";
-            resources.ApplyResources(this.correoDataGridViewTextBoxColumn, "correoDataGridViewTextBoxColumn");
-            this.correoDataGridViewTextBoxColumn.Name = "correoDataGridViewTextBoxColumn";
+            this.GestionDeClientesEspeciales.Controls.Add(this.materialButton11);
+            this.GestionDeClientesEspeciales.Controls.Add(this.NombreDelClienteEspecial_txt);
+            this.GestionDeClientesEspeciales.Controls.Add(this.materialButton12);
+            this.GestionDeClientesEspeciales.Controls.Add(this.materialButton13);
+            this.GestionDeClientesEspeciales.Controls.Add(this.materialButton14);
+            this.GestionDeClientesEspeciales.Controls.Add(this.materialLabel7);
+            this.GestionDeClientesEspeciales.Controls.Add(this.materialLabel8);
+            this.GestionDeClientesEspeciales.Controls.Add(this.materialCard4);
+            resources.ApplyResources(this.GestionDeClientesEspeciales, "GestionDeClientesEspeciales");
+            this.GestionDeClientesEspeciales.Name = "GestionDeClientesEspeciales";
+            this.GestionDeClientesEspeciales.UseVisualStyleBackColor = true;
             // 
-            // rolDataGridViewTextBoxColumn
+            // materialButton11
             // 
-            this.rolDataGridViewTextBoxColumn.DataPropertyName = "Rol";
-            resources.ApplyResources(this.rolDataGridViewTextBoxColumn, "rolDataGridViewTextBoxColumn");
-            this.rolDataGridViewTextBoxColumn.Name = "rolDataGridViewTextBoxColumn";
+            resources.ApplyResources(this.materialButton11, "materialButton11");
+            this.materialButton11.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.materialButton11.Depth = 0;
+            this.materialButton11.HighEmphasis = true;
+            this.materialButton11.Icon = global::p_proyect.Properties.Resources.Descripcion;
+            this.materialButton11.Image = global::p_proyect.Properties.Resources.Aceprtar;
+            this.materialButton11.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialButton11.Name = "materialButton11";
+            this.materialButton11.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.materialButton11.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.materialButton11.UseAccentColor = true;
+            this.materialButton11.UseVisualStyleBackColor = true;
+            this.materialButton11.Click += new System.EventHandler(this.materialButton11_Click);
             // 
-            // activoDataGridViewCheckBoxColumn1
+            // NombreDelClienteEspecial_txt
             // 
-            this.activoDataGridViewCheckBoxColumn1.DataPropertyName = "Activo";
-            resources.ApplyResources(this.activoDataGridViewCheckBoxColumn1, "activoDataGridViewCheckBoxColumn1");
-            this.activoDataGridViewCheckBoxColumn1.Name = "activoDataGridViewCheckBoxColumn1";
+            this.NombreDelClienteEspecial_txt.AllowPromptAsInput = true;
+            this.NombreDelClienteEspecial_txt.AnimateReadOnly = false;
+            this.NombreDelClienteEspecial_txt.AsciiOnly = false;
+            resources.ApplyResources(this.NombreDelClienteEspecial_txt, "NombreDelClienteEspecial_txt");
+            this.NombreDelClienteEspecial_txt.BeepOnError = false;
+            this.NombreDelClienteEspecial_txt.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.IncludeLiterals;
+            this.NombreDelClienteEspecial_txt.Depth = 0;
+            this.NombreDelClienteEspecial_txt.HidePromptOnLeave = false;
+            this.NombreDelClienteEspecial_txt.HideSelection = true;
+            this.NombreDelClienteEspecial_txt.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Default;
+            this.NombreDelClienteEspecial_txt.LeadingIcon = global::p_proyect.Properties.Resources.busqueda_de_lupa;
+            this.NombreDelClienteEspecial_txt.Mask = "";
+            this.NombreDelClienteEspecial_txt.MaxLength = 32767;
+            this.NombreDelClienteEspecial_txt.MouseState = MaterialSkin.MouseState.OUT;
+            this.NombreDelClienteEspecial_txt.Name = "NombreDelClienteEspecial_txt";
+            this.NombreDelClienteEspecial_txt.PasswordChar = '\0';
+            this.NombreDelClienteEspecial_txt.PromptChar = '_';
+            this.NombreDelClienteEspecial_txt.ReadOnly = false;
+            this.NombreDelClienteEspecial_txt.RejectInputOnFirstFailure = false;
+            this.NombreDelClienteEspecial_txt.ResetOnPrompt = true;
+            this.NombreDelClienteEspecial_txt.ResetOnSpace = true;
+            this.NombreDelClienteEspecial_txt.SelectedText = "";
+            this.NombreDelClienteEspecial_txt.SelectionLength = 0;
+            this.NombreDelClienteEspecial_txt.SelectionStart = 0;
+            this.NombreDelClienteEspecial_txt.ShortcutsEnabled = true;
+            this.NombreDelClienteEspecial_txt.SkipLiterals = true;
+            this.NombreDelClienteEspecial_txt.TabStop = false;
+            this.NombreDelClienteEspecial_txt.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.NombreDelClienteEspecial_txt.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludeLiterals;
+            this.NombreDelClienteEspecial_txt.TrailingIcon = null;
+            this.NombreDelClienteEspecial_txt.UseSystemPasswordChar = false;
+            this.NombreDelClienteEspecial_txt.ValidatingType = null;
+            this.NombreDelClienteEspecial_txt.TextChanged += new System.EventHandler(this.NombreDelClienteEspecial_txt_TextChanged);
             // 
-            // fechaCreacionDataGridViewTextBoxColumn
+            // materialButton12
             // 
-            this.fechaCreacionDataGridViewTextBoxColumn.DataPropertyName = "FechaCreacion";
-            resources.ApplyResources(this.fechaCreacionDataGridViewTextBoxColumn, "fechaCreacionDataGridViewTextBoxColumn");
-            this.fechaCreacionDataGridViewTextBoxColumn.Name = "fechaCreacionDataGridViewTextBoxColumn";
+            resources.ApplyResources(this.materialButton12, "materialButton12");
+            this.materialButton12.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.materialButton12.Depth = 0;
+            this.materialButton12.HighEmphasis = true;
+            this.materialButton12.Icon = global::p_proyect.Properties.Resources.Cancelar;
+            this.materialButton12.Image = global::p_proyect.Properties.Resources.Aceprtar;
+            this.materialButton12.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialButton12.Name = "materialButton12";
+            this.materialButton12.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.materialButton12.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.materialButton12.UseAccentColor = true;
+            this.materialButton12.UseVisualStyleBackColor = true;
+            this.materialButton12.Click += new System.EventHandler(this.materialButton12_Click);
             // 
-            // fechaEdicionDataGridViewTextBoxColumn
+            // materialButton13
             // 
-            this.fechaEdicionDataGridViewTextBoxColumn.DataPropertyName = "FechaEdicion";
-            resources.ApplyResources(this.fechaEdicionDataGridViewTextBoxColumn, "fechaEdicionDataGridViewTextBoxColumn");
-            this.fechaEdicionDataGridViewTextBoxColumn.Name = "fechaEdicionDataGridViewTextBoxColumn";
+            resources.ApplyResources(this.materialButton13, "materialButton13");
+            this.materialButton13.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.materialButton13.Depth = 0;
+            this.materialButton13.HighEmphasis = true;
+            this.materialButton13.Icon = global::p_proyect.Properties.Resources.ListaDeCompras;
+            this.materialButton13.Image = global::p_proyect.Properties.Resources.Aceprtar;
+            this.materialButton13.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialButton13.Name = "materialButton13";
+            this.materialButton13.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.materialButton13.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.materialButton13.UseAccentColor = true;
+            this.materialButton13.UseVisualStyleBackColor = true;
+            this.materialButton13.Click += new System.EventHandler(this.materialButton13_Click);
             // 
-            // ultimaVezActivoDataGridViewTextBoxColumn
+            // materialButton14
             // 
-            this.ultimaVezActivoDataGridViewTextBoxColumn.DataPropertyName = "UltimaVezActivo";
-            resources.ApplyResources(this.ultimaVezActivoDataGridViewTextBoxColumn, "ultimaVezActivoDataGridViewTextBoxColumn");
-            this.ultimaVezActivoDataGridViewTextBoxColumn.Name = "ultimaVezActivoDataGridViewTextBoxColumn";
+            resources.ApplyResources(this.materialButton14, "materialButton14");
+            this.materialButton14.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.materialButton14.Depth = 0;
+            this.materialButton14.HighEmphasis = true;
+            this.materialButton14.Icon = global::p_proyect.Properties.Resources.Aceprtar;
+            this.materialButton14.Image = global::p_proyect.Properties.Resources.Aceprtar;
+            this.materialButton14.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialButton14.Name = "materialButton14";
+            this.materialButton14.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.materialButton14.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.materialButton14.UseAccentColor = true;
+            this.materialButton14.UseVisualStyleBackColor = true;
+            this.materialButton14.Click += new System.EventHandler(this.materialButton14_Click);
+            // 
+            // materialLabel7
+            // 
+            resources.ApplyResources(this.materialLabel7, "materialLabel7");
+            this.materialLabel7.Depth = 0;
+            this.materialLabel7.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel7.Name = "materialLabel7";
+            // 
+            // materialLabel8
+            // 
+            resources.ApplyResources(this.materialLabel8, "materialLabel8");
+            this.materialLabel8.Depth = 0;
+            this.materialLabel8.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel8.Name = "materialLabel8";
+            // 
+            // materialCard4
+            // 
+            this.materialCard4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.materialCard4.Controls.Add(this.ListadoClienteEspecialDg);
+            this.materialCard4.Depth = 0;
+            this.materialCard4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            resources.ApplyResources(this.materialCard4, "materialCard4");
+            this.materialCard4.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialCard4.Name = "materialCard4";
+            // 
+            // ListadoClienteEspecialDg
+            // 
+            this.ListadoClienteEspecialDg.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            resources.ApplyResources(this.ListadoClienteEspecialDg, "ListadoClienteEspecialDg");
+            this.ListadoClienteEspecialDg.Name = "ListadoClienteEspecialDg";
+            this.ListadoClienteEspecialDg.RowTemplate.Height = 24;
+            this.ListadoClienteEspecialDg.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ListadoClienteEspecialDg_CellClick);
             // 
             // usuarioMostrarDtoBindingSource
             // 
@@ -678,6 +756,10 @@
             this.GestionDeProveedores.PerformLayout();
             this.materialCard3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ProveedoresListadoShow)).EndInit();
+            this.GestionDeClientesEspeciales.ResumeLayout(false);
+            this.GestionDeClientesEspeciales.PerformLayout();
+            this.materialCard4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.ListadoClienteEspecialDg)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.usuarioMostrarDtoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.proveedorBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productoMostrarDtoBindingSource1)).EndInit();
@@ -712,16 +794,6 @@
         private MaterialSkin.Controls.MaterialCard materialCard2;
         private System.Windows.Forms.DataGridView ListadoDeProductosMostrar;
         private System.Windows.Forms.BindingSource productoMostrarDtoBindingSource;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn apellidoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cedulaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn correoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn rolDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn activoDataGridViewCheckBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fechaCreacionDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fechaEdicionDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ultimaVezActivoDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource usuarioMostrarDtoBindingSource;
         private System.Windows.Forms.BindingSource productoMostrarDtoBindingSource1;
         private MaterialSkin.Controls.MaterialButton materialButton6;
@@ -736,5 +808,15 @@
         private System.Windows.Forms.BindingSource proveedorBindingSource;
         private MaterialSkin.Controls.MaterialButton materialButton10;
         private System.Windows.Forms.BindingSource proveedorBindingSource1;
+        private System.Windows.Forms.TabPage GestionDeClientesEspeciales;
+        private MaterialSkin.Controls.MaterialButton materialButton11;
+        private MaterialSkin.Controls.MaterialMaskedTextBox NombreDelClienteEspecial_txt;
+        private MaterialSkin.Controls.MaterialButton materialButton12;
+        private MaterialSkin.Controls.MaterialButton materialButton13;
+        private MaterialSkin.Controls.MaterialButton materialButton14;
+        private MaterialSkin.Controls.MaterialLabel materialLabel7;
+        private MaterialSkin.Controls.MaterialLabel materialLabel8;
+        private MaterialSkin.Controls.MaterialCard materialCard4;
+        private System.Windows.Forms.DataGridView ListadoClienteEspecialDg;
     }
 }
