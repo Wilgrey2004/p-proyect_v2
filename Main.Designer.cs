@@ -81,27 +81,28 @@
             this.materialCard5 = new MaterialSkin.Controls.MaterialCard();
             this.ListadoDeClientesNormalesDg = new System.Windows.Forms.DataGridView();
             this.GestionVentaAlDetalle = new System.Windows.Forms.TabPage();
+            this.materialButton20 = new MaterialSkin.Controls.MaterialButton();
             this.materialLabel12 = new MaterialSkin.Controls.MaterialLabel();
             this.ListadoDeProductosDisponibles_dg = new System.Windows.Forms.DataGridView();
             this.materialLabel11 = new MaterialSkin.Controls.MaterialLabel();
-            this.CarritoDecompras_dg = new System.Windows.Forms.DataGridView();
             this.materialCard7 = new MaterialSkin.Controls.MaterialCard();
+            this.materialButton17 = new MaterialSkin.Controls.MaterialButton();
+            this.materialMaskedTextBox4 = new MaterialSkin.Controls.MaterialMaskedTextBox();
+            this.Nombre_txt = new MaterialSkin.Controls.MaterialMaskedTextBox();
+            this.materialLabel16 = new MaterialSkin.Controls.MaterialLabel();
             this.materialCard6 = new MaterialSkin.Controls.MaterialCard();
-            this.Codigo_Del_Producto_txt = new MaterialSkin.Controls.MaterialMaskedTextBox();
-            this.Nombre_Del_Producto_txt = new MaterialSkin.Controls.MaterialMaskedTextBox();
-            this.numCantidadProducto = new System.Windows.Forms.NumericUpDown();
-            this.materialLabel13 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialLabel14 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialLabel15 = new MaterialSkin.Controls.MaterialLabel();
-            this.UnidadDeMedidaDelProducto = new MaterialSkin.Controls.MaterialLabel();
+            this.materialButton19 = new MaterialSkin.Controls.MaterialButton();
+            this.materialButton18 = new MaterialSkin.Controls.MaterialButton();
             this.PrecioPorUnidadDelProducto_txt = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel17 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialLabel16 = new MaterialSkin.Controls.MaterialLabel();
-            this.Nombre_txt = new MaterialSkin.Controls.MaterialMaskedTextBox();
-            this.materialMaskedTextBox4 = new MaterialSkin.Controls.MaterialMaskedTextBox();
-            this.materialButton17 = new MaterialSkin.Controls.MaterialButton();
-            this.materialButton18 = new MaterialSkin.Controls.MaterialButton();
-            this.materialButton19 = new MaterialSkin.Controls.MaterialButton();
+            this.UnidadDeMedidaDelProducto = new MaterialSkin.Controls.MaterialLabel();
+            this.materialLabel15 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialLabel14 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialLabel13 = new MaterialSkin.Controls.MaterialLabel();
+            this.numCantidadProducto = new System.Windows.Forms.NumericUpDown();
+            this.Nombre_Del_Producto_txt = new MaterialSkin.Controls.MaterialMaskedTextBox();
+            this.Codigo_Del_Producto_txt = new MaterialSkin.Controls.MaterialMaskedTextBox();
+            this.CarritoDecompras_dg = new System.Windows.Forms.DataGridView();
             this.usuarioMostrarDtoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.proveedorBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.productoMostrarDtoBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
@@ -125,10 +126,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.ListadoDeClientesNormalesDg)).BeginInit();
             this.GestionVentaAlDetalle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ListadoDeProductosDisponibles_dg)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CarritoDecompras_dg)).BeginInit();
             this.materialCard7.SuspendLayout();
             this.materialCard6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numCantidadProducto)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CarritoDecompras_dg)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usuarioMostrarDtoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.proveedorBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productoMostrarDtoBindingSource1)).BeginInit();
@@ -897,16 +898,31 @@
             // 
             // GestionVentaAlDetalle
             // 
+            this.GestionVentaAlDetalle.Controls.Add(this.CarritoDecompras_dg);
+            this.GestionVentaAlDetalle.Controls.Add(this.materialButton20);
             this.GestionVentaAlDetalle.Controls.Add(this.materialLabel12);
             this.GestionVentaAlDetalle.Controls.Add(this.ListadoDeProductosDisponibles_dg);
             this.GestionVentaAlDetalle.Controls.Add(this.materialLabel11);
-            this.GestionVentaAlDetalle.Controls.Add(this.CarritoDecompras_dg);
             this.GestionVentaAlDetalle.Controls.Add(this.materialCard7);
             this.GestionVentaAlDetalle.Controls.Add(this.materialCard6);
             resources.ApplyResources(this.GestionVentaAlDetalle, "GestionVentaAlDetalle");
             this.GestionVentaAlDetalle.Name = "GestionVentaAlDetalle";
             this.GestionVentaAlDetalle.UseVisualStyleBackColor = true;
             this.GestionVentaAlDetalle.Click += new System.EventHandler(this.tabPage1_Click);
+            // 
+            // materialButton20
+            // 
+            resources.ApplyResources(this.materialButton20, "materialButton20");
+            this.materialButton20.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.materialButton20.Depth = 0;
+            this.materialButton20.HighEmphasis = true;
+            this.materialButton20.Icon = null;
+            this.materialButton20.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialButton20.Name = "materialButton20";
+            this.materialButton20.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.materialButton20.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.materialButton20.UseAccentColor = false;
+            this.materialButton20.UseVisualStyleBackColor = true;
             // 
             // materialLabel12
             // 
@@ -932,13 +948,6 @@
             this.materialLabel11.Name = "materialLabel11";
             this.materialLabel11.Click += new System.EventHandler(this.materialLabel11_Click);
             // 
-            // CarritoDecompras_dg
-            // 
-            this.CarritoDecompras_dg.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            resources.ApplyResources(this.CarritoDecompras_dg, "CarritoDecompras_dg");
-            this.CarritoDecompras_dg.Name = "CarritoDecompras_dg";
-            this.CarritoDecompras_dg.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.CarritoDecompras_dg_CellContentClick);
-            // 
             // materialCard7
             // 
             this.materialCard7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -953,185 +962,19 @@
             this.materialCard7.Name = "materialCard7";
             this.materialCard7.Paint += new System.Windows.Forms.PaintEventHandler(this.materialCard7_Paint);
             // 
-            // materialCard6
+            // materialButton17
             // 
-            this.materialCard6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.materialCard6.Controls.Add(this.materialButton19);
-            this.materialCard6.Controls.Add(this.materialButton18);
-            this.materialCard6.Controls.Add(this.PrecioPorUnidadDelProducto_txt);
-            this.materialCard6.Controls.Add(this.materialLabel17);
-            this.materialCard6.Controls.Add(this.UnidadDeMedidaDelProducto);
-            this.materialCard6.Controls.Add(this.materialLabel15);
-            this.materialCard6.Controls.Add(this.materialLabel14);
-            this.materialCard6.Controls.Add(this.materialLabel13);
-            this.materialCard6.Controls.Add(this.numCantidadProducto);
-            this.materialCard6.Controls.Add(this.Nombre_Del_Producto_txt);
-            this.materialCard6.Controls.Add(this.Codigo_Del_Producto_txt);
-            this.materialCard6.Depth = 0;
-            this.materialCard6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            resources.ApplyResources(this.materialCard6, "materialCard6");
-            this.materialCard6.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialCard6.Name = "materialCard6";
-            this.materialCard6.Paint += new System.Windows.Forms.PaintEventHandler(this.materialCard6_Paint);
-            // 
-            // Codigo_Del_Producto_txt
-            // 
-            this.Codigo_Del_Producto_txt.AllowPromptAsInput = true;
-            this.Codigo_Del_Producto_txt.AnimateReadOnly = true;
-            this.Codigo_Del_Producto_txt.AsciiOnly = false;
-            resources.ApplyResources(this.Codigo_Del_Producto_txt, "Codigo_Del_Producto_txt");
-            this.Codigo_Del_Producto_txt.BeepOnError = false;
-            this.Codigo_Del_Producto_txt.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.IncludeLiterals;
-            this.Codigo_Del_Producto_txt.Depth = 0;
-            this.Codigo_Del_Producto_txt.HidePromptOnLeave = false;
-            this.Codigo_Del_Producto_txt.HideSelection = true;
-            this.Codigo_Del_Producto_txt.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Default;
-            this.Codigo_Del_Producto_txt.LeadingIcon = null;
-            this.Codigo_Del_Producto_txt.Mask = "";
-            this.Codigo_Del_Producto_txt.MaxLength = 32767;
-            this.Codigo_Del_Producto_txt.MouseState = MaterialSkin.MouseState.OUT;
-            this.Codigo_Del_Producto_txt.Name = "Codigo_Del_Producto_txt";
-            this.Codigo_Del_Producto_txt.PasswordChar = '\0';
-            this.Codigo_Del_Producto_txt.PromptChar = '_';
-            this.Codigo_Del_Producto_txt.ReadOnly = false;
-            this.Codigo_Del_Producto_txt.RejectInputOnFirstFailure = false;
-            this.Codigo_Del_Producto_txt.ResetOnPrompt = true;
-            this.Codigo_Del_Producto_txt.ResetOnSpace = true;
-            this.Codigo_Del_Producto_txt.SelectedText = "";
-            this.Codigo_Del_Producto_txt.SelectionLength = 0;
-            this.Codigo_Del_Producto_txt.SelectionStart = 0;
-            this.Codigo_Del_Producto_txt.ShortcutsEnabled = true;
-            this.Codigo_Del_Producto_txt.SkipLiterals = true;
-            this.Codigo_Del_Producto_txt.TabStop = false;
-            this.Codigo_Del_Producto_txt.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.Codigo_Del_Producto_txt.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludeLiterals;
-            this.Codigo_Del_Producto_txt.TrailingIcon = global::p_proyect.Properties.Resources.producto_de_codigo_de_barras;
-            this.Codigo_Del_Producto_txt.UseSystemPasswordChar = false;
-            this.Codigo_Del_Producto_txt.ValidatingType = null;
-            // 
-            // Nombre_Del_Producto_txt
-            // 
-            this.Nombre_Del_Producto_txt.AllowPromptAsInput = true;
-            this.Nombre_Del_Producto_txt.AnimateReadOnly = true;
-            this.Nombre_Del_Producto_txt.AsciiOnly = false;
-            resources.ApplyResources(this.Nombre_Del_Producto_txt, "Nombre_Del_Producto_txt");
-            this.Nombre_Del_Producto_txt.BeepOnError = false;
-            this.Nombre_Del_Producto_txt.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.IncludeLiterals;
-            this.Nombre_Del_Producto_txt.Depth = 0;
-            this.Nombre_Del_Producto_txt.HidePromptOnLeave = false;
-            this.Nombre_Del_Producto_txt.HideSelection = true;
-            this.Nombre_Del_Producto_txt.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Default;
-            this.Nombre_Del_Producto_txt.LeadingIcon = null;
-            this.Nombre_Del_Producto_txt.Mask = "";
-            this.Nombre_Del_Producto_txt.MaxLength = 32767;
-            this.Nombre_Del_Producto_txt.MouseState = MaterialSkin.MouseState.OUT;
-            this.Nombre_Del_Producto_txt.Name = "Nombre_Del_Producto_txt";
-            this.Nombre_Del_Producto_txt.PasswordChar = '\0';
-            this.Nombre_Del_Producto_txt.PromptChar = '_';
-            this.Nombre_Del_Producto_txt.ReadOnly = true;
-            this.Nombre_Del_Producto_txt.RejectInputOnFirstFailure = false;
-            this.Nombre_Del_Producto_txt.ResetOnPrompt = true;
-            this.Nombre_Del_Producto_txt.ResetOnSpace = true;
-            this.Nombre_Del_Producto_txt.SelectedText = "";
-            this.Nombre_Del_Producto_txt.SelectionLength = 0;
-            this.Nombre_Del_Producto_txt.SelectionStart = 0;
-            this.Nombre_Del_Producto_txt.ShortcutsEnabled = true;
-            this.Nombre_Del_Producto_txt.SkipLiterals = true;
-            this.Nombre_Del_Producto_txt.TabStop = false;
-            this.Nombre_Del_Producto_txt.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.Nombre_Del_Producto_txt.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludeLiterals;
-            this.Nombre_Del_Producto_txt.TrailingIcon = global::p_proyect.Properties.Resources.firma;
-            this.Nombre_Del_Producto_txt.UseSystemPasswordChar = false;
-            this.Nombre_Del_Producto_txt.ValidatingType = null;
-            // 
-            // numCantidadProducto
-            // 
-            resources.ApplyResources(this.numCantidadProducto, "numCantidadProducto");
-            this.numCantidadProducto.Name = "numCantidadProducto";
-            // 
-            // materialLabel13
-            // 
-            resources.ApplyResources(this.materialLabel13, "materialLabel13");
-            this.materialLabel13.Depth = 0;
-            this.materialLabel13.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel13.Name = "materialLabel13";
-            // 
-            // materialLabel14
-            // 
-            resources.ApplyResources(this.materialLabel14, "materialLabel14");
-            this.materialLabel14.Depth = 0;
-            this.materialLabel14.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel14.Name = "materialLabel14";
-            // 
-            // materialLabel15
-            // 
-            resources.ApplyResources(this.materialLabel15, "materialLabel15");
-            this.materialLabel15.Depth = 0;
-            this.materialLabel15.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel15.Name = "materialLabel15";
-            // 
-            // UnidadDeMedidaDelProducto
-            // 
-            resources.ApplyResources(this.UnidadDeMedidaDelProducto, "UnidadDeMedidaDelProducto");
-            this.UnidadDeMedidaDelProducto.Depth = 0;
-            this.UnidadDeMedidaDelProducto.MouseState = MaterialSkin.MouseState.HOVER;
-            this.UnidadDeMedidaDelProducto.Name = "UnidadDeMedidaDelProducto";
-            // 
-            // PrecioPorUnidadDelProducto_txt
-            // 
-            resources.ApplyResources(this.PrecioPorUnidadDelProducto_txt, "PrecioPorUnidadDelProducto_txt");
-            this.PrecioPorUnidadDelProducto_txt.Depth = 0;
-            this.PrecioPorUnidadDelProducto_txt.MouseState = MaterialSkin.MouseState.HOVER;
-            this.PrecioPorUnidadDelProducto_txt.Name = "PrecioPorUnidadDelProducto_txt";
-            // 
-            // materialLabel17
-            // 
-            resources.ApplyResources(this.materialLabel17, "materialLabel17");
-            this.materialLabel17.Depth = 0;
-            this.materialLabel17.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel17.Name = "materialLabel17";
-            // 
-            // materialLabel16
-            // 
-            resources.ApplyResources(this.materialLabel16, "materialLabel16");
-            this.materialLabel16.Depth = 0;
-            this.materialLabel16.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel16.Name = "materialLabel16";
-            // 
-            // Nombre_txt
-            // 
-            this.Nombre_txt.AllowPromptAsInput = true;
-            this.Nombre_txt.AnimateReadOnly = true;
-            this.Nombre_txt.AsciiOnly = false;
-            resources.ApplyResources(this.Nombre_txt, "Nombre_txt");
-            this.Nombre_txt.BeepOnError = false;
-            this.Nombre_txt.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.IncludeLiterals;
-            this.Nombre_txt.Depth = 0;
-            this.Nombre_txt.HidePromptOnLeave = false;
-            this.Nombre_txt.HideSelection = true;
-            this.Nombre_txt.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Default;
-            this.Nombre_txt.LeadingIcon = null;
-            this.Nombre_txt.Mask = "";
-            this.Nombre_txt.MaxLength = 32767;
-            this.Nombre_txt.MouseState = MaterialSkin.MouseState.OUT;
-            this.Nombre_txt.Name = "Nombre_txt";
-            this.Nombre_txt.PasswordChar = '\0';
-            this.Nombre_txt.PromptChar = '_';
-            this.Nombre_txt.ReadOnly = false;
-            this.Nombre_txt.RejectInputOnFirstFailure = false;
-            this.Nombre_txt.ResetOnPrompt = true;
-            this.Nombre_txt.ResetOnSpace = true;
-            this.Nombre_txt.SelectedText = "";
-            this.Nombre_txt.SelectionLength = 0;
-            this.Nombre_txt.SelectionStart = 0;
-            this.Nombre_txt.ShortcutsEnabled = true;
-            this.Nombre_txt.SkipLiterals = true;
-            this.Nombre_txt.TabStop = false;
-            this.Nombre_txt.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.Nombre_txt.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludeLiterals;
-            this.Nombre_txt.TrailingIcon = global::p_proyect.Properties.Resources.firma;
-            this.Nombre_txt.UseSystemPasswordChar = false;
-            this.Nombre_txt.ValidatingType = null;
+            resources.ApplyResources(this.materialButton17, "materialButton17");
+            this.materialButton17.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.materialButton17.Depth = 0;
+            this.materialButton17.HighEmphasis = true;
+            this.materialButton17.Icon = null;
+            this.materialButton17.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialButton17.Name = "materialButton17";
+            this.materialButton17.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.materialButton17.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.materialButton17.UseAccentColor = false;
+            this.materialButton17.UseVisualStyleBackColor = true;
             // 
             // materialMaskedTextBox4
             // 
@@ -1168,33 +1011,68 @@
             this.materialMaskedTextBox4.UseSystemPasswordChar = false;
             this.materialMaskedTextBox4.ValidatingType = null;
             // 
-            // materialButton17
+            // Nombre_txt
             // 
-            resources.ApplyResources(this.materialButton17, "materialButton17");
-            this.materialButton17.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.materialButton17.Depth = 0;
-            this.materialButton17.HighEmphasis = true;
-            this.materialButton17.Icon = null;
-            this.materialButton17.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialButton17.Name = "materialButton17";
-            this.materialButton17.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.materialButton17.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.materialButton17.UseAccentColor = false;
-            this.materialButton17.UseVisualStyleBackColor = true;
+            this.Nombre_txt.AllowPromptAsInput = true;
+            this.Nombre_txt.AnimateReadOnly = true;
+            this.Nombre_txt.AsciiOnly = false;
+            resources.ApplyResources(this.Nombre_txt, "Nombre_txt");
+            this.Nombre_txt.BeepOnError = false;
+            this.Nombre_txt.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.IncludeLiterals;
+            this.Nombre_txt.Depth = 0;
+            this.Nombre_txt.HidePromptOnLeave = false;
+            this.Nombre_txt.HideSelection = true;
+            this.Nombre_txt.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Default;
+            this.Nombre_txt.LeadingIcon = null;
+            this.Nombre_txt.Mask = "";
+            this.Nombre_txt.MaxLength = 32767;
+            this.Nombre_txt.MouseState = MaterialSkin.MouseState.OUT;
+            this.Nombre_txt.Name = "Nombre_txt";
+            this.Nombre_txt.PasswordChar = '\0';
+            this.Nombre_txt.PromptChar = '_';
+            this.Nombre_txt.ReadOnly = false;
+            this.Nombre_txt.RejectInputOnFirstFailure = false;
+            this.Nombre_txt.ResetOnPrompt = true;
+            this.Nombre_txt.ResetOnSpace = true;
+            this.Nombre_txt.SelectedText = "";
+            this.Nombre_txt.SelectionLength = 0;
+            this.Nombre_txt.SelectionStart = 0;
+            this.Nombre_txt.ShortcutsEnabled = true;
+            this.Nombre_txt.SkipLiterals = true;
+            this.Nombre_txt.TabStop = false;
+            this.Nombre_txt.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.Nombre_txt.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludeLiterals;
+            this.Nombre_txt.TrailingIcon = global::p_proyect.Properties.Resources.firma;
+            this.Nombre_txt.UseSystemPasswordChar = false;
+            this.Nombre_txt.ValidatingType = null;
             // 
-            // materialButton18
+            // materialLabel16
             // 
-            resources.ApplyResources(this.materialButton18, "materialButton18");
-            this.materialButton18.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.materialButton18.Depth = 0;
-            this.materialButton18.HighEmphasis = true;
-            this.materialButton18.Icon = null;
-            this.materialButton18.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialButton18.Name = "materialButton18";
-            this.materialButton18.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.materialButton18.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.materialButton18.UseAccentColor = false;
-            this.materialButton18.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.materialLabel16, "materialLabel16");
+            this.materialLabel16.Depth = 0;
+            this.materialLabel16.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel16.Name = "materialLabel16";
+            // 
+            // materialCard6
+            // 
+            this.materialCard6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.materialCard6.Controls.Add(this.materialButton19);
+            this.materialCard6.Controls.Add(this.materialButton18);
+            this.materialCard6.Controls.Add(this.PrecioPorUnidadDelProducto_txt);
+            this.materialCard6.Controls.Add(this.materialLabel17);
+            this.materialCard6.Controls.Add(this.UnidadDeMedidaDelProducto);
+            this.materialCard6.Controls.Add(this.materialLabel15);
+            this.materialCard6.Controls.Add(this.materialLabel14);
+            this.materialCard6.Controls.Add(this.materialLabel13);
+            this.materialCard6.Controls.Add(this.numCantidadProducto);
+            this.materialCard6.Controls.Add(this.Nombre_Del_Producto_txt);
+            this.materialCard6.Controls.Add(this.Codigo_Del_Producto_txt);
+            this.materialCard6.Depth = 0;
+            this.materialCard6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            resources.ApplyResources(this.materialCard6, "materialCard6");
+            this.materialCard6.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialCard6.Name = "materialCard6";
+            this.materialCard6.Paint += new System.Windows.Forms.PaintEventHandler(this.materialCard6_Paint);
             // 
             // materialButton19
             // 
@@ -1209,6 +1087,148 @@
             this.materialButton19.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.materialButton19.UseAccentColor = false;
             this.materialButton19.UseVisualStyleBackColor = true;
+            this.materialButton19.Click += new System.EventHandler(this.materialButton19_Click);
+            // 
+            // materialButton18
+            // 
+            resources.ApplyResources(this.materialButton18, "materialButton18");
+            this.materialButton18.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.materialButton18.Depth = 0;
+            this.materialButton18.HighEmphasis = true;
+            this.materialButton18.Icon = null;
+            this.materialButton18.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialButton18.Name = "materialButton18";
+            this.materialButton18.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.materialButton18.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.materialButton18.UseAccentColor = false;
+            this.materialButton18.UseVisualStyleBackColor = true;
+            this.materialButton18.Click += new System.EventHandler(this.materialButton18_Click_1);
+            // 
+            // PrecioPorUnidadDelProducto_txt
+            // 
+            resources.ApplyResources(this.PrecioPorUnidadDelProducto_txt, "PrecioPorUnidadDelProducto_txt");
+            this.PrecioPorUnidadDelProducto_txt.Depth = 0;
+            this.PrecioPorUnidadDelProducto_txt.MouseState = MaterialSkin.MouseState.HOVER;
+            this.PrecioPorUnidadDelProducto_txt.Name = "PrecioPorUnidadDelProducto_txt";
+            // 
+            // materialLabel17
+            // 
+            resources.ApplyResources(this.materialLabel17, "materialLabel17");
+            this.materialLabel17.Depth = 0;
+            this.materialLabel17.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel17.Name = "materialLabel17";
+            // 
+            // UnidadDeMedidaDelProducto
+            // 
+            resources.ApplyResources(this.UnidadDeMedidaDelProducto, "UnidadDeMedidaDelProducto");
+            this.UnidadDeMedidaDelProducto.Depth = 0;
+            this.UnidadDeMedidaDelProducto.MouseState = MaterialSkin.MouseState.HOVER;
+            this.UnidadDeMedidaDelProducto.Name = "UnidadDeMedidaDelProducto";
+            // 
+            // materialLabel15
+            // 
+            resources.ApplyResources(this.materialLabel15, "materialLabel15");
+            this.materialLabel15.Depth = 0;
+            this.materialLabel15.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel15.Name = "materialLabel15";
+            // 
+            // materialLabel14
+            // 
+            resources.ApplyResources(this.materialLabel14, "materialLabel14");
+            this.materialLabel14.Depth = 0;
+            this.materialLabel14.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel14.Name = "materialLabel14";
+            // 
+            // materialLabel13
+            // 
+            resources.ApplyResources(this.materialLabel13, "materialLabel13");
+            this.materialLabel13.Depth = 0;
+            this.materialLabel13.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel13.Name = "materialLabel13";
+            // 
+            // numCantidadProducto
+            // 
+            resources.ApplyResources(this.numCantidadProducto, "numCantidadProducto");
+            this.numCantidadProducto.Name = "numCantidadProducto";
+            // 
+            // Nombre_Del_Producto_txt
+            // 
+            this.Nombre_Del_Producto_txt.AllowPromptAsInput = true;
+            this.Nombre_Del_Producto_txt.AnimateReadOnly = true;
+            this.Nombre_Del_Producto_txt.AsciiOnly = false;
+            resources.ApplyResources(this.Nombre_Del_Producto_txt, "Nombre_Del_Producto_txt");
+            this.Nombre_Del_Producto_txt.BeepOnError = false;
+            this.Nombre_Del_Producto_txt.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.IncludeLiterals;
+            this.Nombre_Del_Producto_txt.Depth = 0;
+            this.Nombre_Del_Producto_txt.HidePromptOnLeave = false;
+            this.Nombre_Del_Producto_txt.HideSelection = true;
+            this.Nombre_Del_Producto_txt.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Default;
+            this.Nombre_Del_Producto_txt.LeadingIcon = null;
+            this.Nombre_Del_Producto_txt.Mask = "";
+            this.Nombre_Del_Producto_txt.MaxLength = 32767;
+            this.Nombre_Del_Producto_txt.MouseState = MaterialSkin.MouseState.OUT;
+            this.Nombre_Del_Producto_txt.Name = "Nombre_Del_Producto_txt";
+            this.Nombre_Del_Producto_txt.PasswordChar = '\0';
+            this.Nombre_Del_Producto_txt.PromptChar = '_';
+            this.Nombre_Del_Producto_txt.ReadOnly = true;
+            this.Nombre_Del_Producto_txt.RejectInputOnFirstFailure = false;
+            this.Nombre_Del_Producto_txt.ResetOnPrompt = true;
+            this.Nombre_Del_Producto_txt.ResetOnSpace = true;
+            this.Nombre_Del_Producto_txt.SelectedText = "";
+            this.Nombre_Del_Producto_txt.SelectionLength = 0;
+            this.Nombre_Del_Producto_txt.SelectionStart = 0;
+            this.Nombre_Del_Producto_txt.ShortcutsEnabled = true;
+            this.Nombre_Del_Producto_txt.SkipLiterals = true;
+            this.Nombre_Del_Producto_txt.TabStop = false;
+            this.Nombre_Del_Producto_txt.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.Nombre_Del_Producto_txt.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludeLiterals;
+            this.Nombre_Del_Producto_txt.TrailingIcon = global::p_proyect.Properties.Resources.firma;
+            this.Nombre_Del_Producto_txt.UseSystemPasswordChar = false;
+            this.Nombre_Del_Producto_txt.ValidatingType = null;
+            // 
+            // Codigo_Del_Producto_txt
+            // 
+            this.Codigo_Del_Producto_txt.AllowPromptAsInput = true;
+            this.Codigo_Del_Producto_txt.AnimateReadOnly = true;
+            this.Codigo_Del_Producto_txt.AsciiOnly = false;
+            resources.ApplyResources(this.Codigo_Del_Producto_txt, "Codigo_Del_Producto_txt");
+            this.Codigo_Del_Producto_txt.BeepOnError = false;
+            this.Codigo_Del_Producto_txt.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.IncludeLiterals;
+            this.Codigo_Del_Producto_txt.Depth = 0;
+            this.Codigo_Del_Producto_txt.HidePromptOnLeave = false;
+            this.Codigo_Del_Producto_txt.HideSelection = true;
+            this.Codigo_Del_Producto_txt.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Default;
+            this.Codigo_Del_Producto_txt.LeadingIcon = null;
+            this.Codigo_Del_Producto_txt.Mask = "";
+            this.Codigo_Del_Producto_txt.MaxLength = 32767;
+            this.Codigo_Del_Producto_txt.MouseState = MaterialSkin.MouseState.OUT;
+            this.Codigo_Del_Producto_txt.Name = "Codigo_Del_Producto_txt";
+            this.Codigo_Del_Producto_txt.PasswordChar = '\0';
+            this.Codigo_Del_Producto_txt.PromptChar = '_';
+            this.Codigo_Del_Producto_txt.ReadOnly = false;
+            this.Codigo_Del_Producto_txt.RejectInputOnFirstFailure = false;
+            this.Codigo_Del_Producto_txt.ResetOnPrompt = true;
+            this.Codigo_Del_Producto_txt.ResetOnSpace = true;
+            this.Codigo_Del_Producto_txt.SelectedText = "";
+            this.Codigo_Del_Producto_txt.SelectionLength = 0;
+            this.Codigo_Del_Producto_txt.SelectionStart = 0;
+            this.Codigo_Del_Producto_txt.ShortcutsEnabled = true;
+            this.Codigo_Del_Producto_txt.SkipLiterals = true;
+            this.Codigo_Del_Producto_txt.TabStop = false;
+            this.Codigo_Del_Producto_txt.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.Codigo_Del_Producto_txt.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludeLiterals;
+            this.Codigo_Del_Producto_txt.TrailingIcon = global::p_proyect.Properties.Resources.producto_de_codigo_de_barras;
+            this.Codigo_Del_Producto_txt.UseSystemPasswordChar = false;
+            this.Codigo_Del_Producto_txt.ValidatingType = null;
+            this.Codigo_Del_Producto_txt.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Codigo_Del_Producto_txt_KeyDown);
+            // 
+            // CarritoDecompras_dg
+            // 
+            this.CarritoDecompras_dg.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            resources.ApplyResources(this.CarritoDecompras_dg, "CarritoDecompras_dg");
+            this.CarritoDecompras_dg.Name = "CarritoDecompras_dg";
+            this.CarritoDecompras_dg.ReadOnly = true;
+            this.CarritoDecompras_dg.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.CarritoDecompras_dg_CellClick_1);
             // 
             // usuarioMostrarDtoBindingSource
             // 
@@ -1267,12 +1287,12 @@
             this.GestionVentaAlDetalle.ResumeLayout(false);
             this.GestionVentaAlDetalle.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ListadoDeProductosDisponibles_dg)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CarritoDecompras_dg)).EndInit();
             this.materialCard7.ResumeLayout(false);
             this.materialCard7.PerformLayout();
             this.materialCard6.ResumeLayout(false);
             this.materialCard6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numCantidadProducto)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CarritoDecompras_dg)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.usuarioMostrarDtoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.proveedorBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productoMostrarDtoBindingSource1)).EndInit();
@@ -1343,7 +1363,6 @@
         private MaterialSkin.Controls.MaterialCard materialCard7;
         private MaterialSkin.Controls.MaterialCard materialCard6;
         private MaterialSkin.Controls.MaterialLabel materialLabel11;
-        private System.Windows.Forms.DataGridView CarritoDecompras_dg;
         private System.Windows.Forms.DataGridView ListadoDeProductosDisponibles_dg;
         private MaterialSkin.Controls.MaterialLabel materialLabel12;
         private MaterialSkin.Controls.MaterialMaskedTextBox Codigo_Del_Producto_txt;
@@ -1361,5 +1380,7 @@
         private MaterialSkin.Controls.MaterialButton materialButton17;
         private MaterialSkin.Controls.MaterialButton materialButton19;
         private MaterialSkin.Controls.MaterialButton materialButton18;
+        private MaterialSkin.Controls.MaterialButton materialButton20;
+        private System.Windows.Forms.DataGridView CarritoDecompras_dg;
     }
 }

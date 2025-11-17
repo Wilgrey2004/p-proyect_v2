@@ -17,6 +17,7 @@ namespace p_proyect.Modules.Entidades.dtos.dtoVentas
 
         public int Stock { get; set; }
 
+
         public UnidadMedida unidadMedida { get; set; }
 
         public decimal Precio { get; set; }

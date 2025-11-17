@@ -66,5 +66,20 @@ namespace p_proyect.Modules.Entidades.dtos.dtoCompras
             entity.Total = dto.Total;
             entity.Productos = dto.Productos;
         }
+
+        public static CarritoCompraDto MapCompraToCarrito(CompraEntity compra)
+        {
+            return new CarritoCompraDto
+            {
+                CompraId = compra.Id,
+                ProductoId = compra.IdProducto,
+                NombreProducto = compra.ListaDeproductos?.Nombre,
+                CodigoBarra = compra.ListaDeproductos?.CodigoBarra,
+                Cantidad = compra.CantidadDelProducto,
+                PrecioUnitario = compra.ListaDeproductos?.PrecioVenta ?? 0,
+                UnidadMedida = compra.ListaDeproductos?.UnidadMedida.ToString(),
+                FechaAgregado = compra.FechaCreacio
+            };
+        }
     }
 }

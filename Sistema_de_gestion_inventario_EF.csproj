@@ -263,10 +263,12 @@
     <Compile Include="Modules\Entidades\dtos\dtoClienteNormal\ClienteNormalEditarDto.cs" />
     <Compile Include="Modules\Entidades\dtos\dtoClienteNormal\ClienteNormalMapper.cs" />
     <Compile Include="Modules\Entidades\dtos\dtoClienteNormal\ClienteNormalMostrarDto.cs" />
+    <Compile Include="Modules\Entidades\dtos\dtoCompras\CarritoCompraDto.cs" />
     <Compile Include="Modules\Entidades\dtos\dtoCompras\CompraCrearDto.cs" />
     <Compile Include="Modules\Entidades\dtos\dtoCompras\CompraEditarDto.cs" />
     <Compile Include="Modules\Entidades\dtos\dtoCompras\CompraMapper.cs" />
     <Compile Include="Modules\Entidades\dtos\dtoCompras\CompraMostrarDto.cs" />
+    <Compile Include="Modules\Entidades\dtos\dtoProductos\ProductoCarritoDeComrpasDto.cs" />
     <Compile Include="Modules\Entidades\dtos\dtoProductos\ProductoCreateDto.cs" />
     <Compile Include="Modules\Entidades\dtos\dtoProductos\ProductoEditarDto.cs" />
     <Compile Include="Modules\Entidades\dtos\dtoProductos\ProductoMapper.cs" />

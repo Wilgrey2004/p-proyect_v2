@@ -1704,6 +1704,60 @@
   <data name="&gt;&gt;GestionDeClientesNormales.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
+  <data name="CarritoDecompras_dg.Location" type="System.Drawing.Point, System.Drawing">
+    <value>414, 345</value>
+  </data>
+  <data name="CarritoDecompras_dg.Size" type="System.Drawing.Size, System.Drawing">
+    <value>780, 254</value>
+  </data>
+  <data name="CarritoDecompras_dg.TabIndex" type="System.Int32, mscorlib">
+    <value>24</value>
+  </data>
+  <data name="&gt;&gt;CarritoDecompras_dg.Name" xml:space="preserve">
+    <value>CarritoDecompras_dg</value>
+  </data>
+  <data name="&gt;&gt;CarritoDecompras_dg.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CarritoDecompras_dg.Parent" xml:space="preserve">
+    <value>GestionVentaAlDetalle</value>
+  </data>
+  <data name="&gt;&gt;CarritoDecompras_dg.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="materialButton20.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="materialButton20.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="materialButton20.Location" type="System.Drawing.Point, System.Drawing">
+    <value>414, 617</value>
+  </data>
+  <data name="materialButton20.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 6, 4, 6</value>
+  </data>
+  <data name="materialButton20.Size" type="System.Drawing.Size, System.Drawing">
+    <value>158, 36</value>
+  </data>
+  <data name="materialButton20.TabIndex" type="System.Int32, mscorlib">
+    <value>23</value>
+  </data>
+  <data name="materialButton20.Text" xml:space="preserve">
+    <value>Efectuar Compra</value>
+  </data>
+  <data name="&gt;&gt;materialButton20.Name" xml:space="preserve">
+    <value>materialButton20</value>
+  </data>
+  <data name="&gt;&gt;materialButton20.Type" xml:space="preserve">
+    <value>MaterialSkin.Controls.MaterialButton, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;materialButton20.Parent" xml:space="preserve">
+    <value>GestionVentaAlDetalle</value>
+  </data>
+  <data name="&gt;&gt;materialButton20.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <data name="materialLabel12.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1735,7 +1789,7 @@
     <value>GestionVentaAlDetalle</value>
   </data>
   <data name="&gt;&gt;materialLabel12.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>2</value>
   </data>
   <data name="ListadoDeProductosDisponibles_dg.Location" type="System.Drawing.Point, System.Drawing">
     <value>803, 34</value>
@@ -1756,7 +1810,7 @@
     <value>GestionVentaAlDetalle</value>
   </data>
   <data name="&gt;&gt;ListadoDeProductosDisponibles_dg.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>3</value>
   </data>
   <data name="materialLabel11.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1789,28 +1843,7 @@
     <value>GestionVentaAlDetalle</value>
   </data>
   <data name="&gt;&gt;materialLabel11.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="CarritoDecompras_dg.Location" type="System.Drawing.Point, System.Drawing">
-    <value>414, 345</value>
-  </data>
-  <data name="CarritoDecompras_dg.Size" type="System.Drawing.Size, System.Drawing">
-    <value>780, 305</value>
-  </data>
-  <data name="CarritoDecompras_dg.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;CarritoDecompras_dg.Name" xml:space="preserve">
-    <value>CarritoDecompras_dg</value>
-  </data>
-  <data name="&gt;&gt;CarritoDecompras_dg.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;CarritoDecompras_dg.Parent" xml:space="preserve">
-    <value>GestionVentaAlDetalle</value>
-  </data>
-  <data name="&gt;&gt;CarritoDecompras_dg.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="materialButton17.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
@@ -1975,7 +2008,7 @@
     <value>GestionVentaAlDetalle</value>
   </data>
   <data name="&gt;&gt;materialCard7.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="materialButton19.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
@@ -2359,7 +2392,7 @@
     <value>GestionVentaAlDetalle</value>
   </data>
   <data name="&gt;&gt;materialCard6.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="GestionVentaAlDetalle.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>

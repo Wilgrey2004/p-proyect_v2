@@ -76,6 +76,13 @@ namespace p_proyect.Modules.Entidades.dtos.dtoProductos
                 FechaCreacion = DateTime.Now
             };
         }
+        public static Producto DeProductoMostrarVentaAProducto(this int id)
+        {
+            using (var context = new AppDbContext(new DbContextOptions<AppDbContext>()))
+            {
+                return context.Productos.FirstOrDefault(x => x.Id == id);
+            }
+        }
 
         // UPDATE DTO → Entidad (aplica cambios)
         public static void ActualizarProducto(this Producto p, ProductoEditarDto dto)

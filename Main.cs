@@ -10,6 +10,7 @@ using p_proyect.Modules;
 using p_proyect.Modules.Entidades;
 using p_proyect.Modules.Entidades.dtos.dtoClienteEspecial;
 using p_proyect.Modules.Entidades.dtos.dtoClienteNormal;
+using p_proyect.Modules.Entidades.dtos.dtoCompras;
 using p_proyect.Modules.Entidades.dtos.dtoProductos;
 using p_proyect.Modules.Entidades.dtos.dtoProveedor;
 using p_proyect.Modules.Entidades.dtos.dtoUsuarios;
@@ -68,7 +69,7 @@ namespace p_proyect
         }
 
         List<ProductoVentasMostrarDto> listadoProductosDisponiblesVenta = new List<ProductoVentasMostrarDto>();
-        List<ProductoMostrarDto> CarritoDeCompras = new List<ProductoMostrarDto>();
+        List<CarritoCompraDto> CarritoDeCompras = new List<CarritoCompraDto>();
         private async Task CargarTablasVenta()
         {
             ListadoDeProductosDisponibles_dg.DataSource = null;
@@ -545,7 +546,7 @@ namespace p_proyect
                     break;
 
                 case 5:
-                    Text = "Venta Al Por Mayor";
+                    Text = "Venta Al Detalle";
                     await CargarTablasVenta();
                     break;
             }
@@ -808,13 +809,14 @@ namespace p_proyect
         {
             ProductoAComprarVenta = DataGridHelper.ObtenerIdSeleccionado(ListadoDeProductosDisponibles_dg, e);
 
-            if (ProductoAComprarVenta != -1)
+            if (ProductoAComprarVenta == -1)
             {
-                MessageBox.Show("ID seleccionado: " + ProductoAComprarVenta);
+                MessageBox.Show("Error al seleccionar Producto");
+                return;
             }
 
             productoSeleccionado = listadoProductosDisponiblesVenta.FirstOrDefault(x => x.Id == ProductoAComprarVenta);
-            CargarProductoVentaEnCombos(productoSeleccionado);
+             CargarProductoVentaEnCombos(productoSeleccionado);
         }
 
 
@@ -824,6 +826,122 @@ namespace p_proyect
             Nombre_Del_Producto_txt.Text = cargar.Nombre;
             UnidadDeMedidaDelProducto.Text = cargar.unidadMedida.ToString();
             PrecioPorUnidadDelProducto_txt.Text = cargar.Precio.ToString();
+        }
+        Ventas ventaActualAlDetalle = new Ventas();
+        CompraEntity compraActuial = new CompraEntity();
+        private async void materialButton18_Click_1(object sender, EventArgs e)
+        {
+
+            if (numCantidadProducto.Value == 0) {
+                MessageBox.Show("No hay una cantidad");
+                return;
+            }
+
+            if (ProductoAComprarVenta == -1)
+            {
+                var producto = await productoController.TraerProductoPorElCodigo_(Codigo_Del_Producto_txt.Text.Trim());
+                AgregarProductoAlCarrito(RegresarCompraCreada(producto));
+                return;
+            }
+
+            AgregarProductoAlCarrito(RegresarCompraCreada());
+
+            
+        }
+
+        private void AgregarProductoAlCarrito(CompraEntity compraEntity)
+        {
+
+            CarritoDeCompras.Add(CompraMapper.MapCompraToCarrito(compraEntity));
+
+
+            CarritoDecompras_dg.DataSource = null;
+
+            CarritoDecompras_dg.DataSource = CarritoDeCompras;
+
+
+        }
+
+        private  CompraEntity RegresarCompraCreada()
+        {
+            CompraEntity compraActuial = new CompraEntity();
+            //compraActuial.Id = ProductoAComprarVenta;
+            compraActuial.CantidadDelProducto = Convert.ToInt32(numCantidadProducto.Value);
+            compraActuial.IdProducto = ProductoAComprarVenta;
+            compraActuial.ListaDeproductos =  productoController.TraerUnProductoPorElId(ProductoAComprarVenta);
+
+
+            return compraActuial;
+        }
+
+        private CompraEntity RegresarCompraCreada(Producto producto)
+        {
+            CompraEntity compraActuial = new CompraEntity();
+            //compraActuial.Id = ProductoAComprarVenta;
+            compraActuial.CantidadDelProducto = Convert.ToInt32(numCantidadProducto.Value);
+            compraActuial.IdProducto = producto.Id;
+            compraActuial.ListaDeproductos = producto;
+
+
+            return compraActuial;
+        }
+
+        private int ProductosDelCarritoInt =0;
+
+
+        private void CarritoDecompras_dg_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+        }
+
+        private void CarritoDecompras_dg_CellClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+        }
+
+        private void materialButton19_Click(object sender, EventArgs e)
+        {
+            var respuesta = MessageBox.Show("Estas seguro de eliminar", "Quieres Eliminar El ultimo producto agregado al carrito?", MessageBoxButtons.YesNo);
+            if (respuesta == DialogResult.No)
+            {
+                return;
+            }
+
+            var carritoProductoAEliminar = CarritoDeCompras.Last();
+
+            CarritoDeCompras.Remove(carritoProductoAEliminar);
+
+            CarritoDecompras_dg.DataSource = null;
+
+            CarritoDecompras_dg.DataSource = CarritoDeCompras;
+        }
+
+        private async void CargarProductoPorCodigo(string codigoProducto)
+
+        {
+             
+            CargarProductoVentaEnCombos(await productoController.TraerProductoPorElCodigo(codigoProducto)); 
+        }
+
+
+        private void Codigo_Del_Producto_txt_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+
+                string codigo = Codigo_Del_Producto_txt.Text.Trim();
+
+                Codigo_Del_Producto_txt.Text = codigo;
+
+
+                CargarProductoPorCodigo(codigo);
+
+                //MessageBox.Show($"Codigo Escaneado {codigo} \n ");
+
+                e.Handled = true;
+                e.SuppressKeyPress = true;
+
+
+            }
         }
     }
 }

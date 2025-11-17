@@ -48,6 +48,24 @@ namespace p_proyect.Controller.ProductosController
             }
         }
 
+        public async Task<ProductoVentasMostrarDto> TraerProductoPorElCodigo(string Codigo)
+        {
+            using (var context = new AppDbContext(new DbContextOptions<AppDbContext>()))
+            {
+                var productoACombertir = await context.Productos.FirstOrDefaultAsync(x => x.CodigoBarra == Codigo);
+
+                return ProductoMapper.DeProductoAProductoVentasDto(productoACombertir);
+            }
+        }
+
+        public async Task<Producto> TraerProductoPorElCodigo_(string Codigo)
+        {
+            using (var context = new AppDbContext(new DbContextOptions<AppDbContext>()))
+            {
+                return await context.Productos.FirstOrDefaultAsync(x => x.CodigoBarra == Codigo);
+            }
+        }
+
         public async Task<List<ProductoMostrarDto>> ObtenerTodosLosProductosDeUnProveedor(int id)
         {
             using (var context = new AppDbContext(new DbContextOptions<AppDbContext>()))
