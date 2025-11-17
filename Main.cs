@@ -1,14 +1,19 @@
 ﻿using MaterialSkin;
 using MaterialSkin.Controls;
+using Microsoft.EntityFrameworkCore.Internal;
 using p_proyect.Controller.ClienteEspecialController;
+using p_proyect.Controller.ClienteNormalController;
 using p_proyect.Controller.ProductosController;
 using p_proyect.Controller.ProveedorController;
 using p_proyect.Controller.UsuarioController;
+using p_proyect.Modules;
 using p_proyect.Modules.Entidades;
 using p_proyect.Modules.Entidades.dtos.dtoClienteEspecial;
+using p_proyect.Modules.Entidades.dtos.dtoClienteNormal;
 using p_proyect.Modules.Entidades.dtos.dtoProductos;
 using p_proyect.Modules.Entidades.dtos.dtoProveedor;
 using p_proyect.Modules.Entidades.dtos.dtoUsuarios;
+using p_proyect.Modules.Entidades.dtos.dtoVentas;
 using p_proyect.Modules.Entidades.Formularios.ClienteEspecialForms;
 using p_proyect.Modules.Entidades.Formularios.ProductosForms;
 using p_proyect.Modules.Entidades.Formularios.ProveedorForms;
@@ -17,6 +22,8 @@ using p_proyect.Utils;
 using p_proyect.Utils.Reportes;
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Runtime.Remoting.Contexts;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -57,6 +64,37 @@ namespace p_proyect
             //await CargarTablaProductos();
             //await CargarListaDeProveedores();
             //await CargarListadoDeClientesEspeciales();
+
+        }
+
+        List<ProductoVentasMostrarDto> listadoProductosDisponiblesVenta = new List<ProductoVentasMostrarDto>();
+        List<ProductoMostrarDto> CarritoDeCompras = new List<ProductoMostrarDto>();
+        private async Task CargarTablasVenta()
+        {
+            ListadoDeProductosDisponibles_dg.DataSource = null;
+            listadoProductosDisponiblesVenta.Clear();
+            listadoProductosDisponiblesVenta = await productosControllerC.ObtenerTodosLosproductosParaListaDeProductos(Modules.Enums.TipoDeVenta.VentaAlDetalle);
+            ListadoDeProductosDisponibles_dg.DataSource = listadoProductosDisponiblesVenta;
+
+
+            CarritoDecompras_dg.DataSource = null;
+            CarritoDeCompras.Clear();
+            CarritoDecompras_dg.DataSource = CarritoDeCompras;
+
+
+
+        }
+
+        ClienteNormalControllerC ClienteNormalControllerC_ = new ClienteNormalControllerC();
+        List<ClienteNormalMostrarDto> ListadoClienteNormalMostrarDtos = new List<ClienteNormalMostrarDto>();
+        private async Task CargarListadoDeClientesNormales()
+        {
+            ListadoClienteNormalMostrarDtos.Clear();
+            ListadoDeClientesNormalesDg.DataSource = null;
+
+
+            ListadoClienteNormalMostrarDtos = await ClienteNormalControllerC_.ObtenerTodosLosClientesNormalesAsync();
+            ListadoDeClientesNormalesDg.DataSource = ListadoClienteNormalMostrarDtos;
 
         }
 
@@ -183,7 +221,7 @@ namespace p_proyect
 
         private void BuscarUsuarios_TextChanged(object sender, EventArgs e)
         {
-            
+
 
             FindForNameHelper.BuscarPorNombre<UsuarioMostrarDto>(sender, e, Listado_De_usuarios_Mostrar, Usuarios_DataGrid);
         }
@@ -250,7 +288,7 @@ namespace p_proyect
 
         private void materialMaskedTextBox1_TextChanged(object sender, EventArgs e)
         {
-            
+
 
             FindForNameHelper.BuscarPorNombre<ProductoMostrarDto>(sender, e, productoMostrarDtos, ListadoDeProductosMostrar);
         }
@@ -373,7 +411,7 @@ namespace p_proyect
 
         private void materialMaskedTextBox2_TextChanged(object sender, EventArgs e)
         {
-            
+
 
             FindForNameHelper.BuscarPorNombre<ProveedorMostrarDto>(sender, e, listadoDeProveedoresMostrar, ProveedoresListadoShow);
         }
@@ -501,6 +539,15 @@ namespace p_proyect
                     this.Text = "Gestión de Clientes Especiales";
                     await CargarListadoDeClientesEspeciales();
                     break;
+                case 4:
+                    Text = "Gestion de Clientes Normales";
+                    await CargarListadoDeClientesNormales();
+                    break;
+
+                case 5:
+                    Text = "Venta Al Por Mayor";
+                    await CargarTablasVenta();
+                    break;
             }
         }
 
@@ -511,7 +558,272 @@ namespace p_proyect
 
         }
 
+        int IdClienteNormalSeleccionado = -1;
+        private void ListadoDeClientesNormalesDg_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            IdClienteNormalSeleccionado = DataGridHelper.ObtenerIdSeleccionado(ListadoDeClientesNormalesDg, e);
+
+            if (IdClienteNormalSeleccionado != -1)
+            {
+                MessageBox.Show("ID seleccionado: " + IdClienteNormalSeleccionado);
+            }
+        }
+
+        private void materialButton18_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        ClienteNormalControllerC ClienteNormalControllerC = new ClienteNormalControllerC();
+        private async void materialButton16_Click(object sender, EventArgs e)
+        {
+            var respuesta = MessageBox.Show("Quieres Eliminar a este cliente?", "Pregunta sobre Eliminacion", MessageBoxButtons.YesNo);
+            if (respuesta == DialogResult.No)
+            {
+                return;
+            }
 
 
+            await ClienteNormalControllerC_.EliminarClienteNormalAsync(IdClienteNormalSeleccionado);
+
+            MessageBox.Show("Eliminacion exitosa!!");
+        }
+
+        private async void materialButton15_Click(object sender, EventArgs e)
+        {
+            ReportesHelperForm reportesHelperForm = new ReportesHelperForm();
+
+            reportesHelperForm.ListadoParaImprimirClienteNormal = ListadoClienteNormalMostrarDtos;
+
+            reportesHelperForm.ShowDialog();
+
+
+            await CargarListadoDeClientesNormales();
+
+
+        }
+
+        private void materialMaskedTextBox3_TextChanged(object sender, EventArgs e)
+        {
+            FindForNameHelper.BuscarPorNombre<ClienteNormalMostrarDto>(sender, e, ListadoClienteNormalMostrarDtos, ListadoDeClientesNormalesDg);
+        }
+
+        private void materialCard7_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void GestionUsers_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void materialLabel2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void materialLabel1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void materialCard1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void materialLabel3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void materialLabel4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void materialCard2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void GestionDeProveedores_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void materialLabel5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void materialLabel6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void materialCard3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void ProveedoresListadoShow_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void GestionDeClientesEspeciales_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void materialLabel7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void materialLabel8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void materialCard4_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void ListadoClienteEspecialDg_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void GestionDeClientesNormales_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void materialLabel9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void materialLabel10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void materialCard5_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void ListadoDeClientesNormalesDg_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void BuscarUsuarios_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void materialMaskedTextBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void materialMaskedTextBox2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void NombreDelClienteEspecial_txt_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void materialMaskedTextBox3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void materialCard6_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CarritoDecompras_dg_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void materialLabel11_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ListadoDeProductosDisponibles_dg_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void materialLabel12_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void usuarioMostrarDtoBindingSource_CurrentChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void proveedorBindingSource_CurrentChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void productoMostrarDtoBindingSource1_CurrentChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void productoMostrarDtoBindingSource_CurrentChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void proveedorBindingSource1_CurrentChanged(object sender, EventArgs e)
+        {
+
+        }
+        int ProductoAComprarVenta = -1;
+        ProductoVentasMostrarDto productoSeleccionado = new ProductoVentasMostrarDto();
+        private async void ListadoDeProductosDisponibles_dg_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            ProductoAComprarVenta = DataGridHelper.ObtenerIdSeleccionado(ListadoDeProductosDisponibles_dg, e);
+
+            if (ProductoAComprarVenta != -1)
+            {
+                MessageBox.Show("ID seleccionado: " + ProductoAComprarVenta);
+            }
+
+            productoSeleccionado = listadoProductosDisponiblesVenta.FirstOrDefault(x => x.Id == ProductoAComprarVenta);
+            CargarProductoVentaEnCombos(productoSeleccionado);
+        }
+
+
+        private void CargarProductoVentaEnCombos(ProductoVentasMostrarDto cargar)
+        {
+            Codigo_Del_Producto_txt.Text = cargar.CodigoDelProducto;
+            Nombre_Del_Producto_txt.Text = cargar.Nombre;
+            UnidadDeMedidaDelProducto.Text = cargar.unidadMedida.ToString();
+            PrecioPorUnidadDelProducto_txt.Text = cargar.Precio.ToString();
+        }
     }
 }

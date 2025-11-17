@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using p_proyect.Modules;
 
 namespace p_proyect.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20251116143217_altertablkeClienteNormalDeleteFkLj")]
+    partial class altertablkeClienteNormalDeleteFkLj
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -139,7 +141,7 @@ namespace p_proyect.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int?>("ClienteEspecialId")
+                    b.Property<int>("ClienteEspecialId")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("Fecha")
@@ -153,40 +155,6 @@ namespace p_proyect.Migrations
                     b.HasIndex("ClienteEspecialId");
 
                     b.ToTable("Compras");
-                });
-
-            modelBuilder.Entity("p_proyect.Modules.Entidades.CompraEntity", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("CantidadDelProducto")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("FechaCreacio")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("IdProducto")
-                        .HasColumnType("int");
-
-                    b.Property<int>("IdVenta")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("ListaDeproductosId")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("VentaId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ListaDeproductosId");
-
-                    b.HasIndex("VentaId");
-
-                    b.ToTable("ComprasEntity");
                 });
 
             modelBuilder.Entity("p_proyect.Modules.Entidades.Proveedor", b =>
@@ -266,33 +234,6 @@ namespace p_proyect.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Usuarios");
-                });
-
-            modelBuilder.Entity("p_proyect.Modules.Entidades.Ventas", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<decimal>("Descuento")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.Property<DateTime>("FechaCreacio")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("IdCliente")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Tipo_De_Venta")
-                        .HasColumnType("int");
-
-                    b.Property<decimal>("TotalEntero")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Ventas");
                 });
 
             modelBuilder.Entity("p_proyect.Modules.Producto", b =>
@@ -388,18 +329,9 @@ namespace p_proyect.Migrations
                 {
                     b.HasOne("ClienteEspecial", null)
                         .WithMany("HistorialCompras")
-                        .HasForeignKey("ClienteEspecialId");
-                });
-
-            modelBuilder.Entity("p_proyect.Modules.Entidades.CompraEntity", b =>
-                {
-                    b.HasOne("p_proyect.Modules.Producto", "ListaDeproductos")
-                        .WithMany()
-                        .HasForeignKey("ListaDeproductosId");
-
-                    b.HasOne("p_proyect.Modules.Entidades.Ventas", "Venta")
-                        .WithMany("ListadoDeCompras")
-                        .HasForeignKey("VentaId");
+                        .HasForeignKey("ClienteEspecialId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("p_proyect.Modules.Producto", b =>

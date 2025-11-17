@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using p_proyect.Modules;
 using p_proyect.Modules.Entidades.dtos.dtoProductos;
+using p_proyect.Modules.Entidades.dtos.dtoVentas;
 using p_proyect.Modules.Enums;
 using System;
 using System.Collections.Generic;
@@ -13,6 +14,22 @@ namespace p_proyect.Controller.ProductosController
     {
         public ProductosControllerC() { }
 
+
+
+        public async Task<List<ProductoVentasMostrarDto>> ObtenerTodosLosproductosParaListaDeProductos(TipoDeVenta tipoDeVenta)
+        {
+            using (var context = new AppDbContext(new DbContextOptions<AppDbContext>()))
+            {
+                var listadoPuro = await context.Productos.Where(pro => pro.TipoDeDeSalida == tipoDeVenta && pro.Cantidad > 0).ToListAsync();
+                List<ProductoVentasMostrarDto> listadoConvertido = new List<ProductoVentasMostrarDto>();
+                for (int i = 0; i < listadoPuro.Count; i++)
+                {
+                    listadoConvertido.Add(ProductoMapper.DeProductoAProductoVentasDto(listadoPuro[i]));
+                }
+
+                return listadoConvertido;
+            }
+        }
 
         public async Task<List<ProductoMostrarDto>> ObtenerTodosLosProductos()
         {
@@ -105,7 +122,7 @@ namespace p_proyect.Controller.ProductosController
                 producto.FechaActualizacion = DateTime.UtcNow;
 
                 context.Productos.Update(producto);
-                
+
                 await context.SaveChangesAsync();
 
                 return producto;
@@ -174,7 +191,8 @@ namespace p_proyect.Controller.ProductosController
             }
         }
 
-        public bool EliminarUnProductoPorElId(int id) {
+        public bool EliminarUnProductoPorElId(int id)
+        {
             using (var context = new AppDbContext(new DbContextOptions<AppDbContext>()))
             {
                 context.Productos.Remove(TraerUnProductoPorElId(id));

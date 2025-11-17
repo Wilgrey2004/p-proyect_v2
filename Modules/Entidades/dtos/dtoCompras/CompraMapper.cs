@@ -14,7 +14,7 @@ namespace p_proyect.Modules.Entidades.dtos.dtoCompras
             return new CompraMostrarDto
             {
                 Id = entity.Id,
-                ClienteEspecialId = entity.ClienteEspecialId,
+                //ClienteEspecialId = entity.ClienteEspecialId,
                 Fecha = entity.Fecha,
                 Total = entity.Total,
                 Productos = entity.Productos
@@ -27,7 +27,7 @@ namespace p_proyect.Modules.Entidades.dtos.dtoCompras
             return new CompraEditarDto
             {
                 Id = entity.Id,
-                ClienteEspecialId = entity.ClienteEspecialId,
+                //ClienteEspecialId = entity.ClienteEspecialId,
                 Fecha = entity.Fecha,
                 Total = entity.Total,
                 Productos = entity.Productos
@@ -39,7 +39,7 @@ namespace p_proyect.Modules.Entidades.dtos.dtoCompras
         {
             return new CompraCrearDto
             {
-                ClienteEspecialId = entity.ClienteEspecialId,
+                //ClienteEspecialId = entity.ClienteEspecialId,
                 Fecha = entity.Fecha,
                 Total = entity.Total,
                 Productos = entity.Productos
@@ -51,7 +51,7 @@ namespace p_proyect.Modules.Entidades.dtos.dtoCompras
         {
             return new Compra
             {
-                ClienteEspecialId = dto.ClienteEspecialId,
+                //ClienteEspecialId = dto.ClienteEspecialId,
                 Fecha = dto.Fecha,
                 Total = dto.Total,
                 Productos = dto.Productos
@@ -61,7 +61,7 @@ namespace p_proyect.Modules.Entidades.dtos.dtoCompras
         // ===== EDITAR DTO → ENTIDAD (UPDATE) =====
         public static void UpdateEntity(this CompraEditarDto dto, Compra entity)
         {
-            entity.ClienteEspecialId = dto.ClienteEspecialId;
+            //entity.ClienteEspecialId = dto.ClienteEspecialId;
             entity.Fecha = dto.Fecha;
             entity.Total = dto.Total;
             entity.Productos = dto.Productos;

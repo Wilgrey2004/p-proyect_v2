@@ -13,13 +13,18 @@ namespace p_proyect.Controller.ClienteNormalController
         // ============================================================
         // GET: Obtener todos los clientes normales
         // ============================================================
-        public async Task<List<ClienteNormal>> ObtenerTodosLosClientesNormalesAsync()
+        public async Task<List<ClienteNormalMostrarDto>> ObtenerTodosLosClientesNormalesAsync()
         {
             using (var context = new AppDbContext(new DbContextOptions<AppDbContext>()))
             {
-                return await context.ClientesNormales
-                    .Include(c => c.Compra_)
-                    .ToListAsync();
+                var listadoOriginal = await context.ClientesNormales.ToListAsync();
+                var listaConvertida = new List<ClienteNormalMostrarDto>();
+                for (var i = 0; i < listadoOriginal.Count; i++)
+                {
+                    listaConvertida.Add(ClienteNormalMapper.ToMostrarDto(listadoOriginal[i]));
+                }
+
+                return listaConvertida;
             }
         }
 
@@ -41,7 +46,7 @@ namespace p_proyect.Controller.ClienteNormalController
                     Nombre = dto.Nombre.Trim(),
                     Contacto = dto.Contacto,
                     FechaCreacion = DateTime.Now,
-                    UltimaCompra = dto.UltimaCompra
+                    //UltimaCompra = dto.UltimaCompra
                 };
 
                 context.ClientesNormales.Add(nuevo);
@@ -61,7 +66,7 @@ namespace p_proyect.Controller.ClienteNormalController
             using (var context = new AppDbContext(new DbContextOptions<AppDbContext>()))
             {
                 var cliente = await context.ClientesNormales
-                    .Include(c => c.Compra_)
+                    //.Include(c => c.Compra_)
                     .FirstOrDefaultAsync(c => c.Id == dto.Id);
 
                 if (cliente == null)
@@ -70,8 +75,8 @@ namespace p_proyect.Controller.ClienteNormalController
                 if (dto.Nombre != null) cliente.Nombre = dto.Nombre.Trim();
                 if (dto.Contacto != null) cliente.Contacto = dto.Contacto;
 
-                if (dto.UltimaCompra > 0)
-                    cliente.UltimaCompra = dto.UltimaCompra;
+                //if (dto.UltimaCompra > 0)
+                //    cliente.UltimaCompra = dto.UltimaCompra;
 
                 context.ClientesNormales.Update(cliente);
                 await context.SaveChangesAsync();
@@ -87,7 +92,7 @@ namespace p_proyect.Controller.ClienteNormalController
             using (var context = new AppDbContext(new DbContextOptions<AppDbContext>()))
             {
                 return await context.ClientesNormales
-                    .Include(c => c.Compra_)
+                    //.Include(c => c.Compra_)
                     .FirstOrDefaultAsync(c => c.Id == id);
             }
         }

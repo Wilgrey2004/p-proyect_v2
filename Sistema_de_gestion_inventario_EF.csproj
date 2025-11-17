@@ -188,6 +188,7 @@
     <Compile Include="Controller\ProveedorController\ProveedorControllerC.cs" />
     <Compile Include="Controller\ProveedorController\ProveedorCrearDto.cs" />
     <Compile Include="Controller\UsuarioController\UsuarioControllerC.cs" />
+    <Compile Include="Core\Interfaces\ICliente.cs" />
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -214,6 +215,34 @@
     <Compile Include="Migrations\20251115151447_clienteNormal.Designer.cs">
       <DependentUpon>20251115151447_clienteNormal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\20251116142739_altertablkeClienteNormalDeleteFk.cs" />
+    <Compile Include="Migrations\20251116142739_altertablkeClienteNormalDeleteFk.Designer.cs">
+      <DependentUpon>20251116142739_altertablkeClienteNormalDeleteFk.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20251116142942_altertablkeClienteNormalDeleteFkL.cs" />
+    <Compile Include="Migrations\20251116142942_altertablkeClienteNormalDeleteFkL.Designer.cs">
+      <DependentUpon>20251116142942_altertablkeClienteNormalDeleteFkL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20251116143217_altertablkeClienteNormalDeleteFkLj.cs" />
+    <Compile Include="Migrations\20251116143217_altertablkeClienteNormalDeleteFkLj.Designer.cs">
+      <DependentUpon>20251116143217_altertablkeClienteNormalDeleteFkLj.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20251116143743_alterComprasDeletefkClienteEspecial.cs" />
+    <Compile Include="Migrations\20251116143743_alterComprasDeletefkClienteEspecial.Designer.cs">
+      <DependentUpon>20251116143743_alterComprasDeletefkClienteEspecial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20251116144034_alterComprasaddKey.cs" />
+    <Compile Include="Migrations\20251116144034_alterComprasaddKey.Designer.cs">
+      <DependentUpon>20251116144034_alterComprasaddKey.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20251116162633_addCompraEntityAddVentas.cs" />
+    <Compile Include="Migrations\20251116162633_addCompraEntityAddVentas.Designer.cs">
+      <DependentUpon>20251116162633_addCompraEntityAddVentas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20251116201426_typeOfsale.cs" />
+    <Compile Include="Migrations\20251116201426_typeOfsale.Designer.cs">
+      <DependentUpon>20251116201426_typeOfsale.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\AppDbContextModelSnapshot.cs" />
     <Compile Include="Modules\AppDbContext.cs" />
     <Compile Include="Modules\AppDbContextFactory.cs" />
@@ -221,6 +250,7 @@
     <Compile Include="Modules\Entidades\ClienteEspecial.cs" />
     <Compile Include="Modules\Entidades\ClienteNormal.cs" />
     <Compile Include="Modules\Entidades\Compra.cs" />
+    <Compile Include="Modules\Entidades\ComprasEntity.cs" />
     <Compile Include="Modules\Entidades\dtos\dtoAdeudos\AdeudoCrearDto.cs" />
     <Compile Include="Modules\Entidades\dtos\dtoAdeudos\AdeudoEditarDto.cs" />
     <Compile Include="Modules\Entidades\dtos\dtoAdeudos\AdeudoMapper.cs" />
@@ -246,6 +276,7 @@
     <Compile Include="Modules\Entidades\dtos\dtoUsuarios\EditarUsuarioDto.cs" />
     <Compile Include="Modules\Entidades\dtos\dtoUsuarios\UsuarioCreacionDto.cs" />
     <Compile Include="Modules\Entidades\dtos\dtoUsuarios\UsuarioMostrarDto.cs" />
+    <Compile Include="Modules\Entidades\dtos\dtoProductos\ProductoVentasMostrarDto.cs" />
     <Compile Include="Modules\Entidades\Formularios\ClienteEspecialForms\AgregarClienteEspecial.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -257,6 +288,12 @@
     </Compile>
     <Compile Include="Modules\Entidades\Formularios\ClienteEspecialForms\ClienteEspecialEditar.Designer.cs">
       <DependentUpon>ClienteEspecialEditar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Entidades\Formularios\ClienteNormalForms\AgregarClienteNormal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\Entidades\Formularios\ClienteNormalForms\AgregarClienteNormal.Designer.cs">
+      <DependentUpon>AgregarClienteNormal.cs</DependentUpon>
     </Compile>
     <Compile Include="Modules\Entidades\Formularios\ProductosForms\AgregarEditarProductos.cs">
       <SubType>Form</SubType>
@@ -284,6 +321,7 @@
     </Compile>
     <Compile Include="Modules\Entidades\Proveedor.cs" />
     <Compile Include="Modules\Entidades\Usuarios.cs" />
+    <Compile Include="Modules\Entidades\Ventas.cs" />
     <Compile Include="Modules\Enums\TipoDeVenta.cs" />
     <Compile Include="Modules\Enums\UnidadMedida.cs" />
     <Compile Include="Modules\Enums\UserRole.cs" />
@@ -315,6 +353,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Modules\Entidades\Formularios\ClienteEspecialForms\ClienteEspecialEditar.resx">
       <DependentUpon>ClienteEspecialEditar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Entidades\Formularios\ClienteNormalForms\AgregarClienteNormal.resx">
+      <DependentUpon>AgregarClienteNormal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modules\Entidades\Formularios\ProductosForms\AgregarEditarProductos.resx">
       <DependentUpon>AgregarEditarProductos.cs</DependentUpon>
@@ -408,8 +449,8 @@
     <None Include="src\Iconos\lista-de-verificacion.png" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Modules\Entidades\dtos\dtoVentas\" />
     <Folder Include="Modules\Entidades\Formularios\AdeudosForms\" />
-    <Folder Include="Modules\Entidades\Formularios\ClienteNormalForms\" />
     <Folder Include="Modules\Entidades\Formularios\CompraForms\" />
   </ItemGroup>
   <ItemGroup>

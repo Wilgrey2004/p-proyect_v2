@@ -13,7 +13,7 @@ namespace p_proyect.Modules.Entidades.dtos.dtoClienteNormal
                 Nombre = entity.Nombre,
                 Contacto = entity.Contacto,
                 FechaCreacion = entity.FechaCreacion,
-                UltimaCompra = entity.UltimaCompra
+               
             };
         }
 
@@ -25,7 +25,7 @@ namespace p_proyect.Modules.Entidades.dtos.dtoClienteNormal
                 Id = entity.Id,
                 Nombre = entity.Nombre,
                 Contacto = entity.Contacto,
-                UltimaCompra = entity.UltimaCompra,
+               
                 FechaDeEdicion = DateTime.Now
             };
         }
@@ -37,7 +37,7 @@ namespace p_proyect.Modules.Entidades.dtos.dtoClienteNormal
             {
                 Nombre = entity.Nombre,
                 Contacto = entity.Contacto,
-                UltimaCompra = entity.UltimaCompra,
+               
                 FechaCreacion = entity.FechaCreacion
             };
         }
@@ -49,7 +49,7 @@ namespace p_proyect.Modules.Entidades.dtos.dtoClienteNormal
             {
                 Nombre = dto.Nombre,
                 Contacto = dto.Contacto,
-                UltimaCompra = dto.UltimaCompra,
+                
                 FechaCreacion = dto.FechaCreacion
             };
         }
@@ -59,7 +59,7 @@ namespace p_proyect.Modules.Entidades.dtos.dtoClienteNormal
         {
             entity.Nombre = dto.Nombre;
             entity.Contacto = dto.Contacto;
-            entity.UltimaCompra = dto.UltimaCompra;
+            
         }
     }
 }

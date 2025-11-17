@@ -1,24 +1,22 @@
-﻿using p_proyect.Modules.Entidades;
+﻿using p_proyect.Core.Interfaces;
+using p_proyect.Modules.Entidades;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-public class ClienteEspecial
+public class ClienteEspecial : ICliente
 {
     [Key]
     public int Id { get; set; }
 
-    // Datos personales
+    // Datos en común
     public string Nombre { get; set; }
+    public string Contacto { get; set; }
+    public DateTime FechaCreacion { get; set; } = DateTime.Now;
+
+    // Datos exclusivos de ClienteEspecial
     public string Apellido { get; set; }
     public string Cedula { get; set; }
-   
-   
-    public string Contacto { get; set; }
-   
-
-    // Metadatos
-    public DateTime FechaCreacion { get; set; } = DateTime.Now;
     public DateTime? FechaDeEdicion { get; set; }
     public DateTime? FechaUltimaActualizacion { get; set; }
     public bool EsClienteActivo { get; set; } = true;

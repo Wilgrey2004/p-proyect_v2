@@ -26,6 +26,10 @@ namespace p_proyect.Modules
 
          public DbSet<ClienteNormal> ClientesNormales { get; set; }
 
+        public DbSet<CompraEntity> ComprasEntity {  get; set; }
+
+        public DbSet<Ventas> Ventas { get; set; }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             // ✅ Solo por si el contexto se crea sin opciones

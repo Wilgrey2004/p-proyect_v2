@@ -1,6 +1,7 @@
 ﻿using MaterialSkin;
 using MaterialSkin.Controls;
 using p_proyect.Modules.Entidades.dtos.dtoClienteEspecial;
+using p_proyect.Modules.Entidades.dtos.dtoClienteNormal;
 using p_proyect.Modules.Entidades.dtos.dtoProductos;
 using p_proyect.Modules.Entidades.dtos.dtoProveedor;
 using p_proyect.Modules.Entidades.dtos.dtoUsuarios;
@@ -25,6 +26,12 @@ namespace p_proyect.Utils.Reportes
 
         public List<ClienteEspecialMostrarDto> ListadoParaImprimirClienteEspecial = new List<ClienteEspecialMostrarDto>();
         public List<ClienteEspecialMostrarDto> ListadoParaImprimirClienteEspecial_Copia = new List<ClienteEspecialMostrarDto>();
+
+        public List<ClienteNormalMostrarDto> ListadoParaImprimirClienteNormal = new List<ClienteNormalMostrarDto>();
+        public List<ClienteNormalMostrarDto> ListadoParaImprimirClienteNormal_Copia = new List<ClienteNormalMostrarDto>();
+
+
+
         public ReportesHelperForm()
         {
             InitializeComponent();
@@ -74,6 +81,13 @@ namespace p_proyect.Utils.Reportes
                 ListadoParaReportesShow.DataSource = ListadoParaImprimirClienteEspecial;
                 return;
             }
+
+            if (ListadoParaImprimirClienteNormal != null && ListadoParaImprimirClienteNormal.Count > 0)
+            {
+                ListadoParaImprimirClienteNormal = new List<ClienteNormalMostrarDto>(ListadoParaImprimirClienteNormal);
+                ListadoParaReportesShow.DataSource = ListadoParaImprimirClienteNormal;
+                return;
+            }
         }
 
 
@@ -117,6 +131,37 @@ namespace p_proyect.Utils.Reportes
                 "Clientes_Especiales",
                 "ReportesPlantilla",
                 "ReporteDeClientes"
+            );
+
+            MessageBox.Show("Reporte de productos generado con éxito ✅");
+        }
+        private void GenerarReportesClientesNormales()
+        {
+            if (ListadoParaImprimirClienteNormal == null || ListadoParaImprimirClienteNormal.Count == 0)
+                return;
+
+            var respuesta = MessageBox.Show("¿Estás seguro de que quieres generar un reporte de Clientes Normales?",
+                                            "Generar reporte", MessageBoxButtons.YesNo);
+
+            if (respuesta == DialogResult.No)
+                return;
+
+            List<string> nombresPropiedades = new List<string>
+            {
+                "ID",
+                "Nombre",
+                "Contacto",
+                "Fecha de Creación",
+                "ID de Última Compra"
+
+            };
+
+            GeneradorDePdf.GeneradorDePDFS<ClienteNormalMostrarDto>(
+                ListadoParaImprimirClienteNormal,
+                nombresPropiedades,
+                "Clientes_Normales",
+                "ReportesPlantilla",
+                "Reporte_De_Clientes"
             );
 
             MessageBox.Show("Reporte de productos generado con éxito ✅");
@@ -262,6 +307,8 @@ namespace p_proyect.Utils.Reportes
 
             if (ListadoParaImprimirClienteEspecial != null && ListadoParaImprimirClienteEspecial.Count > 0) { GenerarReportesClientesEspeciales(); return; }
 
+            if (ListadoParaImprimirClienteNormal != null && ListadoParaImprimirClienteNormal.Count > 0) { GenerarReportesClientesNormales(); return; }
+
         }
         public static List<T> FiltrarPorRangoDeFechas<T>(List<T> datos, DateTime fechaInicio, DateTime fechaFin) where T : class
         {
@@ -297,6 +344,17 @@ namespace p_proyect.Utils.Reportes
             if (ListadoParaImprimirProveedor != null)
             {
                 GenerarReportesProveedores();
+                return;
+            }
+            if (ListadoParaImprimirClienteEspecial != null)
+            {
+                GenerarReportesClientesEspeciales();
+                return;
+            }
+
+            if (ListadoParaImprimirClienteNormal != null)
+            {
+                GenerarReportesClientesNormales();
                 return;
             }
         }
@@ -335,6 +393,13 @@ namespace p_proyect.Utils.Reportes
             else if (ListadoParaImprimirClienteEspecial != null && ListadoParaImprimirClienteEspecial.Count > 0)
             {
                 CargarPorFechasClientesEspeciales();
+                return;
+            }
+
+            else if (ListadoParaImprimirClienteNormal != null && ListadoParaImprimirClienteNormal.Count > 0)
+            {
+                CargarPorFechasClientesNormales();
+                return;
             }
         }
 
@@ -342,6 +407,18 @@ namespace p_proyect.Utils.Reportes
         {
             var filtrados = FiltrarPorRangoDeFechas<ClienteEspecialMostrarDto>(
                      ListadoParaImprimirClienteEspecial,
+                     FechaDeInicioDelReporte.Value,
+                     FechaDeFinalizacionDelReporte.Value
+                  );
+            ListadoParaReportesShow.DataSource = null;
+            ListadoParaReportesShow.DataSource = filtrados;
+            return;
+        }
+
+        private void CargarPorFechasClientesNormales()
+        {
+            var filtrados = FiltrarPorRangoDeFechas<ClienteNormalMostrarDto>(
+                     ListadoParaImprimirClienteNormal,
                      FechaDeInicioDelReporte.Value,
                      FechaDeFinalizacionDelReporte.Value
                   );
@@ -380,23 +457,33 @@ namespace p_proyect.Utils.Reportes
                 ListadoParaReportesShow.DataSource = null;
                 ListadoParaReportesShow.DataSource = ListadoParaImprimirUsuarios;
             }
+
             else if (ListadoParaImprimirProductos != null && ListadoParaImprimirProductos.Count > 0)
             {
                 ListadoParaImprimirProductos = new List<ProductoMostrarDto>(ListadoParaImprimirProductos_Copia);
                 ListadoParaReportesShow.DataSource = null;
                 ListadoParaReportesShow.DataSource = ListadoParaImprimirProductos;
             }
+
             else if (ListadoParaImprimirProveedor != null && ListadoParaImprimirProveedor.Count > 0)
             {
                 ListadoParaImprimirProveedor = new List<ProveedorMostrarDto>(ListadoParaImprimirProveedor_Copia);
                 ListadoParaReportesShow.DataSource = null;
                 ListadoParaReportesShow.DataSource = ListadoParaImprimirProveedor;
             }
+
             else if (ListadoParaImprimirClienteEspecial != null && ListadoParaImprimirClienteEspecial.Count > 0)
             {
                 ListadoParaImprimirClienteEspecial = new List<ClienteEspecialMostrarDto>(ListadoParaImprimirClienteEspecial_Copia);
                 ListadoParaReportesShow.DataSource = null;
                 ListadoParaReportesShow.DataSource = ListadoParaImprimirClienteEspecial;
+            }
+
+            else if (ListadoParaImprimirClienteNormal != null && ListadoParaImprimirClienteNormal.Count > 0)
+            {
+                ListadoParaImprimirClienteNormal = new List<ClienteNormalMostrarDto>(ListadoParaImprimirClienteNormal_Copia);
+                ListadoParaReportesShow.DataSource = null;
+                ListadoParaReportesShow.DataSource = ListadoParaImprimirClienteNormal;
             }
         }
 

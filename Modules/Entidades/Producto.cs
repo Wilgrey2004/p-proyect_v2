@@ -43,6 +43,9 @@ namespace p_proyect.Modules
         [MaxLength(50)]
         public UnidadMedida UnidadMedida { get; set; } // Ejemplo: "Unidad", "Caja", "Litro", "Kg"
 
+        
+
+
         // Información económica
         [Column(TypeName = "decimal(18,2)")]
         public decimal PrecioCompra { get; set; }

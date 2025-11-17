@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using p_proyect.Modules.Entidades;
+using p_proyect.Modules.Entidades.dtos.dtoVentas;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -101,6 +102,19 @@ namespace p_proyect.Modules.Entidades.dtos.dtoProductos
             p.ProveedorId = dto.ProveedorId;
 
             p.FechaActualizacion = DateTime.Now;
+        }
+
+        public static ProductoVentasMostrarDto DeProductoAProductoVentasDto(this Producto p)
+        {
+            return new ProductoVentasMostrarDto
+            {
+                Id = p.Id,
+                Nombre = p.Nombre,
+                CodigoDelProducto = p.CodigoBarra,  // aquí usas el código del producto
+                Stock = p.Cantidad,                 // stock actual
+                Precio = p.PrecioVenta    ,
+                unidadMedida = p.UnidadMedida// el precio que se usará en ventas
+            };
         }
     }
 }

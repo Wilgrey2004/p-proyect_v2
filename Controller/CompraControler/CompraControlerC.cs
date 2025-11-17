@@ -38,7 +38,7 @@ namespace p_proyect.Controller.CompraControler
 
                 var nuevaCompra = new Compra
                 {
-                    ClienteEspecialId = dto.ClienteEspecialId,
+                    //ClienteEspecialId = dto.ClienteEspecialId,
                     Fecha = DateTime.Now,
                     Productos = productos,
                     Total = productos.Sum(p => p.PrecioVenta)
@@ -66,8 +66,8 @@ namespace p_proyect.Controller.CompraControler
                 if (compra == null)
                     throw new Exception("La compra no existe.");
 
-                if (dto.ClienteEspecialId > 0)
-                    compra.ClienteEspecialId = dto.ClienteEspecialId;
+                //if (dto.ClienteEspecialId > 0)
+                //    compra.ClienteEspecialId = dto.ClienteEspecialId;
 
                 if (dto.Productos != null)
                 {
