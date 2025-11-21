@@ -1,5 +1,6 @@
 ﻿using MaterialSkin;
 using MaterialSkin.Controls;
+using p_proyect.Modules.Entidades;
 using p_proyect.Modules.Entidades.dtos.dtoClienteEspecial;
 using p_proyect.Modules.Entidades.dtos.dtoClienteNormal;
 using p_proyect.Modules.Entidades.dtos.dtoProductos;
@@ -30,7 +31,8 @@ namespace p_proyect.Utils.Reportes
         public List<ClienteNormalMostrarDto> ListadoParaImprimirClienteNormal = new List<ClienteNormalMostrarDto>();
         public List<ClienteNormalMostrarDto> ListadoParaImprimirClienteNormal_Copia = new List<ClienteNormalMostrarDto>();
 
-
+        public List<Ventas> ListadoParaImprimirVentas = new List<Ventas>();
+        public List<Ventas> ListadoParaImprimirVentas_Copia = new List<Ventas>();
 
         public ReportesHelperForm()
         {
@@ -84,8 +86,15 @@ namespace p_proyect.Utils.Reportes
 
             if (ListadoParaImprimirClienteNormal != null && ListadoParaImprimirClienteNormal.Count > 0)
             {
-                ListadoParaImprimirClienteNormal = new List<ClienteNormalMostrarDto>(ListadoParaImprimirClienteNormal);
+                ListadoParaImprimirClienteNormal_Copia = new List<ClienteNormalMostrarDto>(ListadoParaImprimirClienteNormal);
                 ListadoParaReportesShow.DataSource = ListadoParaImprimirClienteNormal;
+                return;
+            }
+
+            if (ListadoParaImprimirVentas != null && ListadoParaImprimirVentas.Count > 0)
+            {
+                ListadoParaImprimirVentas_Copia = new List<Ventas>(ListadoParaImprimirVentas);
+                ListadoParaReportesShow.DataSource = ListadoParaImprimirVentas;
                 return;
             }
         }
@@ -138,13 +147,19 @@ namespace p_proyect.Utils.Reportes
         private void GenerarReportesClientesNormales()
         {
             if (ListadoParaImprimirClienteNormal == null || ListadoParaImprimirClienteNormal.Count == 0)
-                return;
+            {
 
-            var respuesta = MessageBox.Show("¿Estás seguro de que quieres generar un reporte de Clientes Normales?",
-                                            "Generar reporte", MessageBoxButtons.YesNo);
-
-            if (respuesta == DialogResult.No)
                 return;
+            }
+
+            //var respuesta = MessageBox.Show("¿Estás seguro de que quieres generar un reporte de Ventas?",
+            //                                "Generar reporte", MessageBoxButtons.YesNo);
+
+            //if (respuesta == DialogResult.No)
+            //{
+
+            //    return;
+            //}
 
             List<string> nombresPropiedades = new List<string>
             {
@@ -154,14 +169,51 @@ namespace p_proyect.Utils.Reportes
                 "Fecha de Creación",
                 "ID de Última Compra"
 
+
+
             };
 
             GeneradorDePdf.GeneradorDePDFS<ClienteNormalMostrarDto>(
                 ListadoParaImprimirClienteNormal,
                 nombresPropiedades,
-                "Clientes_Normales",
+                "Reporte De ventas",
                 "ReportesPlantilla",
                 "Reporte_De_Clientes"
+            );
+
+            MessageBox.Show("Reporte de productos generado con éxito ✅");
+        }
+
+        private void GenerarReportesVentas()
+        {
+            if (ListadoParaImprimirVentas == null || ListadoParaImprimirVentas.Count == 0)
+                return;
+
+            //var respuesta = MessageBox.Show("¿Estás seguro de que quieres generar un reporte de Clientes Normales?",
+            //                                "Generar reporte", MessageBoxButtons.YesNo);
+
+            //if (respuesta == DialogResult.No)
+            //return;
+
+            List<string> nombresPropiedades = new List<string>
+            {
+                "Codigo unico de la venta",
+                "Descuento de la venta",
+                "Total de la venta",
+                "Codigo del cliente",
+                "Monto descontado",
+                "Total con el descuento",
+                "Fecha de Creacion",
+                "Tipo de salida"
+
+            };
+
+            GeneradorDePdf.GeneradorDePDFS<Ventas>(
+                ListadoParaImprimirVentas,
+                nombresPropiedades,
+                "Reporte de ventas",
+                "ReportesPlantilla",
+                "Reporte de ventas"
             );
 
             MessageBox.Show("Reporte de productos generado con éxito ✅");
@@ -173,11 +225,11 @@ namespace p_proyect.Utils.Reportes
             if (ListadoParaImprimirProductos == null || ListadoParaImprimirProductos.Count == 0)
                 return;
 
-            var respuesta = MessageBox.Show("¿Estás seguro de que quieres generar un reporte de Productos?",
-                                            "Generar reporte", MessageBoxButtons.YesNo);
+            //var respuesta = MessageBox.Show("¿Estás seguro de que quieres generar un reporte de Productos?",
+            //                                "Generar reporte", MessageBoxButtons.YesNo);
 
-            if (respuesta == DialogResult.No)
-                return;
+            //if (respuesta == DialogResult.No)
+            //    return;
 
             List<string> nombresPropiedades = new List<string>
             {
@@ -220,8 +272,6 @@ namespace p_proyect.Utils.Reportes
             ListadoParaReportesShow.DataSource = filtrados;
         }
 
-
-
         private void ReportesHelperForm_Load(object sender, EventArgs e)
         {
             CargarListaParaReporte();
@@ -233,11 +283,11 @@ namespace p_proyect.Utils.Reportes
             if (ListadoParaImprimirUsuarios == null || ListadoParaImprimirUsuarios.Count == 0)
                 return;
 
-            var respuesta = MessageBox.Show("Estas seguro de que quieres generar un reporte de Usuarios?", "Generar reporte?", MessageBoxButtons.YesNo);
-            if (respuesta == DialogResult.No)
-            {
-                return;
-            }
+            //var respuesta = MessageBox.Show("Estas seguro de que quieres generar un reporte de Usuarios?", "Generar reporte?", MessageBoxButtons.YesNo);
+            //if (respuesta == DialogResult.No)
+            //{
+            //    return;
+            //}
             List<string> nombresPropiedades = new List<string>
                 {
                     "Id",
@@ -270,11 +320,12 @@ namespace p_proyect.Utils.Reportes
             if (ListadoParaImprimirProveedor == null || ListadoParaImprimirProveedor.Count == 0)
                 return;
 
-            var respuesta = MessageBox.Show("Estas seguro de que quieres generar un reporte de Proveedores?", "Generar reporte?", MessageBoxButtons.YesNo);
-            if (respuesta == DialogResult.No)
-            {
-                return;
-            }
+            //var respuesta = MessageBox.Show("Estas seguro de que quieres generar un reporte de Proveedores?", "Generar reporte?", MessageBoxButtons.YesNo);
+            //if (respuesta == DialogResult.No)
+            //{
+            //    return;
+            //}
+
             List<string> nombresPropiedades = new List<string>
                 {
                    "Codigo unico",
@@ -309,6 +360,7 @@ namespace p_proyect.Utils.Reportes
 
             if (ListadoParaImprimirClienteNormal != null && ListadoParaImprimirClienteNormal.Count > 0) { GenerarReportesClientesNormales(); return; }
 
+            if (ListadoParaImprimirVentas != null && ListadoParaImprimirVentas.Count > 0) { GenerarReportesVentas(); return; }
         }
         public static List<T> FiltrarPorRangoDeFechas<T>(List<T> datos, DateTime fechaInicio, DateTime fechaFin) where T : class
         {
@@ -401,6 +453,12 @@ namespace p_proyect.Utils.Reportes
                 CargarPorFechasClientesNormales();
                 return;
             }
+
+            else if (ListadoParaImprimirVentas != null && ListadoParaImprimirVentas.Count > 0)
+            {
+                CargarPorFechasVentas();
+                return;
+            }
         }
 
         private void CargarPorFechasClientesEspeciales()
@@ -419,6 +477,18 @@ namespace p_proyect.Utils.Reportes
         {
             var filtrados = FiltrarPorRangoDeFechas<ClienteNormalMostrarDto>(
                      ListadoParaImprimirClienteNormal,
+                     FechaDeInicioDelReporte.Value,
+                     FechaDeFinalizacionDelReporte.Value
+                  );
+            ListadoParaReportesShow.DataSource = null;
+            ListadoParaReportesShow.DataSource = filtrados;
+            return;
+        }
+
+        private void CargarPorFechasVentas()
+        {
+            var filtrados = FiltrarPorRangoDeFechas<Ventas>(
+                     ListadoParaImprimirVentas,
                      FechaDeInicioDelReporte.Value,
                      FechaDeFinalizacionDelReporte.Value
                   );
@@ -484,6 +554,13 @@ namespace p_proyect.Utils.Reportes
                 ListadoParaImprimirClienteNormal = new List<ClienteNormalMostrarDto>(ListadoParaImprimirClienteNormal_Copia);
                 ListadoParaReportesShow.DataSource = null;
                 ListadoParaReportesShow.DataSource = ListadoParaImprimirClienteNormal;
+            }
+
+            else if (ListadoParaImprimirVentas != null && ListadoParaImprimirVentas.Count > 0)
+            {
+                ListadoParaImprimirVentas = new List<Ventas>(ListadoParaImprimirVentas_Copia);
+                ListadoParaReportesShow.DataSource = null;
+                ListadoParaReportesShow.DataSource = ListadoParaImprimirVentas;
             }
         }
 

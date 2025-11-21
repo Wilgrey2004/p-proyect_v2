@@ -51,7 +51,7 @@ namespace p_proyect
             }
 
             // ✅ Ejecutamos el formulario principal
-            Application.Run(new Main());
+            Application.Run(new InicioDeSecion());
         }
     }
 }

@@ -16,11 +16,11 @@ namespace p_proyect.Controller.ProductosController
 
 
 
-        public async Task<List<ProductoVentasMostrarDto>> ObtenerTodosLosproductosParaListaDeProductos(TipoDeVenta tipoDeVenta)
+        public async Task<List<ProductoVentasMostrarDto>> ObtenerTodosLosproductosParaListaDeProductos()
         {
             using (var context = new AppDbContext(new DbContextOptions<AppDbContext>()))
             {
-                var listadoPuro = await context.Productos.Where(pro => pro.TipoDeDeSalida == tipoDeVenta && pro.Cantidad > 0).ToListAsync();
+                var listadoPuro = await context.Productos.Where(pro =>  pro.Cantidad > 0).ToListAsync();
                 List<ProductoVentasMostrarDto> listadoConvertido = new List<ProductoVentasMostrarDto>();
                 for (int i = 0; i < listadoPuro.Count; i++)
                 {

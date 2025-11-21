@@ -43,6 +43,22 @@ namespace p_proyect.Modules
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+
+            // Semilla para usuario administrador
+            modelBuilder.Entity<Usuarios>().HasData(
+                new Usuarios
+                {
+                    Id = 100,
+                    Nombre = "Admin",
+                    Apellido = "origen",
+                    Cedula = "No porta",
+                    Correo = "Apro24470@gmail.com",
+                    Contrasena = "admin123",
+                    Rol = Enums.UserRole.Administrador,
+                    Activo = true
+
+                }
+            );
         }
     }
 }

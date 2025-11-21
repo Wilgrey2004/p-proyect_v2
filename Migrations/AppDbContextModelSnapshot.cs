@@ -86,8 +86,8 @@ namespace p_proyect.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int?>("Compra_Id")
-                        .HasColumnType("int");
+                    b.Property<string>("ContactoDelCliente")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime?>("FechaCreacion")
                         .HasColumnType("datetime2");
@@ -95,8 +95,14 @@ namespace p_proyect.Migrations
                     b.Property<DateTime?>("FechaUltimaActualizacion")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("IdCompra")
+                    b.Property<int>("IdCliente")
                         .HasColumnType("int");
+
+                    b.Property<int>("IdVenta")
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("MontoRestanteDelAdeudo")
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<decimal>("MontoTotalAbonadoDelAdeudo")
                         .HasColumnType("decimal(18,2)");
@@ -104,9 +110,12 @@ namespace p_proyect.Migrations
                     b.Property<decimal>("MontoTotalDelAdeudo")
                         .HasColumnType("decimal(18,2)");
 
+                    b.Property<int?>("VentaId")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
 
-                    b.HasIndex("Compra_Id");
+                    b.HasIndex("VentaId");
 
                     b.ToTable("Adeudos");
                 });
@@ -174,15 +183,13 @@ namespace p_proyect.Migrations
                     b.Property<int>("IdVenta")
                         .HasColumnType("int");
 
-                    b.Property<int?>("ListaDeproductosId")
-                        .HasColumnType("int");
+                    b.Property<decimal>("PrecioUnitario")
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<int?>("VentaId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("ListaDeproductosId");
 
                     b.HasIndex("VentaId");
 
@@ -266,6 +273,22 @@ namespace p_proyect.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Usuarios");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 100,
+                            Activo = true,
+                            Apellido = "origen",
+                            Cedula = "No porta",
+                            Contrasena = "admin123",
+                            Correo = "Apro24470@gmail.com",
+                            FechaCreacion = new DateTime(2025, 11, 21, 11, 14, 36, 10, DateTimeKind.Local).AddTicks(9297),
+                            FechaEdicion = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Nombre = "Admin",
+                            Rol = 1,
+                            UltimaVezActivo = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                        });
                 });
 
             modelBuilder.Entity("p_proyect.Modules.Entidades.Ventas", b =>
@@ -278,14 +301,20 @@ namespace p_proyect.Migrations
                     b.Property<decimal>("Descuento")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<DateTime>("FechaCreacio")
+                    b.Property<DateTime>("FechaCreacion")
                         .HasColumnType("datetime2");
 
                     b.Property<int>("IdCliente")
                         .HasColumnType("int");
 
+                    b.Property<decimal>("MontoDescontado")
+                        .HasColumnType("decimal(18,2)");
+
                     b.Property<int>("Tipo_De_Venta")
                         .HasColumnType("int");
+
+                    b.Property<decimal>("TotalConElDescuento")
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<decimal>("TotalEntero")
                         .HasColumnType("decimal(18,2)");
@@ -379,9 +408,9 @@ namespace p_proyect.Migrations
 
             modelBuilder.Entity("p_proyect.Modules.Entidades.Adeudo", b =>
                 {
-                    b.HasOne("p_proyect.Modules.Entidades.Compra", "Compra_")
+                    b.HasOne("p_proyect.Modules.Entidades.Ventas", "Venta")
                         .WithMany()
-                        .HasForeignKey("Compra_Id");
+                        .HasForeignKey("VentaId");
                 });
 
             modelBuilder.Entity("p_proyect.Modules.Entidades.Compra", b =>
@@ -393,10 +422,6 @@ namespace p_proyect.Migrations
 
             modelBuilder.Entity("p_proyect.Modules.Entidades.CompraEntity", b =>
                 {
-                    b.HasOne("p_proyect.Modules.Producto", "ListaDeproductos")
-                        .WithMany()
-                        .HasForeignKey("ListaDeproductosId");
-
                     b.HasOne("p_proyect.Modules.Entidades.Ventas", "Venta")
                         .WithMany("ListadoDeCompras")
                         .HasForeignKey("VentaId");

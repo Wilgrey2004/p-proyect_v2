@@ -130,6 +130,9 @@
   <data name="Aceprtar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\src\Iconos\Aceprtar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="bruto" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\src\Iconos\bruto.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Edad" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\src\Iconos\Edad.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -142,23 +145,23 @@
   <data name="Descripcion1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\src\Iconos\Descripcion.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Direccion" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\src\Iconos\Direccion.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="logotipo-de-whatsapp" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\logotipo-de-whatsapp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="firma" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\src\Iconos\firma.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="logotipo-de-whatsapp" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\logotipo-de-whatsapp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Direccion" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\src\Iconos\Direccion.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="gmail" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\src\Iconos\gmail.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ListaDeCompras" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\src\Iconos\ListaDeCompras.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="busqueda-de-lupa" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\src\Iconos\busqueda-de-lupa.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Descripcion" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\src\Iconos\Descripcion.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="agregar-producto" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\src\Iconos\agregar-producto.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -172,8 +175,8 @@
   <data name="producto-de-codigo-de-barras" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\src\Iconos\producto-de-codigo-de-barras.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="bruto" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\src\Iconos\bruto.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Descripcion" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\src\Iconos\Descripcion.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="etiquetas-de-productos" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\src\Iconos\etiquetas-de-productos.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -181,7 +184,7 @@
   <data name="lista-de-verificacion" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\src\Iconos\lista-de-verificacion.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="gmail" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\src\Iconos\gmail.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="FondoDePantallaRojo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\src\logo\FondoDePantallaRojo.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

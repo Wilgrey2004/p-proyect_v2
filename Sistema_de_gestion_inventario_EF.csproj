@@ -189,6 +189,12 @@
     <Compile Include="Controller\ProveedorController\ProveedorCrearDto.cs" />
     <Compile Include="Controller\UsuarioController\UsuarioControllerC.cs" />
     <Compile Include="Core\Interfaces\ICliente.cs" />
+    <Compile Include="InicioDeSecion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InicioDeSecion.Designer.cs">
+      <DependentUpon>InicioDeSecion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -243,6 +249,30 @@
     <Compile Include="Migrations\20251116201426_typeOfsale.Designer.cs">
       <DependentUpon>20251116201426_typeOfsale.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\20251118010412_updateinVentas.cs" />
+    <Compile Include="Migrations\20251118010412_updateinVentas.Designer.cs">
+      <DependentUpon>20251118010412_updateinVentas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20251118124939_updateCompraEntity1.cs" />
+    <Compile Include="Migrations\20251118124939_updateCompraEntity1.Designer.cs">
+      <DependentUpon>20251118124939_updateCompraEntity1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20251118203424_agregaridClienteAAdeudo.cs" />
+    <Compile Include="Migrations\20251118203424_agregaridClienteAAdeudo.Designer.cs">
+      <DependentUpon>20251118203424_agregaridClienteAAdeudo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20251118233650_SeedAdminUser.cs" />
+    <Compile Include="Migrations\20251118233650_SeedAdminUser.Designer.cs">
+      <DependentUpon>20251118233650_SeedAdminUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20251119124444_updateDatetime.cs" />
+    <Compile Include="Migrations\20251119124444_updateDatetime.Designer.cs">
+      <DependentUpon>20251119124444_updateDatetime.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20251121151436_updateAdeudo.cs" />
+    <Compile Include="Migrations\20251121151436_updateAdeudo.Designer.cs">
+      <DependentUpon>20251121151436_updateAdeudo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\AppDbContextModelSnapshot.cs" />
     <Compile Include="Modules\AppDbContext.cs" />
     <Compile Include="Modules\AppDbContextFactory.cs" />
@@ -279,6 +309,18 @@
     <Compile Include="Modules\Entidades\dtos\dtoUsuarios\UsuarioCreacionDto.cs" />
     <Compile Include="Modules\Entidades\dtos\dtoUsuarios\UsuarioMostrarDto.cs" />
     <Compile Include="Modules\Entidades\dtos\dtoProductos\ProductoVentasMostrarDto.cs" />
+    <Compile Include="Modules\Entidades\Formularios\AdeudosForms\AgrearAdeudoParaUnClienteNormal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\Entidades\Formularios\AdeudosForms\AgrearAdeudoParaUnClienteNormal.Designer.cs">
+      <DependentUpon>AgrearAdeudoParaUnClienteNormal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Entidades\Formularios\AdeudosForms\AgregarMontoAlADeudo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\Entidades\Formularios\AdeudosForms\AgregarMontoAlADeudo.Designer.cs">
+      <DependentUpon>AgregarMontoAlADeudo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modules\Entidades\Formularios\ClienteEspecialForms\AgregarClienteEspecial.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -321,6 +363,12 @@
     <Compile Include="Modules\Entidades\Formularios\UsuarioForms\AgregarEditarUsuarios.Designer.cs">
       <DependentUpon>AgregarEditarUsuarios.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modules\Entidades\Formularios\VentaForms\VentaResumenForms.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\Entidades\Formularios\VentaForms\VentaResumenForms.Designer.cs">
+      <DependentUpon>VentaResumenForms.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modules\Entidades\Proveedor.cs" />
     <Compile Include="Modules\Entidades\Usuarios.cs" />
     <Compile Include="Modules\Entidades\Ventas.cs" />
@@ -344,11 +392,20 @@
     <Compile Include="Utils\Reportes\ReportesHelperForm.Designer.cs">
       <DependentUpon>ReportesHelperForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="InicioDeSecion.resx">
+      <DependentUpon>InicioDeSecion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Main.es.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Entidades\Formularios\AdeudosForms\AgrearAdeudoParaUnClienteNormal.resx">
+      <DependentUpon>AgrearAdeudoParaUnClienteNormal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Entidades\Formularios\AdeudosForms\AgregarMontoAlADeudo.resx">
+      <DependentUpon>AgregarMontoAlADeudo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modules\Entidades\Formularios\ClienteEspecialForms\AgregarClienteEspecial.resx">
       <DependentUpon>AgregarClienteEspecial.cs</DependentUpon>
@@ -370,6 +427,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Modules\Entidades\Formularios\UsuarioForms\AgregarEditarUsuarios.resx">
       <DependentUpon>AgregarEditarUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Entidades\Formularios\VentaForms\VentaResumenForms.resx">
+      <DependentUpon>VentaResumenForms.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -452,11 +512,11 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Modules\Entidades\dtos\dtoVentas\" />
-    <Folder Include="Modules\Entidades\Formularios\AdeudosForms\" />
     <Folder Include="Modules\Entidades\Formularios\CompraForms\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="src\Iconos\gmail.png" />
+    <None Include="src\logo\FondoDePantallaRojo.jpg" />
     <Content Include="src\logo\logo_si_hd-removebg.png" />
     <Content Include="Resources\logotipo-de-whatsapp.png" />
   </ItemGroup>

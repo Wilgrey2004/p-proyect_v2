@@ -32,64 +32,37 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.Gestion = new MaterialSkin.Controls.MaterialTabControl();
             this.GestionUsers = new System.Windows.Forms.TabPage();
-            this.GenerarReportesUsuarios = new MaterialSkin.Controls.MaterialButton();
-            this.BuscarUsuarios = new MaterialSkin.Controls.MaterialMaskedTextBox();
-            this.Eliminar_Usuario = new MaterialSkin.Controls.MaterialButton();
-            this.materialButton1 = new MaterialSkin.Controls.MaterialButton();
-            this.Agregar_usuarios = new MaterialSkin.Controls.MaterialButton();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.materialCard1 = new MaterialSkin.Controls.MaterialCard();
             this.Usuarios_DataGrid = new System.Windows.Forms.DataGridView();
             this.GestionDeInventario = new System.Windows.Forms.TabPage();
-            this.materialButton2 = new MaterialSkin.Controls.MaterialButton();
-            this.materialMaskedTextBox1 = new MaterialSkin.Controls.MaterialMaskedTextBox();
-            this.materialButton3 = new MaterialSkin.Controls.MaterialButton();
-            this.materialButton4 = new MaterialSkin.Controls.MaterialButton();
-            this.materialButton5 = new MaterialSkin.Controls.MaterialButton();
             this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
             this.materialCard2 = new MaterialSkin.Controls.MaterialCard();
             this.ListadoDeProductosMostrar = new System.Windows.Forms.DataGridView();
             this.GestionDeProveedores = new System.Windows.Forms.TabPage();
-            this.materialButton10 = new MaterialSkin.Controls.MaterialButton();
-            this.materialButton6 = new MaterialSkin.Controls.MaterialButton();
-            this.materialMaskedTextBox2 = new MaterialSkin.Controls.MaterialMaskedTextBox();
-            this.materialButton7 = new MaterialSkin.Controls.MaterialButton();
-            this.materialButton8 = new MaterialSkin.Controls.MaterialButton();
-            this.materialButton9 = new MaterialSkin.Controls.MaterialButton();
             this.materialLabel5 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel6 = new MaterialSkin.Controls.MaterialLabel();
             this.materialCard3 = new MaterialSkin.Controls.MaterialCard();
             this.ProveedoresListadoShow = new System.Windows.Forms.DataGridView();
             this.GestionDeClientesEspeciales = new System.Windows.Forms.TabPage();
-            this.materialButton11 = new MaterialSkin.Controls.MaterialButton();
-            this.NombreDelClienteEspecial_txt = new MaterialSkin.Controls.MaterialMaskedTextBox();
-            this.materialButton12 = new MaterialSkin.Controls.MaterialButton();
-            this.materialButton13 = new MaterialSkin.Controls.MaterialButton();
-            this.materialButton14 = new MaterialSkin.Controls.MaterialButton();
             this.materialLabel7 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel8 = new MaterialSkin.Controls.MaterialLabel();
             this.materialCard4 = new MaterialSkin.Controls.MaterialCard();
             this.ListadoClienteEspecialDg = new System.Windows.Forms.DataGridView();
             this.GestionDeClientesNormales = new System.Windows.Forms.TabPage();
-            this.materialButton15 = new MaterialSkin.Controls.MaterialButton();
-            this.materialMaskedTextBox3 = new MaterialSkin.Controls.MaterialMaskedTextBox();
-            this.materialButton16 = new MaterialSkin.Controls.MaterialButton();
             this.materialLabel9 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel10 = new MaterialSkin.Controls.MaterialLabel();
             this.materialCard5 = new MaterialSkin.Controls.MaterialCard();
             this.ListadoDeClientesNormalesDg = new System.Windows.Forms.DataGridView();
             this.GestionVentaAlDetalle = new System.Windows.Forms.TabPage();
+            this.materialButton17 = new MaterialSkin.Controls.MaterialButton();
+            this.CarritoDecompras_dg = new System.Windows.Forms.DataGridView();
             this.materialButton20 = new MaterialSkin.Controls.MaterialButton();
             this.materialLabel12 = new MaterialSkin.Controls.MaterialLabel();
             this.ListadoDeProductosDisponibles_dg = new System.Windows.Forms.DataGridView();
             this.materialLabel11 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialCard7 = new MaterialSkin.Controls.MaterialCard();
-            this.materialButton17 = new MaterialSkin.Controls.MaterialButton();
-            this.materialMaskedTextBox4 = new MaterialSkin.Controls.MaterialMaskedTextBox();
-            this.Nombre_txt = new MaterialSkin.Controls.MaterialMaskedTextBox();
-            this.materialLabel16 = new MaterialSkin.Controls.MaterialLabel();
             this.materialCard6 = new MaterialSkin.Controls.MaterialCard();
             this.materialButton19 = new MaterialSkin.Controls.MaterialButton();
             this.materialButton18 = new MaterialSkin.Controls.MaterialButton();
@@ -100,9 +73,48 @@
             this.materialLabel14 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel13 = new MaterialSkin.Controls.MaterialLabel();
             this.numCantidadProducto = new System.Windows.Forms.NumericUpDown();
+            this.GestionDeventas = new System.Windows.Forms.TabPage();
+            this.materialLabel16 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialCard7 = new MaterialSkin.Controls.MaterialCard();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.GestionDeAdeudos = new System.Windows.Forms.TabPage();
+            this.materialLabel18 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialCard8 = new MaterialSkin.Controls.MaterialCard();
+            this.ListadoDeAdeudos = new System.Windows.Forms.DataGridView();
+            this.materialLabel19 = new MaterialSkin.Controls.MaterialLabel();
+            this.GenerarReportesUsuarios = new MaterialSkin.Controls.MaterialButton();
+            this.BuscarUsuarios = new MaterialSkin.Controls.MaterialMaskedTextBox();
+            this.Eliminar_Usuario = new MaterialSkin.Controls.MaterialButton();
+            this.materialButton1 = new MaterialSkin.Controls.MaterialButton();
+            this.Agregar_usuarios = new MaterialSkin.Controls.MaterialButton();
+            this.materialButton2 = new MaterialSkin.Controls.MaterialButton();
+            this.materialMaskedTextBox1 = new MaterialSkin.Controls.MaterialMaskedTextBox();
+            this.materialButton3 = new MaterialSkin.Controls.MaterialButton();
+            this.materialButton4 = new MaterialSkin.Controls.MaterialButton();
+            this.materialButton5 = new MaterialSkin.Controls.MaterialButton();
+            this.materialButton10 = new MaterialSkin.Controls.MaterialButton();
+            this.materialButton6 = new MaterialSkin.Controls.MaterialButton();
+            this.materialMaskedTextBox2 = new MaterialSkin.Controls.MaterialMaskedTextBox();
+            this.materialButton7 = new MaterialSkin.Controls.MaterialButton();
+            this.materialButton8 = new MaterialSkin.Controls.MaterialButton();
+            this.materialButton9 = new MaterialSkin.Controls.MaterialButton();
+            this.materialButton11 = new MaterialSkin.Controls.MaterialButton();
+            this.NombreDelClienteEspecial_txt = new MaterialSkin.Controls.MaterialMaskedTextBox();
+            this.materialButton12 = new MaterialSkin.Controls.MaterialButton();
+            this.materialButton13 = new MaterialSkin.Controls.MaterialButton();
+            this.materialButton14 = new MaterialSkin.Controls.MaterialButton();
+            this.materialButton15 = new MaterialSkin.Controls.MaterialButton();
+            this.materialMaskedTextBox3 = new MaterialSkin.Controls.MaterialMaskedTextBox();
+            this.materialButton16 = new MaterialSkin.Controls.MaterialButton();
+            this.Descuento_txt = new MaterialSkin.Controls.MaterialMaskedTextBox();
             this.Nombre_Del_Producto_txt = new MaterialSkin.Controls.MaterialMaskedTextBox();
             this.Codigo_Del_Producto_txt = new MaterialSkin.Controls.MaterialMaskedTextBox();
-            this.CarritoDecompras_dg = new System.Windows.Forms.DataGridView();
+            this.materialButton21 = new MaterialSkin.Controls.MaterialButton();
+            this.materialButton22 = new MaterialSkin.Controls.MaterialButton();
+            this.materialMaskedTextBox4 = new MaterialSkin.Controls.MaterialMaskedTextBox();
+            this.materialButton23 = new MaterialSkin.Controls.MaterialButton();
+            this.materialButton24 = new MaterialSkin.Controls.MaterialButton();
+            this.materialButton26 = new MaterialSkin.Controls.MaterialButton();
             this.usuarioMostrarDtoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.proveedorBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.productoMostrarDtoBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
@@ -125,11 +137,16 @@
             this.materialCard5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ListadoDeClientesNormalesDg)).BeginInit();
             this.GestionVentaAlDetalle.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.CarritoDecompras_dg)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ListadoDeProductosDisponibles_dg)).BeginInit();
-            this.materialCard7.SuspendLayout();
             this.materialCard6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numCantidadProducto)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CarritoDecompras_dg)).BeginInit();
+            this.GestionDeventas.SuspendLayout();
+            this.materialCard7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.GestionDeAdeudos.SuspendLayout();
+            this.materialCard8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ListadoDeAdeudos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usuarioMostrarDtoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.proveedorBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productoMostrarDtoBindingSource1)).BeginInit();
@@ -145,6 +162,8 @@
             this.Gestion.Controls.Add(this.GestionDeClientesEspeciales);
             this.Gestion.Controls.Add(this.GestionDeClientesNormales);
             this.Gestion.Controls.Add(this.GestionVentaAlDetalle);
+            this.Gestion.Controls.Add(this.GestionDeventas);
+            this.Gestion.Controls.Add(this.GestionDeAdeudos);
             this.Gestion.Depth = 0;
             resources.ApplyResources(this.Gestion, "Gestion");
             this.Gestion.MouseState = MaterialSkin.MouseState.HOVER;
@@ -167,6 +186,501 @@
             this.GestionUsers.Name = "GestionUsers";
             this.GestionUsers.UseVisualStyleBackColor = true;
             this.GestionUsers.Click += new System.EventHandler(this.GestionUsers_Click);
+            // 
+            // materialLabel2
+            // 
+            resources.ApplyResources(this.materialLabel2, "materialLabel2");
+            this.materialLabel2.Depth = 0;
+            this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel2.Name = "materialLabel2";
+            this.materialLabel2.Click += new System.EventHandler(this.materialLabel2_Click);
+            // 
+            // materialLabel1
+            // 
+            resources.ApplyResources(this.materialLabel1, "materialLabel1");
+            this.materialLabel1.Depth = 0;
+            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel1.Name = "materialLabel1";
+            this.materialLabel1.Click += new System.EventHandler(this.materialLabel1_Click);
+            // 
+            // materialCard1
+            // 
+            this.materialCard1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.materialCard1.Controls.Add(this.Usuarios_DataGrid);
+            this.materialCard1.Depth = 0;
+            this.materialCard1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            resources.ApplyResources(this.materialCard1, "materialCard1");
+            this.materialCard1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialCard1.Name = "materialCard1";
+            this.materialCard1.Paint += new System.Windows.Forms.PaintEventHandler(this.materialCard1_Paint);
+            // 
+            // Usuarios_DataGrid
+            // 
+            this.Usuarios_DataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            resources.ApplyResources(this.Usuarios_DataGrid, "Usuarios_DataGrid");
+            this.Usuarios_DataGrid.Name = "Usuarios_DataGrid";
+            this.Usuarios_DataGrid.RowTemplate.Height = 24;
+            this.Usuarios_DataGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Usuarios_DataGrid_CellClick);
+            this.Usuarios_DataGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Usuarios_DataGrid_CellContentClick);
+            // 
+            // GestionDeInventario
+            // 
+            this.GestionDeInventario.Controls.Add(this.materialButton2);
+            this.GestionDeInventario.Controls.Add(this.materialMaskedTextBox1);
+            this.GestionDeInventario.Controls.Add(this.materialButton3);
+            this.GestionDeInventario.Controls.Add(this.materialButton4);
+            this.GestionDeInventario.Controls.Add(this.materialButton5);
+            this.GestionDeInventario.Controls.Add(this.materialLabel3);
+            this.GestionDeInventario.Controls.Add(this.materialLabel4);
+            this.GestionDeInventario.Controls.Add(this.materialCard2);
+            resources.ApplyResources(this.GestionDeInventario, "GestionDeInventario");
+            this.GestionDeInventario.Name = "GestionDeInventario";
+            this.GestionDeInventario.UseVisualStyleBackColor = true;
+            this.GestionDeInventario.Click += new System.EventHandler(this.GestionDeInventario_Click);
+            // 
+            // materialLabel3
+            // 
+            resources.ApplyResources(this.materialLabel3, "materialLabel3");
+            this.materialLabel3.Depth = 0;
+            this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel3.Name = "materialLabel3";
+            this.materialLabel3.Click += new System.EventHandler(this.materialLabel3_Click);
+            // 
+            // materialLabel4
+            // 
+            resources.ApplyResources(this.materialLabel4, "materialLabel4");
+            this.materialLabel4.Depth = 0;
+            this.materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel4.Name = "materialLabel4";
+            this.materialLabel4.Click += new System.EventHandler(this.materialLabel4_Click);
+            // 
+            // materialCard2
+            // 
+            this.materialCard2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.materialCard2.Controls.Add(this.ListadoDeProductosMostrar);
+            this.materialCard2.Depth = 0;
+            this.materialCard2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            resources.ApplyResources(this.materialCard2, "materialCard2");
+            this.materialCard2.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialCard2.Name = "materialCard2";
+            this.materialCard2.Paint += new System.Windows.Forms.PaintEventHandler(this.materialCard2_Paint);
+            // 
+            // ListadoDeProductosMostrar
+            // 
+            this.ListadoDeProductosMostrar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            resources.ApplyResources(this.ListadoDeProductosMostrar, "ListadoDeProductosMostrar");
+            this.ListadoDeProductosMostrar.Name = "ListadoDeProductosMostrar";
+            this.ListadoDeProductosMostrar.RowTemplate.Height = 24;
+            this.ListadoDeProductosMostrar.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ListadoDeProductosMostrar_CellClick);
+            this.ListadoDeProductosMostrar.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ListadoDeProductosMostrar_CellContentClick);
+            // 
+            // GestionDeProveedores
+            // 
+            this.GestionDeProveedores.Controls.Add(this.materialButton10);
+            this.GestionDeProveedores.Controls.Add(this.materialButton6);
+            this.GestionDeProveedores.Controls.Add(this.materialMaskedTextBox2);
+            this.GestionDeProveedores.Controls.Add(this.materialButton7);
+            this.GestionDeProveedores.Controls.Add(this.materialButton8);
+            this.GestionDeProveedores.Controls.Add(this.materialButton9);
+            this.GestionDeProveedores.Controls.Add(this.materialLabel5);
+            this.GestionDeProveedores.Controls.Add(this.materialLabel6);
+            this.GestionDeProveedores.Controls.Add(this.materialCard3);
+            resources.ApplyResources(this.GestionDeProveedores, "GestionDeProveedores");
+            this.GestionDeProveedores.Name = "GestionDeProveedores";
+            this.GestionDeProveedores.UseVisualStyleBackColor = true;
+            this.GestionDeProveedores.Click += new System.EventHandler(this.GestionDeProveedores_Click);
+            // 
+            // materialLabel5
+            // 
+            resources.ApplyResources(this.materialLabel5, "materialLabel5");
+            this.materialLabel5.Depth = 0;
+            this.materialLabel5.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel5.Name = "materialLabel5";
+            this.materialLabel5.Click += new System.EventHandler(this.materialLabel5_Click);
+            // 
+            // materialLabel6
+            // 
+            resources.ApplyResources(this.materialLabel6, "materialLabel6");
+            this.materialLabel6.Depth = 0;
+            this.materialLabel6.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel6.Name = "materialLabel6";
+            this.materialLabel6.Click += new System.EventHandler(this.materialLabel6_Click);
+            // 
+            // materialCard3
+            // 
+            this.materialCard3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.materialCard3.Controls.Add(this.ProveedoresListadoShow);
+            this.materialCard3.Depth = 0;
+            this.materialCard3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            resources.ApplyResources(this.materialCard3, "materialCard3");
+            this.materialCard3.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialCard3.Name = "materialCard3";
+            this.materialCard3.Paint += new System.Windows.Forms.PaintEventHandler(this.materialCard3_Paint);
+            // 
+            // ProveedoresListadoShow
+            // 
+            this.ProveedoresListadoShow.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            resources.ApplyResources(this.ProveedoresListadoShow, "ProveedoresListadoShow");
+            this.ProveedoresListadoShow.Name = "ProveedoresListadoShow";
+            this.ProveedoresListadoShow.RowTemplate.Height = 24;
+            this.ProveedoresListadoShow.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ProveedoresListadoShow_CellClick);
+            this.ProveedoresListadoShow.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ProveedoresListadoShow_CellContentClick);
+            // 
+            // GestionDeClientesEspeciales
+            // 
+            this.GestionDeClientesEspeciales.Controls.Add(this.materialButton11);
+            this.GestionDeClientesEspeciales.Controls.Add(this.NombreDelClienteEspecial_txt);
+            this.GestionDeClientesEspeciales.Controls.Add(this.materialButton12);
+            this.GestionDeClientesEspeciales.Controls.Add(this.materialButton13);
+            this.GestionDeClientesEspeciales.Controls.Add(this.materialButton14);
+            this.GestionDeClientesEspeciales.Controls.Add(this.materialLabel7);
+            this.GestionDeClientesEspeciales.Controls.Add(this.materialLabel8);
+            this.GestionDeClientesEspeciales.Controls.Add(this.materialCard4);
+            resources.ApplyResources(this.GestionDeClientesEspeciales, "GestionDeClientesEspeciales");
+            this.GestionDeClientesEspeciales.Name = "GestionDeClientesEspeciales";
+            this.GestionDeClientesEspeciales.UseVisualStyleBackColor = true;
+            this.GestionDeClientesEspeciales.Click += new System.EventHandler(this.GestionDeClientesEspeciales_Click);
+            // 
+            // materialLabel7
+            // 
+            resources.ApplyResources(this.materialLabel7, "materialLabel7");
+            this.materialLabel7.Depth = 0;
+            this.materialLabel7.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel7.Name = "materialLabel7";
+            this.materialLabel7.Click += new System.EventHandler(this.materialLabel7_Click);
+            // 
+            // materialLabel8
+            // 
+            resources.ApplyResources(this.materialLabel8, "materialLabel8");
+            this.materialLabel8.Depth = 0;
+            this.materialLabel8.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel8.Name = "materialLabel8";
+            this.materialLabel8.Click += new System.EventHandler(this.materialLabel8_Click);
+            // 
+            // materialCard4
+            // 
+            this.materialCard4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.materialCard4.Controls.Add(this.ListadoClienteEspecialDg);
+            this.materialCard4.Depth = 0;
+            this.materialCard4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            resources.ApplyResources(this.materialCard4, "materialCard4");
+            this.materialCard4.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialCard4.Name = "materialCard4";
+            this.materialCard4.Paint += new System.Windows.Forms.PaintEventHandler(this.materialCard4_Paint);
+            // 
+            // ListadoClienteEspecialDg
+            // 
+            this.ListadoClienteEspecialDg.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            resources.ApplyResources(this.ListadoClienteEspecialDg, "ListadoClienteEspecialDg");
+            this.ListadoClienteEspecialDg.Name = "ListadoClienteEspecialDg";
+            this.ListadoClienteEspecialDg.RowTemplate.Height = 24;
+            this.ListadoClienteEspecialDg.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ListadoClienteEspecialDg_CellClick);
+            this.ListadoClienteEspecialDg.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ListadoClienteEspecialDg_CellContentClick);
+            // 
+            // GestionDeClientesNormales
+            // 
+            this.GestionDeClientesNormales.Controls.Add(this.materialButton15);
+            this.GestionDeClientesNormales.Controls.Add(this.materialMaskedTextBox3);
+            this.GestionDeClientesNormales.Controls.Add(this.materialButton16);
+            this.GestionDeClientesNormales.Controls.Add(this.materialLabel9);
+            this.GestionDeClientesNormales.Controls.Add(this.materialLabel10);
+            this.GestionDeClientesNormales.Controls.Add(this.materialCard5);
+            resources.ApplyResources(this.GestionDeClientesNormales, "GestionDeClientesNormales");
+            this.GestionDeClientesNormales.Name = "GestionDeClientesNormales";
+            this.GestionDeClientesNormales.UseVisualStyleBackColor = true;
+            this.GestionDeClientesNormales.Click += new System.EventHandler(this.GestionDeClientesNormales_Click);
+            // 
+            // materialLabel9
+            // 
+            resources.ApplyResources(this.materialLabel9, "materialLabel9");
+            this.materialLabel9.Depth = 0;
+            this.materialLabel9.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel9.Name = "materialLabel9";
+            this.materialLabel9.Click += new System.EventHandler(this.materialLabel9_Click);
+            // 
+            // materialLabel10
+            // 
+            resources.ApplyResources(this.materialLabel10, "materialLabel10");
+            this.materialLabel10.Depth = 0;
+            this.materialLabel10.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel10.Name = "materialLabel10";
+            this.materialLabel10.Click += new System.EventHandler(this.materialLabel10_Click);
+            // 
+            // materialCard5
+            // 
+            this.materialCard5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.materialCard5.Controls.Add(this.ListadoDeClientesNormalesDg);
+            this.materialCard5.Depth = 0;
+            this.materialCard5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            resources.ApplyResources(this.materialCard5, "materialCard5");
+            this.materialCard5.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialCard5.Name = "materialCard5";
+            this.materialCard5.Paint += new System.Windows.Forms.PaintEventHandler(this.materialCard5_Paint);
+            // 
+            // ListadoDeClientesNormalesDg
+            // 
+            this.ListadoDeClientesNormalesDg.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            resources.ApplyResources(this.ListadoDeClientesNormalesDg, "ListadoDeClientesNormalesDg");
+            this.ListadoDeClientesNormalesDg.Name = "ListadoDeClientesNormalesDg";
+            this.ListadoDeClientesNormalesDg.RowTemplate.Height = 24;
+            this.ListadoDeClientesNormalesDg.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ListadoDeClientesNormalesDg_CellClick);
+            this.ListadoDeClientesNormalesDg.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ListadoDeClientesNormalesDg_CellContentClick);
+            // 
+            // GestionVentaAlDetalle
+            // 
+            this.GestionVentaAlDetalle.Controls.Add(this.materialButton17);
+            this.GestionVentaAlDetalle.Controls.Add(this.CarritoDecompras_dg);
+            this.GestionVentaAlDetalle.Controls.Add(this.materialButton20);
+            this.GestionVentaAlDetalle.Controls.Add(this.materialLabel12);
+            this.GestionVentaAlDetalle.Controls.Add(this.ListadoDeProductosDisponibles_dg);
+            this.GestionVentaAlDetalle.Controls.Add(this.materialLabel11);
+            this.GestionVentaAlDetalle.Controls.Add(this.materialCard6);
+            resources.ApplyResources(this.GestionVentaAlDetalle, "GestionVentaAlDetalle");
+            this.GestionVentaAlDetalle.Name = "GestionVentaAlDetalle";
+            this.GestionVentaAlDetalle.UseVisualStyleBackColor = true;
+            this.GestionVentaAlDetalle.Click += new System.EventHandler(this.tabPage1_Click);
+            // 
+            // materialButton17
+            // 
+            resources.ApplyResources(this.materialButton17, "materialButton17");
+            this.materialButton17.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.materialButton17.Depth = 0;
+            this.materialButton17.HighEmphasis = true;
+            this.materialButton17.Icon = null;
+            this.materialButton17.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialButton17.Name = "materialButton17";
+            this.materialButton17.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.materialButton17.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.materialButton17.UseAccentColor = false;
+            this.materialButton17.UseVisualStyleBackColor = true;
+            this.materialButton17.Click += new System.EventHandler(this.materialButton17_Click);
+            // 
+            // CarritoDecompras_dg
+            // 
+            this.CarritoDecompras_dg.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            resources.ApplyResources(this.CarritoDecompras_dg, "CarritoDecompras_dg");
+            this.CarritoDecompras_dg.Name = "CarritoDecompras_dg";
+            this.CarritoDecompras_dg.ReadOnly = true;
+            this.CarritoDecompras_dg.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.CarritoDecompras_dg_CellClick_1);
+            // 
+            // materialButton20
+            // 
+            resources.ApplyResources(this.materialButton20, "materialButton20");
+            this.materialButton20.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.materialButton20.Depth = 0;
+            this.materialButton20.HighEmphasis = true;
+            this.materialButton20.Icon = null;
+            this.materialButton20.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialButton20.Name = "materialButton20";
+            this.materialButton20.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.materialButton20.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.materialButton20.UseAccentColor = false;
+            this.materialButton20.UseVisualStyleBackColor = true;
+            this.materialButton20.Click += new System.EventHandler(this.materialButton20_Click);
+            // 
+            // materialLabel12
+            // 
+            resources.ApplyResources(this.materialLabel12, "materialLabel12");
+            this.materialLabel12.Depth = 0;
+            this.materialLabel12.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel12.Name = "materialLabel12";
+            this.materialLabel12.Click += new System.EventHandler(this.materialLabel12_Click);
+            // 
+            // ListadoDeProductosDisponibles_dg
+            // 
+            this.ListadoDeProductosDisponibles_dg.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            resources.ApplyResources(this.ListadoDeProductosDisponibles_dg, "ListadoDeProductosDisponibles_dg");
+            this.ListadoDeProductosDisponibles_dg.Name = "ListadoDeProductosDisponibles_dg";
+            this.ListadoDeProductosDisponibles_dg.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ListadoDeProductosDisponibles_dg_CellClick);
+            this.ListadoDeProductosDisponibles_dg.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ListadoDeProductosDisponibles_dg_CellContentClick);
+            // 
+            // materialLabel11
+            // 
+            resources.ApplyResources(this.materialLabel11, "materialLabel11");
+            this.materialLabel11.Depth = 0;
+            this.materialLabel11.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel11.Name = "materialLabel11";
+            this.materialLabel11.Click += new System.EventHandler(this.materialLabel11_Click);
+            // 
+            // materialCard6
+            // 
+            this.materialCard6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.materialCard6.Controls.Add(this.Descuento_txt);
+            this.materialCard6.Controls.Add(this.materialButton19);
+            this.materialCard6.Controls.Add(this.materialButton18);
+            this.materialCard6.Controls.Add(this.PrecioPorUnidadDelProducto_txt);
+            this.materialCard6.Controls.Add(this.materialLabel17);
+            this.materialCard6.Controls.Add(this.UnidadDeMedidaDelProducto);
+            this.materialCard6.Controls.Add(this.materialLabel15);
+            this.materialCard6.Controls.Add(this.materialLabel14);
+            this.materialCard6.Controls.Add(this.materialLabel13);
+            this.materialCard6.Controls.Add(this.numCantidadProducto);
+            this.materialCard6.Controls.Add(this.Nombre_Del_Producto_txt);
+            this.materialCard6.Controls.Add(this.Codigo_Del_Producto_txt);
+            this.materialCard6.Depth = 0;
+            this.materialCard6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            resources.ApplyResources(this.materialCard6, "materialCard6");
+            this.materialCard6.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialCard6.Name = "materialCard6";
+            this.materialCard6.Paint += new System.Windows.Forms.PaintEventHandler(this.materialCard6_Paint);
+            // 
+            // materialButton19
+            // 
+            resources.ApplyResources(this.materialButton19, "materialButton19");
+            this.materialButton19.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.materialButton19.Depth = 0;
+            this.materialButton19.HighEmphasis = true;
+            this.materialButton19.Icon = null;
+            this.materialButton19.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialButton19.Name = "materialButton19";
+            this.materialButton19.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.materialButton19.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.materialButton19.UseAccentColor = false;
+            this.materialButton19.UseVisualStyleBackColor = true;
+            this.materialButton19.Click += new System.EventHandler(this.materialButton19_Click);
+            // 
+            // materialButton18
+            // 
+            resources.ApplyResources(this.materialButton18, "materialButton18");
+            this.materialButton18.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.materialButton18.Depth = 0;
+            this.materialButton18.HighEmphasis = true;
+            this.materialButton18.Icon = null;
+            this.materialButton18.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialButton18.Name = "materialButton18";
+            this.materialButton18.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.materialButton18.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.materialButton18.UseAccentColor = false;
+            this.materialButton18.UseVisualStyleBackColor = true;
+            this.materialButton18.Click += new System.EventHandler(this.materialButton18_Click_1);
+            // 
+            // PrecioPorUnidadDelProducto_txt
+            // 
+            resources.ApplyResources(this.PrecioPorUnidadDelProducto_txt, "PrecioPorUnidadDelProducto_txt");
+            this.PrecioPorUnidadDelProducto_txt.Depth = 0;
+            this.PrecioPorUnidadDelProducto_txt.MouseState = MaterialSkin.MouseState.HOVER;
+            this.PrecioPorUnidadDelProducto_txt.Name = "PrecioPorUnidadDelProducto_txt";
+            // 
+            // materialLabel17
+            // 
+            resources.ApplyResources(this.materialLabel17, "materialLabel17");
+            this.materialLabel17.Depth = 0;
+            this.materialLabel17.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel17.Name = "materialLabel17";
+            // 
+            // UnidadDeMedidaDelProducto
+            // 
+            resources.ApplyResources(this.UnidadDeMedidaDelProducto, "UnidadDeMedidaDelProducto");
+            this.UnidadDeMedidaDelProducto.Depth = 0;
+            this.UnidadDeMedidaDelProducto.MouseState = MaterialSkin.MouseState.HOVER;
+            this.UnidadDeMedidaDelProducto.Name = "UnidadDeMedidaDelProducto";
+            // 
+            // materialLabel15
+            // 
+            resources.ApplyResources(this.materialLabel15, "materialLabel15");
+            this.materialLabel15.Depth = 0;
+            this.materialLabel15.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel15.Name = "materialLabel15";
+            // 
+            // materialLabel14
+            // 
+            resources.ApplyResources(this.materialLabel14, "materialLabel14");
+            this.materialLabel14.Depth = 0;
+            this.materialLabel14.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel14.Name = "materialLabel14";
+            // 
+            // materialLabel13
+            // 
+            resources.ApplyResources(this.materialLabel13, "materialLabel13");
+            this.materialLabel13.Depth = 0;
+            this.materialLabel13.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel13.Name = "materialLabel13";
+            // 
+            // numCantidadProducto
+            // 
+            resources.ApplyResources(this.numCantidadProducto, "numCantidadProducto");
+            this.numCantidadProducto.Name = "numCantidadProducto";
+            // 
+            // GestionDeventas
+            // 
+            this.GestionDeventas.Controls.Add(this.materialLabel16);
+            this.GestionDeventas.Controls.Add(this.materialCard7);
+            this.GestionDeventas.Controls.Add(this.materialButton21);
+            this.GestionDeventas.Controls.Add(this.materialButton22);
+            resources.ApplyResources(this.GestionDeventas, "GestionDeventas");
+            this.GestionDeventas.Name = "GestionDeventas";
+            this.GestionDeventas.UseVisualStyleBackColor = true;
+            // 
+            // materialLabel16
+            // 
+            resources.ApplyResources(this.materialLabel16, "materialLabel16");
+            this.materialLabel16.Depth = 0;
+            this.materialLabel16.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel16.Name = "materialLabel16";
+            // 
+            // materialCard7
+            // 
+            this.materialCard7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.materialCard7.Controls.Add(this.dataGridView1);
+            this.materialCard7.Depth = 0;
+            this.materialCard7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            resources.ApplyResources(this.materialCard7, "materialCard7");
+            this.materialCard7.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialCard7.Name = "materialCard7";
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            resources.ApplyResources(this.dataGridView1, "dataGridView1");
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            // 
+            // GestionDeAdeudos
+            // 
+            this.GestionDeAdeudos.Controls.Add(this.materialMaskedTextBox4);
+            this.GestionDeAdeudos.Controls.Add(this.materialLabel19);
+            this.GestionDeAdeudos.Controls.Add(this.materialButton23);
+            this.GestionDeAdeudos.Controls.Add(this.materialButton24);
+            this.GestionDeAdeudos.Controls.Add(this.materialButton26);
+            this.GestionDeAdeudos.Controls.Add(this.materialLabel18);
+            this.GestionDeAdeudos.Controls.Add(this.materialCard8);
+            resources.ApplyResources(this.GestionDeAdeudos, "GestionDeAdeudos");
+            this.GestionDeAdeudos.Name = "GestionDeAdeudos";
+            this.GestionDeAdeudos.UseVisualStyleBackColor = true;
+            this.GestionDeAdeudos.Click += new System.EventHandler(this.GestionDeAdeudos_Click);
+            // 
+            // materialLabel18
+            // 
+            resources.ApplyResources(this.materialLabel18, "materialLabel18");
+            this.materialLabel18.Depth = 0;
+            this.materialLabel18.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel18.Name = "materialLabel18";
+            // 
+            // materialCard8
+            // 
+            this.materialCard8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.materialCard8.Controls.Add(this.ListadoDeAdeudos);
+            this.materialCard8.Depth = 0;
+            this.materialCard8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            resources.ApplyResources(this.materialCard8, "materialCard8");
+            this.materialCard8.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialCard8.Name = "materialCard8";
+            // 
+            // ListadoDeAdeudos
+            // 
+            this.ListadoDeAdeudos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            resources.ApplyResources(this.ListadoDeAdeudos, "ListadoDeAdeudos");
+            this.ListadoDeAdeudos.Name = "ListadoDeAdeudos";
+            this.ListadoDeAdeudos.RowTemplate.Height = 24;
+            this.ListadoDeAdeudos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ListadoDeAdeudos_CellClick);
+            // 
+            // materialLabel19
+            // 
+            resources.ApplyResources(this.materialLabel19, "materialLabel19");
+            this.materialLabel19.Depth = 0;
+            this.materialLabel19.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel19.Name = "materialLabel19";
             // 
             // GenerarReportesUsuarios
             // 
@@ -269,57 +783,6 @@
             this.Agregar_usuarios.UseVisualStyleBackColor = true;
             this.Agregar_usuarios.Click += new System.EventHandler(this.Agregar_usuarios_Click);
             // 
-            // materialLabel2
-            // 
-            resources.ApplyResources(this.materialLabel2, "materialLabel2");
-            this.materialLabel2.Depth = 0;
-            this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel2.Name = "materialLabel2";
-            this.materialLabel2.Click += new System.EventHandler(this.materialLabel2_Click);
-            // 
-            // materialLabel1
-            // 
-            resources.ApplyResources(this.materialLabel1, "materialLabel1");
-            this.materialLabel1.Depth = 0;
-            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel1.Name = "materialLabel1";
-            this.materialLabel1.Click += new System.EventHandler(this.materialLabel1_Click);
-            // 
-            // materialCard1
-            // 
-            this.materialCard1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.materialCard1.Controls.Add(this.Usuarios_DataGrid);
-            this.materialCard1.Depth = 0;
-            this.materialCard1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            resources.ApplyResources(this.materialCard1, "materialCard1");
-            this.materialCard1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialCard1.Name = "materialCard1";
-            this.materialCard1.Paint += new System.Windows.Forms.PaintEventHandler(this.materialCard1_Paint);
-            // 
-            // Usuarios_DataGrid
-            // 
-            this.Usuarios_DataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            resources.ApplyResources(this.Usuarios_DataGrid, "Usuarios_DataGrid");
-            this.Usuarios_DataGrid.Name = "Usuarios_DataGrid";
-            this.Usuarios_DataGrid.RowTemplate.Height = 24;
-            this.Usuarios_DataGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Usuarios_DataGrid_CellClick);
-            this.Usuarios_DataGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Usuarios_DataGrid_CellContentClick);
-            // 
-            // GestionDeInventario
-            // 
-            this.GestionDeInventario.Controls.Add(this.materialButton2);
-            this.GestionDeInventario.Controls.Add(this.materialMaskedTextBox1);
-            this.GestionDeInventario.Controls.Add(this.materialButton3);
-            this.GestionDeInventario.Controls.Add(this.materialButton4);
-            this.GestionDeInventario.Controls.Add(this.materialButton5);
-            this.GestionDeInventario.Controls.Add(this.materialLabel3);
-            this.GestionDeInventario.Controls.Add(this.materialLabel4);
-            this.GestionDeInventario.Controls.Add(this.materialCard2);
-            resources.ApplyResources(this.GestionDeInventario, "GestionDeInventario");
-            this.GestionDeInventario.Name = "GestionDeInventario";
-            this.GestionDeInventario.UseVisualStyleBackColor = true;
-            this.GestionDeInventario.Click += new System.EventHandler(this.GestionDeInventario_Click);
-            // 
             // materialButton2
             // 
             resources.ApplyResources(this.materialButton2, "materialButton2");
@@ -420,58 +883,6 @@
             this.materialButton5.UseAccentColor = true;
             this.materialButton5.UseVisualStyleBackColor = true;
             this.materialButton5.Click += new System.EventHandler(this.materialButton5_Click);
-            // 
-            // materialLabel3
-            // 
-            resources.ApplyResources(this.materialLabel3, "materialLabel3");
-            this.materialLabel3.Depth = 0;
-            this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel3.Name = "materialLabel3";
-            this.materialLabel3.Click += new System.EventHandler(this.materialLabel3_Click);
-            // 
-            // materialLabel4
-            // 
-            resources.ApplyResources(this.materialLabel4, "materialLabel4");
-            this.materialLabel4.Depth = 0;
-            this.materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel4.Name = "materialLabel4";
-            this.materialLabel4.Click += new System.EventHandler(this.materialLabel4_Click);
-            // 
-            // materialCard2
-            // 
-            this.materialCard2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.materialCard2.Controls.Add(this.ListadoDeProductosMostrar);
-            this.materialCard2.Depth = 0;
-            this.materialCard2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            resources.ApplyResources(this.materialCard2, "materialCard2");
-            this.materialCard2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialCard2.Name = "materialCard2";
-            this.materialCard2.Paint += new System.Windows.Forms.PaintEventHandler(this.materialCard2_Paint);
-            // 
-            // ListadoDeProductosMostrar
-            // 
-            this.ListadoDeProductosMostrar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            resources.ApplyResources(this.ListadoDeProductosMostrar, "ListadoDeProductosMostrar");
-            this.ListadoDeProductosMostrar.Name = "ListadoDeProductosMostrar";
-            this.ListadoDeProductosMostrar.RowTemplate.Height = 24;
-            this.ListadoDeProductosMostrar.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ListadoDeProductosMostrar_CellClick);
-            this.ListadoDeProductosMostrar.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ListadoDeProductosMostrar_CellContentClick);
-            // 
-            // GestionDeProveedores
-            // 
-            this.GestionDeProveedores.Controls.Add(this.materialButton10);
-            this.GestionDeProveedores.Controls.Add(this.materialButton6);
-            this.GestionDeProveedores.Controls.Add(this.materialMaskedTextBox2);
-            this.GestionDeProveedores.Controls.Add(this.materialButton7);
-            this.GestionDeProveedores.Controls.Add(this.materialButton8);
-            this.GestionDeProveedores.Controls.Add(this.materialButton9);
-            this.GestionDeProveedores.Controls.Add(this.materialLabel5);
-            this.GestionDeProveedores.Controls.Add(this.materialLabel6);
-            this.GestionDeProveedores.Controls.Add(this.materialCard3);
-            resources.ApplyResources(this.GestionDeProveedores, "GestionDeProveedores");
-            this.GestionDeProveedores.Name = "GestionDeProveedores";
-            this.GestionDeProveedores.UseVisualStyleBackColor = true;
-            this.GestionDeProveedores.Click += new System.EventHandler(this.GestionDeProveedores_Click);
             // 
             // materialButton10
             // 
@@ -590,57 +1001,6 @@
             this.materialButton9.UseVisualStyleBackColor = true;
             this.materialButton9.Click += new System.EventHandler(this.materialButton9_Click);
             // 
-            // materialLabel5
-            // 
-            resources.ApplyResources(this.materialLabel5, "materialLabel5");
-            this.materialLabel5.Depth = 0;
-            this.materialLabel5.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel5.Name = "materialLabel5";
-            this.materialLabel5.Click += new System.EventHandler(this.materialLabel5_Click);
-            // 
-            // materialLabel6
-            // 
-            resources.ApplyResources(this.materialLabel6, "materialLabel6");
-            this.materialLabel6.Depth = 0;
-            this.materialLabel6.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel6.Name = "materialLabel6";
-            this.materialLabel6.Click += new System.EventHandler(this.materialLabel6_Click);
-            // 
-            // materialCard3
-            // 
-            this.materialCard3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.materialCard3.Controls.Add(this.ProveedoresListadoShow);
-            this.materialCard3.Depth = 0;
-            this.materialCard3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            resources.ApplyResources(this.materialCard3, "materialCard3");
-            this.materialCard3.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialCard3.Name = "materialCard3";
-            this.materialCard3.Paint += new System.Windows.Forms.PaintEventHandler(this.materialCard3_Paint);
-            // 
-            // ProveedoresListadoShow
-            // 
-            this.ProveedoresListadoShow.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            resources.ApplyResources(this.ProveedoresListadoShow, "ProveedoresListadoShow");
-            this.ProveedoresListadoShow.Name = "ProveedoresListadoShow";
-            this.ProveedoresListadoShow.RowTemplate.Height = 24;
-            this.ProveedoresListadoShow.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ProveedoresListadoShow_CellClick);
-            this.ProveedoresListadoShow.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ProveedoresListadoShow_CellContentClick);
-            // 
-            // GestionDeClientesEspeciales
-            // 
-            this.GestionDeClientesEspeciales.Controls.Add(this.materialButton11);
-            this.GestionDeClientesEspeciales.Controls.Add(this.NombreDelClienteEspecial_txt);
-            this.GestionDeClientesEspeciales.Controls.Add(this.materialButton12);
-            this.GestionDeClientesEspeciales.Controls.Add(this.materialButton13);
-            this.GestionDeClientesEspeciales.Controls.Add(this.materialButton14);
-            this.GestionDeClientesEspeciales.Controls.Add(this.materialLabel7);
-            this.GestionDeClientesEspeciales.Controls.Add(this.materialLabel8);
-            this.GestionDeClientesEspeciales.Controls.Add(this.materialCard4);
-            resources.ApplyResources(this.GestionDeClientesEspeciales, "GestionDeClientesEspeciales");
-            this.GestionDeClientesEspeciales.Name = "GestionDeClientesEspeciales";
-            this.GestionDeClientesEspeciales.UseVisualStyleBackColor = true;
-            this.GestionDeClientesEspeciales.Click += new System.EventHandler(this.GestionDeClientesEspeciales_Click);
-            // 
             // materialButton11
             // 
             resources.ApplyResources(this.materialButton11, "materialButton11");
@@ -742,55 +1102,6 @@
             this.materialButton14.UseVisualStyleBackColor = true;
             this.materialButton14.Click += new System.EventHandler(this.materialButton14_Click);
             // 
-            // materialLabel7
-            // 
-            resources.ApplyResources(this.materialLabel7, "materialLabel7");
-            this.materialLabel7.Depth = 0;
-            this.materialLabel7.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel7.Name = "materialLabel7";
-            this.materialLabel7.Click += new System.EventHandler(this.materialLabel7_Click);
-            // 
-            // materialLabel8
-            // 
-            resources.ApplyResources(this.materialLabel8, "materialLabel8");
-            this.materialLabel8.Depth = 0;
-            this.materialLabel8.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel8.Name = "materialLabel8";
-            this.materialLabel8.Click += new System.EventHandler(this.materialLabel8_Click);
-            // 
-            // materialCard4
-            // 
-            this.materialCard4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.materialCard4.Controls.Add(this.ListadoClienteEspecialDg);
-            this.materialCard4.Depth = 0;
-            this.materialCard4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            resources.ApplyResources(this.materialCard4, "materialCard4");
-            this.materialCard4.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialCard4.Name = "materialCard4";
-            this.materialCard4.Paint += new System.Windows.Forms.PaintEventHandler(this.materialCard4_Paint);
-            // 
-            // ListadoClienteEspecialDg
-            // 
-            this.ListadoClienteEspecialDg.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            resources.ApplyResources(this.ListadoClienteEspecialDg, "ListadoClienteEspecialDg");
-            this.ListadoClienteEspecialDg.Name = "ListadoClienteEspecialDg";
-            this.ListadoClienteEspecialDg.RowTemplate.Height = 24;
-            this.ListadoClienteEspecialDg.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ListadoClienteEspecialDg_CellClick);
-            this.ListadoClienteEspecialDg.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ListadoClienteEspecialDg_CellContentClick);
-            // 
-            // GestionDeClientesNormales
-            // 
-            this.GestionDeClientesNormales.Controls.Add(this.materialButton15);
-            this.GestionDeClientesNormales.Controls.Add(this.materialMaskedTextBox3);
-            this.GestionDeClientesNormales.Controls.Add(this.materialButton16);
-            this.GestionDeClientesNormales.Controls.Add(this.materialLabel9);
-            this.GestionDeClientesNormales.Controls.Add(this.materialLabel10);
-            this.GestionDeClientesNormales.Controls.Add(this.materialCard5);
-            resources.ApplyResources(this.GestionDeClientesNormales, "GestionDeClientesNormales");
-            this.GestionDeClientesNormales.Name = "GestionDeClientesNormales";
-            this.GestionDeClientesNormales.UseVisualStyleBackColor = true;
-            this.GestionDeClientesNormales.Click += new System.EventHandler(this.GestionDeClientesNormales_Click);
-            // 
             // materialButton15
             // 
             resources.ApplyResources(this.materialButton15, "materialButton15");
@@ -860,296 +1171,40 @@
             this.materialButton16.UseVisualStyleBackColor = true;
             this.materialButton16.Click += new System.EventHandler(this.materialButton16_Click);
             // 
-            // materialLabel9
+            // Descuento_txt
             // 
-            resources.ApplyResources(this.materialLabel9, "materialLabel9");
-            this.materialLabel9.Depth = 0;
-            this.materialLabel9.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel9.Name = "materialLabel9";
-            this.materialLabel9.Click += new System.EventHandler(this.materialLabel9_Click);
-            // 
-            // materialLabel10
-            // 
-            resources.ApplyResources(this.materialLabel10, "materialLabel10");
-            this.materialLabel10.Depth = 0;
-            this.materialLabel10.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel10.Name = "materialLabel10";
-            this.materialLabel10.Click += new System.EventHandler(this.materialLabel10_Click);
-            // 
-            // materialCard5
-            // 
-            this.materialCard5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.materialCard5.Controls.Add(this.ListadoDeClientesNormalesDg);
-            this.materialCard5.Depth = 0;
-            this.materialCard5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            resources.ApplyResources(this.materialCard5, "materialCard5");
-            this.materialCard5.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialCard5.Name = "materialCard5";
-            this.materialCard5.Paint += new System.Windows.Forms.PaintEventHandler(this.materialCard5_Paint);
-            // 
-            // ListadoDeClientesNormalesDg
-            // 
-            this.ListadoDeClientesNormalesDg.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            resources.ApplyResources(this.ListadoDeClientesNormalesDg, "ListadoDeClientesNormalesDg");
-            this.ListadoDeClientesNormalesDg.Name = "ListadoDeClientesNormalesDg";
-            this.ListadoDeClientesNormalesDg.RowTemplate.Height = 24;
-            this.ListadoDeClientesNormalesDg.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ListadoDeClientesNormalesDg_CellClick);
-            this.ListadoDeClientesNormalesDg.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ListadoDeClientesNormalesDg_CellContentClick);
-            // 
-            // GestionVentaAlDetalle
-            // 
-            this.GestionVentaAlDetalle.Controls.Add(this.CarritoDecompras_dg);
-            this.GestionVentaAlDetalle.Controls.Add(this.materialButton20);
-            this.GestionVentaAlDetalle.Controls.Add(this.materialLabel12);
-            this.GestionVentaAlDetalle.Controls.Add(this.ListadoDeProductosDisponibles_dg);
-            this.GestionVentaAlDetalle.Controls.Add(this.materialLabel11);
-            this.GestionVentaAlDetalle.Controls.Add(this.materialCard7);
-            this.GestionVentaAlDetalle.Controls.Add(this.materialCard6);
-            resources.ApplyResources(this.GestionVentaAlDetalle, "GestionVentaAlDetalle");
-            this.GestionVentaAlDetalle.Name = "GestionVentaAlDetalle";
-            this.GestionVentaAlDetalle.UseVisualStyleBackColor = true;
-            this.GestionVentaAlDetalle.Click += new System.EventHandler(this.tabPage1_Click);
-            // 
-            // materialButton20
-            // 
-            resources.ApplyResources(this.materialButton20, "materialButton20");
-            this.materialButton20.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.materialButton20.Depth = 0;
-            this.materialButton20.HighEmphasis = true;
-            this.materialButton20.Icon = null;
-            this.materialButton20.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialButton20.Name = "materialButton20";
-            this.materialButton20.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.materialButton20.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.materialButton20.UseAccentColor = false;
-            this.materialButton20.UseVisualStyleBackColor = true;
-            // 
-            // materialLabel12
-            // 
-            resources.ApplyResources(this.materialLabel12, "materialLabel12");
-            this.materialLabel12.Depth = 0;
-            this.materialLabel12.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel12.Name = "materialLabel12";
-            this.materialLabel12.Click += new System.EventHandler(this.materialLabel12_Click);
-            // 
-            // ListadoDeProductosDisponibles_dg
-            // 
-            this.ListadoDeProductosDisponibles_dg.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            resources.ApplyResources(this.ListadoDeProductosDisponibles_dg, "ListadoDeProductosDisponibles_dg");
-            this.ListadoDeProductosDisponibles_dg.Name = "ListadoDeProductosDisponibles_dg";
-            this.ListadoDeProductosDisponibles_dg.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ListadoDeProductosDisponibles_dg_CellClick);
-            this.ListadoDeProductosDisponibles_dg.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ListadoDeProductosDisponibles_dg_CellContentClick);
-            // 
-            // materialLabel11
-            // 
-            resources.ApplyResources(this.materialLabel11, "materialLabel11");
-            this.materialLabel11.Depth = 0;
-            this.materialLabel11.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel11.Name = "materialLabel11";
-            this.materialLabel11.Click += new System.EventHandler(this.materialLabel11_Click);
-            // 
-            // materialCard7
-            // 
-            this.materialCard7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.materialCard7.Controls.Add(this.materialButton17);
-            this.materialCard7.Controls.Add(this.materialMaskedTextBox4);
-            this.materialCard7.Controls.Add(this.Nombre_txt);
-            this.materialCard7.Controls.Add(this.materialLabel16);
-            this.materialCard7.Depth = 0;
-            this.materialCard7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            resources.ApplyResources(this.materialCard7, "materialCard7");
-            this.materialCard7.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialCard7.Name = "materialCard7";
-            this.materialCard7.Paint += new System.Windows.Forms.PaintEventHandler(this.materialCard7_Paint);
-            // 
-            // materialButton17
-            // 
-            resources.ApplyResources(this.materialButton17, "materialButton17");
-            this.materialButton17.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.materialButton17.Depth = 0;
-            this.materialButton17.HighEmphasis = true;
-            this.materialButton17.Icon = null;
-            this.materialButton17.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialButton17.Name = "materialButton17";
-            this.materialButton17.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.materialButton17.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.materialButton17.UseAccentColor = false;
-            this.materialButton17.UseVisualStyleBackColor = true;
-            // 
-            // materialMaskedTextBox4
-            // 
-            this.materialMaskedTextBox4.AllowPromptAsInput = true;
-            this.materialMaskedTextBox4.AnimateReadOnly = true;
-            this.materialMaskedTextBox4.AsciiOnly = false;
-            resources.ApplyResources(this.materialMaskedTextBox4, "materialMaskedTextBox4");
-            this.materialMaskedTextBox4.BeepOnError = false;
-            this.materialMaskedTextBox4.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.IncludeLiterals;
-            this.materialMaskedTextBox4.Depth = 0;
-            this.materialMaskedTextBox4.HidePromptOnLeave = false;
-            this.materialMaskedTextBox4.HideSelection = true;
-            this.materialMaskedTextBox4.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Default;
-            this.materialMaskedTextBox4.LeadingIcon = null;
-            this.materialMaskedTextBox4.Mask = "";
-            this.materialMaskedTextBox4.MaxLength = 32767;
-            this.materialMaskedTextBox4.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialMaskedTextBox4.Name = "materialMaskedTextBox4";
-            this.materialMaskedTextBox4.PasswordChar = '\0';
-            this.materialMaskedTextBox4.PromptChar = '_';
-            this.materialMaskedTextBox4.ReadOnly = false;
-            this.materialMaskedTextBox4.RejectInputOnFirstFailure = false;
-            this.materialMaskedTextBox4.ResetOnPrompt = true;
-            this.materialMaskedTextBox4.ResetOnSpace = true;
-            this.materialMaskedTextBox4.SelectedText = "";
-            this.materialMaskedTextBox4.SelectionLength = 0;
-            this.materialMaskedTextBox4.SelectionStart = 0;
-            this.materialMaskedTextBox4.ShortcutsEnabled = true;
-            this.materialMaskedTextBox4.SkipLiterals = true;
-            this.materialMaskedTextBox4.TabStop = false;
-            this.materialMaskedTextBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.materialMaskedTextBox4.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludeLiterals;
-            this.materialMaskedTextBox4.TrailingIcon = global::p_proyect.Properties.Resources.firma;
-            this.materialMaskedTextBox4.UseSystemPasswordChar = false;
-            this.materialMaskedTextBox4.ValidatingType = null;
-            // 
-            // Nombre_txt
-            // 
-            this.Nombre_txt.AllowPromptAsInput = true;
-            this.Nombre_txt.AnimateReadOnly = true;
-            this.Nombre_txt.AsciiOnly = false;
-            resources.ApplyResources(this.Nombre_txt, "Nombre_txt");
-            this.Nombre_txt.BeepOnError = false;
-            this.Nombre_txt.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.IncludeLiterals;
-            this.Nombre_txt.Depth = 0;
-            this.Nombre_txt.HidePromptOnLeave = false;
-            this.Nombre_txt.HideSelection = true;
-            this.Nombre_txt.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Default;
-            this.Nombre_txt.LeadingIcon = null;
-            this.Nombre_txt.Mask = "";
-            this.Nombre_txt.MaxLength = 32767;
-            this.Nombre_txt.MouseState = MaterialSkin.MouseState.OUT;
-            this.Nombre_txt.Name = "Nombre_txt";
-            this.Nombre_txt.PasswordChar = '\0';
-            this.Nombre_txt.PromptChar = '_';
-            this.Nombre_txt.ReadOnly = false;
-            this.Nombre_txt.RejectInputOnFirstFailure = false;
-            this.Nombre_txt.ResetOnPrompt = true;
-            this.Nombre_txt.ResetOnSpace = true;
-            this.Nombre_txt.SelectedText = "";
-            this.Nombre_txt.SelectionLength = 0;
-            this.Nombre_txt.SelectionStart = 0;
-            this.Nombre_txt.ShortcutsEnabled = true;
-            this.Nombre_txt.SkipLiterals = true;
-            this.Nombre_txt.TabStop = false;
-            this.Nombre_txt.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.Nombre_txt.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludeLiterals;
-            this.Nombre_txt.TrailingIcon = global::p_proyect.Properties.Resources.firma;
-            this.Nombre_txt.UseSystemPasswordChar = false;
-            this.Nombre_txt.ValidatingType = null;
-            // 
-            // materialLabel16
-            // 
-            resources.ApplyResources(this.materialLabel16, "materialLabel16");
-            this.materialLabel16.Depth = 0;
-            this.materialLabel16.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel16.Name = "materialLabel16";
-            // 
-            // materialCard6
-            // 
-            this.materialCard6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.materialCard6.Controls.Add(this.materialButton19);
-            this.materialCard6.Controls.Add(this.materialButton18);
-            this.materialCard6.Controls.Add(this.PrecioPorUnidadDelProducto_txt);
-            this.materialCard6.Controls.Add(this.materialLabel17);
-            this.materialCard6.Controls.Add(this.UnidadDeMedidaDelProducto);
-            this.materialCard6.Controls.Add(this.materialLabel15);
-            this.materialCard6.Controls.Add(this.materialLabel14);
-            this.materialCard6.Controls.Add(this.materialLabel13);
-            this.materialCard6.Controls.Add(this.numCantidadProducto);
-            this.materialCard6.Controls.Add(this.Nombre_Del_Producto_txt);
-            this.materialCard6.Controls.Add(this.Codigo_Del_Producto_txt);
-            this.materialCard6.Depth = 0;
-            this.materialCard6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            resources.ApplyResources(this.materialCard6, "materialCard6");
-            this.materialCard6.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialCard6.Name = "materialCard6";
-            this.materialCard6.Paint += new System.Windows.Forms.PaintEventHandler(this.materialCard6_Paint);
-            // 
-            // materialButton19
-            // 
-            resources.ApplyResources(this.materialButton19, "materialButton19");
-            this.materialButton19.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.materialButton19.Depth = 0;
-            this.materialButton19.HighEmphasis = true;
-            this.materialButton19.Icon = null;
-            this.materialButton19.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialButton19.Name = "materialButton19";
-            this.materialButton19.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.materialButton19.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.materialButton19.UseAccentColor = false;
-            this.materialButton19.UseVisualStyleBackColor = true;
-            this.materialButton19.Click += new System.EventHandler(this.materialButton19_Click);
-            // 
-            // materialButton18
-            // 
-            resources.ApplyResources(this.materialButton18, "materialButton18");
-            this.materialButton18.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.materialButton18.Depth = 0;
-            this.materialButton18.HighEmphasis = true;
-            this.materialButton18.Icon = null;
-            this.materialButton18.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialButton18.Name = "materialButton18";
-            this.materialButton18.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.materialButton18.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.materialButton18.UseAccentColor = false;
-            this.materialButton18.UseVisualStyleBackColor = true;
-            this.materialButton18.Click += new System.EventHandler(this.materialButton18_Click_1);
-            // 
-            // PrecioPorUnidadDelProducto_txt
-            // 
-            resources.ApplyResources(this.PrecioPorUnidadDelProducto_txt, "PrecioPorUnidadDelProducto_txt");
-            this.PrecioPorUnidadDelProducto_txt.Depth = 0;
-            this.PrecioPorUnidadDelProducto_txt.MouseState = MaterialSkin.MouseState.HOVER;
-            this.PrecioPorUnidadDelProducto_txt.Name = "PrecioPorUnidadDelProducto_txt";
-            // 
-            // materialLabel17
-            // 
-            resources.ApplyResources(this.materialLabel17, "materialLabel17");
-            this.materialLabel17.Depth = 0;
-            this.materialLabel17.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel17.Name = "materialLabel17";
-            // 
-            // UnidadDeMedidaDelProducto
-            // 
-            resources.ApplyResources(this.UnidadDeMedidaDelProducto, "UnidadDeMedidaDelProducto");
-            this.UnidadDeMedidaDelProducto.Depth = 0;
-            this.UnidadDeMedidaDelProducto.MouseState = MaterialSkin.MouseState.HOVER;
-            this.UnidadDeMedidaDelProducto.Name = "UnidadDeMedidaDelProducto";
-            // 
-            // materialLabel15
-            // 
-            resources.ApplyResources(this.materialLabel15, "materialLabel15");
-            this.materialLabel15.Depth = 0;
-            this.materialLabel15.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel15.Name = "materialLabel15";
-            // 
-            // materialLabel14
-            // 
-            resources.ApplyResources(this.materialLabel14, "materialLabel14");
-            this.materialLabel14.Depth = 0;
-            this.materialLabel14.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel14.Name = "materialLabel14";
-            // 
-            // materialLabel13
-            // 
-            resources.ApplyResources(this.materialLabel13, "materialLabel13");
-            this.materialLabel13.Depth = 0;
-            this.materialLabel13.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel13.Name = "materialLabel13";
-            // 
-            // numCantidadProducto
-            // 
-            resources.ApplyResources(this.numCantidadProducto, "numCantidadProducto");
-            this.numCantidadProducto.Name = "numCantidadProducto";
+            this.Descuento_txt.AllowPromptAsInput = true;
+            this.Descuento_txt.AnimateReadOnly = true;
+            this.Descuento_txt.AsciiOnly = false;
+            resources.ApplyResources(this.Descuento_txt, "Descuento_txt");
+            this.Descuento_txt.BeepOnError = false;
+            this.Descuento_txt.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.IncludeLiterals;
+            this.Descuento_txt.Depth = 0;
+            this.Descuento_txt.HidePromptOnLeave = false;
+            this.Descuento_txt.HideSelection = true;
+            this.Descuento_txt.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Default;
+            this.Descuento_txt.LeadingIcon = null;
+            this.Descuento_txt.Mask = "";
+            this.Descuento_txt.MaxLength = 32767;
+            this.Descuento_txt.MouseState = MaterialSkin.MouseState.OUT;
+            this.Descuento_txt.Name = "Descuento_txt";
+            this.Descuento_txt.PasswordChar = '\0';
+            this.Descuento_txt.PromptChar = '_';
+            this.Descuento_txt.ReadOnly = false;
+            this.Descuento_txt.RejectInputOnFirstFailure = false;
+            this.Descuento_txt.ResetOnPrompt = true;
+            this.Descuento_txt.ResetOnSpace = true;
+            this.Descuento_txt.SelectedText = "";
+            this.Descuento_txt.SelectionLength = 0;
+            this.Descuento_txt.SelectionStart = 0;
+            this.Descuento_txt.ShortcutsEnabled = true;
+            this.Descuento_txt.SkipLiterals = true;
+            this.Descuento_txt.TabStop = false;
+            this.Descuento_txt.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.Descuento_txt.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludeLiterals;
+            this.Descuento_txt.TrailingIcon = global::p_proyect.Properties.Resources.etiquetas_de_productos;
+            this.Descuento_txt.UseSystemPasswordChar = false;
+            this.Descuento_txt.ValidatingType = null;
             // 
             // Nombre_Del_Producto_txt
             // 
@@ -1222,13 +1277,119 @@
             this.Codigo_Del_Producto_txt.ValidatingType = null;
             this.Codigo_Del_Producto_txt.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Codigo_Del_Producto_txt_KeyDown);
             // 
-            // CarritoDecompras_dg
+            // materialButton21
             // 
-            this.CarritoDecompras_dg.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            resources.ApplyResources(this.CarritoDecompras_dg, "CarritoDecompras_dg");
-            this.CarritoDecompras_dg.Name = "CarritoDecompras_dg";
-            this.CarritoDecompras_dg.ReadOnly = true;
-            this.CarritoDecompras_dg.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.CarritoDecompras_dg_CellClick_1);
+            resources.ApplyResources(this.materialButton21, "materialButton21");
+            this.materialButton21.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.materialButton21.Depth = 0;
+            this.materialButton21.HighEmphasis = true;
+            this.materialButton21.Icon = global::p_proyect.Properties.Resources.Descripcion;
+            this.materialButton21.Image = global::p_proyect.Properties.Resources.Aceprtar;
+            this.materialButton21.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialButton21.Name = "materialButton21";
+            this.materialButton21.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.materialButton21.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.materialButton21.UseAccentColor = true;
+            this.materialButton21.UseVisualStyleBackColor = true;
+            this.materialButton21.Click += new System.EventHandler(this.materialButton21_Click);
+            // 
+            // materialButton22
+            // 
+            resources.ApplyResources(this.materialButton22, "materialButton22");
+            this.materialButton22.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.materialButton22.Depth = 0;
+            this.materialButton22.HighEmphasis = true;
+            this.materialButton22.Icon = global::p_proyect.Properties.Resources.Cancelar;
+            this.materialButton22.Image = global::p_proyect.Properties.Resources.Aceprtar;
+            this.materialButton22.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialButton22.Name = "materialButton22";
+            this.materialButton22.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.materialButton22.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.materialButton22.UseAccentColor = true;
+            this.materialButton22.UseVisualStyleBackColor = true;
+            this.materialButton22.Click += new System.EventHandler(this.materialButton22_Click);
+            // 
+            // materialMaskedTextBox4
+            // 
+            this.materialMaskedTextBox4.AllowPromptAsInput = true;
+            this.materialMaskedTextBox4.AnimateReadOnly = false;
+            this.materialMaskedTextBox4.AsciiOnly = false;
+            resources.ApplyResources(this.materialMaskedTextBox4, "materialMaskedTextBox4");
+            this.materialMaskedTextBox4.BeepOnError = false;
+            this.materialMaskedTextBox4.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.IncludeLiterals;
+            this.materialMaskedTextBox4.Depth = 0;
+            this.materialMaskedTextBox4.HidePromptOnLeave = false;
+            this.materialMaskedTextBox4.HideSelection = true;
+            this.materialMaskedTextBox4.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Default;
+            this.materialMaskedTextBox4.LeadingIcon = global::p_proyect.Properties.Resources.busqueda_de_lupa;
+            this.materialMaskedTextBox4.Mask = "";
+            this.materialMaskedTextBox4.MaxLength = 32767;
+            this.materialMaskedTextBox4.MouseState = MaterialSkin.MouseState.OUT;
+            this.materialMaskedTextBox4.Name = "materialMaskedTextBox4";
+            this.materialMaskedTextBox4.PasswordChar = '\0';
+            this.materialMaskedTextBox4.PromptChar = '_';
+            this.materialMaskedTextBox4.ReadOnly = false;
+            this.materialMaskedTextBox4.RejectInputOnFirstFailure = false;
+            this.materialMaskedTextBox4.ResetOnPrompt = true;
+            this.materialMaskedTextBox4.ResetOnSpace = true;
+            this.materialMaskedTextBox4.SelectedText = "";
+            this.materialMaskedTextBox4.SelectionLength = 0;
+            this.materialMaskedTextBox4.SelectionStart = 0;
+            this.materialMaskedTextBox4.ShortcutsEnabled = true;
+            this.materialMaskedTextBox4.SkipLiterals = true;
+            this.materialMaskedTextBox4.TabStop = false;
+            this.materialMaskedTextBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.materialMaskedTextBox4.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludeLiterals;
+            this.materialMaskedTextBox4.TrailingIcon = null;
+            this.materialMaskedTextBox4.UseSystemPasswordChar = false;
+            this.materialMaskedTextBox4.ValidatingType = null;
+            // 
+            // materialButton23
+            // 
+            resources.ApplyResources(this.materialButton23, "materialButton23");
+            this.materialButton23.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.materialButton23.Depth = 0;
+            this.materialButton23.HighEmphasis = true;
+            this.materialButton23.Icon = global::p_proyect.Properties.Resources.Descripcion;
+            this.materialButton23.Image = global::p_proyect.Properties.Resources.Aceprtar;
+            this.materialButton23.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialButton23.Name = "materialButton23";
+            this.materialButton23.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.materialButton23.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.materialButton23.UseAccentColor = true;
+            this.materialButton23.UseVisualStyleBackColor = true;
+            // 
+            // materialButton24
+            // 
+            resources.ApplyResources(this.materialButton24, "materialButton24");
+            this.materialButton24.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.materialButton24.Depth = 0;
+            this.materialButton24.HighEmphasis = true;
+            this.materialButton24.Icon = global::p_proyect.Properties.Resources.Cancelar;
+            this.materialButton24.Image = global::p_proyect.Properties.Resources.Aceprtar;
+            this.materialButton24.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialButton24.Name = "materialButton24";
+            this.materialButton24.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.materialButton24.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.materialButton24.UseAccentColor = true;
+            this.materialButton24.UseVisualStyleBackColor = true;
+            this.materialButton24.Click += new System.EventHandler(this.materialButton24_Click);
+            // 
+            // materialButton26
+            // 
+            resources.ApplyResources(this.materialButton26, "materialButton26");
+            this.materialButton26.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.materialButton26.Depth = 0;
+            this.materialButton26.HighEmphasis = true;
+            this.materialButton26.Icon = global::p_proyect.Properties.Resources.agregar_producto;
+            this.materialButton26.Image = global::p_proyect.Properties.Resources.Aceprtar;
+            this.materialButton26.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialButton26.Name = "materialButton26";
+            this.materialButton26.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.materialButton26.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.materialButton26.UseAccentColor = true;
+            this.materialButton26.UseVisualStyleBackColor = true;
+            this.materialButton26.Click += new System.EventHandler(this.materialButton26_Click);
             // 
             // usuarioMostrarDtoBindingSource
             // 
@@ -1286,13 +1447,19 @@
             ((System.ComponentModel.ISupportInitialize)(this.ListadoDeClientesNormalesDg)).EndInit();
             this.GestionVentaAlDetalle.ResumeLayout(false);
             this.GestionVentaAlDetalle.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.CarritoDecompras_dg)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ListadoDeProductosDisponibles_dg)).EndInit();
-            this.materialCard7.ResumeLayout(false);
-            this.materialCard7.PerformLayout();
             this.materialCard6.ResumeLayout(false);
             this.materialCard6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numCantidadProducto)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CarritoDecompras_dg)).EndInit();
+            this.GestionDeventas.ResumeLayout(false);
+            this.GestionDeventas.PerformLayout();
+            this.materialCard7.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.GestionDeAdeudos.ResumeLayout(false);
+            this.GestionDeAdeudos.PerformLayout();
+            this.materialCard8.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.ListadoDeAdeudos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.usuarioMostrarDtoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.proveedorBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productoMostrarDtoBindingSource1)).EndInit();
@@ -1360,7 +1527,6 @@
         private MaterialSkin.Controls.MaterialCard materialCard5;
         private System.Windows.Forms.DataGridView ListadoDeClientesNormalesDg;
         private System.Windows.Forms.TabPage GestionVentaAlDetalle;
-        private MaterialSkin.Controls.MaterialCard materialCard7;
         private MaterialSkin.Controls.MaterialCard materialCard6;
         private MaterialSkin.Controls.MaterialLabel materialLabel11;
         private System.Windows.Forms.DataGridView ListadoDeProductosDisponibles_dg;
@@ -1374,13 +1540,26 @@
         private MaterialSkin.Controls.MaterialLabel PrecioPorUnidadDelProducto_txt;
         private MaterialSkin.Controls.MaterialLabel materialLabel17;
         private MaterialSkin.Controls.MaterialLabel UnidadDeMedidaDelProducto;
-        private MaterialSkin.Controls.MaterialLabel materialLabel16;
-        private MaterialSkin.Controls.MaterialMaskedTextBox Nombre_txt;
-        private MaterialSkin.Controls.MaterialMaskedTextBox materialMaskedTextBox4;
-        private MaterialSkin.Controls.MaterialButton materialButton17;
         private MaterialSkin.Controls.MaterialButton materialButton19;
         private MaterialSkin.Controls.MaterialButton materialButton18;
         private MaterialSkin.Controls.MaterialButton materialButton20;
         private System.Windows.Forms.DataGridView CarritoDecompras_dg;
+        private MaterialSkin.Controls.MaterialMaskedTextBox Descuento_txt;
+        private MaterialSkin.Controls.MaterialButton materialButton17;
+        private System.Windows.Forms.TabPage GestionDeventas;
+        private MaterialSkin.Controls.MaterialLabel materialLabel16;
+        private MaterialSkin.Controls.MaterialButton materialButton21;
+        private MaterialSkin.Controls.MaterialButton materialButton22;
+        private MaterialSkin.Controls.MaterialCard materialCard7;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.TabPage GestionDeAdeudos;
+        private MaterialSkin.Controls.MaterialButton materialButton23;
+        private MaterialSkin.Controls.MaterialButton materialButton24;
+        private MaterialSkin.Controls.MaterialButton materialButton26;
+        private MaterialSkin.Controls.MaterialLabel materialLabel18;
+        private MaterialSkin.Controls.MaterialCard materialCard8;
+        private System.Windows.Forms.DataGridView ListadoDeAdeudos;
+        private MaterialSkin.Controls.MaterialMaskedTextBox materialMaskedTextBox4;
+        private MaterialSkin.Controls.MaterialLabel materialLabel19;
     }
 }

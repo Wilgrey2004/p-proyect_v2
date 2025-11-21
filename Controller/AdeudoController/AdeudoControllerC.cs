@@ -12,13 +12,22 @@ namespace p_proyect.Controller.AdeudoController
 {
     public class AdeudoControllerC
     {
-        public async Task<List<Adeudo>> ObtenerTodosLosAdeudosAsync()
+        public async Task<List<AdeudoMostrarDto>> ObtenerTodosLosAdeudosAsync()
         {
             using (var context = new AppDbContext(new DbContextOptions<AppDbContext>()))
             {
-                return await context.Adeudos
-                    .Include(a => a.Compra_)
+                var listado = await context.Adeudos.Where(x => x.MontoRestanteDelAdeudo != 0)
+                    //.Include(a => a.Compra_)
                     .ToListAsync();
+
+                var listadoConvertido = new List<AdeudoMostrarDto>();
+
+                foreach (var item in listado)
+                {
+                    listadoConvertido.Add(AdeudoMapper.ToMostrarDto(item));
+                }
+
+                return listadoConvertido;
             }
         }
 
@@ -40,12 +49,12 @@ namespace p_proyect.Controller.AdeudoController
 
                 var nuevoAdeudo = new Adeudo
                 {
-                    IdCompra = dto.IdCompra,
+                    //IdCompra = dto.IdCompra,
                     MontoTotalDelAdeudo = dto.MontoTotalDelAdeudo,
                     MontoTotalAbonadoDelAdeudo = dto.MontoTotalAbonadoDelAdeudo,
                     FechaCreacion = DateTime.Now,
                     FechaUltimaActualizacion = DateTime.Now,
-                    Compra_ = compra
+                    //Compra_ = compra
                 };
 
                 context.Adeudos.Add(nuevoAdeudo);
@@ -63,7 +72,7 @@ namespace p_proyect.Controller.AdeudoController
             using (var context = new AppDbContext(new DbContextOptions<AppDbContext>()))
             {
                 var adeudo = await context.Adeudos
-                    .Include(a => a.Compra_)
+                    //.Include(a => a.Compra_)
                     .FirstOrDefaultAsync(a => a.Id == dto.Id);
 
                 if (adeudo == null)
@@ -84,8 +93,8 @@ namespace p_proyect.Controller.AdeudoController
                     if (compra == null)
                         throw new Exception("La nueva compra asociada no existe.");
 
-                    adeudo.IdCompra = dto.IdCompra;
-                    adeudo.Compra_ = compra;
+                    //adeudo.IdCompra = dto.IdCompra;
+                    //adeudo.Compra_ = compra;
                 }
 
                 adeudo.FechaUltimaActualizacion = DateTime.Now;
@@ -102,7 +111,7 @@ namespace p_proyect.Controller.AdeudoController
             using (var context = new AppDbContext(new DbContextOptions<AppDbContext>()))
             {
                 return await context.Adeudos
-                    .Include(a => a.Compra_)
+                   // .Include(a => a.Compra_)
                     .FirstOrDefaultAsync(a => a.Id == id);
             }
         }

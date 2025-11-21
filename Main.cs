@@ -1,6 +1,8 @@
 ﻿using MaterialSkin;
 using MaterialSkin.Controls;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Internal;
+using p_proyect.Controller.AdeudoController;
 using p_proyect.Controller.ClienteEspecialController;
 using p_proyect.Controller.ClienteNormalController;
 using p_proyect.Controller.ProductosController;
@@ -8,6 +10,7 @@ using p_proyect.Controller.ProveedorController;
 using p_proyect.Controller.UsuarioController;
 using p_proyect.Modules;
 using p_proyect.Modules.Entidades;
+using p_proyect.Modules.Entidades.dtos.dtoAdeudos;
 using p_proyect.Modules.Entidades.dtos.dtoClienteEspecial;
 using p_proyect.Modules.Entidades.dtos.dtoClienteNormal;
 using p_proyect.Modules.Entidades.dtos.dtoCompras;
@@ -15,16 +18,18 @@ using p_proyect.Modules.Entidades.dtos.dtoProductos;
 using p_proyect.Modules.Entidades.dtos.dtoProveedor;
 using p_proyect.Modules.Entidades.dtos.dtoUsuarios;
 using p_proyect.Modules.Entidades.dtos.dtoVentas;
+using p_proyect.Modules.Entidades.Formularios.AdeudosForms;
 using p_proyect.Modules.Entidades.Formularios.ClienteEspecialForms;
 using p_proyect.Modules.Entidades.Formularios.ProductosForms;
 using p_proyect.Modules.Entidades.Formularios.ProveedorForms;
 using p_proyect.Modules.Entidades.Formularios.UsuarioForms;
+using p_proyect.Modules.Entidades.Formularios.VentaForms;
+using p_proyect.Modules.Enums;
 using p_proyect.Utils;
 using p_proyect.Utils.Reportes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.Remoting.Contexts;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -32,6 +37,8 @@ namespace p_proyect
 {
     public partial class Main : MaterialForm
     {
+
+        public Usuarios SecionActual = new Usuarios();
         private ProductosControllerC productosControllerC = new ProductosControllerC();
         private List<ProductoMostrarDto> productoMostrarDtos = new List<ProductoMostrarDto>();
         ProductosControllerC productoController = new ProductosControllerC();
@@ -61,11 +68,63 @@ namespace p_proyect
         // List<Usuarios> Listado_De_usuarios_Original = new List<Usuarios>();
         private async void Main_Load(object sender, EventArgs e)
         {
-            await CargarTablaDeUsuarios();
-            //await CargarTablaProductos();
-            //await CargarListaDeProveedores();
-            //await CargarListadoDeClientesEspeciales();
 
+
+            await CargarTablaDeUsuarios();
+
+
+            if (SecionActual.Rol == UserRole.Administrador)
+            {
+                MessageBox.Show($"Bienvenido {SecionActual.Nombre}","Saludo!");
+                return;
+            }
+
+            if(SecionActual.Rol == UserRole.GestorDeInventario)
+            {
+                Gestion.TabPages.Remove(GestionDeClientesEspeciales);
+                Gestion.TabPages.Remove(GestionDeClientesNormales);
+                Gestion.TabPages.Remove(GestionVentaAlDetalle);
+                Gestion.TabPages.Remove(GestionUsers);
+                return;
+            }
+
+            if (SecionActual.Rol == UserRole.Vendedor)
+            {
+                //Gestion.TabPages.Remove(GestionDeClientesEspeciales);
+               Gestion.TabPages.Remove(GestionDeClientesNormales);
+                //Gestion.TabPages.Remove(GestionVentaAlDetalle);
+                // Gestion.TabPages.Remove(GestionUsers);
+
+                return;
+            }
+
+            if (SecionActual.Rol == UserRole.None)
+            {
+                MessageBox.Show($"Este usuario no contiene en si un rol {SecionActual.Nombre}", "Error!");
+                Close();
+                return;
+            }
+
+            if (SecionActual.Rol == UserRole.Empleado)
+            {
+                MessageBox.Show($"Este usuario no contiene en si un rol {SecionActual.Nombre}", "Error!");
+                Close();
+                return;
+            }
+
+
+
+
+
+        }
+        List<AdeudoMostrarDto> ListaDeAdeudos = new List<AdeudoMostrarDto>();
+        AdeudoControllerC AdeudocontrollerC_ = new AdeudoControllerC();
+        private async Task CargarAdeudos()
+        {
+            ListaDeAdeudos.Clear();
+            ListaDeAdeudos = await AdeudocontrollerC_.ObtenerTodosLosAdeudosAsync();
+            ListadoDeAdeudos.DataSource = null;
+            ListadoDeAdeudos.DataSource = ListaDeAdeudos;
         }
 
         List<ProductoVentasMostrarDto> listadoProductosDisponiblesVenta = new List<ProductoVentasMostrarDto>();
@@ -74,7 +133,7 @@ namespace p_proyect
         {
             ListadoDeProductosDisponibles_dg.DataSource = null;
             listadoProductosDisponiblesVenta.Clear();
-            listadoProductosDisponiblesVenta = await productosControllerC.ObtenerTodosLosproductosParaListaDeProductos(Modules.Enums.TipoDeVenta.VentaAlDetalle);
+            listadoProductosDisponiblesVenta = await productosControllerC.ObtenerTodosLosproductosParaListaDeProductos();
             ListadoDeProductosDisponibles_dg.DataSource = listadoProductosDisponiblesVenta;
 
 
@@ -549,6 +608,20 @@ namespace p_proyect
                     Text = "Venta Al Detalle";
                     await CargarTablasVenta();
                     break;
+                case 6:
+                    Text = "Gestion de Ventas";
+                    await CargarListaDeVentas();
+                    break;
+
+                case 7:
+                    this.Text = "Gestion de adeudos";
+                    await CargarAdeudos();
+                    break;
+
+                default:
+                    Text = string.Empty;
+                    break;
+
             }
         }
 
@@ -805,6 +878,8 @@ namespace p_proyect
         }
         int ProductoAComprarVenta = -1;
         ProductoVentasMostrarDto productoSeleccionado = new ProductoVentasMostrarDto();
+
+
         private async void ListadoDeProductosDisponibles_dg_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             ProductoAComprarVenta = DataGridHelper.ObtenerIdSeleccionado(ListadoDeProductosDisponibles_dg, e);
@@ -816,7 +891,15 @@ namespace p_proyect
             }
 
             productoSeleccionado = listadoProductosDisponiblesVenta.FirstOrDefault(x => x.Id == ProductoAComprarVenta);
-             CargarProductoVentaEnCombos(productoSeleccionado);
+            CargarProductoVentaEnCombos(productoSeleccionado);
+
+            numCantidadProducto.Value = 1;
+
+            numCantidadProducto.Maximum = productoSeleccionado.Stock;
+
+            numCantidadProducto.Minimum = 1;
+
+
         }
 
 
@@ -832,7 +915,8 @@ namespace p_proyect
         private async void materialButton18_Click_1(object sender, EventArgs e)
         {
 
-            if (numCantidadProducto.Value == 0) {
+            if (numCantidadProducto.Value == 0)
+            {
                 MessageBox.Show("No hay una cantidad");
                 return;
             }
@@ -840,13 +924,14 @@ namespace p_proyect
             if (ProductoAComprarVenta == -1)
             {
                 var producto = await productoController.TraerProductoPorElCodigo_(Codigo_Del_Producto_txt.Text.Trim());
-                AgregarProductoAlCarrito(RegresarCompraCreada(producto));
+                CompraEntity compraAMappear = RegresarCompraCreada(producto);
+                AgregarProductoAlCarrito(compraAMappear);
                 return;
             }
 
             AgregarProductoAlCarrito(RegresarCompraCreada());
 
-            
+
         }
 
         private void AgregarProductoAlCarrito(CompraEntity compraEntity)
@@ -862,14 +947,15 @@ namespace p_proyect
 
         }
 
-        private  CompraEntity RegresarCompraCreada()
+        private CompraEntity RegresarCompraCreada()
         {
+            Producto producto = productoController.TraerUnProductoPorElId(ProductoAComprarVenta);
             CompraEntity compraActuial = new CompraEntity();
             //compraActuial.Id = ProductoAComprarVenta;
             compraActuial.CantidadDelProducto = Convert.ToInt32(numCantidadProducto.Value);
             compraActuial.IdProducto = ProductoAComprarVenta;
-            compraActuial.ListaDeproductos =  productoController.TraerUnProductoPorElId(ProductoAComprarVenta);
-
+            compraActuial.ListaDeproductos = producto == null ? null : producto;
+            compraActuial.PrecioUnitario = producto.PrecioVenta;
 
             return compraActuial;
         }
@@ -881,17 +967,18 @@ namespace p_proyect
             compraActuial.CantidadDelProducto = Convert.ToInt32(numCantidadProducto.Value);
             compraActuial.IdProducto = producto.Id;
             compraActuial.ListaDeproductos = producto;
+            compraActuial.PrecioUnitario = producto.PrecioVenta;
 
 
             return compraActuial;
         }
 
-        private int ProductosDelCarritoInt =0;
+        private int ProductosDelCarritoInt = 0;
 
 
         private void CarritoDecompras_dg_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+
         }
 
         private void CarritoDecompras_dg_CellClick_1(object sender, DataGridViewCellEventArgs e)
@@ -918,8 +1005,8 @@ namespace p_proyect
         private async void CargarProductoPorCodigo(string codigoProducto)
 
         {
-             
-            CargarProductoVentaEnCombos(await productoController.TraerProductoPorElCodigo(codigoProducto)); 
+
+            CargarProductoVentaEnCombos(await productoController.TraerProductoPorElCodigo(codigoProducto));
         }
 
 
@@ -942,6 +1029,268 @@ namespace p_proyect
 
 
             }
+        }
+
+
+        public List<CompraEntity> RegresarUnaListaDeComprasEntity(List<CarritoCompraDto> carrito)
+        {
+            var lista = new List<CompraEntity>();
+
+            foreach (var item in carrito)
+            {
+                var compra = CompraMapper.MapCarritoToCompra(item);
+                lista.Add(compra);
+            }
+
+            return lista;
+        }
+
+        public bool ConfirmarCompra(Ventas ventas)
+        {
+
+            VentaResumenForms ventaResumenForms = new VentaResumenForms();
+
+            ventaResumenForms.VentaActual = ventas;
+
+            ventaResumenForms.ShowDialog();
+
+            if (ventaResumenForms.Confirmacion != true)
+            {
+                MessageBox.Show("Compra Cancelada.");
+                return false;
+            }
+
+            return true;
+        }
+
+        private async void materialButton20_Click(object sender, EventArgs e)
+        {
+
+            var respuesta = MessageBox.Show("Estas aseguro de realizar esta venta?", "Confirmar Venta", MessageBoxButtons.YesNo);
+            if (respuesta == DialogResult.No)
+            {
+                return;
+            }
+            // 1. Convertir el carrito a entidades
+            ventaActualAlDetalle.ListadoDeCompras = RegresarUnaListaDeComprasEntity(CarritoDeCompras);
+
+            // 2. Validaciones
+            if (ventaActualAlDetalle.ListadoDeCompras == null ||
+                ventaActualAlDetalle.ListadoDeCompras.Count == 0)
+            {
+                MessageBox.Show("El carrito está vacío.");
+                return;
+            }
+
+            // 3. Configurar datos iniciales
+            ventaActualAlDetalle.Descuento = decimal.Parse(Descuento_txt.Text) >= 0 ? decimal.Parse(Descuento_txt.Text) : 0;
+            ventaActualAlDetalle.IdCliente = 0;
+            ventaActualAlDetalle.Tipo_De_Venta = Modules.Enums.TipoDeVenta.VentaAlDetalle;
+
+            // 4. Calcular totales UNA sola vez ANTES de guardar
+            ventaActualAlDetalle.TotalEntero = ventaActualAlDetalle.CalcularTotalEntero();
+            ventaActualAlDetalle.MontoDescontado = ventaActualAlDetalle.CaluclarMontoDescontado();
+            ventaActualAlDetalle.TotalConElDescuento = ventaActualAlDetalle.CalcularTotalConElDescuento();
+            ventaActualAlDetalle.FechaCreacion = DateTime.Now;
+
+            using (var context = new AppDbContext(new DbContextOptions<AppDbContext>()))
+            {
+                try
+                {
+                    if (ConfirmarCompra(ventaActualAlDetalle) == false)
+                    {
+
+                        return;
+                    }
+                    RestarStock(RegresarUnaListaDeComprasEntity(CarritoDeCompras));
+                    // Guardar todo en un solo SaveChanges
+                    context.Ventas.Add(ventaActualAlDetalle);
+                    await context.SaveChangesAsync();
+
+                    MessageBox.Show("Compra efectuada con éxito!");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Ha ocurrido un error al guardar la venta \n" + ex.Message);
+                }
+            }
+
+            ventaActualAlDetalle = null;
+
+            
+
+            await CargarTablasVenta();
+        }
+
+        private void RestarStock(List<CompraEntity> listado)
+        {
+            using (var context = new AppDbContext(new DbContextOptions<AppDbContext>()))
+            {
+                for (int i = 0; i < listado.Count; i++)
+                {
+                    var producto = context.Productos.FirstOrDefault(x => x.Id == listado[i].IdProducto);
+                    if (producto == null) { continue; }
+
+                    producto.Cantidad -= listado[i].CantidadDelProducto;
+
+                    context.Productos.Update(producto);
+                    context.SaveChanges();
+
+                }
+
+            }
+        }
+
+        private async void materialButton17_Click(object sender, EventArgs e)
+        {
+            ventaActualAlDetalle = null;
+
+
+
+            await CargarTablasVenta();
+        }
+
+        int ventaSeleccionada = -1;
+
+        List<Ventas> lisatdoDeVentas = new List<Ventas>();
+        
+
+        private async Task CargarListaDeVentas()
+        {
+            lisatdoDeVentas.Clear();
+            dataGridView1.DataSource = null;
+            using (var context = new AppDbContext(new DbContextOptions<AppDbContext>()))
+            {
+                lisatdoDeVentas = await context.Ventas.ToListAsync();
+            }
+            dataGridView1.DataSource = lisatdoDeVentas;
+
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            ventaSeleccionada = DataGridHelper.ObtenerIdSeleccionado(dataGridView1, e);
+
+            if (ventaSeleccionada == -1)
+            {
+                MessageBox.Show("No se logro seleccionar");
+                return;
+            }
+        }
+
+        private async void materialButton22_Click(object sender, EventArgs e)
+        {
+            var respuesta = MessageBox.Show("Queres Eliminar Esta venta?", "Pregunta Sobre Eliminbacion", MessageBoxButtons.YesNo);
+            if (respuesta == DialogResult.No)
+            {
+                return;
+            }
+
+            using (var context = new AppDbContext(new DbContextOptions<AppDbContext>()))
+            {
+                var VentaAEliminar = await context.Ventas.FirstOrDefaultAsync( x => x.Id == ventaSeleccionada);
+
+                context.Ventas.Remove(VentaAEliminar);
+
+                await context.SaveChangesAsync();
+
+                MessageBox.Show("venta Eliminada con exito");
+
+                await CargarListaDeVentas();
+
+                return;
+            }
+        }
+
+        private void materialButton21_Click(object sender, EventArgs e)
+        {
+            var respuesta = MessageBox.Show("Quieres Entrar a la seccion de reportes ?", "Pregunta sobre Generacion de reportes", MessageBoxButtons.YesNo);
+            if (respuesta == DialogResult.No)
+            {
+                return;
+            }
+            ReportesHelperForm reportesHelperForm = new ReportesHelperForm();
+
+            reportesHelperForm.ListadoParaImprimirVentas = lisatdoDeVentas;
+
+            reportesHelperForm.ShowDialog();
+
+
+        }
+        int IdAdeudoSeleccionado = -1;
+        private void ListadoDeAdeudos_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            IdAdeudoSeleccionado = DataGridHelper.ObtenerIdSeleccionado(ListadoDeAdeudos, e);
+
+            if (IdAdeudoSeleccionado != -1)
+            {
+                MessageBox.Show("ID seleccionado: " + IdAdeudoSeleccionado);
+            }
+        }
+
+        private async void materialButton24_Click(object sender, EventArgs e)
+        {
+
+            var respuesta = MessageBox.Show("Queres Eliminar El adeudo?", "PREGUNTA SOBRE ELIMINACION", MessageBoxButtons.YesNo);
+            if (respuesta == DialogResult.No)
+            {
+                return;
+            }
+            var confirmacion = await  AdeudocontrollerC_.EliminarAdeudoAsync(IdAdeudoSeleccionado);
+
+            if(confirmacion)
+            {
+                MessageBox.Show("Adeudo Eliminado");
+
+                await CargarAdeudos();
+
+                return;
+            }
+
+            if (!confirmacion)
+            {
+                MessageBox.Show("No de logro eliminar el adeudo");
+                return;
+            }
+        }
+
+        private void GestionDeAdeudos_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private async void materialButton26_Click(object sender, EventArgs e)
+        {
+
+            if(IdAdeudoSeleccionado < 0)
+            {
+                MessageBox.Show("Selecciona un adeudo primero");
+                return;
+            }
+            var respuesta = MessageBox.Show("Quieres agregar un abono a un adeudo?", "Pregunta sobre agregado", MessageBoxButtons.YesNo);
+            if (respuesta == DialogResult.No)
+            {
+                return;
+            }
+            AdeudoMostrarDto adeudoSeleccionado = new AdeudoMostrarDto();
+
+            adeudoSeleccionado = ListaDeAdeudos.FirstOrDefault(x => x.Id == IdAdeudoSeleccionado);
+
+            if(adeudoSeleccionado == null)
+            {
+                return;
+            }
+
+            AgregarMontoAlADeudo agregarMontoAlADeudo = new AgregarMontoAlADeudo();
+
+
+            agregarMontoAlADeudo.adeudoActual = adeudoSeleccionado; 
+
+            agregarMontoAlADeudo.ShowDialog();
+
+            await CargarAdeudos();
+
+
         }
     }
 }
