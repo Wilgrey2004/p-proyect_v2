@@ -50,17 +50,24 @@ namespace p_proyect
                 }
 
 
+                try
+                {
+                    Main main = new Main();
 
+                    main.SecionActual = usuarioEnSecion;
 
-                Main main = new Main();
+                    Hide();
 
-                main.SecionActual = usuarioEnSecion;
+                    main.ShowDialog();
 
-                Hide();
+                    Show();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al iniciar sesion: " + ex.Message);
+                }
 
-                main.ShowDialog();
-
-                Show();
+                
             }
         }
     }

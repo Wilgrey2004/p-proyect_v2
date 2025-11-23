@@ -38,13 +38,19 @@
             this.materialButton1 = new MaterialSkin.Controls.MaterialButton();
             this.materialButton2 = new MaterialSkin.Controls.MaterialButton();
             this.materialButton3 = new MaterialSkin.Controls.MaterialButton();
+            this.Ganancias_txt = new MaterialSkin.Controls.MaterialLabel();
+            this.Total_txt = new MaterialSkin.Controls.MaterialLabel();
+            this.Reinversion_txt = new MaterialSkin.Controls.MaterialLabel();
+            this.GananciasLavel = new MaterialSkin.Controls.MaterialLabel();
+            this.TotalLavel = new MaterialSkin.Controls.MaterialLabel();
+            this.ReinversionLavel = new MaterialSkin.Controls.MaterialLabel();
             ((System.ComponentModel.ISupportInitialize)(this.ListadoParaReportesShow)).BeginInit();
             this.SuspendLayout();
             // 
             // ListadoParaReportesShow
             // 
             this.ListadoParaReportesShow.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ListadoParaReportesShow.Location = new System.Drawing.Point(36, 129);
+            this.ListadoParaReportesShow.Location = new System.Drawing.Point(21, 125);
             this.ListadoParaReportesShow.Name = "ListadoParaReportesShow";
             this.ListadoParaReportesShow.Size = new System.Drawing.Size(903, 437);
             this.ListadoParaReportesShow.TabIndex = 0;
@@ -107,10 +113,10 @@
             this.FechaDeFinalizacionDelReporte.IconColor = System.Drawing.Color.Gray;
             this.FechaDeFinalizacionDelReporte.IconLocation = Bunifu.UI.WinForms.BunifuDatePicker.Indicator.Right;
             this.FechaDeFinalizacionDelReporte.LeftTextMargin = 5;
-            this.FechaDeFinalizacionDelReporte.Location = new System.Drawing.Point(322, 613);
+            this.FechaDeFinalizacionDelReporte.Location = new System.Drawing.Point(36, 714);
             this.FechaDeFinalizacionDelReporte.MinimumSize = new System.Drawing.Size(4, 32);
             this.FechaDeFinalizacionDelReporte.Name = "FechaDeFinalizacionDelReporte";
-            this.FechaDeFinalizacionDelReporte.Size = new System.Drawing.Size(297, 32);
+            this.FechaDeFinalizacionDelReporte.Size = new System.Drawing.Size(280, 32);
             this.FechaDeFinalizacionDelReporte.TabIndex = 3;
             this.FechaDeFinalizacionDelReporte.Value = new System.DateTime(2025, 11, 11, 0, 0, 0, 0);
             this.FechaDeFinalizacionDelReporte.ValueChanged += new System.EventHandler(this.FechaDeFinalizacionDelReporte_ValueChanged);
@@ -132,7 +138,7 @@
             this.materialLabel4.AutoSize = true;
             this.materialLabel4.Depth = 0;
             this.materialLabel4.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel4.Location = new System.Drawing.Point(260, 582);
+            this.materialLabel4.Location = new System.Drawing.Point(33, 678);
             this.materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel4.Name = "materialLabel4";
             this.materialLabel4.Size = new System.Drawing.Size(230, 19);
@@ -146,7 +152,7 @@
             this.materialButton1.Depth = 0;
             this.materialButton1.HighEmphasis = true;
             this.materialButton1.Icon = null;
-            this.materialButton1.Location = new System.Drawing.Point(36, 654);
+            this.materialButton1.Location = new System.Drawing.Point(40, 769);
             this.materialButton1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.materialButton1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialButton1.Name = "materialButton1";
@@ -166,7 +172,7 @@
             this.materialButton2.Depth = 0;
             this.materialButton2.HighEmphasis = true;
             this.materialButton2.Icon = null;
-            this.materialButton2.Location = new System.Drawing.Point(279, 654);
+            this.materialButton2.Location = new System.Drawing.Point(283, 769);
             this.materialButton2.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.materialButton2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialButton2.Name = "materialButton2";
@@ -186,7 +192,7 @@
             this.materialButton3.Depth = 0;
             this.materialButton3.HighEmphasis = true;
             this.materialButton3.Icon = null;
-            this.materialButton3.Location = new System.Drawing.Point(627, 654);
+            this.materialButton3.Location = new System.Drawing.Point(631, 769);
             this.materialButton3.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.materialButton3.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialButton3.Name = "materialButton3";
@@ -199,11 +205,95 @@
             this.materialButton3.UseVisualStyleBackColor = true;
             this.materialButton3.Click += new System.EventHandler(this.materialButton3_Click);
             // 
+            // Ganancias_txt
+            // 
+            this.Ganancias_txt.AutoSize = true;
+            this.Ganancias_txt.Depth = 0;
+            this.Ganancias_txt.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.Ganancias_txt.Location = new System.Drawing.Point(357, 613);
+            this.Ganancias_txt.MouseState = MaterialSkin.MouseState.HOVER;
+            this.Ganancias_txt.Name = "Ganancias_txt";
+            this.Ganancias_txt.Size = new System.Drawing.Size(32, 19);
+            this.Ganancias_txt.TabIndex = 10;
+            this.Ganancias_txt.Text = "0.00";
+            this.Ganancias_txt.Visible = false;
+            // 
+            // Total_txt
+            // 
+            this.Total_txt.AutoSize = true;
+            this.Total_txt.Depth = 0;
+            this.Total_txt.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.Total_txt.Location = new System.Drawing.Point(648, 612);
+            this.Total_txt.MouseState = MaterialSkin.MouseState.HOVER;
+            this.Total_txt.Name = "Total_txt";
+            this.Total_txt.Size = new System.Drawing.Size(32, 19);
+            this.Total_txt.TabIndex = 11;
+            this.Total_txt.Text = "0.00";
+            this.Total_txt.Visible = false;
+            // 
+            // Reinversion_txt
+            // 
+            this.Reinversion_txt.AutoSize = true;
+            this.Reinversion_txt.Depth = 0;
+            this.Reinversion_txt.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.Reinversion_txt.Location = new System.Drawing.Point(490, 613);
+            this.Reinversion_txt.MouseState = MaterialSkin.MouseState.HOVER;
+            this.Reinversion_txt.Name = "Reinversion_txt";
+            this.Reinversion_txt.Size = new System.Drawing.Size(32, 19);
+            this.Reinversion_txt.TabIndex = 12;
+            this.Reinversion_txt.Text = "0.00";
+            this.Reinversion_txt.Visible = false;
+            // 
+            // GananciasLavel
+            // 
+            this.GananciasLavel.AutoSize = true;
+            this.GananciasLavel.Depth = 0;
+            this.GananciasLavel.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.GananciasLavel.Location = new System.Drawing.Point(357, 593);
+            this.GananciasLavel.MouseState = MaterialSkin.MouseState.HOVER;
+            this.GananciasLavel.Name = "GananciasLavel";
+            this.GananciasLavel.Size = new System.Drawing.Size(77, 19);
+            this.GananciasLavel.TabIndex = 13;
+            this.GananciasLavel.Text = "Ganancias";
+            this.GananciasLavel.Visible = false;
+            // 
+            // TotalLavel
+            // 
+            this.TotalLavel.AutoSize = true;
+            this.TotalLavel.Depth = 0;
+            this.TotalLavel.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.TotalLavel.Location = new System.Drawing.Point(648, 593);
+            this.TotalLavel.MouseState = MaterialSkin.MouseState.HOVER;
+            this.TotalLavel.Name = "TotalLavel";
+            this.TotalLavel.Size = new System.Drawing.Size(38, 19);
+            this.TotalLavel.TabIndex = 14;
+            this.TotalLavel.Text = "Total";
+            this.TotalLavel.Visible = false;
+            // 
+            // ReinversionLavel
+            // 
+            this.ReinversionLavel.AutoSize = true;
+            this.ReinversionLavel.Depth = 0;
+            this.ReinversionLavel.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.ReinversionLavel.Location = new System.Drawing.Point(490, 593);
+            this.ReinversionLavel.MouseState = MaterialSkin.MouseState.HOVER;
+            this.ReinversionLavel.Name = "ReinversionLavel";
+            this.ReinversionLavel.Size = new System.Drawing.Size(83, 19);
+            this.ReinversionLavel.TabIndex = 15;
+            this.ReinversionLavel.Text = "Reinversion";
+            this.ReinversionLavel.Visible = false;
+            // 
             // ReportesHelperForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(985, 735);
+            this.ClientSize = new System.Drawing.Size(948, 823);
+            this.Controls.Add(this.ReinversionLavel);
+            this.Controls.Add(this.TotalLavel);
+            this.Controls.Add(this.GananciasLavel);
+            this.Controls.Add(this.Reinversion_txt);
+            this.Controls.Add(this.Total_txt);
+            this.Controls.Add(this.Ganancias_txt);
             this.Controls.Add(this.materialButton3);
             this.Controls.Add(this.materialButton2);
             this.Controls.Add(this.materialButton1);
@@ -234,5 +324,11 @@
         private MaterialSkin.Controls.MaterialButton materialButton1;
         private MaterialSkin.Controls.MaterialButton materialButton2;
         private MaterialSkin.Controls.MaterialButton materialButton3;
+        private MaterialSkin.Controls.MaterialLabel Ganancias_txt;
+        private MaterialSkin.Controls.MaterialLabel Total_txt;
+        private MaterialSkin.Controls.MaterialLabel Reinversion_txt;
+        private MaterialSkin.Controls.MaterialLabel GananciasLavel;
+        private MaterialSkin.Controls.MaterialLabel TotalLavel;
+        private MaterialSkin.Controls.MaterialLabel ReinversionLavel;
     }
 }

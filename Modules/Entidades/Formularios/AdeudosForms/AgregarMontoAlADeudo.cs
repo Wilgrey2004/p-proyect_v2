@@ -39,7 +39,8 @@ namespace p_proyect.Modules.Entidades.Formularios.AdeudosForms
 
         private void AgregarMontoAlADeudo_Load(object sender, EventArgs e)
         {
-            MontoTotalDelAdeudo.Text = adeudoActual.MontoTotalDelAdeudo.ToString();
+            MontoTotalDelAdeudo.Text = adeudoActual.MontoRestanteDelAdeudo.ToString();
+            MontoDelaDeuda.Text = adeudoActual.MontoTotalDelAdeudo.ToString();
         }
 
         private void materialButton1_Click(object sender, EventArgs e)

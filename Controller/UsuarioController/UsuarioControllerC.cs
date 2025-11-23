@@ -6,6 +6,7 @@ using p_proyect.Modules.Enums;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using static p_proyect.Modules.Entidades.dtos.dtoUsuarios.EditarUsuarioDto;
 
 namespace p_proyect.Controller.UsuarioController
@@ -31,26 +32,49 @@ namespace p_proyect.Controller.UsuarioController
         {
             // ✅ 1. Validación de datos esenciales
             if (string.IsNullOrWhiteSpace(dto.Nombre))
-                throw new ArgumentException("El nombre es obligatorio.");
+            {
+                MessageBox.Show("El nombre es obligatorio.");
+                return null;
+            }
 
             if (string.IsNullOrWhiteSpace(dto.Apellido))
-                throw new ArgumentException("El apellido es obligatorio.");
+            {
+                MessageBox.Show("El apellido es obligatorio.");
+                return null;
+            }
 
             if (string.IsNullOrWhiteSpace(dto.Cedula))
-                throw new ArgumentException("La cédula es obligatoria.");
+            {
+                MessageBox.Show("La cédula es obligatoria.");
+                return null;
+            }
+               
 
             if (dto.Cedula.Length > 11)
-                throw new ArgumentException("La cédula no puede tener más de 11 caracteres.");
+            {
+                MessageBox.Show("La cédula no puede tener más de 11 caracteres.");
+                return null;
+            }
 
             if (string.IsNullOrWhiteSpace(dto.Correo))
-                throw new ArgumentException("El correo es obligatorio.");
+            {
+                MessageBox.Show("El correo es obligatorio.");
+                return null;
+            }
+               
 
             if (string.IsNullOrWhiteSpace(dto.Contrasena))
-                throw new ArgumentException("La contraseña es obligatoria.");
+            {
+                MessageBox.Show("La contraseña es obligatoria.");
+                return null;
+            }
 
             // ✅ 2. Validación del Rol (debe ser un enum válido)
             if (!Enum.IsDefined(typeof(UserRole), dto.Rol))
-                throw new ArgumentException("El rol especificado no es válido.");
+            {
+                MessageBox.Show("El rol especificado no es válido.");
+                return null; 
+            }
 
             // ✅ 3. Crear contexto bien configurado
 
@@ -85,7 +109,10 @@ namespace p_proyect.Controller.UsuarioController
         {
             // ✅ 1. Validar ID
             if (dto.Id <= 0)
-                throw new ArgumentException("El ID del usuario es obligatorio.");
+            {
+                MessageBox.Show("El ID del usuario es obligatorio.");
+                return null;
+            }
 
             // ✅ 2. Crear contexto
             using (var context = new AppDbContext(new DbContextOptions<AppDbContext>()))
@@ -99,28 +126,28 @@ namespace p_proyect.Controller.UsuarioController
                 // ✅ 4. Validaciones básicas (solo si envía el campo)
 
                 if (dto.Nombre != null && string.IsNullOrWhiteSpace(dto.Nombre))
-                    throw new ArgumentException("El nombre no puede estar vacío.");
+                    MessageBox.Show("El nombre no puede estar vacío.");
 
                 if (dto.Apellido != null && string.IsNullOrWhiteSpace(dto.Apellido))
-                    throw new ArgumentException("El apellido no puede estar vacío.");
+                    MessageBox.Show("El apellido no puede estar vacío.");
 
                 if (dto.Cedula != null)
                 {
                     if (string.IsNullOrWhiteSpace(dto.Cedula))
-                        throw new ArgumentException("La cédula no puede estar vacía.");
+                        MessageBox.Show("La cédula no puede estar vacía.");
 
                     if (dto.Cedula.Length > 11)
-                        throw new ArgumentException("La cédula no puede tener más de 11 caracteres.");
+                        MessageBox.Show("La cédula no puede tener más de 11 caracteres.");
                 }
 
                 if (dto.Correo != null && string.IsNullOrWhiteSpace(dto.Correo))
-                    throw new ArgumentException("El correo no puede estar vacío.");
+                    MessageBox.Show("El correo no puede estar vacío.");
 
                 if (dto.Contrasena != null && string.IsNullOrWhiteSpace(dto.Contrasena))
-                    throw new ArgumentException("La contraseña no puede estar vacía.");
+                    MessageBox.Show("La contraseña no puede estar vacía.");
 
                 if (dto.Rol.HasValue && !Enum.IsDefined(typeof(UserRole), dto.Rol.Value))
-                    throw new ArgumentException("El rol especificado no es válido.");
+                    MessageBox.Show("El rol especificado no es válido.");
 
                 // ✅ 5. Aplicar solo los campos enviados
                 if (dto.Nombre != null) usuario.Nombre = dto.Nombre.Trim();
@@ -158,20 +185,30 @@ namespace p_proyect.Controller.UsuarioController
 
             using (var context = new AppDbContext(new DbContextOptions<AppDbContext>()))
             {
-                // 1. Buscar usuario
-                var usuario = await context.Usuarios.FirstOrDefaultAsync(u => u.Id == id);
 
-                // 2. Validar existencia
-                if (usuario == null)
+                try
                 {
-                    return false; // No existe
+                    var usuario = await context.Usuarios.FirstOrDefaultAsync(u => u.Id == id);
+
+                    // 2. Validar existencia
+                    if (usuario == null)
+                    {
+                        return false; // No existe
+                    }
+
+                    // 3. Eliminar
+                    context.Usuarios.Remove(usuario);
+
+                    // 4. Guardar cambios
+                    await context.SaveChangesAsync();
                 }
-
-                // 3. Eliminar
-                context.Usuarios.Remove(usuario);
-
-                // 4. Guardar cambios
-                await context.SaveChangesAsync();
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al eliminar el usuario. Verifica el ID seleccionado. \n" + ex);
+                    return false;
+                }
+                // 1. Buscar usuario
+                
 
                 return true; // Eliminado
             }

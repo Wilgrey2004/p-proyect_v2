@@ -18,13 +18,11 @@ namespace p_proyect.Modules.Entidades
         public decimal MontoTotalAbonadoDelAdeudo { get; set; }
 
         [DisplayName("Monto Restante a pagar")]
-        public decimal MontoRestanteDelAdeudo
-        {
-            set; get;
-        }
+        public decimal MontoRestanteDelAdeudo {set; get;}
 
         [DisplayName("Fecha De Creacion del adeudo")]
         public DateTime? FechaCreacion { get; set; }
+
         [DisplayName("Fecha de la ultima Actualizacion")]
         public DateTime? FechaUltimaActualizacion { get; set; }
 
@@ -36,8 +34,8 @@ namespace p_proyect.Modules.Entidades
 
         [DisplayName("Cliente Asociado al adeudo")]
         public int IdCliente { get; set; }
-        [DisplayName("Contacto Del Cliente asociado al adeudo")]
 
+        [DisplayName("Contacto Del Cliente asociado al adeudo")]
         public string ContactoDelCliente { get; set; }
 
         public decimal CalcularElmontoRestante()

@@ -30,13 +30,10 @@ namespace p_proyect.Utils
             }
         }
 
-        // string resourcesPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Resources");
-        //string filePath = Path.Combine(resourcesPath, "MiReporte.pdf");
+
         public static void GeneradorDePDFS<T>(List<T> usl, List<string> Cabeceras_, string Reporte, string NombreDeLaPlantilla, string nombre_del_Reporte)
                     where T : class
         {
-
-
             // No consultamos la BD si T no es una entidad del contexto
             string rutaPlantilla = Path.Combine(
                 AppDomain.CurrentDomain.BaseDirectory,
@@ -48,7 +45,9 @@ namespace p_proyect.Utils
 
             GenerarPdf(usl, Cabeceras_, rutaPlantilla, rutaSalida);
         }
-        public static void GeneradorDePDFS<T>(List<T> usl, List<string> Cabeceras_, string Reporte, string NombreDeLaPlantilla, decimal? total)
+
+
+        public static void GeneradorDePDFS<T>(List<T> usl, List<string> Cabeceras_, string Reporte, string NombreDeLaPlantilla, string nombre_del_Reporte, decimal total, decimal Ganancia, decimal Reinversion)
             where T : class
         {
             GeneradorDePdf generador = new GeneradorDePdf();
@@ -60,14 +59,12 @@ namespace p_proyect.Utils
                 $"{NombreDeLaPlantilla}.html"
             );
 
-            string rutaSalida = Path.Combine(
-                AppDomain.CurrentDomain.BaseDirectory,
-                $"Reportes/{Reporte}",
-                $"Reporte-{DateTime.Now:yyyyMMddHHmmss}.pdf"
-            );
+            string rutaSalida = PedirRutaGuardado(nombre_del_Reporte);
 
-            GenerarPdf(usl, Cabeceras_, rutaPlantilla, rutaSalida, total.ToString());
+            GenerarPdf(usl, Cabeceras_, rutaPlantilla, rutaSalida, total.ToString(), Ganancia.ToString(), Reinversion.ToString());
         }
+
+
         private static void GenerarPdf<T>(List<T> datos, List<string> cabeceras, string rutaPlantilla, string rutaSalida)
         {
             // Verificar la existencia de la plantilla HTML
@@ -110,7 +107,7 @@ namespace p_proyect.Utils
             plantillaHtml = plantillaHtml.Replace("@Filas", sbFilas.ToString());
             plantillaHtml = plantillaHtml.Replace("@Fecha", DateTime.Now.ToString("dd/MM/yyyy"));
             plantillaHtml = plantillaHtml.Replace("@Cabeceras", cabecerasHtml);
-            plantillaHtml = plantillaHtml.Replace("@Total", "0.00");
+            plantillaHtml = plantillaHtml.Replace("@Total", "");
             plantillaHtml = plantillaHtml.Replace("@ID", "00001111");
 
 
@@ -124,8 +121,11 @@ namespace p_proyect.Utils
             documento.Save(rutaSalida);
             documento.Close();
         }
-        private static void GenerarPdf<T>(List<T> datos, List<string> cabeceras, string rutaPlantilla, string rutaSalida, string total)
+        
+        
+        private static void GenerarPdf<T>(List<T> datos, List<string> cabeceras, string rutaPlantilla, string rutaSalida, string total, string Ganancia, string Reinversion)
         {
+            // Verificar la existencia de la plantilla HTML
             // Verificar la existencia de la plantilla HTML
             if (!File.Exists(rutaPlantilla))
             {
@@ -144,7 +144,6 @@ namespace p_proyect.Utils
             foreach (var item in cabeceras)
             {
                 infoCabeceras += $"<th style='padding: 8px; border: 1px solid #ddd; word-break: break-word; font-size: 10px;'>{item}</th>";
-
             }
 
             cabecerasHtml = cabecerasHtml.Replace("@filas", infoCabeceras);
@@ -163,14 +162,13 @@ namespace p_proyect.Utils
             }
 
 
-
             // Reemplazar los marcadores en la plantilla
             plantillaHtml = plantillaHtml.Replace("@Filas", sbFilas.ToString());
             plantillaHtml = plantillaHtml.Replace("@Fecha", DateTime.Now.ToString("dd/MM/yyyy"));
             plantillaHtml = plantillaHtml.Replace("@Cabeceras", cabecerasHtml);
             plantillaHtml = plantillaHtml.Replace("@Total", total);
-            plantillaHtml = plantillaHtml.Replace("@ValorTotal", total);
-            plantillaHtml = plantillaHtml.Replace("@ID", "00001111");
+            plantillaHtml = plantillaHtml.Replace("@Ganancias", Ganancia);
+            plantillaHtml = plantillaHtml.Replace("@Reinversion", Reinversion);
 
 
             // Convertir el HTML a PDF utilizando SelectPdf

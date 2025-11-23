@@ -16,14 +16,21 @@ namespace p_proyect.Controller.AdeudoController
         {
             using (var context = new AppDbContext(new DbContextOptions<AppDbContext>()))
             {
-                var listado = await context.Adeudos.Where(x => x.MontoRestanteDelAdeudo != 0)
-                    //.Include(a => a.Compra_)
-                    .ToListAsync();
+                //.Where(x => x.MontoTotalDelAdeudo == x.MontoTotalAbonadoDelAdeudo)
+                var listado = await context.Adeudos.ToListAsync();
 
                 var listadoConvertido = new List<AdeudoMostrarDto>();
 
                 foreach (var item in listado)
                 {
+                    if (item.MontoTotalDelAdeudo == item.MontoTotalAbonadoDelAdeudo) continue;
+
+                    item.MontoRestanteDelAdeudo = item.CalcularElmontoRestante();
+
+                    context.Adeudos.Update(item);
+
+                    await context.SaveChangesAsync();
+
                     listadoConvertido.Add(AdeudoMapper.ToMostrarDto(item));
                 }
 

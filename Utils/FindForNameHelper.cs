@@ -37,6 +37,11 @@ namespace p_proyect.Utils
 
                 if (prop == null)
                 {
+                    prop = typeof(T).GetProperty("NombreDelCliente");
+                }
+
+                if(prop == null)
+                {
                     MessageBox.Show($"La clase {typeof(T).Name} no contiene la propiedad 'Nombre'.");
                     return;
                 }

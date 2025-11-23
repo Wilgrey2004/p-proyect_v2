@@ -273,6 +273,10 @@
     <Compile Include="Migrations\20251121151436_updateAdeudo.Designer.cs">
       <DependentUpon>20251121151436_updateAdeudo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\20251122002308_agregadoFormaDePago.cs" />
+    <Compile Include="Migrations\20251122002308_agregadoFormaDePago.Designer.cs">
+      <DependentUpon>20251122002308_agregadoFormaDePago.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\AppDbContextModelSnapshot.cs" />
     <Compile Include="Modules\AppDbContext.cs" />
     <Compile Include="Modules\AppDbContextFactory.cs" />
@@ -303,6 +307,7 @@
     <Compile Include="Modules\Entidades\dtos\dtoProductos\ProductoEditarDto.cs" />
     <Compile Include="Modules\Entidades\dtos\dtoProductos\ProductoMapper.cs" />
     <Compile Include="Modules\Entidades\dtos\dtoProductos\ProductoMostrarDto.cs" />
+    <Compile Include="Modules\Entidades\dtos\dtoProductos\ProductoReporteDto.cs" />
     <Compile Include="Modules\Entidades\dtos\dtoProveedor\ProveedorMapper.cs" />
     <Compile Include="Modules\Entidades\dtos\dtoProveedor\ProveedorMostrarDto.cs" />
     <Compile Include="Modules\Entidades\dtos\dtoUsuarios\EditarUsuarioDto.cs" />
@@ -332,6 +337,12 @@
     </Compile>
     <Compile Include="Modules\Entidades\Formularios\ClienteEspecialForms\ClienteEspecialEditar.Designer.cs">
       <DependentUpon>ClienteEspecialEditar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Entidades\Formularios\ClienteEspecialForms\ClienteEspecialSeleccionarParaVentaACredito.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\Entidades\Formularios\ClienteEspecialForms\ClienteEspecialSeleccionarParaVentaACredito.Designer.cs">
+      <DependentUpon>ClienteEspecialSeleccionarParaVentaACredito.cs</DependentUpon>
     </Compile>
     <Compile Include="Modules\Entidades\Formularios\ClienteNormalForms\AgregarClienteNormal.cs">
       <SubType>Form</SubType>
@@ -372,6 +383,8 @@
     <Compile Include="Modules\Entidades\Proveedor.cs" />
     <Compile Include="Modules\Entidades\Usuarios.cs" />
     <Compile Include="Modules\Entidades\Ventas.cs" />
+    <Compile Include="Modules\Enums\TipoDeCliente.cs" />
+    <Compile Include="Modules\Enums\TipoDePago.cs" />
     <Compile Include="Modules\Enums\TipoDeVenta.cs" />
     <Compile Include="Modules\Enums\UnidadMedida.cs" />
     <Compile Include="Modules\Enums\UserRole.cs" />
@@ -412,6 +425,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Modules\Entidades\Formularios\ClienteEspecialForms\ClienteEspecialEditar.resx">
       <DependentUpon>ClienteEspecialEditar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Entidades\Formularios\ClienteEspecialForms\ClienteEspecialSeleccionarParaVentaACredito.resx">
+      <DependentUpon>ClienteEspecialSeleccionarParaVentaACredito.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modules\Entidades\Formularios\ClienteNormalForms\AgregarClienteNormal.resx">
       <DependentUpon>AgregarClienteNormal.cs</DependentUpon>
@@ -517,6 +533,13 @@
   <ItemGroup>
     <None Include="src\Iconos\gmail.png" />
     <None Include="src\logo\FondoDePantallaRojo.jpg" />
+    <None Include="src\Iconos\usuarioIco.png" />
+    <None Include="src\Iconos\inventarioIco.png" />
+    <None Include="src\Iconos\gestion-de-la-cadena-de-suministro.png" />
+    <None Include="src\Iconos\clasificacion.png" />
+    <None Include="src\Iconos\clientes-potenciales.png" />
+    <None Include="src\Iconos\historial-de-transacciones.png" />
+    <None Include="src\Iconos\AdeudoIMG.png" />
     <Content Include="src\logo\logo_si_hd-removebg.png" />
     <Content Include="Resources\logotipo-de-whatsapp.png" />
   </ItemGroup>

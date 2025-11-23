@@ -48,6 +48,31 @@ namespace p_proyect.Modules.Entidades.dtos.dtoProductos
             
         }
 
+        public static ProductoReporteDto ToReporteDto(ProductoMostrarDto dto)
+        {
+            if (dto == null) return null;
+
+            return new ProductoReporteDto
+            {
+                Id = dto.Id,
+                Nombre = dto.Nombre,
+                Descripcion = dto.Descripcion,
+                CodigoBarra = dto.CodigoBarra,
+                Marca = dto.Marca,
+                Modelo = dto.Modelo,
+                Cantidad = dto.Cantidad,
+                PrecioCompra = dto.PrecioCompra,
+                PrecioVenta = dto.PrecioVenta,
+                Ubicacion = dto.Ubicacion,
+                UnidadMedida = dto.UnidadMedida,
+               // TipoDeDeSalida = dto.TipoDeDeSalida,
+                ProveedorNombre = dto.NombreProveedor,
+                FechaExpiracion = dto.FechaExpiracion,
+                FechaCreacion = dto.FechaCreacion
+            };
+        }
+
+
         // CREATE DTO → Entidad
         public static Producto CrearYRegresarEntidadDeDto(this ProductoCreateDto dto)
         {

@@ -118,41 +118,35 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="Cancelar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\src\Iconos\Cancelar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="avatar-de-usuario" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\src\Iconos\avatar-de-usuario.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="etiquetas-de-productos" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\src\Iconos\etiquetas-de-productos.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="cedula" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\src\Iconos\cedula.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="logo_si_hd-removebg" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\src\logo\logo_si_hd-removebg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Aceprtar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\src\Iconos\Aceprtar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="bruto" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\src\Iconos\bruto.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Edad" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\src\Iconos\Edad.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Aceprtar1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\src\Iconos\Aceprtar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="logo_si_hd-removebg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\src\logo\logo_si_hd-removebg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="avatar-de-usuario" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\src\Iconos\avatar-de-usuario.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="clientes-potenciales" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\src\Iconos\clientes-potenciales.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Descripcion1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\src\Iconos\Descripcion.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="logotipo-de-whatsapp" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\logotipo-de-whatsapp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Cancelar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\src\Iconos\Cancelar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="firma" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\src\Iconos\firma.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Direccion" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\src\Iconos\Direccion.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Aceprtar1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\src\Iconos\Aceprtar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="gmail" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\src\Iconos\gmail.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -160,31 +154,58 @@
   <data name="ListaDeCompras" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\src\Iconos\ListaDeCompras.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="busqueda-de-lupa" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\src\Iconos\busqueda-de-lupa.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Direccion" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\src\Iconos\Direccion.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="agregar-producto" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\src\Iconos\agregar-producto.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="clasificacion" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\src\Iconos\clasificacion.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Descripcion1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\src\Iconos\Descripcion.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="llamada-telefonica1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\src\Iconos\llamada-telefonica.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="FondoDePantallaRojo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\src\logo\FondoDePantallaRojo.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="historial-de-transacciones" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\src\Iconos\historial-de-transacciones.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="gestion-de-la-cadena-de-suministro" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\src\Iconos\gestion-de-la-cadena-de-suministro.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="agregar-producto" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\src\Iconos\agregar-producto.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bruto" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\src\Iconos\bruto.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="llamada-telefonica" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\src\Iconos\llamada-telefonica.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="producto-de-codigo-de-barras" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\src\Iconos\producto-de-codigo-de-barras.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Descripcion" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\src\Iconos\Descripcion.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="etiquetas-de-productos" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\src\Iconos\etiquetas-de-productos.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="producto-de-codigo-de-barras" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\src\Iconos\producto-de-codigo-de-barras.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="busqueda-de-lupa" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\src\Iconos\busqueda-de-lupa.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="lista-de-verificacion" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\src\Iconos\lista-de-verificacion.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="FondoDePantallaRojo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\src\logo\FondoDePantallaRojo.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="usuarioIco" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\src\Iconos\usuarioIco.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="inventarioIco" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\src\Iconos\inventarioIco.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="logotipo-de-whatsapp" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\logotipo-de-whatsapp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AdeudoIMG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\src\Iconos\AdeudoIMG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

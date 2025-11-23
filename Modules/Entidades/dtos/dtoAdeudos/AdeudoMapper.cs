@@ -1,10 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using p_proyect.Core.Interfaces;
+using p_proyect.Modules.Enums;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace p_proyect.Modules.Entidades.dtos.dtoAdeudos
@@ -17,31 +14,34 @@ namespace p_proyect.Modules.Entidades.dtos.dtoAdeudos
 
             string Nombre = "";
             string Numero = "000-000-0000";
+            TipoDeCliente tipo = new TipoDeCliente();
             ClienteNormal clienteNormal = new ClienteNormal();
             ClienteEspecial clienteEspecial = new ClienteEspecial();
-           
+
             using (var context = new AppDbContext(new DbContextOptions<AppDbContext>()))
             {
-            
-                
+
                 clienteNormal = context.ClientesNormales.FirstOrDefault(x => x.Id == entity.IdCliente || x.Contacto == entity.ContactoDelCliente);
                 clienteEspecial = context.ClientesEspeciales.FirstOrDefault(x => x.Id == entity.IdCliente || x.Contacto == entity.ContactoDelCliente);
 
-                if (clienteNormal != null && clienteEspecial !=null) {
+                if (clienteNormal != null && clienteEspecial != null)
+                {
                     MessageBox.Show("Este Cliente existe como cliente normal y cliente especial.");
                     return null;
                 }
 
-                if(clienteNormal != null)
+                if (clienteNormal != null)
                 {
                     Nombre = clienteNormal.Nombre;
                     Numero = clienteNormal.Contacto.ToString();
+                    tipo = TipoDeCliente.ClienteNormal;
                 }
 
-                if(clienteEspecial != null)
+                if (clienteEspecial != null)
                 {
                     Nombre = clienteEspecial.Nombre;
                     Numero = clienteEspecial.Contacto.ToString();
+                    tipo = TipoDeCliente.ClienteEspecial;
                 }
             }
 
@@ -56,6 +56,8 @@ namespace p_proyect.Modules.Entidades.dtos.dtoAdeudos
                 NombreDelCliente = Nombre,
                 NumeroDelCliente = Numero,
                 IdCompra = entity.IdVenta,
+                TipoDeCliente = tipo,
+
             };
         }
 
@@ -68,7 +70,7 @@ namespace p_proyect.Modules.Entidades.dtos.dtoAdeudos
                 MontoTotalDelAdeudo = entity.MontoTotalDelAdeudo,
                 MontoTotalAbonadoDelAdeudo = entity.MontoTotalAbonadoDelAdeudo,
                 FechaUltimaActualizacion = DateTime.Now,
-                //IdCompra = entity.IdCompra
+                IdCompra = entity.IdVenta
             };
         }
 
@@ -80,7 +82,7 @@ namespace p_proyect.Modules.Entidades.dtos.dtoAdeudos
                 MontoTotalDelAdeudo = entity.MontoTotalDelAdeudo,
                 MontoTotalAbonadoDelAdeudo = entity.MontoTotalAbonadoDelAdeudo,
                 FechaCreacion = entity.FechaCreacion,
-               // IdCompra = entity.IdCompra
+                // IdCompra = entity.IdCompra
             };
         }
 
@@ -92,7 +94,7 @@ namespace p_proyect.Modules.Entidades.dtos.dtoAdeudos
                 MontoTotalDelAdeudo = dto.MontoTotalDelAdeudo,
                 MontoTotalAbonadoDelAdeudo = dto.MontoTotalAbonadoDelAdeudo,
                 FechaCreacion = dto.FechaCreacion,
-               // IdCompra = dto.IdCompra
+                // IdCompra = dto.IdCompra
             };
         }
 
@@ -102,7 +104,7 @@ namespace p_proyect.Modules.Entidades.dtos.dtoAdeudos
             entity.MontoTotalDelAdeudo = dto.MontoTotalDelAdeudo;
             entity.MontoTotalAbonadoDelAdeudo = dto.MontoTotalAbonadoDelAdeudo;
             entity.FechaUltimaActualizacion = dto.FechaUltimaActualizacion;
-           // entity.IdCompra = dto.IdCompra;
+            // entity.IdCompra = dto.IdCompra;
         }
     }
 }

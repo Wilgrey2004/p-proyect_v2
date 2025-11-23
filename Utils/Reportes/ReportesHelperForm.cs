@@ -67,6 +67,8 @@ namespace p_proyect.Utils.Reportes
             {
                 ListadoParaImprimirProductos_Copia = new List<ProductoMostrarDto>(ListadoParaImprimirProductos);
                 ListadoParaReportesShow.DataSource = ListadoParaImprimirProductos;
+
+                CargarLabelsDeProductos();
                 return;
             }
 
@@ -220,6 +222,44 @@ namespace p_proyect.Utils.Reportes
         }
 
 
+        decimal Total = 0;
+
+        decimal Ganancias = 0;
+
+        decimal Reinversion = 0;
+
+        List<ProductoReporteDto> ListadoConvertidoProductos = new List<ProductoReporteDto>();
+
+
+        private void CargarLabelsDeProductos()
+        {
+
+            TotalLavel.Visible = true;
+            GananciasLavel.Visible = true;
+            ReinversionLavel.Visible = true;
+
+            Total_txt.Visible = true;
+            Ganancias_txt.Visible = true;
+            Reinversion_txt.Visible = true;
+
+
+
+
+            for (int i = 0; i < ListadoParaImprimirProductos.Count; i++)
+            {
+                Total += ListadoParaImprimirProductos[i].PrecioVenta * ListadoParaImprimirProductos[i].Cantidad;
+                Ganancias += (ListadoParaImprimirProductos[i].PrecioVenta * ListadoParaImprimirProductos[i].Cantidad - ListadoParaImprimirProductos[i].PrecioCompra * ListadoParaImprimirProductos[i].Cantidad);
+                Reinversion += (ListadoParaImprimirProductos[i].PrecioCompra * ListadoParaImprimirProductos[i].Cantidad);
+
+                ListadoConvertidoProductos.Add(ProductoMapper.ToReporteDto(ListadoParaImprimirProductos[i]));
+            }
+
+
+            Total_txt.Text = $"{Total:C2}";
+            Ganancias_txt.Text = $"{Ganancias:C2}";
+            Reinversion_txt.Text = $"{Reinversion:C2}";
+        }
+
         private void GenerarReportesProductos()
         {
             if (ListadoParaImprimirProductos == null || ListadoParaImprimirProductos.Count == 0)
@@ -244,18 +284,29 @@ namespace p_proyect.Utils.Reportes
                 "PrecioVenta",
                 "Ubicacion",
                 "UnidadMedida",
-                "TipoDeDeSalida",
+               // "TipoDeDeSalida",
                 "ProveedorNombre",
                 "FechaExpiracion",
                 "FechaCreacion"
             };
 
-            GeneradorDePdf.GeneradorDePDFS<ProductoMostrarDto>(
-                ListadoParaImprimirProductos,
+
+
+            CargarLabelsDeProductos();
+
+
+
+
+
+            GeneradorDePdf.GeneradorDePDFS<ProductoReporteDto>(
+                ListadoConvertidoProductos,
                 nombresPropiedades,
                 "Productos",
                 "ReportesPlantilla",
-                "ReporteProductos"
+                "ReporteProductos",
+                Total,
+                Ganancias,
+                Reinversion
             );
 
             MessageBox.Show("Reporte de productos generado con éxito ✅");

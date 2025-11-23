@@ -40,6 +40,8 @@ namespace p_proyect.Modules.Entidades
         [DisplayName("Tipo de salida")]
         public TipoDeVenta Tipo_De_Venta { get; set; }
 
+        [DisplayName("Tipo de pago")]
+        public TipoDePago Pago { get; set; } = TipoDePago.PagoEnEfectivo;
 
         public List<CompraEntity> ListadoDeCompras { get; set; }
 

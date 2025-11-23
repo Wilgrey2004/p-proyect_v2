@@ -1,4 +1,5 @@
-﻿using System;
+﻿using p_proyect.Modules.Enums;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -34,5 +35,7 @@ namespace p_proyect.Modules.Entidades.dtos.dtoAdeudos
 
         [DisplayName("ID de la Compra")]
         public int IdCompra { get; set; }
+
+        public TipoDeCliente TipoDeCliente { get; set; }
     }
 }

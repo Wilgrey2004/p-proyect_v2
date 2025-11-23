@@ -15,21 +15,20 @@ namespace p_proyect.Controller.ProductosController
         public ProductosControllerC() { }
 
 
-
         public async Task<List<ProductoVentasMostrarDto>> ObtenerTodosLosproductosParaListaDeProductos()
         {
             using (var context = new AppDbContext(new DbContextOptions<AppDbContext>()))
             {
-                var listadoPuro = await context.Productos.Where(pro =>  pro.Cantidad > 0).ToListAsync();
+                var listadoPuro = await context.Productos.Where(pro => pro.Cantidad > 0).ToListAsync();
                 List<ProductoVentasMostrarDto> listadoConvertido = new List<ProductoVentasMostrarDto>();
                 for (int i = 0; i < listadoPuro.Count; i++)
                 {
                     listadoConvertido.Add(ProductoMapper.DeProductoAProductoVentasDto(listadoPuro[i]));
                 }
-
                 return listadoConvertido;
             }
         }
+
 
         public async Task<List<ProductoMostrarDto>> ObtenerTodosLosProductos()
         {
@@ -48,6 +47,7 @@ namespace p_proyect.Controller.ProductosController
             }
         }
 
+
         public async Task<ProductoVentasMostrarDto> TraerProductoPorElCodigo(string Codigo)
         {
             using (var context = new AppDbContext(new DbContextOptions<AppDbContext>()))
@@ -58,6 +58,7 @@ namespace p_proyect.Controller.ProductosController
             }
         }
 
+
         public async Task<Producto> TraerProductoPorElCodigo_(string Codigo)
         {
             using (var context = new AppDbContext(new DbContextOptions<AppDbContext>()))
@@ -66,11 +67,12 @@ namespace p_proyect.Controller.ProductosController
             }
         }
 
+
         public async Task<List<ProductoMostrarDto>> ObtenerTodosLosProductosDeUnProveedor(int id)
         {
             using (var context = new AppDbContext(new DbContextOptions<AppDbContext>()))
             {
-                var listado = context.Productos.Where(pro => pro.ProveedorId == id).ToList();
+                var listado = await context.Productos.Where(pro => pro.ProveedorId == id).ToListAsync();
 
                 List<ProductoMostrarDto> listadoConvertido = new List<ProductoMostrarDto>();
 
@@ -83,6 +85,7 @@ namespace p_proyect.Controller.ProductosController
             }
         }
 
+       
         public async Task<Producto> EditarProductoASync(ProductoEditarDto dto)
         {
             if (dto.Id <= 0)
@@ -201,6 +204,8 @@ namespace p_proyect.Controller.ProductosController
                 return nuevoProducto;
             }
         }
+       
+
         public Producto TraerUnProductoPorElId(int id)
         {
             using (var context = new AppDbContext(new DbContextOptions<AppDbContext>()))
@@ -209,11 +214,14 @@ namespace p_proyect.Controller.ProductosController
             }
         }
 
-        public bool EliminarUnProductoPorElId(int id)
+
+        public async Task<bool> EliminarUnProductoPorElId(int id)
         {
             using (var context = new AppDbContext(new DbContextOptions<AppDbContext>()))
             {
                 context.Productos.Remove(TraerUnProductoPorElId(id));
+
+                await context.SaveChangesAsync();
 
                 return true;
             }
