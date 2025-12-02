@@ -94,7 +94,9 @@ namespace p_proyect.Modules.Entidades.dtos.dtoAdeudos
                 MontoTotalDelAdeudo = dto.MontoTotalDelAdeudo,
                 MontoTotalAbonadoDelAdeudo = dto.MontoTotalAbonadoDelAdeudo,
                 FechaCreacion = dto.FechaCreacion,
-                // IdCompra = dto.IdCompra
+                IdVenta = dto.IdVenta,
+                IdCliente = dto.IdCliente,
+                ContactoDelCliente = dto.ContactoDelCliente,
             };
         }
 

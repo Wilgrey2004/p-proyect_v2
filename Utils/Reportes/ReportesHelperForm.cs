@@ -206,7 +206,8 @@ namespace p_proyect.Utils.Reportes
                 "Monto descontado",
                 "Total con el descuento",
                 "Fecha de Creacion",
-                "Tipo de salida"
+                "Tipo de salida",
+                "Forma de pago"
 
             };
 

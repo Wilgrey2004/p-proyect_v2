@@ -138,15 +138,25 @@ namespace p_proyect.Modules.Entidades.dtos.dtoProductos
 
         public static ProductoVentasMostrarDto DeProductoAProductoVentasDto(this Producto p)
         {
-            return new ProductoVentasMostrarDto
+
+            ProductoVentasMostrarDto productoARegresar = new ProductoVentasMostrarDto
             {
                 Id = p.Id,
                 Nombre = p.Nombre,
                 CodigoDelProducto = p.CodigoBarra,  // aquí usas el código del producto
                 Stock = p.Cantidad,                 // stock actual
-                Precio = p.PrecioVenta    ,
+                Precio = p.PrecioVenta,
                 unidadMedida = p.UnidadMedida// el precio que se usará en ventas
+                                             
             };
+
+            if(productoARegresar != null)
+            {
+                return productoARegresar;
+            }
+
+
+            return null;
         }
     }
 }

@@ -13,7 +13,11 @@ namespace p_proyect.Modules.Entidades.dtos.dtoAdeudos
 
         public DateTime? FechaCreacion { get; set; } = DateTime.Now;
 
-        public int IdCliente { get; set; } 
+        public int IdVenta { get; set; }
+
+        public int IdCliente { get; set; }
+
+        public string ContactoDelCliente { get; set; }
 
         public int IdCompra { get; set; }
     }

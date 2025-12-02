@@ -18,6 +18,7 @@ public class ImpresionRecibo
         this.productos = productos;
     }
 
+
     public void Imprimir()
     {
         using (PrintDocument printDocument = new PrintDocument())
@@ -63,12 +64,19 @@ public class ImpresionRecibo
         g.DrawString(empresa, fuente, Brushes.Black, pageWidth - margenDerecho - textWidth, posicionY);
 
         posicionY += espacioLinea;
-        g.DrawString("Fecha: " + DateTime.Now.ToString("dd-MM-yyyy HH:mm"), fuente, Brushes.Black, margenIzquierdo, posicionY);
+        g.DrawString("Fecha: " + DateTime.Now.ToString("dd-MM-yyyy HH:mm"), fuente, Brushes.Black, margenDerecho, posicionY );
+        posicionY += espacioLinea + 10;
+        g.DrawString("Yeufris Rent Cart", fuente, Brushes.Black, margenIzquierdo, posicionY);
+        posicionY += espacioLinea + 10;
+        g.DrawString("Codigo De la Factura: ", fuente, Brushes.Black, margenIzquierdo, posicionY);
+
         posicionY += espacioLinea + 10;
 
         g.DrawString("*----------------------------------------------------*", fuente, Brushes.Black, margenIzquierdo, posicionY);
         posicionY += espacioLinea;
-
+        decimal TotalDeLaCompra = 0;
+        g.DrawString("Lista De Productos", fuente, Brushes.Black, margenDerecho, posicionY);
+        posicionY += espacioLinea + 10;
         // Recorre la lista de productos
         foreach (var item in productos)
         {
@@ -76,17 +84,24 @@ public class ImpresionRecibo
             string cantidad = item.Cantidad.ToString();
             string precio = item.PrecioUnitario.ToString("N2");
             string total = item.TotalProducto.ToString("N2");
-
+            TotalDeLaCompra += item.TotalProducto;
             g.DrawString(nombre, fuente, Brushes.Black, margenIzquierdo, posicionY);
             g.DrawString(cantidad.PadLeft(3), fuente, Brushes.Black, margenIzquierdo + 100, posicionY);
             g.DrawString(precio, fuente, Brushes.Black, margenIzquierdo + 150, posicionY);
             g.DrawString(total, fuente, Brushes.Black, margenIzquierdo + 220, posicionY);
-
-            posicionY += espacioLinea;
+            posicionY += espacioLinea + 10; 
+           // g.DrawString("*----------------------------------------------------*", fuente, Brushes.Black, margenIzquierdo, posicionY);
+            //posicionY += espacioLinea;
         }
 
         posicionY += 10;
+        g.DrawString("*----------------------------------------------------*", fuente, Brushes.Black, margenDerecho, posicionY);
+        posicionY += espacioLinea + 10;
+        g.DrawString("Total "+ TotalDeLaCompra, fuente, Brushes.Black, margenIzquierdo, posicionY);
+        posicionY += espacioLinea + 10;
         g.DrawString("*----------------------------------------------------*", fuente, Brushes.Black, margenIzquierdo, posicionY);
+
+
     }
 
     private string AjustarNombreProducto(string nombreProducto, int maxWidth)

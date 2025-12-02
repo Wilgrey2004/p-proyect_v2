@@ -83,8 +83,11 @@ namespace p_proyect.Controller.ClienteEspecialController
                     throw new Exception("El cliente no existe.");
 
                 if (dto.Nombre != null) cliente.Nombre = dto.Nombre.Trim();
+
                 if (dto.Apellido != null) cliente.Apellido = dto.Apellido.Trim();
+
                 if (dto.Cedula != null) cliente.Cedula = dto.Cedula.Trim();
+
                 if (dto.Contacto != null) cliente.Contacto = dto.Contacto;
 
                 if (dto.LimiteDelCredito > 0)
@@ -106,7 +109,9 @@ namespace p_proyect.Controller.ClienteEspecialController
                 cliente.FechaUltimaActualizacion = DateTime.Now;
 
                 context.ClientesEspeciales.Update(cliente);
+
                 await context.SaveChangesAsync();
+
                 return cliente;
             }
         }

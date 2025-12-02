@@ -60,14 +60,19 @@ namespace p_proyect
 
                     main.ShowDialog();
 
+
+                    NombreDelUsuario.Text = "";
+                    ClaveDelUsuario.Text = "";
+
+
                     Show();
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error al iniciar sesion: " + ex.Message);
+                    MessageBox.Show("Error al iniciar sesion: " + ex);
                 }
 
-                
+
             }
         }
     }

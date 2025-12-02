@@ -67,15 +67,16 @@ namespace p_proyect.Modules.Entidades.dtos.dtoCompras
 
         public static CarritoCompraDto MapCompraToCarrito(CompraEntity compra)
         {
+            
             return new CarritoCompraDto
             {
-                CompraId = compra.Id,
                 ProductoId = compra.IdProducto,
                 NombreProducto = compra.ListaDeproductos?.Nombre,
                 CodigoBarra = compra.ListaDeproductos?.CodigoBarra,
                 Cantidad = compra.CantidadDelProducto,
                 PrecioUnitario = compra.ListaDeproductos?.PrecioVenta ?? 0,
                 UnidadMedida = compra.ListaDeproductos?.UnidadMedida.ToString(),
+                
                 FechaAgregado = compra.FechaCreacio
             };
         }
@@ -83,10 +84,18 @@ namespace p_proyect.Modules.Entidades.dtos.dtoCompras
         public static CompraEntity MapCarritoToCompra(CarritoCompraDto dto)
         {
 
+
+            var UltimaVenta = new Ventas();
+
+           
             var producto = new Producto();
             using (var context = new AppDbContext(new DbContextOptions<AppDbContext>()))
             {
                 producto = context.Productos.FirstOrDefault(x => x.Id == dto.ProductoId);
+
+                UltimaVenta = context.Ventas
+                   .OrderByDescending(c => c.Id)
+                   .FirstOrDefault();
             }
 
             if (producto == null) {
@@ -95,10 +104,10 @@ namespace p_proyect.Modules.Entidades.dtos.dtoCompras
             }
             return new CompraEntity
             {
-                Id = dto.CompraId, // Si es una compra nueva debe ser 0
+                 // Si es una compra nueva debe ser 0
                 IdProducto = dto.ProductoId,
                 CantidadDelProducto = dto.Cantidad,
-
+                IdVenta = UltimaVenta != null ? UltimaVenta.Id + 1 : 0,
                 // No incluyas el total aquí porque CompraEntity ya lo calcula
                 // TotalPorElProducto => se calcula desde la entidad
 

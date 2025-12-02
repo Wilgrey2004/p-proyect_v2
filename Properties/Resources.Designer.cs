@@ -153,6 +153,16 @@ namespace p_proyect.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap cerrado {
+            get {
+                object obj = ResourceManager.GetObject("cerrado", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap clasificacion {
             get {
                 object obj = ResourceManager.GetObject("clasificacion", resourceCulture);
@@ -206,6 +216,16 @@ namespace p_proyect.Properties {
         internal static System.Drawing.Bitmap Edad {
             get {
                 object obj = ResourceManager.GetObject("Edad", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap escoba {
+            get {
+                object obj = ResourceManager.GetObject("escoba", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -346,6 +366,16 @@ namespace p_proyect.Properties {
         internal static System.Drawing.Bitmap producto_de_codigo_de_barras {
             get {
                 object obj = ResourceManager.GetObject("producto-de-codigo-de-barras", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap usuario_icon {
+            get {
+                object obj = ResourceManager.GetObject("usuario-icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

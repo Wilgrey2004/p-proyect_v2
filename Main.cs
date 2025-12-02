@@ -19,6 +19,7 @@ using p_proyect.Modules.Entidades.dtos.dtoUsuarios;
 using p_proyect.Modules.Entidades.dtos.dtoVentas;
 using p_proyect.Modules.Entidades.Formularios.AdeudosForms;
 using p_proyect.Modules.Entidades.Formularios.ClienteEspecialForms;
+using p_proyect.Modules.Entidades.Formularios.CompraForms;
 using p_proyect.Modules.Entidades.Formularios.ProductosForms;
 using p_proyect.Modules.Entidades.Formularios.ProveedorForms;
 using p_proyect.Modules.Entidades.Formularios.UsuarioForms;
@@ -26,6 +27,7 @@ using p_proyect.Modules.Entidades.Formularios.VentaForms;
 using p_proyect.Modules.Enums;
 using p_proyect.Utils;
 using p_proyect.Utils.Reportes;
+using p_proyect.Utils.Rnc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -36,7 +38,8 @@ namespace p_proyect
 {
     public partial class Main : MaterialForm
     {
-
+        Timer inactividadTimer = new Timer();
+        int tiempoInactivo = 0;
         public Usuarios SecionActual = new Usuarios();
         private ProductosControllerC productosControllerC = new ProductosControllerC();
         private List<ProductoMostrarDto> productoMostrarDtos = new List<ProductoMostrarDto>();
@@ -44,6 +47,15 @@ namespace p_proyect
         public Main()
         {
             InitializeComponent();
+
+            inactividadTimer.Interval = 1000 ; // 1 segundo
+            inactividadTimer.Tick += InactividadTimer_Tick;
+            inactividadTimer.Start();
+
+            // Eventos para detectar actividad
+            this.MouseMove += ResetearInactividad;
+            this.KeyPress += ResetearInactividad;
+            this.MouseClick += ResetearInactividad;
 
             var materialSkinManager = MaterialSkinManager.Instance;
             materialSkinManager.AddFormToManage(this);
@@ -61,6 +73,95 @@ namespace p_proyect
             );
         }
 
+        private void ResetearInactividad(object sender, EventArgs e)
+        {
+            tiempoInactivo = 0;
+        }
+
+
+        private void InactividadTimer_Tick(object sender, EventArgs e)
+        {
+            tiempoInactivo++;
+
+            // 60 segundos sin actividad
+            if (tiempoInactivo >= 60)
+            {
+                inactividadTimer.Stop();
+                MessageBox.Show("Sesión cerrada por inactividad.");
+
+                // Aquí cierras sesión o rediriges al login
+                SecionActual = null;
+                Close();
+
+
+            }
+        }
+
+
+
+        private void RemoverSegunUsuario(Usuarios SecionActual)
+        {
+            // Mensaje para roles inválidos
+            if (SecionActual.Rol == UserRole.None)
+            {
+                MessageBox.Show($"Este usuario no contiene un rol válido: {SecionActual.Nombre}", "Error!");
+                Close();
+                return;
+            }
+
+            switch (SecionActual.Rol)
+            {
+                case UserRole.Administrador:
+                    MessageBox.Show($"Bienvenido {SecionActual.Nombre}", "Saludo!");
+                    break;
+
+                case UserRole.GestorDeInventario:
+                    RemoverPestanas(
+                        GestionDeClientesEspeciales,  // comentado según tu estructura actual
+                        GestionDeClientesNormales,
+                        GestionVentaAlDetalle,
+                        GestionUsers,
+                        GestionDeProveedores,
+                        //GestionDeInventario,
+                        GestionDeClientesEspeciales,
+                        GestionDeventas,
+                        GestionDeCompras,
+                        GestionDeAdeudos
+                    );
+                    break;
+
+                case UserRole.Vendedor:
+                    RemoverPestanas(
+                        GestionDeClientesEspeciales,  // comentado según tu estructura actual
+                        GestionDeClientesNormales,
+                        // GestionVentaAlDetalle,
+                        GestionUsers,
+                        GestionDeProveedores,
+                        GestionDeInventario,
+                        GestionDeClientesEspeciales,
+                        GestionDeventas,
+                        GestionDeCompras
+
+                    );
+                    break;
+
+                case UserRole.Empleado:
+
+                    RemoverPestanas(GestionUsers);
+                    break;
+            }
+        }
+
+        private void RemoverPestanas(params TabPage[] paginas)
+        {
+            foreach (var page in paginas)
+            {
+                if (Gestion.TabPages.Contains(page))
+                {
+                    Gestion.TabPages.Remove(page);
+                }
+            }
+        }
 
         UsuarioControllerC usuarioControllerC = new UsuarioControllerC();
         List<UsuarioMostrarDto> Listado_De_usuarios_Mostrar = new List<UsuarioMostrarDto>();
@@ -68,52 +169,31 @@ namespace p_proyect
         private async void Main_Load(object sender, EventArgs e)
         {
 
-
-            await CargarTablaDeUsuarios();
-
+            RemoverSegunUsuario(SecionActual);
 
             if (SecionActual.Rol == UserRole.Administrador)
             {
-                MessageBox.Show($"Bienvenido {SecionActual.Nombre}", "Saludo!");
+                await CargarTablaDeUsuarios();
                 return;
             }
 
             if (SecionActual.Rol == UserRole.GestorDeInventario)
             {
-                Gestion.TabPages.Remove(GestionDeClientesEspeciales);
-                Gestion.TabPages.Remove(GestionDeClientesNormales);
-                Gestion.TabPages.Remove(GestionVentaAlDetalle);
-                Gestion.TabPages.Remove(GestionUsers);
+                await CargarTablaProductos();
                 return;
             }
 
             if (SecionActual.Rol == UserRole.Vendedor)
             {
-                //Gestion.TabPages.Remove(GestionDeClientesEspeciales);
-                Gestion.TabPages.Remove(GestionDeClientesNormales);
-                //Gestion.TabPages.Remove(GestionVentaAlDetalle);
-                // Gestion.TabPages.Remove(GestionUsers);
-
-                return;
-            }
-
-            if (SecionActual.Rol == UserRole.None)
-            {
-                MessageBox.Show($"Este usuario no contiene en si un rol {SecionActual.Nombre}", "Error!");
-                Close();
+                await CargarTablasVenta();
                 return;
             }
 
             if (SecionActual.Rol == UserRole.Empleado)
             {
-                MessageBox.Show($"Este usuario no contiene en si un rol {SecionActual.Nombre}", "Error!");
-                Close();
+                await CargarTablaDeUsuarios();
                 return;
             }
-
-
-
-
 
         }
         List<AdeudoMostrarDto> ListaDeAdeudos = new List<AdeudoMostrarDto>();
@@ -137,6 +217,7 @@ namespace p_proyect
             PrecioPorUnidadDelProducto_txt.Text = string.Empty;
             numCantidadProducto.Value = 1;
             ProductoAComprarVenta = -1;
+            TotalDelCarrito.Text = "0.00";
         }
         private async Task CargarTablasVenta()
         {
@@ -180,10 +261,6 @@ namespace p_proyect
             ListadoClienteEspecialDg.DataSource = null;
             ListadoClienteEspecialDg.DataSource = listadoDeClientesEspecialesMostrar;
         }
-
-
-
-
 
         public async Task<List<Usuarios>> CargarLista()
         {
@@ -599,7 +676,8 @@ namespace p_proyect
 
         }
 
-        private async void Gestion_SelectedIndexChanged(object sender, EventArgs e)
+
+        private async void CargarTablaSegunIndice_Admin()
         {
             switch (Gestion.SelectedIndex)
             {
@@ -638,6 +716,14 @@ namespace p_proyect
                     this.Text = "Gestion de adeudos";
                     await CargarAdeudos();
                     break;
+                case 8:
+                    Text = "Lista de compras";
+                    await CargarListaDeCompras();
+                    break;
+                case 9:
+                    Text = "Perfil";
+                    CargarInformacionDelUsuario();
+                    break;
 
                 default:
                     Text = string.Empty;
@@ -645,14 +731,133 @@ namespace p_proyect
 
             }
         }
+        private async void CargarTablaSegunIndice_Empleado()
+        {
+            switch (Gestion.SelectedIndex)
+            {
+                //case 0:
+                //    this.Text = "Gestión de Usuarios";
+                //    await CargarTablaDeUsuarios();
+                //    break;
 
+                case 0:
+                    this.Text = "Gestión de Productos";
+                    await CargarTablaProductos();
+                    break;
+                case 1:
+                    this.Text = "Gestión de Proveedores";
+                    await CargarListaDeProveedores();
+                    break;
+                case 2:
+                    this.Text = "Gestión de Clientes Especiales";
+                    await CargarListadoDeClientesEspeciales();
+                    break;
+                case 3:
+                    Text = "Gestion de Clientes Normales";
+                    await CargarListadoDeClientesNormales();
+                    break;
+
+                case 4:
+                    Text = "Venta Al Detalle";
+                    await CargarTablasVenta();
+                    break;
+                case 5:
+                    Text = "Gestion de Ventas";
+                    await CargarListaDeVentas();
+                    break;
+
+                case 6:
+                    this.Text = "Gestion de adeudos";
+                    await CargarAdeudos();
+                    break;
+                case 7:
+                    Text = "Lista de compras";
+                    await CargarListaDeCompras();
+                    break;
+                case 8:
+                    Text = "Perfil";
+                    CargarInformacionDelUsuario();
+                    break;
+
+                default:
+                    Text = string.Empty;
+                    break;
+
+            }
+        }
+        private void Gestion_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch (SecionActual.Rol)
+            {
+                case UserRole.Administrador:
+                    CargarTablaSegunIndice_Admin();
+                    break;
+                case UserRole.GestorDeInventario:
+                    CargarTablaSegunIndice_Inventario();
+                    break;
+                case UserRole.Vendedor:
+                    CargarTablaSegunIndice_Vendedor();
+                    break;
+
+                case UserRole.Empleado:
+                    CargarTablaSegunIndice_Empleado();
+                    break;
+
+            }
+
+        }
+        private async void CargarTablaSegunIndice_Inventario()
+        {
+            switch (Gestion.SelectedIndex)
+            {
+                case 0:
+                    Text = "Gestion de Productos";
+                    await CargarTablaProductos();
+                    break;
+                case 1:
+                    Text = "Perfil";
+                    CargarInformacionDelUsuario();
+                    break;
+            }
+        }
+        private async void CargarTablaSegunIndice_Vendedor()
+        {
+            switch (Gestion.SelectedIndex)
+            {
+                case 0:
+                    Text = "Gestion de Ventas";
+                    await CargarTablasVenta();
+                    break;
+
+                case 1:
+                    Text = "Gestion de Adeudos";
+                    await CargarAdeudos();
+                    break;
+                case 2:
+                    Text = "Perfil";
+                    CargarInformacionDelUsuario();
+                    break;
+            }
+        }
+        List<ProductoMostrarDto> ListadoDeProductosAgotados = new List<ProductoMostrarDto>();
+        private async Task CargarListaDeCompras()
+        {
+            ListadoDeProductosAgotados.Clear();
+
+            ListadoDeProductosAgotados = await productoController.ObtenerProductosParaListaDeProductos();
+
+            ListaDeCompras.DataSource = null;
+
+            ListaDeCompras.DataSource = ListadoDeProductosAgotados;
+
+
+        }
         private void NombreDelClienteEspecial_txt_TextChanged(object sender, EventArgs e)
         {
 
             FindForNameHelper.BuscarPorNombre<ClienteEspecialMostrarDto>(sender, e, listadoDeClientesEspecialesMostrar, ListadoClienteEspecialDg);
 
         }
-
         int IdClienteNormalSeleccionado = -1;
         private void ListadoDeClientesNormalesDg_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -663,12 +868,10 @@ namespace p_proyect
                 MessageBox.Show("ID seleccionado: " + IdClienteNormalSeleccionado);
             }
         }
-
         private void materialButton18_Click(object sender, EventArgs e)
         {
 
         }
-
         ClienteNormalControllerC ClienteNormalControllerC = new ClienteNormalControllerC();
         private async void materialButton16_Click(object sender, EventArgs e)
         {
@@ -683,7 +886,6 @@ namespace p_proyect
 
             MessageBox.Show("Eliminacion exitosa!!");
         }
-
         private async void materialButton15_Click(object sender, EventArgs e)
         {
             ReportesHelperForm reportesHelperForm = new ReportesHelperForm();
@@ -697,35 +899,27 @@ namespace p_proyect
 
 
         }
-
         private void materialMaskedTextBox3_TextChanged(object sender, EventArgs e)
         {
             FindForNameHelper.BuscarPorNombre<ClienteNormalMostrarDto>(sender, e, ListadoClienteNormalMostrarDtos, ListadoDeClientesNormalesDg);
         }
-
         private void materialCard7_Paint(object sender, PaintEventArgs e)
         {
 
         }
-
         private void GestionUsers_Click(object sender, EventArgs e)
         {
 
         }
-
         private void materialLabel2_Click(object sender, EventArgs e)
         {
 
         }
-
         private void materialLabel1_Click(object sender, EventArgs e)
         {
-
         }
-
         private void materialCard1_Paint(object sender, PaintEventArgs e)
         {
-
         }
 
         private void materialLabel3_Click(object sender, EventArgs e)
@@ -926,6 +1120,11 @@ namespace p_proyect
 
         private void CargarProductoVentaEnCombos(ProductoVentasMostrarDto cargar)
         {
+            if (cargar == null)
+            {
+                MessageBox.Show("Producto no encontrado");
+                return;
+            }
             Codigo_Del_Producto_txt.Text = cargar.CodigoDelProducto;
             Nombre_Del_Producto_txt.Text = cargar.Nombre;
             UnidadDeMedidaDelProducto.Text = cargar.unidadMedida.ToString();
@@ -982,14 +1181,29 @@ namespace p_proyect
             return compraActuial;
         }
 
+        Ventas UltimaVenta = new Ventas();
+
         private CompraEntity RegresarCompraCreada(Producto producto)
         {
+
+
+            using (var context = new AppDbContext(new DbContextOptions<AppDbContext>()))
+            {
+                UltimaVenta = context.Ventas
+                   .OrderByDescending(c => c.Id)
+                   .FirstOrDefault();
+            }
+
+
             CompraEntity compraActuial = new CompraEntity();
+
             //compraActuial.Id = ProductoAComprarVenta;
             compraActuial.CantidadDelProducto = Convert.ToInt32(numCantidadProducto.Value);
             compraActuial.IdProducto = producto.Id;
+
             compraActuial.ListaDeproductos = producto;
             compraActuial.PrecioUnitario = producto.PrecioVenta;
+            compraActuial.IdVenta = UltimaVenta.Id + 1;
 
 
             return compraActuial;
@@ -1015,6 +1229,8 @@ namespace p_proyect
                 return;
             }
 
+
+
             var carritoProductoAEliminar = CarritoDeCompras.Last();
 
             CarritoDeCompras.Remove(carritoProductoAEliminar);
@@ -1022,6 +1238,21 @@ namespace p_proyect
             CarritoDecompras_dg.DataSource = null;
 
             CarritoDecompras_dg.DataSource = CarritoDeCompras;
+
+
+            CarritoCompraDto carro_restar = new CarritoCompraDto("Restar");
+            carro_restar.RestarUnoAlContador();
+
+            if (CarritoDeCompras.Count == 0)
+            {
+                CarritoCompraDto carro = new CarritoCompraDto("Reiniciar");
+                carro.ReiniciarContador();
+                return;
+            }
+
+
+
+            
         }
 
         private async void CargarProductoPorCodigo(string codigoProducto)
@@ -1056,15 +1287,32 @@ namespace p_proyect
 
         public List<CompraEntity> RegresarUnaListaDeComprasEntity(List<CarritoCompraDto> carrito)
         {
-            var lista = new List<CompraEntity>();
-
-            foreach (var item in carrito)
+            try
             {
-                var compra = CompraMapper.MapCarritoToCompra(item);
-                lista.Add(compra);
+                if (carrito == null || carrito.Count == 0)
+                {
+                    MessageBox.Show("El carrito está vacío.");
+                    return null;
+                }
+
+                var lista = new List<CompraEntity>();
+
+                foreach (var item in carrito)
+                {
+                    var compra = CompraMapper.MapCarritoToCompra(item);
+                    lista.Add(compra);
+                }
+
+                return lista;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al convertir el carrito a lista de compras: " + ex.Message);
+                return null;
             }
 
-            return lista;
+
         }
 
         public bool ConfirmarCompra(Ventas ventas)
@@ -1108,13 +1356,39 @@ namespace p_proyect
         private async void materialButton20_Click(object sender, EventArgs e)
         {
 
+            RncLookupResult infoRnc = new RncLookupResult();
             var respuesta = MessageBox.Show("Estas aseguro de realizar esta venta?", "Confirmar Venta", MessageBoxButtons.YesNo);
             if (respuesta == DialogResult.No)
             {
                 return;
             }
+
+            var respuesta2 = MessageBox.Show("Comprovante Fiscal?", "Comprovante?", MessageBoxButtons.YesNo,MessageBoxIcon.Question);
+            if (respuesta2 == DialogResult.Yes)
+            {
+
+               RNCFormHelper rNCFormHelper = new RNCFormHelper();
+               rNCFormHelper.ShowDialog();
+               infoRnc = rNCFormHelper.getInfoRnc();
+
+                if (infoRnc == null)
+                {
+                    MessageBox.Show("Rnc Cancelado");
+                }
+
+                ventaActualAlDetalle.RNC = infoRnc.Rnc;
+            }
+
+            try
+            {
+                ventaActualAlDetalle.ListadoDeCompras = RegresarUnaListaDeComprasEntity(CarritoDeCompras);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error inesperado: " + ex.Message);
+                return;
+            }
             // 1. Convertir el carrito a entidades
-            ventaActualAlDetalle.ListadoDeCompras = RegresarUnaListaDeComprasEntity(CarritoDeCompras);
 
             // 2. Validaciones
             if (ventaActualAlDetalle.ListadoDeCompras == null ||
@@ -1159,11 +1433,15 @@ namespace p_proyect
                 }
             }
 
+            CarritoDeCompras.Clear();
 
+
+
+            ventaActualAlDetalle.ListadoDeCompras = null;
 
             ventaActualAlDetalle = null;
 
-
+            TotalDelCarrito.Text = "0.00";
 
             await CargarTablasVenta();
         }
@@ -1219,6 +1497,8 @@ namespace p_proyect
 
         }
 
+        Ventas VentaSeleccionadaDelDatagrid = new Ventas();
+
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             ventaSeleccionada = DataGridHelper.ObtenerIdSeleccionado(dataGridView1, e);
@@ -1227,6 +1507,17 @@ namespace p_proyect
             {
                 MessageBox.Show("No se logro seleccionar");
                 return;
+            }
+
+            using (var context = new AppDbContext(new DbContextOptions<AppDbContext>()))
+            {
+                VentaSeleccionadaDelDatagrid = context.Ventas.FirstOrDefault(x => x.Id == ventaSeleccionada);
+                
+                if (VentaSeleccionadaDelDatagrid == null)
+                {
+                    MessageBox.Show("Venta No existe con el ID: " + VentaSeleccionadaDelDatagrid.Id.ToString());
+                    return;
+                }
             }
         }
 
@@ -1391,9 +1682,9 @@ namespace p_proyect
 
                     RestarStock(RegresarUnaListaDeComprasEntity(CarritoDeCompras));
                     // Guardar todo en un solo SaveChanges
-                    context.Ventas.Add(ventaActualAlDetalle);
+                    //context.Ventas.Add(ventaActualAlDetalle);
 
-                    await context.SaveChangesAsync();
+                    //await context.SaveChangesAsync();
 
                     ImprimirReciboDeVenta(CarritoDeCompras);
 
@@ -1405,11 +1696,9 @@ namespace p_proyect
                 }
             }
 
-
-
             ventaActualAlDetalle = null;
 
-
+            TotalDelCarrito.Text = "0.00";
 
             await CargarTablasVenta();
         }
@@ -1417,6 +1706,114 @@ namespace p_proyect
         private async void Usuarios_DataGrid_DataError(object sender, DataGridViewDataErrorEventArgs e)
         {
             await CargarTablaDeUsuarios();
+        }
+
+        private void materialMaskedTextBox5_TextChanged(object sender, EventArgs e)
+        {
+            FindForNameHelper.BuscarPorNombre<ProductoMostrarDto>(sender, e, ListadoDeProductosAgotados, ListaDeCompras);
+        }
+
+        private void ListadoDeAdeudos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        int IdProductoAgotandose = -1;
+        private void ListaDeCompras_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            IdProductoAgotandose = DataGridHelper.ObtenerIdSeleccionado(ListaDeCompras, e);
+
+            if (IdProductoAgotandose != -1)
+            {
+                MessageBox.Show("ID seleccionado: " + IdProductoAgotandose);
+            }
+        }
+
+        private void materialButton28_Click(object sender, EventArgs e)
+        {
+
+            var respuesta = MessageBox.Show("Queres Eliminar a este Producto de la lista de compras?", "Pregunta sobre Eliminacion", MessageBoxButtons.YesNo);
+
+            if (respuesta == DialogResult.No)
+            {
+                return;
+            }
+
+            var productoAgotado = ListadoDeProductosAgotados.FirstOrDefault(x => x.Id == IdProductoAgotandose);
+
+            ListadoDeProductosAgotados.Remove(productoAgotado);
+
+            ListaDeCompras.DataSource = null;
+
+            ListaDeCompras.DataSource = ListadoDeProductosAgotados;
+
+        }
+
+        private async void materialButton27_Click(object sender, EventArgs e)
+        {
+            ReportesHelperForm reportesHelperForm = new ReportesHelperForm();
+            reportesHelperForm.ListadoParaImprimirUsuarios = null;
+            reportesHelperForm.ListadoParaImprimirProductos = ListadoDeProductosAgotados;
+
+            reportesHelperForm.ShowDialog();
+
+            await CargarListaDeCompras();
+
+        }
+
+        private void materialMaskedTextBox6_TextChanged(object sender, EventArgs e)
+        {
+            FindForNameHelper.BuscarPorNombre<ProductoVentasMostrarDto>(sender, e, listadoProductosDisponiblesVenta, ListadoDeProductosDisponibles_dg);
+
+        }
+
+        private void materialMaskedTextBox6_TabStopChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CarritoDecompras_dg_CellClick_2(object sender, DataGridViewCellEventArgs e)
+        {
+            // Evita errores si se hace clic en el encabezado
+            if (e.RowIndex < 0) return;
+
+        }
+
+        private void CarritoDecompras_dg_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            if (e.RowIndex < 0) return;
+
+        }
+
+        private void CargarInformacionDelUsuario()
+        {
+            NombreDelUsuarioSecion.Text = SecionActual.Nombre;
+            ApellidoDelUsuarioSecion.Text = SecionActual.Apellido;
+            CedulaDelUsuarioSecion.Text = SecionActual.Cedula;
+            CargoEmpleadoPerilTxt.Text = SecionActual.Rol.ToString();
+            PasswordDeSeccion.Text = SecionActual.Contrasena;
+            CorreoDelUsuarioSecion.Text = SecionActual.Correo;
+
+        }
+
+        private void materialButton29_Click(object sender, EventArgs e)
+        {
+            SecionActual = null;
+            Close();
+        }
+
+        private void LimpiarVenta_Click(object sender, EventArgs e)
+        {
+            LimpiarCamposDeVenta();
+            
+        }
+
+        private void materialButton30_Click(object sender, EventArgs e)
+        {
+            VerCarritoDeCompras verCarritoDeCompras = new VerCarritoDeCompras(VentaSeleccionadaDelDatagrid);
+
+            verCarritoDeCompras.ShowDialog();
+
         }
     }
 }

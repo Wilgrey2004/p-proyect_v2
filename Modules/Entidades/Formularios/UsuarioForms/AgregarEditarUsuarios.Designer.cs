@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.materialCard1 = new MaterialSkin.Controls.MaterialCard();
-            this.materialMaskedTextBox1 = new MaterialSkin.Controls.MaterialMaskedTextBox();
             this.materialButton1 = new MaterialSkin.Controls.MaterialButton();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.Agregar_usuarios = new MaterialSkin.Controls.MaterialButton();
@@ -45,7 +44,6 @@
             // materialCard1
             // 
             this.materialCard1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.materialCard1.Controls.Add(this.materialMaskedTextBox1);
             this.materialCard1.Controls.Add(this.materialButton1);
             this.materialCard1.Controls.Add(this.materialLabel1);
             this.materialCard1.Controls.Add(this.Agregar_usuarios);
@@ -65,48 +63,6 @@
             this.materialCard1.Size = new System.Drawing.Size(406, 655);
             this.materialCard1.TabIndex = 1;
             // 
-            // materialMaskedTextBox1
-            // 
-            this.materialMaskedTextBox1.AllowPromptAsInput = true;
-            this.materialMaskedTextBox1.AnimateReadOnly = true;
-            this.materialMaskedTextBox1.AsciiOnly = false;
-            this.materialMaskedTextBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.materialMaskedTextBox1.BeepOnError = false;
-            this.materialMaskedTextBox1.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.IncludeLiterals;
-            this.materialMaskedTextBox1.Depth = 0;
-            this.materialMaskedTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialMaskedTextBox1.HidePromptOnLeave = false;
-            this.materialMaskedTextBox1.HideSelection = true;
-            this.materialMaskedTextBox1.Hint = "Numero de telefono";
-            this.materialMaskedTextBox1.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Default;
-            this.materialMaskedTextBox1.LeadingIcon = null;
-            this.materialMaskedTextBox1.Location = new System.Drawing.Point(21, 489);
-            this.materialMaskedTextBox1.Mask = "";
-            this.materialMaskedTextBox1.MaxLength = 32767;
-            this.materialMaskedTextBox1.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialMaskedTextBox1.Name = "materialMaskedTextBox1";
-            this.materialMaskedTextBox1.PasswordChar = '\0';
-            this.materialMaskedTextBox1.PrefixSuffixText = null;
-            this.materialMaskedTextBox1.PromptChar = '_';
-            this.materialMaskedTextBox1.ReadOnly = false;
-            this.materialMaskedTextBox1.RejectInputOnFirstFailure = false;
-            this.materialMaskedTextBox1.ResetOnPrompt = true;
-            this.materialMaskedTextBox1.ResetOnSpace = true;
-            this.materialMaskedTextBox1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.materialMaskedTextBox1.SelectedText = "";
-            this.materialMaskedTextBox1.SelectionLength = 0;
-            this.materialMaskedTextBox1.SelectionStart = 0;
-            this.materialMaskedTextBox1.ShortcutsEnabled = true;
-            this.materialMaskedTextBox1.Size = new System.Drawing.Size(368, 48);
-            this.materialMaskedTextBox1.SkipLiterals = true;
-            this.materialMaskedTextBox1.TabIndex = 9;
-            this.materialMaskedTextBox1.TabStop = false;
-            this.materialMaskedTextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.materialMaskedTextBox1.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludeLiterals;
-            this.materialMaskedTextBox1.TrailingIcon = global::p_proyect.Properties.Resources.llamada_telefonica1;
-            this.materialMaskedTextBox1.UseSystemPasswordChar = false;
-            this.materialMaskedTextBox1.ValidatingType = null;
-            // 
             // materialButton1
             // 
             this.materialButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
@@ -116,7 +72,7 @@
             this.materialButton1.Icon = global::p_proyect.Properties.Resources.Cancelar;
             this.materialButton1.Image = global::p_proyect.Properties.Resources.Cancelar;
             this.materialButton1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.materialButton1.Location = new System.Drawing.Point(197, 600);
+            this.materialButton1.Location = new System.Drawing.Point(210, 600);
             this.materialButton1.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.materialButton1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialButton1.Name = "materialButton1";
@@ -150,7 +106,7 @@
             this.Agregar_usuarios.Icon = global::p_proyect.Properties.Resources.Aceprtar;
             this.Agregar_usuarios.Image = global::p_proyect.Properties.Resources.Aceprtar;
             this.Agregar_usuarios.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.Agregar_usuarios.Location = new System.Drawing.Point(60, 600);
+            this.Agregar_usuarios.Location = new System.Drawing.Point(73, 600);
             this.Agregar_usuarios.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.Agregar_usuarios.MouseState = MaterialSkin.MouseState.HOVER;
             this.Agregar_usuarios.Name = "Agregar_usuarios";
@@ -310,6 +266,7 @@
             this.Cedula_text.TrailingIcon = global::p_proyect.Properties.Resources.cedula;
             this.Cedula_text.UseSystemPasswordChar = false;
             this.Cedula_text.ValidatingType = null;
+            this.Cedula_text.TextChanged += new System.EventHandler(this.Cedula_text_TextChanged);
             // 
             // LastName_txt
             // 
@@ -423,6 +380,5 @@
         private MaterialSkin.Controls.MaterialButton Agregar_usuarios;
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
         private MaterialSkin.Controls.MaterialButton materialButton1;
-        private MaterialSkin.Controls.MaterialMaskedTextBox materialMaskedTextBox1;
     }
 }

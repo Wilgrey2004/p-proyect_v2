@@ -64,7 +64,7 @@ namespace p_proyect.Modules.Entidades.Formularios.ProveedorForms
 
         private async void Agregar_usuarios_Click(object sender, EventArgs e)
         {
-            if(proveedorActual != null)
+            if(proveedorActual == null)
             {
                 ProveedorMostrarDto proveedorMostrarDto = new ProveedorMostrarDto()
                 {

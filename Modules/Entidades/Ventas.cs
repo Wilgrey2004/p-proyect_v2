@@ -43,6 +43,8 @@ namespace p_proyect.Modules.Entidades
         [DisplayName("Tipo de pago")]
         public TipoDePago Pago { get; set; } = TipoDePago.PagoEnEfectivo;
 
+        public string RNC { get; set; } = "Sin RNC";
+
         public List<CompraEntity> ListadoDeCompras { get; set; }
 
 

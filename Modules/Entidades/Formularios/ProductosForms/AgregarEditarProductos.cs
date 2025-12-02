@@ -142,27 +142,57 @@ namespace p_proyect.Modules.Entidades.Formularios.ProductosForms
 
         private async void Agregar_usuarios_Click(object sender, EventArgs e)
         {
-            if (productoSeleccioando.Id == 0 || productoSeleccioando == null)
+            if (productoSeleccioando != null)
             {
-                await productosControllerC.CrearProductoAsync(GenerarProducto());
 
-                MessageBox.Show("Producto agrgeado con exito!!");
+                await productosControllerC.EditarProductoASync(GenerarProductoEditarDto());
+                MessageBox.Show("Producto Editado Con exito!!");
+
                 Close();
-                
+                return;
 
             }
 
-            await productosControllerC.EditarProductoASync(GenerarProductoEditarDto());
-            MessageBox.Show("Producto Editado Con exito!!");
-            Close();
-            
+          
+           var producto = await productosControllerC.CrearProductoAsync(GenerarProducto());
 
+            if(producto != null)
+            {
+                MessageBox.Show("Producto agrgeado con exito!!");
+                Close();
+                return;
+            }
+
+
+            return;
+
+            
 
         }
 
         private void materialButton1_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void CodigoBarra_txt_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+
+                string codigo = CodigoBarra_txt.Text.Trim();
+
+                CodigoBarra_txt.Text = codigo;
+
+
+                //CargarProductos(codigo);
+                //MessageBox.Show($"Codigo Escaneado {codigo} \n ");
+
+                e.Handled = true;
+                e.SuppressKeyPress = true;
+
+
+            }
         }
     }
 }

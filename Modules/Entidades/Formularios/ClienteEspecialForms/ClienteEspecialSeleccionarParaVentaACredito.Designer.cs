@@ -36,15 +36,17 @@
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             this.materialButton1 = new MaterialSkin.Controls.MaterialButton();
             this.Agregar_usuarios = new MaterialSkin.Controls.MaterialButton();
+            this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
+            this.BuscarPorNombre = new MaterialSkin.Controls.MaterialMaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.ListadoDeClienteEspeciales)).BeginInit();
             this.SuspendLayout();
             // 
             // ListadoDeClienteEspeciales
             // 
             this.ListadoDeClienteEspeciales.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ListadoDeClienteEspeciales.Location = new System.Drawing.Point(349, 67);
+            this.ListadoDeClienteEspeciales.Location = new System.Drawing.Point(315, 192);
             this.ListadoDeClienteEspeciales.Name = "ListadoDeClienteEspeciales";
-            this.ListadoDeClienteEspeciales.Size = new System.Drawing.Size(611, 465);
+            this.ListadoDeClienteEspeciales.Size = new System.Drawing.Size(645, 340);
             this.ListadoDeClienteEspeciales.TabIndex = 0;
             this.ListadoDeClienteEspeciales.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ListadoDeClienteEspeciales_CellClick);
             // 
@@ -57,13 +59,13 @@
             this.MontoDeLaVenta.BeepOnError = false;
             this.MontoDeLaVenta.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.IncludeLiterals;
             this.MontoDeLaVenta.Depth = 0;
-            this.MontoDeLaVenta.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.MontoDeLaVenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.MontoDeLaVenta.HidePromptOnLeave = false;
             this.MontoDeLaVenta.HideSelection = true;
             this.MontoDeLaVenta.Hint = "Monto de la venta";
             this.MontoDeLaVenta.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Default;
             this.MontoDeLaVenta.LeadingIcon = null;
-            this.MontoDeLaVenta.Location = new System.Drawing.Point(40, 124);
+            this.MontoDeLaVenta.Location = new System.Drawing.Point(16, 211);
             this.MontoDeLaVenta.Mask = "";
             this.MontoDeLaVenta.MaxLength = 32767;
             this.MontoDeLaVenta.MouseState = MaterialSkin.MouseState.OUT;
@@ -105,7 +107,7 @@
             this.NombreDelCliente.Hint = "Nombre Del Cliente";
             this.NombreDelCliente.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Default;
             this.NombreDelCliente.LeadingIcon = null;
-            this.NombreDelCliente.Location = new System.Drawing.Point(40, 241);
+            this.NombreDelCliente.Location = new System.Drawing.Point(16, 318);
             this.NombreDelCliente.Mask = "";
             this.NombreDelCliente.MaxLength = 32767;
             this.NombreDelCliente.MouseState = MaterialSkin.MouseState.OUT;
@@ -147,7 +149,7 @@
             this.CreditoRestanteDelCliente.Hint = "Credito Del Cliente";
             this.CreditoRestanteDelCliente.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Default;
             this.CreditoRestanteDelCliente.LeadingIcon = null;
-            this.CreditoRestanteDelCliente.Location = new System.Drawing.Point(40, 315);
+            this.CreditoRestanteDelCliente.Location = new System.Drawing.Point(16, 372);
             this.CreditoRestanteDelCliente.Mask = "";
             this.CreditoRestanteDelCliente.MaxLength = 32767;
             this.CreditoRestanteDelCliente.MouseState = MaterialSkin.MouseState.OUT;
@@ -179,7 +181,7 @@
             this.materialLabel1.AutoSize = true;
             this.materialLabel1.Depth = 0;
             this.materialLabel1.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel1.Location = new System.Drawing.Point(37, 91);
+            this.materialLabel1.Location = new System.Drawing.Point(120, 189);
             this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel1.Name = "materialLabel1";
             this.materialLabel1.Size = new System.Drawing.Size(42, 19);
@@ -191,7 +193,7 @@
             this.materialLabel2.AutoSize = true;
             this.materialLabel2.Depth = 0;
             this.materialLabel2.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel2.Location = new System.Drawing.Point(37, 219);
+            this.materialLabel2.Location = new System.Drawing.Point(60, 287);
             this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel2.Name = "materialLabel2";
             this.materialLabel2.Size = new System.Drawing.Size(162, 19);
@@ -242,11 +244,68 @@
             this.Agregar_usuarios.UseVisualStyleBackColor = true;
             this.Agregar_usuarios.Click += new System.EventHandler(this.Agregar_usuarios_Click);
             // 
+            // materialLabel3
+            // 
+            this.materialLabel3.AutoSize = true;
+            this.materialLabel3.Depth = 0;
+            this.materialLabel3.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel3.Location = new System.Drawing.Point(539, 91);
+            this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel3.Name = "materialLabel3";
+            this.materialLabel3.Size = new System.Drawing.Size(196, 19);
+            this.materialLabel3.TabIndex = 29;
+            this.materialLabel3.Text = "Lista de Clientes Especiales";
+            // 
+            // BuscarPorNombre
+            // 
+            this.BuscarPorNombre.AllowPromptAsInput = true;
+            this.BuscarPorNombre.AnimateReadOnly = false;
+            this.BuscarPorNombre.AsciiOnly = false;
+            this.BuscarPorNombre.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.BuscarPorNombre.BeepOnError = false;
+            this.BuscarPorNombre.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.IncludeLiterals;
+            this.BuscarPorNombre.Depth = 0;
+            this.BuscarPorNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.BuscarPorNombre.HidePromptOnLeave = false;
+            this.BuscarPorNombre.HideSelection = true;
+            this.BuscarPorNombre.Hint = "Buscar Por Nombre o codigo";
+            this.BuscarPorNombre.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Default;
+            this.BuscarPorNombre.LeadingIcon = global::p_proyect.Properties.Resources.busqueda_de_lupa;
+            this.BuscarPorNombre.Location = new System.Drawing.Point(315, 138);
+            this.BuscarPorNombre.Mask = "";
+            this.BuscarPorNombre.MaxLength = 32767;
+            this.BuscarPorNombre.MouseState = MaterialSkin.MouseState.OUT;
+            this.BuscarPorNombre.Name = "BuscarPorNombre";
+            this.BuscarPorNombre.PasswordChar = '\0';
+            this.BuscarPorNombre.PrefixSuffixText = null;
+            this.BuscarPorNombre.PromptChar = '_';
+            this.BuscarPorNombre.ReadOnly = false;
+            this.BuscarPorNombre.RejectInputOnFirstFailure = false;
+            this.BuscarPorNombre.ResetOnPrompt = true;
+            this.BuscarPorNombre.ResetOnSpace = true;
+            this.BuscarPorNombre.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.BuscarPorNombre.SelectedText = "";
+            this.BuscarPorNombre.SelectionLength = 0;
+            this.BuscarPorNombre.SelectionStart = 0;
+            this.BuscarPorNombre.ShortcutsEnabled = true;
+            this.BuscarPorNombre.Size = new System.Drawing.Size(645, 48);
+            this.BuscarPorNombre.SkipLiterals = true;
+            this.BuscarPorNombre.TabIndex = 32;
+            this.BuscarPorNombre.TabStop = false;
+            this.BuscarPorNombre.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.BuscarPorNombre.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludeLiterals;
+            this.BuscarPorNombre.TrailingIcon = null;
+            this.BuscarPorNombre.UseSystemPasswordChar = false;
+            this.BuscarPorNombre.ValidatingType = null;
+            this.BuscarPorNombre.TextChanged += new System.EventHandler(this.BuscarPorNombre_TextChanged);
+            // 
             // ClienteEspecialSeleccionarParaVentaACredito
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(966, 538);
+            this.Controls.Add(this.BuscarPorNombre);
+            this.Controls.Add(this.materialLabel3);
             this.Controls.Add(this.materialButton1);
             this.Controls.Add(this.Agregar_usuarios);
             this.Controls.Add(this.materialLabel2);
@@ -274,5 +333,7 @@
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
         private MaterialSkin.Controls.MaterialButton materialButton1;
         private MaterialSkin.Controls.MaterialButton Agregar_usuarios;
+        private MaterialSkin.Controls.MaterialLabel materialLabel3;
+        private MaterialSkin.Controls.MaterialMaskedTextBox BuscarPorNombre;
     }
 }

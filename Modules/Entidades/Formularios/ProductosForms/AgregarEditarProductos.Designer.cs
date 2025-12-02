@@ -178,6 +178,7 @@
             this.CodigoBarra_txt.TrailingIcon = global::p_proyect.Properties.Resources.producto_de_codigo_de_barras;
             this.CodigoBarra_txt.UseSystemPasswordChar = false;
             this.CodigoBarra_txt.ValidatingType = null;
+            this.CodigoBarra_txt.KeyDown += new System.Windows.Forms.KeyEventHandler(this.CodigoBarra_txt_KeyDown);
             // 
             // Marca_txt
             // 

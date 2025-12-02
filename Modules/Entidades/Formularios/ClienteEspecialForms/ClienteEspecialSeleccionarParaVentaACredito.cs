@@ -2,18 +2,11 @@
 using MaterialSkin.Controls;
 using Microsoft.EntityFrameworkCore;
 using p_proyect.Controller.ClienteEspecialController;
+using p_proyect.Modules.Entidades.dtos.dtoAdeudos;
 using p_proyect.Modules.Entidades.dtos.dtoClienteEspecial;
 using p_proyect.Utils;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
-using System.Web.UI.Design.WebControls;
 using System.Windows.Forms;
 
 namespace p_proyect.Modules.Entidades.Formularios.ClienteEspecialForms
@@ -52,7 +45,7 @@ namespace p_proyect.Modules.Entidades.Formularios.ClienteEspecialForms
             clienteEspecialListado.Clear();
             ListadoDeClienteEspeciales.DataSource = null;
 
-            clienteEspecialListado = await clienteC.ObtenerTodosLosClientesEspecialesAsync(); 
+            clienteEspecialListado = await clienteC.ObtenerTodosLosClientesEspecialesAsync();
 
             ListadoDeClienteEspeciales.DataSource = clienteEspecialListado;
         }
@@ -61,7 +54,7 @@ namespace p_proyect.Modules.Entidades.Formularios.ClienteEspecialForms
         {
             MontoDeLaVenta.ReadOnly = true;
             MontoDeLaVenta.Text = VentaActual.TotalEntero.ToString();
-            CargarTablaCLienteEspecial(); 
+            CargarTablaCLienteEspecial();
         }
         int idClienteEspecial = -1;
 
@@ -72,7 +65,7 @@ namespace p_proyect.Modules.Entidades.Formularios.ClienteEspecialForms
             NombreDelCliente.Text = cliente.Nombre;
             CreditoRestanteDelCliente.Text = cliente.CreditoDisponible.ToString();
         }
-        
+
 
 
         private async void ListadoDeClienteEspeciales_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -102,13 +95,20 @@ namespace p_proyect.Modules.Entidades.Formularios.ClienteEspecialForms
 
         private void Agregar_usuarios_Click(object sender, EventArgs e)
         {
-            if(ClienteEspecialSeleccionado == null)
+            if (ClienteEspecialSeleccionado == null)
             {
                 MessageBox.Show("Selecciona aun cliente especial");
                 return;
             }
 
+            if (ClienteEspecialSeleccionado.CreditoDisponible < VentaActual.TotalConElDescuento)
+            {
+                MessageBox.Show("El cliente especial no tiene suficiente credito disponible para esta venta.");
+                return;
+            }
+
             var respuesta = MessageBox.Show("Generar Venta A Credito Con cliente especial?", "Pregunta sobre agregado", MessageBoxButtons.YesNo);
+
             if (respuesta == DialogResult.No)
             {
                 return;
@@ -116,7 +116,30 @@ namespace p_proyect.Modules.Entidades.Formularios.ClienteEspecialForms
 
             using (var context = new AppDbContext(new DbContextOptions<AppDbContext>()))
             {
-                ClienteEspecialSeleccionado.CreditoGastado +=  VentaActual.TotalConElDescuento;
+
+                AdeudoCrearDto adeudo = new AdeudoCrearDto
+                {
+                    MontoTotalDelAdeudo = VentaActual.TotalConElDescuento,
+                    MontoTotalAbonadoDelAdeudo = 0,
+                    //MontoRestanteDelAdeudo = VentaActual.TotalConElDescuento,
+                    FechaCreacion = DateTime.Now,
+                    // FechaUltimaActualizacion = DateTime.Now,
+                    IdVenta = VentaActual.Id,
+                    IdCliente = ClienteEspecialSeleccionado.Id,
+                    ContactoDelCliente = ClienteEspecialSeleccionado.Contacto
+                };
+
+                context.Ventas.Add(VentaActual);
+
+                context.SaveChanges();
+
+                //Ventas venta =context.Ventas.OrderByDescending(v => v.Id).FirstOrDefault();
+
+                adeudo.IdVenta = VentaActual.Id;
+
+                context.Adeudos.Add(AdeudoMapper.ToEntity(adeudo));
+
+                ClienteEspecialSeleccionado.CreditoGastado += VentaActual.TotalConElDescuento;
 
                 context.ClientesEspeciales.Update(ClienteEspecialSeleccionado);
 
@@ -128,6 +151,11 @@ namespace p_proyect.Modules.Entidades.Formularios.ClienteEspecialForms
 
             Close();
 
+        }
+
+        private void BuscarPorNombre_TextChanged(object sender, EventArgs e)
+        {
+            FindForNameHelper.BuscarPorNombre<ClienteEspecialMostrarDto>(sender, e, clienteEspecialListado, ListadoDeClienteEspeciales);
         }
     }
 }

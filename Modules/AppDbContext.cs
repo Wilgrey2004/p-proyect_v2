@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Identity.Client;
 using p_proyect.Modules.Entidades;
+using p_proyect.Utils.Rnc;
 using System.Configuration;
 
 namespace p_proyect.Modules
@@ -29,6 +30,8 @@ namespace p_proyect.Modules
         public DbSet<CompraEntity> ComprasEntity {  get; set; }
 
         public DbSet<Ventas> Ventas { get; set; }
+
+      //  public DbSet<RncLookupResult> RncLookupResults { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

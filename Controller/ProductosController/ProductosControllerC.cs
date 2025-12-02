@@ -7,11 +7,14 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace p_proyect.Controller.ProductosController
 {
     public class ProductosControllerC
     {
+
+
         public ProductosControllerC() { }
 
 
@@ -28,7 +31,38 @@ namespace p_proyect.Controller.ProductosController
                 return listadoConvertido;
             }
         }
+         
 
+        public async Task<List<ProductoMostrarDto>> ObtenerProductosParaListaDeProductos(int? cantidad = 0)
+        {
+            using (var context = new AppDbContext(new DbContextOptions<AppDbContext>()))
+            {
+                var listadoPuro = new List<Producto>();
+
+
+
+                if (cantidad == 0)
+                {
+                    listadoPuro = await context.Productos.Where(pro => pro.Cantidad <= pro.StockMinimo).ToListAsync();
+
+                }
+                else
+                {
+                    listadoPuro = await context.Productos.Where(pro => pro.Cantidad >= cantidad).ToListAsync();
+
+                }
+
+                List<ProductoMostrarDto> listadoConvertido = new List<ProductoMostrarDto>();
+
+                for (int i = 0; i < listadoPuro.Count; i++)
+                {
+                    listadoConvertido.Add(ProductoMapper.DeProductoAProductoDtoMostrar(listadoPuro[i]));
+                }
+
+                return listadoConvertido;
+            }
+
+        }
 
         public async Task<List<ProductoMostrarDto>> ObtenerTodosLosProductos()
         {
@@ -53,6 +87,13 @@ namespace p_proyect.Controller.ProductosController
             using (var context = new AppDbContext(new DbContextOptions<AppDbContext>()))
             {
                 var productoACombertir = await context.Productos.FirstOrDefaultAsync(x => x.CodigoBarra == Codigo);
+
+
+                if(productoACombertir == null)
+                {
+                    MessageBox.Show("El producto con el código ingresado no existe.", "Producto no encontrado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return null;
+                }
 
                 return ProductoMapper.DeProductoAProductoVentasDto(productoACombertir);
             }
@@ -85,7 +126,7 @@ namespace p_proyect.Controller.ProductosController
             }
         }
 
-       
+
         public async Task<Producto> EditarProductoASync(ProductoEditarDto dto)
         {
             if (dto.Id <= 0)
@@ -176,6 +217,14 @@ namespace p_proyect.Controller.ProductosController
 
             using (var context = new AppDbContext(new DbContextOptions<AppDbContext>()))
             {
+                var productoCodigo = await context.Productos.FirstOrDefaultAsync(x => x.CodigoBarra == dto.CodigoBarra);
+
+                if (productoCodigo != null)
+                {
+                    MessageBox.Show("El código de barra ya está en uso por otro producto.", "Código de barra duplicado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return null;
+                }
+
                 var nuevoProducto = new Producto
                 {
                     Nombre = dto.Nombre.Trim(),
@@ -204,7 +253,7 @@ namespace p_proyect.Controller.ProductosController
                 return nuevoProducto;
             }
         }
-       
+
 
         public Producto TraerUnProductoPorElId(int id)
         {
