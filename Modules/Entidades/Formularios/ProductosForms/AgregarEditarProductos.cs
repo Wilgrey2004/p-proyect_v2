@@ -49,6 +49,7 @@ namespace p_proyect.Modules.Entidades.Formularios.ProductosForms
             }
             else
             {
+                Agregar_usuarios.Text = "Editar Producto";
                 Text = $"Editar Producto Ya Existente {productoSeleccioando.Nombre}";
                 CargarProductoEnControles(productoSeleccioando);
             }

@@ -48,7 +48,7 @@ namespace p_proyect
         {
             InitializeComponent();
 
-            inactividadTimer.Interval = 1000 ; // 1 segundo
+            inactividadTimer.Interval = 1000; // 1 segundo
             inactividadTimer.Tick += InactividadTimer_Tick;
             inactividadTimer.Start();
 
@@ -77,6 +77,18 @@ namespace p_proyect
         {
             tiempoInactivo = 0;
         }
+        private void PausaTimer(object sender, EventArgs e)
+        {
+            inactividadTimer.Stop();
+        }
+
+        private void ReanudarTimer(object sender, EventArgs e)
+        {
+            tiempoInactivo = 0;
+            inactividadTimer.Start();
+        }
+
+
 
 
         private void InactividadTimer_Tick(object sender, EventArgs e)
@@ -84,7 +96,7 @@ namespace p_proyect
             tiempoInactivo++;
 
             // 60 segundos sin actividad
-            if (tiempoInactivo >= 60)
+            if (tiempoInactivo >= 180)
             {
                 inactividadTimer.Stop();
                 MessageBox.Show("Sesión cerrada por inactividad.");
@@ -112,7 +124,7 @@ namespace p_proyect
             switch (SecionActual.Rol)
             {
                 case UserRole.Administrador:
-                    MessageBox.Show($"Bienvenido {SecionActual.Nombre}", "Saludo!");
+                    //MessageBox.Show($"Bienvenido {SecionActual.Nombre}", "Saludo!");
                     break;
 
                 case UserRole.GestorDeInventario:
@@ -307,11 +319,13 @@ namespace p_proyect
 
         private async void Agregar_usuarios_Click(object sender, EventArgs e)
         {
+            PausaTimer(sender, e);
             AgregarEditarUsuarios aeuForms = new AgregarEditarUsuarios();
 
             aeuForms.ShowDialog();
 
             await CargarTablaDeUsuarios();
+            ReanudarTimer(sender, e);
 
         }
 
@@ -358,10 +372,11 @@ namespace p_proyect
 
         private async void materialButton1_Click(object sender, EventArgs e)
         {
-
+            PausaTimer(sender, e);
             if (IdUsuarioSeleccionado == -1)
             {
                 MessageBox.Show("Por favor seleccione un usuario para editar.");
+                ReanudarTimer(sender, e);
                 return;
             }
 
@@ -373,6 +388,7 @@ namespace p_proyect
             aeuForms.ShowDialog();
 
             await CargarTablaDeUsuarios();
+            ReanudarTimer(sender, e);
         }
 
 
@@ -386,6 +402,7 @@ namespace p_proyect
 
         private async void GenerarReportesUsuarios_Click(object sender, EventArgs e)
         {
+            PausaTimer(sender, e);
             ReportesHelperForm reportesHelperForm = new ReportesHelperForm();
 
             reportesHelperForm.ListadoParaImprimirUsuarios = Listado_De_usuarios_Mostrar;
@@ -393,6 +410,7 @@ namespace p_proyect
             reportesHelperForm.ShowDialog();
 
             await CargarTablaDeUsuarios();
+            ReanudarTimer(sender, e);
         }
 
         private void ListadoDeProductosMostrar_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -402,10 +420,13 @@ namespace p_proyect
 
         private async void materialButton5_Click(object sender, EventArgs e)
         {
+            PausaTimer(sender, e);
             AgregarEditarProductos aePForms = new AgregarEditarProductos();
             aePForms.productoSeleccioando = null;
             aePForms.ShowDialog();
             await CargarTablaProductos();
+
+            ReanudarTimer(sender, e);
         }
 
         private void GestionDeInventario_Click(object sender, EventArgs e)
@@ -426,10 +447,11 @@ namespace p_proyect
 
         private async void materialButton4_Click(object sender, EventArgs e)
         {
-
+            PausaTimer(sender, e);
             if (IdProductoSeleccionado == -1)
             {
                 MessageBox.Show("Seleccione un producto de la tabla");
+                ReanudarTimer(sender, e);
                 return;
             }
 
@@ -441,6 +463,7 @@ namespace p_proyect
             aePForms.ShowDialog();
 
             await CargarTablaProductos();
+            ReanudarTimer(sender, e);
 
         }
 
@@ -474,7 +497,7 @@ namespace p_proyect
 
         private async void materialButton2_Click(object sender, EventArgs e)
         {
-
+            PausaTimer(sender, e);
             ReportesHelperForm reportesHelperForm = new ReportesHelperForm();
             reportesHelperForm.ListadoParaImprimirUsuarios = null;
             reportesHelperForm.ListadoParaImprimirProductos = productoMostrarDtos;
@@ -482,6 +505,7 @@ namespace p_proyect
             reportesHelperForm.ShowDialog();
 
             await CargarTablaDeUsuarios();
+            ReanudarTimer(sender, e);
         }
         List<ProveedorMostrarDto> listadoDeProveedoresMostrar = new List<ProveedorMostrarDto>();
         ProveedorControllerC ProveedorControllerC_ = new ProveedorControllerC();
@@ -499,11 +523,13 @@ namespace p_proyect
 
         private async void materialButton9_Click(object sender, EventArgs e)
         {
+            PausaTimer(sender, e);
             AgregarEditarProveedor agregarEditarProveedor = new AgregarEditarProveedor();
 
             agregarEditarProveedor.ShowDialog();
 
             await CargarListaDeProveedores();
+            ReanudarTimer(sender, e);
 
         }
 
@@ -522,9 +548,11 @@ namespace p_proyect
         ProveedorControllerC proveedorControllerC_ = new ProveedorControllerC();
         private async void materialButton8_Click(object sender, EventArgs e)
         {
+            PausaTimer(sender, e);
             if (IdProveedorSeleccionado == -1)
             {
                 MessageBox.Show("Por favor seleccione un proveedor para editar.");
+                ReanudarTimer(sender, e);
                 return;
             }
             AgregarEditarProveedor agregarEditarProveedor = new AgregarEditarProveedor();
@@ -534,6 +562,7 @@ namespace p_proyect
             agregarEditarProveedor.ShowDialog();
 
             await CargarListaDeProveedores();
+            ReanudarTimer(sender, e);
         }
 
         private async void materialButton7_Click(object sender, EventArgs e)
@@ -558,6 +587,7 @@ namespace p_proyect
 
         private async void materialButton6_Click(object sender, EventArgs e)
         {
+            PausaTimer(sender, e);
             ReportesHelperForm reportesHelperForm = new ReportesHelperForm();
 
             reportesHelperForm.ListadoParaImprimirProveedor = listadoDeProveedoresMostrar;
@@ -565,6 +595,7 @@ namespace p_proyect
             reportesHelperForm.ShowDialog();
 
             await CargarListaDeProveedores();
+            ReanudarTimer(sender, e);
         }
 
         private void materialMaskedTextBox2_TextChanged(object sender, EventArgs e)
@@ -577,10 +608,11 @@ namespace p_proyect
         private async void materialButton10_Click(object sender, EventArgs e)
         {
             MasInformacionProveedor masInformacionProveedor = new MasInformacionProveedor();
-
+            PausaTimer(sender, e);
             if (IdProveedorSeleccionado == -1)
             {
                 MessageBox.Show("Por favor seleccione un proveedor para ver mas informacion.");
+                ReanudarTimer(sender, e);
                 return;
             }
 
@@ -590,15 +622,18 @@ namespace p_proyect
             masInformacionProveedor.ShowDialog();
 
             await CargarListaDeProveedores();
+            PausaTimer(sender, e);
 
 
         }
 
         private async void materialButton14_Click(object sender, EventArgs e)
         {
+            PausaTimer(sender, e);
             AgregarClienteEspecial agregarClienteEspecial = new AgregarClienteEspecial();
             agregarClienteEspecial.ShowDialog();
             await CargarListadoDeClientesEspeciales();
+            ReanudarTimer(sender, e);
         }
 
         int IdClienteEspecialSeleccionado = -1;
@@ -616,9 +651,11 @@ namespace p_proyect
 
         private async void materialButton13_Click(object sender, EventArgs e)
         {
+            PausaTimer(sender, e);
             if (IdClienteEspecialSeleccionado == -1)
             {
                 MessageBox.Show("Necesita seleccionar a un Cliente Especial para editarlo");
+                ReanudarTimer(sender, e);
                 return;
             }
 
@@ -629,6 +666,7 @@ namespace p_proyect
             clienteEspecialEditar.ShowDialog();
 
             await CargarListadoDeClientesEspeciales();
+            ReanudarTimer(sender, e);
 
         }
 
@@ -665,6 +703,7 @@ namespace p_proyect
 
         private async void materialButton11_Click(object sender, EventArgs e)
         {
+            PausaTimer(sender, e);
             ReportesHelperForm reportesHelperForm = new ReportesHelperForm();
 
             reportesHelperForm.ListadoParaImprimirClienteEspecial = listadoDeClientesEspecialesMostrar;
@@ -672,7 +711,7 @@ namespace p_proyect
             reportesHelperForm.ShowDialog();
 
             await CargarListadoDeClientesEspeciales();
-
+            ReanudarTimer(sender, e);
 
         }
 
@@ -888,6 +927,7 @@ namespace p_proyect
         }
         private async void materialButton15_Click(object sender, EventArgs e)
         {
+            PausaTimer(sender, e);
             ReportesHelperForm reportesHelperForm = new ReportesHelperForm();
 
             reportesHelperForm.ListadoParaImprimirClienteNormal = ListadoClienteNormalMostrarDtos;
@@ -896,7 +936,7 @@ namespace p_proyect
 
 
             await CargarListadoDeClientesNormales();
-
+            ReanudarTimer(sender, e);
 
         }
         private void materialMaskedTextBox3_TextChanged(object sender, EventArgs e)
@@ -1095,7 +1135,7 @@ namespace p_proyect
         ProductoVentasMostrarDto productoSeleccionado = new ProductoVentasMostrarDto();
 
 
-        private async void ListadoDeProductosDisponibles_dg_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void ListadoDeProductosDisponibles_dg_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             ProductoAComprarVenta = DataGridHelper.ObtenerIdSeleccionado(ListadoDeProductosDisponibles_dg, e);
 
@@ -1106,6 +1146,7 @@ namespace p_proyect
             }
 
             productoSeleccionado = listadoProductosDisponiblesVenta.FirstOrDefault(x => x.Id == ProductoAComprarVenta);
+
             CargarProductoVentaEnCombos(productoSeleccionado);
 
             numCantidadProducto.Value = 1;
@@ -1113,6 +1154,8 @@ namespace p_proyect
             numCantidadProducto.Maximum = productoSeleccionado.Stock;
 
             numCantidadProducto.Minimum = 1;
+
+            ListadoDeProductosDisponibles_dg.Visible = false;
 
 
         }
@@ -1125,7 +1168,7 @@ namespace p_proyect
                 MessageBox.Show("Producto no encontrado");
                 return;
             }
-            Codigo_Del_Producto_txt.Text = cargar.CodigoDelProducto;
+            Codigo_Del_Producto_txt.Text = cargar.CodigoBarra;
             Nombre_Del_Producto_txt.Text = cargar.Nombre;
             UnidadDeMedidaDelProducto.Text = cargar.unidadMedida.ToString();
             PrecioPorUnidadDelProducto_txt.Text = cargar.Precio.ToString();
@@ -1252,7 +1295,7 @@ namespace p_proyect
 
 
 
-            
+
         }
 
         private async void CargarProductoPorCodigo(string codigoProducto)
@@ -1352,62 +1395,98 @@ namespace p_proyect
             return true;
         }
 
-
-        private async void materialButton20_Click(object sender, EventArgs e)
+        private bool ELCarritoEstaVacio(List<CarritoCompraDto> carrito)
         {
-
-            RncLookupResult infoRnc = new RncLookupResult();
-            var respuesta = MessageBox.Show("Estas aseguro de realizar esta venta?", "Confirmar Venta", MessageBoxButtons.YesNo);
-            if (respuesta == DialogResult.No)
+            if (carrito == null ||
+              carrito.Count == 0)
             {
+                MessageBox.Show("El carrito está vacío.");
+                return false;
+            }
+
+            return true;
+        }
+
+
+        private void CargarRncALaventa(Ventas venta, RncLookupResult infoRnc)
+        {
+            RNCFormHelper rNCFormHelper = new RNCFormHelper();
+
+            rNCFormHelper.ShowDialog();
+
+            infoRnc = rNCFormHelper.InfoRnc;
+
+
+            if (infoRnc == null)
+            {
+                MessageBox.Show("No se pudo obtener la información del RNC.");
+                venta.RNC = "000000000";
                 return;
             }
 
-            var respuesta2 = MessageBox.Show("Comprovante Fiscal?", "Comprovante?", MessageBoxButtons.YesNo,MessageBoxIcon.Question);
-            if (respuesta2 == DialogResult.Yes)
-            {
+            venta.RNC = infoRnc.Rnc;
 
-               RNCFormHelper rNCFormHelper = new RNCFormHelper();
-               rNCFormHelper.ShowDialog();
-               infoRnc = rNCFormHelper.getInfoRnc();
+        }
 
-                if (infoRnc == null)
-                {
-                    MessageBox.Show("Rnc Cancelado");
-                }
 
-                ventaActualAlDetalle.RNC = infoRnc.Rnc;
-            }
+        private void CrearVenta(Ventas venta, List<CarritoCompraDto> carrito)
+        {
 
             try
             {
-                ventaActualAlDetalle.ListadoDeCompras = RegresarUnaListaDeComprasEntity(CarritoDeCompras);
+                venta.ListadoDeCompras = RegresarUnaListaDeComprasEntity(carrito);
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error inesperado: " + ex.Message);
                 return;
             }
-            // 1. Convertir el carrito a entidades
 
-            // 2. Validaciones
-            if (ventaActualAlDetalle.ListadoDeCompras == null ||
-                ventaActualAlDetalle.ListadoDeCompras.Count == 0)
-            {
-                MessageBox.Show("El carrito está vacío.");
+            venta.Descuento = decimal.Parse(Descuento_txt.Text) >= 0 ? decimal.Parse(Descuento_txt.Text) : 0;
+            venta.Tipo_De_Venta = Modules.Enums.TipoDeVenta.VentaAlDetalle;
+            venta.TotalEntero = ventaActualAlDetalle.CalcularTotalEntero();
+            venta.MontoDescontado = ventaActualAlDetalle.CaluclarMontoDescontado();
+            venta.TotalConElDescuento = ventaActualAlDetalle.CalcularTotalConElDescuento();
+            venta.FechaCreacion = DateTime.Now;
+        }
+        RncLookupResult InfoRnc = new RncLookupResult();
+
+        private async void materialButton20_Click(object sender, EventArgs e)
+        {
+
+
+            PausaTimer(sender, e);
+
+            if (!ELCarritoEstaVacio(CarritoDeCompras))
                 return;
+
+
+            //if (!MessagesHelpers.MensajeDeConfirmacion("Estas aseguro de realizar esta venta?", " Confirmar La venta",MessageBoxIcon.Question))
+            //{
+            //    return;
+            //}
+
+            if (MessagesHelpers.MensajeDeConfirmacion("¿El cliente quiere comprobante fiscal?", "Comprobante Fiscal", MessageBoxIcon.Question))
+            {
+                RNCFormHelper rNCFormHelper = new RNCFormHelper();
+
+                rNCFormHelper.ShowDialog();
+
+                InfoRnc = rNCFormHelper.InfoRnc;
+
+
+                if (InfoRnc == null)
+                {
+                    MessageBox.Show("No se pudo obtener la información del RNC.");
+                    ventaActualAlDetalle.RNC = "000000000";
+                    return;
+                }
+
+                ventaActualAlDetalle.RNC = InfoRnc.Rnc;
             }
 
-            // 3. Configurar datos iniciales
-            ventaActualAlDetalle.Descuento = decimal.Parse(Descuento_txt.Text) >= 0 ? decimal.Parse(Descuento_txt.Text) : 0;
-            //ventaActualAlDetalle.IdCliente = 0;
-            ventaActualAlDetalle.Tipo_De_Venta = Modules.Enums.TipoDeVenta.VentaAlDetalle;
+            CrearVenta(ventaActualAlDetalle, CarritoDeCompras);
 
-            // 4. Calcular totales UNA sola vez ANTES de guardar
-            ventaActualAlDetalle.TotalEntero = ventaActualAlDetalle.CalcularTotalEntero();
-            ventaActualAlDetalle.MontoDescontado = ventaActualAlDetalle.CaluclarMontoDescontado();
-            ventaActualAlDetalle.TotalConElDescuento = ventaActualAlDetalle.CalcularTotalConElDescuento();
-            ventaActualAlDetalle.FechaCreacion = DateTime.Now;
 
             using (var context = new AppDbContext(new DbContextOptions<AppDbContext>()))
             {
@@ -1424,8 +1503,11 @@ namespace p_proyect
                     await context.SaveChangesAsync();
 
                     // naqui va
-                    ImprimirReciboDeVenta(CarritoDeCompras);
-                    MessageBox.Show("Compra efectuada con éxito!");
+
+                    //ImprimirReciboDeVenta(CarritoDeCompras, InfoRnc);
+                    ImprimirReciboDeVenta(CarritoDeCompras, InfoRnc, ventaActualAlDetalle);
+                    LimpiarCamposDeVenta();
+                    //MessageBox.Show("");
                 }
                 catch (Exception ex)
                 {
@@ -1436,18 +1518,24 @@ namespace p_proyect
             CarritoDeCompras.Clear();
 
 
-
-            ventaActualAlDetalle.ListadoDeCompras = null;
-
-            ventaActualAlDetalle = null;
-
-            TotalDelCarrito.Text = "0.00";
+            LimpiarCamposDeVenta();
 
             await CargarTablasVenta();
+
+            ReanudarTimer(sender, e);
+
         }
 
-        public void ImprimirReciboDeVenta(List<CarritoCompraDto> carritoList)
+        public void ImprimirReciboDeVenta(List<CarritoCompraDto> carritoList, RncLookupResult infoRnc, Ventas venta)
         {
+            if (infoRnc != null)
+            {
+                ImpresionRecibo recibo1 = new ImpresionRecibo(carritoList, infoRnc, venta);
+                recibo1.Imprimir();
+                return;
+            }
+
+
             ImpresionRecibo recibo = new ImpresionRecibo(carritoList);
             recibo.Imprimir();
         }
@@ -1512,7 +1600,7 @@ namespace p_proyect
             using (var context = new AppDbContext(new DbContextOptions<AppDbContext>()))
             {
                 VentaSeleccionadaDelDatagrid = context.Ventas.FirstOrDefault(x => x.Id == ventaSeleccionada);
-                
+
                 if (VentaSeleccionadaDelDatagrid == null)
                 {
                     MessageBox.Show("Venta No existe con el ID: " + VentaSeleccionadaDelDatagrid.Id.ToString());
@@ -1547,9 +1635,11 @@ namespace p_proyect
 
         private void materialButton21_Click(object sender, EventArgs e)
         {
+            PausaTimer(sender, e);
             var respuesta = MessageBox.Show("Quieres Entrar a la seccion de reportes ?", "Pregunta sobre Generacion de reportes", MessageBoxButtons.YesNo);
             if (respuesta == DialogResult.No)
             {
+                ReanudarTimer(sender, e);
                 return;
             }
             ReportesHelperForm reportesHelperForm = new ReportesHelperForm();
@@ -1557,6 +1647,7 @@ namespace p_proyect
             reportesHelperForm.ListadoParaImprimirVentas = lisatdoDeVentas;
 
             reportesHelperForm.ShowDialog();
+            ReanudarTimer(sender, e);
 
 
         }
@@ -1643,32 +1734,35 @@ namespace p_proyect
 
         private async void materialButton25_Click(object sender, EventArgs e)
         {
+            PausaTimer(sender, e);
 
-            var respuesta = MessageBox.Show("Estas aseguro de realizar esta venta?", "Confirmar Venta", MessageBoxButtons.YesNo);
-            if (respuesta == DialogResult.No)
-            {
+            if (!ELCarritoEstaVacio(CarritoDeCompras))
                 return;
-            }
-            // 1. Convertir el carrito a entidades
-            ventaActualAlDetalle.ListadoDeCompras = RegresarUnaListaDeComprasEntity(CarritoDeCompras);
 
-            // 2. Validaciones
-            if (ventaActualAlDetalle.ListadoDeCompras == null ||
-                ventaActualAlDetalle.ListadoDeCompras.Count == 0)
+            RncLookupResult infoRnc = new RncLookupResult();
+
+
+            if (MessagesHelpers.MensajeDeConfirmacion("¿El cliente quiere comprobante fiscal?", "Comprobante Fiscal", MessageBoxIcon.Question))
             {
-                MessageBox.Show("El carrito está vacío.");
-                return;
+                RNCFormHelper rNCFormHelper = new RNCFormHelper();
+
+                rNCFormHelper.ShowDialog();
+
+                InfoRnc = rNCFormHelper.InfoRnc;
+
+
+                if (InfoRnc == null)
+                {
+                    MessageBox.Show("No se pudo obtener la información del RNC.");
+                    ventaActualAlDetalle.RNC = "000000000";
+                    return;
+                }
+
+                ventaActualAlDetalle.RNC = InfoRnc.Rnc;
             }
 
             // 3. Configurar datos iniciales
-            ventaActualAlDetalle.Descuento = decimal.Parse(Descuento_txt.Text) >= 0 ? decimal.Parse(Descuento_txt.Text) : 0;
-            ventaActualAlDetalle.Tipo_De_Venta = Modules.Enums.TipoDeVenta.VentaAlDetalle;
-
-            // 4. Calcular totales UNA sola vez ANTES de guardar
-            ventaActualAlDetalle.TotalEntero = ventaActualAlDetalle.CalcularTotalEntero();
-            ventaActualAlDetalle.MontoDescontado = ventaActualAlDetalle.CaluclarMontoDescontado();
-            ventaActualAlDetalle.TotalConElDescuento = ventaActualAlDetalle.CalcularTotalConElDescuento();
-            ventaActualAlDetalle.FechaCreacion = DateTime.Now;
+            CrearVenta(ventaActualAlDetalle, CarritoDeCompras);
 
             using (var context = new AppDbContext(new DbContextOptions<AppDbContext>()))
             {
@@ -1678,15 +1772,12 @@ namespace p_proyect
                     {
                         return;
                     }
-                    //ventaActualAlDetalle.IdCliente = 0;
+
 
                     RestarStock(RegresarUnaListaDeComprasEntity(CarritoDeCompras));
-                    // Guardar todo en un solo SaveChanges
-                    //context.Ventas.Add(ventaActualAlDetalle);
 
-                    //await context.SaveChangesAsync();
 
-                    ImprimirReciboDeVenta(CarritoDeCompras);
+                    ImprimirReciboDeVenta(CarritoDeCompras, infoRnc, ventaActualAlDetalle);
 
                     MessageBox.Show("Compra efectuada con éxito!");
                 }
@@ -1701,6 +1792,10 @@ namespace p_proyect
             TotalDelCarrito.Text = "0.00";
 
             await CargarTablasVenta();
+
+            LimpiarCamposDeVenta();
+
+            ReanudarTimer(sender, e);
         }
 
         private async void Usuarios_DataGrid_DataError(object sender, DataGridViewDataErrorEventArgs e)
@@ -1763,7 +1858,10 @@ namespace p_proyect
 
         private void materialMaskedTextBox6_TextChanged(object sender, EventArgs e)
         {
-            FindForNameHelper.BuscarPorNombre<ProductoVentasMostrarDto>(sender, e, listadoProductosDisponiblesVenta, ListadoDeProductosDisponibles_dg);
+            FindForNameHelper.BuscarPorCodigo<ProductoVentasMostrarDto>(sender, e, listadoProductosDisponiblesVenta, ListadoDeProductosDisponibles_dg);
+
+            // FindForNameHelper.BuscarPorCodigo<ProductoVentasMostrarDto>(sender, e, listadoProductosDisponiblesVenta, ListadoDeProductosDisponibles_dg);
+
 
         }
 
@@ -1805,7 +1903,7 @@ namespace p_proyect
         private void LimpiarVenta_Click(object sender, EventArgs e)
         {
             LimpiarCamposDeVenta();
-            
+
         }
 
         private void materialButton30_Click(object sender, EventArgs e)
@@ -1814,6 +1912,60 @@ namespace p_proyect
 
             verCarritoDeCompras.ShowDialog();
 
+        }
+
+        private void materialMaskedTextBox6_Click(object sender, EventArgs e)
+        {
+            ListadoDeProductosDisponibles_dg.Visible = true;
+        }
+
+        private void materialMaskedTextBox6_Leave(object sender, EventArgs e)
+        {
+            //ListadoDeProductosDisponibles_dg.Visible = false;
+        }
+
+        private async void materialButton31_Click(object sender, EventArgs e)
+        {
+            if (VentaSeleccionadaDelDatagrid == null)
+                return;
+            RncLookupResult rncLookupResult = RncHelper.LookupRnc(VentaSeleccionadaDelDatagrid.RNC);
+
+            ImprimirReciboDeVenta(await RegresarListaDeProductosDeUnaVenta(VentaSeleccionadaDelDatagrid) , rncLookupResult, VentaSeleccionadaDelDatagrid);
+        }
+
+        private async Task<List<CarritoCompraDto>> RegresarListaDeProductosDeUnaVenta(Ventas venta)
+        {
+            using (var context = new AppDbContext(new DbContextOptions<AppDbContext>()))
+            {
+                var CarritoSinParse = await context.ComprasEntity.Where(c => c.IdVenta == venta.Id)
+                    .ToListAsync();
+
+                List<Producto> ListadoDeProductos = new List<Producto>();
+
+
+                foreach (var item in CarritoSinParse)
+                {
+                    var producto = await context.Productos.FirstOrDefaultAsync(x => x.Id == item.IdProducto);
+
+                    producto.Cantidad = item.CantidadDelProducto;
+                    producto.FechaCreacion = item.FechaCreacio;
+                    ListadoDeProductos.Add(producto);
+                }
+
+
+                List<CarritoCompraDto> CarritoDeComprasParaEstaFactura = new List<CarritoCompraDto>();
+
+                foreach (var item in ListadoDeProductos)
+                {
+                    CompraEntity compraAMappear = RegresarCompraCreada(item);
+                   CarritoDeComprasParaEstaFactura.Add(CompraMapper.MapCompraToCarrito(compraAMappear));
+                }
+
+
+                return CarritoDeComprasParaEstaFactura;
+            }
+
+            //return null;
         }
     }
 }

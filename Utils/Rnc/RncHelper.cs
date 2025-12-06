@@ -23,7 +23,7 @@ namespace p_proyect.Utils
                     {
                         Success = true,
                         Rnc = response.CedulaORnc,
-                        Nombre = response.NombreComercial ?? response.NombreORazónSocial,
+                        Nombre = response.NombreORazónSocial,
                         ErrorMessage = null
                     };
                 }

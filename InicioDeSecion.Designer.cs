@@ -43,7 +43,8 @@
             this.materialLabel1.Depth = 0;
             this.materialLabel1.Font = new System.Drawing.Font("Roboto", 34F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.materialLabel1.FontType = MaterialSkin.MaterialSkinManager.fontType.H4;
-            this.materialLabel1.Location = new System.Drawing.Point(76, 63);
+            this.materialLabel1.Location = new System.Drawing.Point(101, 78);
+            this.materialLabel1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel1.Name = "materialLabel1";
             this.materialLabel1.Size = new System.Drawing.Size(235, 41);
@@ -55,9 +56,10 @@
             // 
             this.panel1.BackgroundImage = global::p_proyect.Properties.Resources.FondoDePantallaRojo;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel1.Location = new System.Drawing.Point(2, 67);
+            this.panel1.Location = new System.Drawing.Point(3, 82);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(930, 478);
+            this.panel1.Size = new System.Drawing.Size(1240, 588);
             this.panel1.TabIndex = 4;
             // 
             // materialButton1
@@ -67,8 +69,8 @@
             this.materialButton1.Depth = 0;
             this.materialButton1.HighEmphasis = true;
             this.materialButton1.Icon = global::p_proyect.Properties.Resources.Aceprtar;
-            this.materialButton1.Location = new System.Drawing.Point(136, 341);
-            this.materialButton1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.materialButton1.Location = new System.Drawing.Point(181, 420);
+            this.materialButton1.Margin = new System.Windows.Forms.Padding(5, 7, 5, 7);
             this.materialButton1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialButton1.Name = "materialButton1";
             this.materialButton1.NoAccentTextColor = System.Drawing.Color.Empty;
@@ -95,7 +97,8 @@
             this.ClaveDelUsuario.Hint = "Contraseña";
             this.ClaveDelUsuario.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Default;
             this.ClaveDelUsuario.LeadingIcon = global::p_proyect.Properties.Resources.avatar_de_usuario;
-            this.ClaveDelUsuario.Location = new System.Drawing.Point(11, 235);
+            this.ClaveDelUsuario.Location = new System.Drawing.Point(15, 289);
+            this.ClaveDelUsuario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ClaveDelUsuario.Mask = "";
             this.ClaveDelUsuario.MaxLength = 32767;
             this.ClaveDelUsuario.MouseState = MaterialSkin.MouseState.OUT;
@@ -112,7 +115,7 @@
             this.ClaveDelUsuario.SelectionLength = 0;
             this.ClaveDelUsuario.SelectionStart = 0;
             this.ClaveDelUsuario.ShortcutsEnabled = true;
-            this.ClaveDelUsuario.Size = new System.Drawing.Size(364, 48);
+            this.ClaveDelUsuario.Size = new System.Drawing.Size(485, 48);
             this.ClaveDelUsuario.SkipLiterals = true;
             this.ClaveDelUsuario.TabIndex = 1;
             this.ClaveDelUsuario.TabStop = false;
@@ -121,6 +124,7 @@
             this.ClaveDelUsuario.TrailingIcon = null;
             this.ClaveDelUsuario.UseSystemPasswordChar = false;
             this.ClaveDelUsuario.ValidatingType = null;
+            this.ClaveDelUsuario.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ClaveDelUsuario_KeyDown);
             // 
             // NombreDelUsuario
             // 
@@ -137,7 +141,8 @@
             this.NombreDelUsuario.Hint = "Nombre";
             this.NombreDelUsuario.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Default;
             this.NombreDelUsuario.LeadingIcon = global::p_proyect.Properties.Resources.firma;
-            this.NombreDelUsuario.Location = new System.Drawing.Point(11, 126);
+            this.NombreDelUsuario.Location = new System.Drawing.Point(15, 155);
+            this.NombreDelUsuario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.NombreDelUsuario.Mask = "";
             this.NombreDelUsuario.MaxLength = 32767;
             this.NombreDelUsuario.MouseState = MaterialSkin.MouseState.OUT;
@@ -154,7 +159,7 @@
             this.NombreDelUsuario.SelectionLength = 0;
             this.NombreDelUsuario.SelectionStart = 0;
             this.NombreDelUsuario.ShortcutsEnabled = true;
-            this.NombreDelUsuario.Size = new System.Drawing.Size(364, 48);
+            this.NombreDelUsuario.Size = new System.Drawing.Size(485, 48);
             this.NombreDelUsuario.SkipLiterals = true;
             this.NombreDelUsuario.TabIndex = 0;
             this.NombreDelUsuario.TabStop = false;
@@ -163,6 +168,7 @@
             this.NombreDelUsuario.TrailingIcon = null;
             this.NombreDelUsuario.UseSystemPasswordChar = false;
             this.NombreDelUsuario.ValidatingType = null;
+            this.NombreDelUsuario.KeyDown += new System.Windows.Forms.KeyEventHandler(this.NombreDelUsuario_KeyDown);
             // 
             // materialCard1
             // 
@@ -173,22 +179,24 @@
             this.materialCard1.Controls.Add(this.NombreDelUsuario);
             this.materialCard1.Depth = 0;
             this.materialCard1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialCard1.Location = new System.Drawing.Point(537, 74);
-            this.materialCard1.Margin = new System.Windows.Forms.Padding(14);
+            this.materialCard1.Location = new System.Drawing.Point(716, 91);
+            this.materialCard1.Margin = new System.Windows.Forms.Padding(19, 17, 19, 17);
             this.materialCard1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialCard1.Name = "materialCard1";
-            this.materialCard1.Padding = new System.Windows.Forms.Padding(14);
-            this.materialCard1.Size = new System.Drawing.Size(390, 470);
+            this.materialCard1.Padding = new System.Windows.Forms.Padding(19, 17, 19, 17);
+            this.materialCard1.Size = new System.Drawing.Size(520, 578);
             this.materialCard1.TabIndex = 5;
             // 
             // InicioDeSecion
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(938, 551);
+            this.ClientSize = new System.Drawing.Size(1251, 678);
             this.Controls.Add(this.materialCard1);
             this.Controls.Add(this.panel1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "InicioDeSecion";
+            this.Padding = new System.Windows.Forms.Padding(4, 79, 4, 4);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Inicio";
             this.Load += new System.EventHandler(this.InicioDeSecion_Load);

@@ -1,5 +1,6 @@
 ﻿using p_proyect.Core.Interfaces;
 using p_proyect.Modules.Enums;
+using p_proyect.Utils.Rnc;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -43,7 +44,12 @@ namespace p_proyect.Modules.Entidades
         [DisplayName("Tipo de pago")]
         public TipoDePago Pago { get; set; } = TipoDePago.PagoEnEfectivo;
 
+        [DisplayName("RNC")]
         public string RNC { get; set; } = "Sin RNC";
+
+
+
+       // public RncLookupResult InfoRnc { get; set; }
 
         public List<CompraEntity> ListadoDeCompras { get; set; }
 

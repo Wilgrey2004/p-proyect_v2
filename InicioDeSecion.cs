@@ -75,5 +75,27 @@ namespace p_proyect
 
             }
         }
+
+        private void NombreDelUsuario_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                
+                e.SuppressKeyPress = true; // Evita el sonido de "ding"
+
+                materialButton1_Click(sender, e);
+            }
+        }
+
+        private void ClaveDelUsuario_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+
+                e.SuppressKeyPress = true; // Evita el sonido de "ding"
+
+                materialButton1_Click(sender, e);
+            }
+        }
     }
 }

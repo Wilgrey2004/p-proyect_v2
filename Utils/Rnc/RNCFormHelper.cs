@@ -8,7 +8,7 @@ namespace p_proyect.Utils.Rnc
     public partial class RNCFormHelper : MaterialForm
     {
         private string Rnc_;
-        private RncLookupResult InfoRnc;
+        public RncLookupResult InfoRnc;
         public RNCFormHelper()
         {
 
@@ -54,14 +54,12 @@ namespace p_proyect.Utils.Rnc
             InfoRnc = RncHelper.LookupRnc(Rnc_);
             if (InfoRnc == null)
             {
-                MessageBox.Show("No se encontró información para el RNC/Cédula proporcionado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+               MessageBox.Show("No se encontró información para el RNC/Cédula proporcionado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                 return;
             }
-            else
-            {
-                MessageBox.Show(InfoRnc.ToString(), "Información RNC", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
+            
+            NombreDeLaEmpresa_txt.Text = InfoRnc.Nombre;
         }
 
         private void RNCFormHelper_Load(object sender, EventArgs e)
@@ -83,6 +81,16 @@ namespace p_proyect.Utils.Rnc
         private void materialButton2_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void materialButton1_Click(object sender, EventArgs e)
+        {
+            if (MessagesHelpers.MensajeDeConfirmacion("¿Está seguro de que desea Agregar la información del RNC/Cédula a la factura?", "Confirmación", MessageBoxIcon.Question))
+            {   
+                Close();
+                return;
+            }
+        
         }
     }
 }

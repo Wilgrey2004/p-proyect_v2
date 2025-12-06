@@ -1,5 +1,4 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.Identity.Client;
 using p_proyect.Modules.Entidades;
 using p_proyect.Utils.Rnc;
 using System.Configuration;
@@ -25,13 +24,13 @@ namespace p_proyect.Modules
 
         public DbSet<Adeudo> Adeudos { get; set; }
 
-         public DbSet<ClienteNormal> ClientesNormales { get; set; }
+        public DbSet<ClienteNormal> ClientesNormales { get; set; }
 
-        public DbSet<CompraEntity> ComprasEntity {  get; set; }
+        public DbSet<CompraEntity> ComprasEntity { get; set; }
 
         public DbSet<Ventas> Ventas { get; set; }
 
-      //  public DbSet<RncLookupResult> RncLookupResults { get; set; }
+        //public DbSet<RncLookupResult> RncLookupResults { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

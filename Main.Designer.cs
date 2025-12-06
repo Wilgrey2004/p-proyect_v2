@@ -52,12 +52,10 @@
             this.materialButton25 = new MaterialSkin.Controls.MaterialButton();
             this.materialButton17 = new MaterialSkin.Controls.MaterialButton();
             this.CarritoDecompras_dg = new System.Windows.Forms.DataGridView();
-            this.materialLabel12 = new MaterialSkin.Controls.MaterialLabel();
             this.ListadoDeProductosDisponibles_dg = new System.Windows.Forms.DataGridView();
             this.materialLabel11 = new MaterialSkin.Controls.MaterialLabel();
             this.materialCard6 = new MaterialSkin.Controls.MaterialCard();
             this.LimpiarVenta = new MaterialSkin.Controls.MaterialFloatingActionButton();
-            this.materialFloatingActionButton1 = new MaterialSkin.Controls.MaterialFloatingActionButton();
             this.materialLabel21 = new MaterialSkin.Controls.MaterialLabel();
             this.TotalDelCarrito = new MaterialSkin.Controls.MaterialLabel();
             this.Descuento_txt = new MaterialSkin.Controls.MaterialMaskedTextBox();
@@ -144,6 +142,7 @@
             this.ApellidoDelUsuarioSecion = new MaterialSkin.Controls.MaterialMaskedTextBox();
             this.NombreDelUsuarioSecion = new MaterialSkin.Controls.MaterialMaskedTextBox();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.materialButton31 = new MaterialSkin.Controls.MaterialButton();
             this.usuarioMostrarDtoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.proveedorBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.productoMostrarDtoBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
@@ -321,6 +320,7 @@
             // 
             // GestionDeventas
             // 
+            this.GestionDeventas.Controls.Add(this.materialButton31);
             this.GestionDeventas.Controls.Add(this.materialButton30);
             this.GestionDeventas.Controls.Add(this.materialLabel20);
             this.GestionDeventas.Controls.Add(this.materialLabel16);
@@ -417,7 +417,6 @@
             this.GestionVentaAlDetalle.Controls.Add(this.materialButton25);
             this.GestionVentaAlDetalle.Controls.Add(this.materialButton17);
             this.GestionVentaAlDetalle.Controls.Add(this.CarritoDecompras_dg);
-            this.GestionVentaAlDetalle.Controls.Add(this.materialLabel12);
             this.GestionVentaAlDetalle.Controls.Add(this.ListadoDeProductosDisponibles_dg);
             this.GestionVentaAlDetalle.Controls.Add(this.materialLabel11);
             this.GestionVentaAlDetalle.Controls.Add(this.materialCard6);
@@ -461,6 +460,8 @@
             this.materialMaskedTextBox6.TrailingIcon = null;
             this.materialMaskedTextBox6.UseSystemPasswordChar = false;
             this.materialMaskedTextBox6.ValidatingType = null;
+            this.materialMaskedTextBox6.Click += new System.EventHandler(this.materialMaskedTextBox6_Click);
+            this.materialMaskedTextBox6.Leave += new System.EventHandler(this.materialMaskedTextBox6_Leave);
             this.materialMaskedTextBox6.TabStopChanged += new System.EventHandler(this.materialMaskedTextBox6_TabStopChanged);
             this.materialMaskedTextBox6.TextChanged += new System.EventHandler(this.materialMaskedTextBox6_TextChanged);
             // 
@@ -503,14 +504,6 @@
             this.CarritoDecompras_dg.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.CarritoDecompras_dg_CellClick_2);
             this.CarritoDecompras_dg.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.CarritoDecompras_dg_DataError);
             // 
-            // materialLabel12
-            // 
-            resources.ApplyResources(this.materialLabel12, "materialLabel12");
-            this.materialLabel12.Depth = 0;
-            this.materialLabel12.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel12.Name = "materialLabel12";
-            this.materialLabel12.Click += new System.EventHandler(this.materialLabel12_Click);
-            // 
             // ListadoDeProductosDisponibles_dg
             // 
             this.ListadoDeProductosDisponibles_dg.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -532,7 +525,6 @@
             // 
             this.materialCard6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.materialCard6.Controls.Add(this.LimpiarVenta);
-            this.materialCard6.Controls.Add(this.materialFloatingActionButton1);
             this.materialCard6.Controls.Add(this.materialLabel21);
             this.materialCard6.Controls.Add(this.TotalDelCarrito);
             this.materialCard6.Controls.Add(this.Descuento_txt);
@@ -563,15 +555,6 @@
             this.LimpiarVenta.Name = "LimpiarVenta";
             this.LimpiarVenta.UseVisualStyleBackColor = true;
             this.LimpiarVenta.Click += new System.EventHandler(this.LimpiarVenta_Click);
-            // 
-            // materialFloatingActionButton1
-            // 
-            this.materialFloatingActionButton1.Depth = 0;
-            this.materialFloatingActionButton1.Icon = null;
-            resources.ApplyResources(this.materialFloatingActionButton1, "materialFloatingActionButton1");
-            this.materialFloatingActionButton1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialFloatingActionButton1.Name = "materialFloatingActionButton1";
-            this.materialFloatingActionButton1.UseVisualStyleBackColor = true;
             // 
             // materialLabel21
             // 
@@ -1729,7 +1712,7 @@
             this.bunifuPictureBox1.AllowFocused = false;
             resources.ApplyResources(this.bunifuPictureBox1, "bunifuPictureBox1");
             this.bunifuPictureBox1.AutoSizeHeight = true;
-            this.bunifuPictureBox1.BorderRadius = 74;
+            this.bunifuPictureBox1.BorderRadius = 66;
             this.bunifuPictureBox1.Image = global::p_proyect.Properties.Resources.usuario_icon;
             this.bunifuPictureBox1.IsCircle = true;
             this.bunifuPictureBox1.Name = "bunifuPictureBox1";
@@ -1926,6 +1909,22 @@
             this.imageList1.Images.SetKeyName(8, "ListaIcon2.png");
             this.imageList1.Images.SetKeyName(9, "usuario-icon.png");
             // 
+            // materialButton31
+            // 
+            resources.ApplyResources(this.materialButton31, "materialButton31");
+            this.materialButton31.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.materialButton31.Depth = 0;
+            this.materialButton31.HighEmphasis = true;
+            this.materialButton31.Icon = global::p_proyect.Properties.Resources.gestion_de_la_cadena_de_suministro;
+            this.materialButton31.Image = global::p_proyect.Properties.Resources.Aceprtar;
+            this.materialButton31.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialButton31.Name = "materialButton31";
+            this.materialButton31.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.materialButton31.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.materialButton31.UseAccentColor = true;
+            this.materialButton31.UseVisualStyleBackColor = true;
+            this.materialButton31.Click += new System.EventHandler(this.materialButton31_Click);
+            // 
             // usuarioMostrarDtoBindingSource
             // 
             this.usuarioMostrarDtoBindingSource.DataSource = typeof(p_proyect.Modules.Entidades.dtos.dtoUsuarios.UsuarioMostrarDto);
@@ -1958,6 +1957,7 @@
             this.Controls.Add(this.Gestion);
             this.DrawerTabControl = this.Gestion;
             this.Name = "Main";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Main_Load);
             this.GestionDeAdeudos.ResumeLayout(false);
             this.GestionDeAdeudos.PerformLayout();
@@ -2039,7 +2039,6 @@
         private MaterialSkin.Controls.MaterialButton materialButton17;
         private MaterialSkin.Controls.MaterialButton materialButton20;
         private System.Windows.Forms.DataGridView CarritoDecompras_dg;
-        private MaterialSkin.Controls.MaterialLabel materialLabel12;
         private System.Windows.Forms.DataGridView ListadoDeProductosDisponibles_dg;
         private MaterialSkin.Controls.MaterialLabel materialLabel11;
         private MaterialSkin.Controls.MaterialCard materialCard6;
@@ -2129,8 +2128,8 @@
         private MaterialSkin.Controls.MaterialButton materialButton29;
         private MaterialSkin.Controls.MaterialLabel CargoEmpleadoPerilTxt;
         private MaterialSkin.Controls.MaterialLabel materialLabel25;
-        private MaterialSkin.Controls.MaterialFloatingActionButton materialFloatingActionButton1;
         private MaterialSkin.Controls.MaterialFloatingActionButton LimpiarVenta;
         private MaterialSkin.Controls.MaterialButton materialButton30;
+        private MaterialSkin.Controls.MaterialButton materialButton31;
     }
 }

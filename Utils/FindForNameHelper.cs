@@ -2,8 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace p_proyect.Utils
@@ -40,7 +38,7 @@ namespace p_proyect.Utils
                     prop = typeof(T).GetProperty("NombreDelCliente");
                 }
 
-                if(prop == null)
+                if (prop == null)
                 {
                     MessageBox.Show($"La clase {typeof(T).Name} no contiene la propiedad 'Nombre'.");
                     return;
@@ -65,5 +63,50 @@ namespace p_proyect.Utils
                 dgv.DataSource = listadoOriginal; // Lista original
             }
         }
+        public static void BuscarPorCodigo<T>(object sender, EventArgs e, List<T> listadoOriginal, DataGridView dgv)
+        {
+            BaseMaskedTextBox txtBox = sender as BaseMaskedTextBox;
+            string texto = txtBox.Text.Trim();
+
+            if (!string.IsNullOrEmpty(texto))
+            {
+                // Obtener propiedades mediante reflexión
+                var propCodigo = typeof(T).GetProperty("CodigoBarra");
+                var propNombre = typeof(T).GetProperty("Nombre");
+
+                if (propCodigo == null || propNombre == null)
+                {
+                    MessageBox.Show($"La clase {typeof(T).Name} debe contener 'CodigoBarra' y 'Nombre'.");
+                    return;
+                }
+
+                // Filtrar combinando ambas propiedades
+                var listaFiltrada = listadoOriginal
+                    .Where(item =>
+                    {
+                        string codigo = propCodigo.GetValue(item)?.ToString();
+                        string nombre = propNombre.GetValue(item)?.ToString();
+
+                        bool coincideCodigo = !string.IsNullOrEmpty(codigo) &&
+                                              codigo.IndexOf(texto, StringComparison.OrdinalIgnoreCase) >= 0;
+
+                        bool coincideNombre = !string.IsNullOrEmpty(nombre) &&
+                                              nombre.IndexOf(texto, StringComparison.OrdinalIgnoreCase) >= 0;
+
+                        return coincideCodigo || coincideNombre;
+                    })
+                    .ToList();
+
+                dgv.DataSource = null;
+                dgv.DataSource = listaFiltrada;
+            }
+            else
+            {
+                // Si está vacío, mostrar lista original
+                dgv.DataSource = null;
+                dgv.DataSource = listadoOriginal;
+            }
+        }
+
     }
 }

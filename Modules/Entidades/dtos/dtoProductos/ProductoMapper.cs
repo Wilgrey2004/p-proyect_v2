@@ -143,7 +143,7 @@ namespace p_proyect.Modules.Entidades.dtos.dtoProductos
             {
                 Id = p.Id,
                 Nombre = p.Nombre,
-                CodigoDelProducto = p.CodigoBarra,  // aquí usas el código del producto
+                CodigoBarra = p.CodigoBarra,  // aquí usas el código del producto
                 Stock = p.Cantidad,                 // stock actual
                 Precio = p.PrecioVenta,
                 unidadMedida = p.UnidadMedida// el precio que se usará en ventas
