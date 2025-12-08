@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using p_proyect.Modules;
 
 namespace p_proyect.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20251207171736_NFCadd")]
+    partial class NFCadd
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -183,9 +185,6 @@ namespace p_proyect.Migrations
                     b.Property<int>("IdVenta")
                         .HasColumnType("int");
 
-                    b.Property<int?>("NotificacionDeVentaId")
-                        .HasColumnType("int");
-
                     b.Property<decimal>("PrecioUnitario")
                         .HasColumnType("decimal(18,2)");
 
@@ -193,8 +192,6 @@ namespace p_proyect.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("NotificacionDeVentaId");
 
                     b.HasIndex("VentaId");
 
@@ -309,7 +306,7 @@ namespace p_proyect.Migrations
                             Cedula = "No porta",
                             Contrasena = "admin123",
                             Correo = "Apro24470@gmail.com",
-                            FechaCreacion = new DateTime(2025, 12, 8, 11, 24, 46, 773, DateTimeKind.Local).AddTicks(7683),
+                            FechaCreacion = new DateTime(2025, 12, 7, 13, 17, 36, 17, DateTimeKind.Local).AddTicks(3562),
                             FechaEdicion = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Nombre = "Admin",
                             Rol = 1,
@@ -336,9 +333,6 @@ namespace p_proyect.Migrations
                     b.Property<decimal>("MontoDescontado")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<string>("NFC")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<int>("Pago")
                         .HasColumnType("int");
 
@@ -357,37 +351,6 @@ namespace p_proyect.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Ventas");
-                });
-
-            modelBuilder.Entity("p_proyect.Modules.NotificacionDeVenta", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<DateTime>("FechaCreacion")
-                        .HasColumnType("datetime2");
-
-                    b.Property<bool>("ImprimirRecibo")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("NombreDelCliente")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("RNCInfoRnc")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<int?>("VentaId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("RNCInfoRnc");
-
-                    b.HasIndex("VentaId");
-
-                    b.ToTable("NotificacionesDeVentas");
                 });
 
             modelBuilder.Entity("p_proyect.Modules.Producto", b =>
@@ -472,25 +435,6 @@ namespace p_proyect.Migrations
                     b.ToTable("Productos");
                 });
 
-            modelBuilder.Entity("p_proyect.Utils.Rnc.RncLookupResult", b =>
-                {
-                    b.Property<string>("Rnc")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("ErrorMessage")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Nombre")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("Success")
-                        .HasColumnType("bit");
-
-                    b.HasKey("Rnc");
-
-                    b.ToTable("RncLookupResult");
-                });
-
             modelBuilder.Entity("p_proyect.Modules.Entidades.Adeudo", b =>
                 {
                     b.HasOne("p_proyect.Modules.Entidades.Ventas", "Venta")
@@ -507,23 +451,8 @@ namespace p_proyect.Migrations
 
             modelBuilder.Entity("p_proyect.Modules.Entidades.CompraEntity", b =>
                 {
-                    b.HasOne("p_proyect.Modules.NotificacionDeVenta", null)
-                        .WithMany("CarritoDeCompras")
-                        .HasForeignKey("NotificacionDeVentaId");
-
                     b.HasOne("p_proyect.Modules.Entidades.Ventas", "Venta")
                         .WithMany("ListadoDeCompras")
-                        .HasForeignKey("VentaId");
-                });
-
-            modelBuilder.Entity("p_proyect.Modules.NotificacionDeVenta", b =>
-                {
-                    b.HasOne("p_proyect.Utils.Rnc.RncLookupResult", "RNCInfo")
-                        .WithMany()
-                        .HasForeignKey("RNCInfoRnc");
-
-                    b.HasOne("p_proyect.Modules.Entidades.Ventas", "Venta")
-                        .WithMany()
                         .HasForeignKey("VentaId");
                 });
 

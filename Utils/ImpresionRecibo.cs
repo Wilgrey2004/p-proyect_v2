@@ -1,23 +1,29 @@
-﻿using p_proyect.Modules.Entidades;
+﻿using Microsoft.EntityFrameworkCore;
+using p_proyect.Controller.NFCController;
+using p_proyect.Modules;
+using p_proyect.Modules.Entidades;
 using p_proyect.Modules.Entidades.dtos.dtoCompras;
 using p_proyect.Utils.Rnc;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Printing;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 public class ImpresionRecibo
 {
     private readonly List<CarritoCompraDto> productos;
     private readonly string RncDeLaEmpresa = "RNC: 132848632";
-    private readonly string NombreDeLaEmpresa = "GRUPO YEJIMIS E.I.R.L";
+    private string NombreDeLaEmpresa = "GRUPO YEJIMIS E.I.R.L";
     private readonly string Ubicacion = "AV. LIBERTAD NO 151, YAGUATE";
     private readonly string Telefono = "TEL: 849-449-8601/829-726-0794";
     private readonly string Fecha = "Fecha: " + DateTime.Now.ToString("dd-MM-yyyy  /   HH:mm");
     private readonly RncLookupResult rncLookupResult;
     private readonly Ventas ventas;
-    private readonly Font fuente = new Font("Arial", 10);
+    private readonly Font fuente = new Font("Microsoft Sans Serif", 9);
+
+
     private int posicionY = 0;
     private readonly int maxWidth = 150;
 
@@ -28,11 +34,12 @@ public class ImpresionRecibo
         this.productos = productos;
     }
 
-    public ImpresionRecibo(List<CarritoCompraDto> productos, RncLookupResult rncLookupResult, Ventas venta = null)
+    public  ImpresionRecibo(List<CarritoCompraDto> productos, RncLookupResult rncLookupResult, Ventas venta = null)
     {
         this.productos = productos;
         this.rncLookupResult = rncLookupResult;
         this.ventas = venta;
+        
     }
 
 
@@ -80,6 +87,7 @@ public class ImpresionRecibo
     {
         if (rncLookupResult != null && rncLookupResult.Success)
         {
+
             return rncLookupResult.Nombre;
         }
         else
@@ -89,15 +97,43 @@ public class ImpresionRecibo
     }
 
 
-    private string CargarNumeroOCodigoDeLaFactura()
+    private async Task<string> CargarNumeroOCodigoDeLaFactura()
     {
-        if (ventas != null)
+        if (ventas.RNC == "000000000")
         {
-            return "0000" + ventas.Id.ToString();
+            string codigoFactura = "0000" + ventas.Id.ToString();
+
+            using (var context = new AppDbContext(new DbContextOptions<AppDbContext>()))
+            {
+                ventas.NFC = codigoFactura;
+                context.Ventas.Update(ventas);
+                await context.SaveChangesAsync();
+            }
+
+            return codigoFactura;
         }
         else
         {
-            return "000000";
+            NFCController_ nFCController_ = new NFCController_();
+
+            string NcfVentas = await nFCController_.TraerparaImprimirNFC();
+
+            if(NcfVentas != null)
+            {
+                using (var context = new AppDbContext(new DbContextOptions<AppDbContext>()))
+                {
+                    ventas.NFC = NcfVentas;
+                    context.Ventas.Update(ventas);
+                    await context.SaveChangesAsync();
+                }
+
+                //MessageBox.Show(NcfVentas);
+
+
+                return NcfVentas;
+            }
+
+            return ventas.NFC;
         }
     }
 
@@ -116,6 +152,21 @@ public class ImpresionRecibo
         return itebis.ToString();
     }
 
+    private string numeroFactura;
+    private string rncCliente;
+    private string nombreCliente;
+    private string fechaCierre;
+
+
+    public async Task PrepararDatosAsync()
+    {
+        rncCliente = ComprovarRnc();
+        nombreCliente = comprovarNombre();
+        numeroFactura = await CargarNumeroOCodigoDeLaFactura();
+        fechaCierre = FechaDeCierreDeLaFactura();
+    }
+
+
     private void PrintPage(object sender, PrintPageEventArgs e)
     {
         Graphics g = e.Graphics;
@@ -125,20 +176,25 @@ public class ImpresionRecibo
         int margenSuperior = 20;
         int espacioLinea = 25;
         int pageWidth = e.PageBounds.Width;
-        string rnc = ComprovarRnc();
-        string EmpresaDelCliente = comprovarNombre();
-        string numeroDeLaFacturaOCodigoDeEsta = CargarNumeroOCodigoDeLaFactura();
-        string fechadelcierre = FechaDeCierreDeLaFactura();
+       
+
+
         //string itebis;
 
         // Encabezado
-        string empresa = NombreDeLaEmpresa;
+
+
         posicionY = margenSuperior;
 
-        float textWidth = g.MeasureString(empresa, fuente).Width;
+        float textWidth = g.MeasureString(NombreDeLaEmpresa, fuente).Width;
+
+        if (fuente == null)
+        {
+            throw new Exception("La fuente es NULL");
+        }
 
         posicionY += espacioLinea + 10;
-        g.DrawString(empresa, fuente, Brushes.Black, pageWidth - margenDerecho - textWidth, posicionY);
+        g.DrawString(NombreDeLaEmpresa, fuente, Brushes.Black, pageWidth - margenDerecho - textWidth, posicionY);
         posicionY += espacioLinea + 10;
         g.DrawString(Ubicacion, fuente, Brushes.Black, pageWidth - margenDerecho - textWidth, posicionY);
         posicionY += espacioLinea + 10;
@@ -157,13 +213,16 @@ public class ImpresionRecibo
         g.DrawString(Fecha, fuente, Brushes.Black, margenDerecho, posicionY);
         posicionY += espacioLinea + 10;
 
-        g.DrawString($"Rnc Del Cliente: {rnc}", fuente, Brushes.Black, margenIzquierdo, posicionY);
+        g.DrawString($"Cliente: {nombreCliente}", fuente, Brushes.Black, margenIzquierdo, posicionY);
         posicionY += espacioLinea + 10;
 
-        g.DrawString("Numero De La Factura: " + numeroDeLaFacturaOCodigoDeEsta, fuente, Brushes.Black, margenIzquierdo, posicionY);
+        g.DrawString($"Rnc Del Cliente: {rncCliente}", fuente, Brushes.Black, margenIzquierdo, posicionY);
         posicionY += espacioLinea + 10;
 
-        g.DrawString("Vivencia de la factura: " + fechadelcierre, fuente, Brushes.Black, margenIzquierdo, posicionY);
+        g.DrawString("Numero De La Factura: " + numeroFactura, fuente, Brushes.Black, margenIzquierdo, posicionY);
+        posicionY += espacioLinea + 10;
+
+        g.DrawString("Vivencia de la factura: " + fechaCierre, fuente, Brushes.Black, margenIzquierdo, posicionY);
         posicionY += espacioLinea + 10;
 
         g.DrawString("*----------------------------------------------------*", fuente, Brushes.Black, margenIzquierdo, posicionY);
@@ -236,4 +295,7 @@ public class ImpresionRecibo
                 return nombreProducto;
         }
     }
+
+
+
 }

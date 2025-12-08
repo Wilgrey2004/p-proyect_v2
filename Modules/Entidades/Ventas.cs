@@ -44,12 +44,13 @@ namespace p_proyect.Modules.Entidades
         [DisplayName("Tipo de pago")]
         public TipoDePago Pago { get; set; } = TipoDePago.PagoEnEfectivo;
 
-        [DisplayName("RNC")]
+         [DisplayName("RNC")]
         public string RNC { get; set; } = "Sin RNC";
+        
+        [DisplayName("NFC")]
+        public string NFC { get; set; } = "No aplica";
 
-
-
-       // public RncLookupResult InfoRnc { get; set; }
+        // public RncLookupResult InfoRnc { get; set; }
 
         public List<CompraEntity> ListadoDeCompras { get; set; }
 

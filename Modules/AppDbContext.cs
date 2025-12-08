@@ -1,6 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using p_proyect.Modules.Entidades;
-using p_proyect.Utils.Rnc;
 using System.Configuration;
 
 namespace p_proyect.Modules
@@ -30,7 +29,8 @@ namespace p_proyect.Modules
 
         public DbSet<Ventas> Ventas { get; set; }
 
-        //public DbSet<RncLookupResult> RncLookupResults { get; set; }
+        public DbSet<NCF> NCFs { get; set; }
+        public DbSet<NotificacionDeVenta> NotificacionesDeVentas { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

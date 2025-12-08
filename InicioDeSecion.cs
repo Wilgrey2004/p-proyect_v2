@@ -70,6 +70,7 @@ namespace p_proyect
                 catch (Exception ex)
                 {
                     MessageBox.Show("Error al iniciar sesion: " + ex);
+                    Show();
                 }
 
 

@@ -280,7 +280,7 @@
     <value>True</value>
   </data>
   <data name="materialLabel19.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 14px</value>
+    <value>Roboto, 14px</value>
   </data>
   <data name="materialLabel19.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -313,7 +313,7 @@
     <value>True</value>
   </data>
   <data name="materialLabel18.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 14px</value>
+    <value>Roboto, 14px</value>
   </data>
   <data name="materialLabel18.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -364,7 +364,7 @@
     <value>13, 14, 13, 14</value>
   </data>
   <data name="materialCard8.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1586, 473</value>
+    <value>1532, 473</value>
   </data>
   <data name="materialCard8.TabIndex" type="System.Int32, mscorlib">
     <value>24</value>
@@ -394,7 +394,7 @@
     <value>51</value>
   </data>
   <data name="ListadoDeAdeudos.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1560, 445</value>
+    <value>1506, 445</value>
   </data>
   <data name="ListadoDeAdeudos.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -418,7 +418,7 @@
     <value>NoControl</value>
   </data>
   <data name="materialButton23.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1032, 694</value>
+    <value>994, 694</value>
   </data>
   <data name="materialButton23.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 6, 4, 6</value>
@@ -451,7 +451,7 @@
     <value>NoControl</value>
   </data>
   <data name="materialButton24.Location" type="System.Drawing.Point, System.Drawing">
-    <value>851, 694</value>
+    <value>813, 694</value>
   </data>
   <data name="materialButton24.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 6, 4, 6</value>
@@ -510,6 +510,123 @@
   <data name="&gt;&gt;materialButton26.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
+  <data name="&gt;&gt;materialButton31.Name" xml:space="preserve">
+    <value>materialButton31</value>
+  </data>
+  <data name="&gt;&gt;materialButton31.Type" xml:space="preserve">
+    <value>MaterialSkin.Controls.MaterialButton, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;materialButton31.Parent" xml:space="preserve">
+    <value>GestionDeventas</value>
+  </data>
+  <data name="&gt;&gt;materialButton31.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;materialButton30.Name" xml:space="preserve">
+    <value>materialButton30</value>
+  </data>
+  <data name="&gt;&gt;materialButton30.Type" xml:space="preserve">
+    <value>MaterialSkin.Controls.MaterialButton, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;materialButton30.Parent" xml:space="preserve">
+    <value>GestionDeventas</value>
+  </data>
+  <data name="&gt;&gt;materialButton30.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;materialLabel20.Name" xml:space="preserve">
+    <value>materialLabel20</value>
+  </data>
+  <data name="&gt;&gt;materialLabel20.Type" xml:space="preserve">
+    <value>MaterialSkin.Controls.MaterialLabel, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;materialLabel20.Parent" xml:space="preserve">
+    <value>GestionDeventas</value>
+  </data>
+  <data name="&gt;&gt;materialLabel20.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;materialLabel16.Name" xml:space="preserve">
+    <value>materialLabel16</value>
+  </data>
+  <data name="&gt;&gt;materialLabel16.Type" xml:space="preserve">
+    <value>MaterialSkin.Controls.MaterialLabel, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;materialLabel16.Parent" xml:space="preserve">
+    <value>GestionDeventas</value>
+  </data>
+  <data name="&gt;&gt;materialLabel16.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;materialCard7.Name" xml:space="preserve">
+    <value>materialCard7</value>
+  </data>
+  <data name="&gt;&gt;materialCard7.Type" xml:space="preserve">
+    <value>MaterialSkin.Controls.MaterialCard, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;materialCard7.Parent" xml:space="preserve">
+    <value>GestionDeventas</value>
+  </data>
+  <data name="&gt;&gt;materialCard7.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;materialButton21.Name" xml:space="preserve">
+    <value>materialButton21</value>
+  </data>
+  <data name="&gt;&gt;materialButton21.Type" xml:space="preserve">
+    <value>MaterialSkin.Controls.MaterialButton, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;materialButton21.Parent" xml:space="preserve">
+    <value>GestionDeventas</value>
+  </data>
+  <data name="&gt;&gt;materialButton21.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;materialButton22.Name" xml:space="preserve">
+    <value>materialButton22</value>
+  </data>
+  <data name="&gt;&gt;materialButton22.Type" xml:space="preserve">
+    <value>MaterialSkin.Controls.MaterialButton, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;materialButton22.Parent" xml:space="preserve">
+    <value>GestionDeventas</value>
+  </data>
+  <data name="&gt;&gt;materialButton22.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="GestionDeventas.ImageKey" xml:space="preserve">
+    <value>ListaIcon2.png</value>
+  </data>
+  <data name="GestionDeventas.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 25</value>
+  </data>
+  <data name="GestionDeventas.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="GestionDeventas.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="GestionDeventas.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1558, 835</value>
+  </data>
+  <data name="GestionDeventas.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="GestionDeventas.Text" xml:space="preserve">
+    <value>Historial de Ventas</value>
+  </data>
+  <data name="&gt;&gt;GestionDeventas.Name" xml:space="preserve">
+    <value>GestionDeventas</value>
+  </data>
+  <data name="&gt;&gt;GestionDeventas.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GestionDeventas.Parent" xml:space="preserve">
+    <value>Gestion</value>
+  </data>
+  <data name="&gt;&gt;GestionDeventas.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
   <data name="materialButton31.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
   </data>
@@ -517,7 +634,7 @@
     <value>NoControl</value>
   </data>
   <data name="materialButton31.Location" type="System.Drawing.Point, System.Drawing">
-    <value>877, 754</value>
+    <value>914, 754</value>
   </data>
   <data name="materialButton31.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 6, 4, 6</value>
@@ -658,7 +775,7 @@
     <value>0</value>
   </data>
   <data name="materialCard7.Location" type="System.Drawing.Point, System.Drawing">
-    <value>265, 142</value>
+    <value>65, 142</value>
   </data>
   <data name="materialCard7.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>13, 14, 13, 14</value>
@@ -667,7 +784,7 @@
     <value>13, 14, 13, 14</value>
   </data>
   <data name="materialCard7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1080, 555</value>
+    <value>1449, 555</value>
   </data>
   <data name="materialCard7.TabIndex" type="System.Int32, mscorlib">
     <value>25</value>
@@ -683,6 +800,39 @@
   </data>
   <data name="&gt;&gt;materialCard7.ZOrder" xml:space="preserve">
     <value>4</value>
+  </data>
+  <metadata name="ventasBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>1518, 21</value>
+  </metadata>
+  <data name="dataGridView1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="dataGridView1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 14</value>
+  </data>
+  <data name="dataGridView1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 2, 3, 2</value>
+  </data>
+  <data name="dataGridView1.RowHeadersWidth" type="System.Int32, mscorlib">
+    <value>51</value>
+  </data>
+  <data name="dataGridView1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1423, 527</value>
+  </data>
+  <data name="dataGridView1.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;dataGridView1.Name" xml:space="preserve">
+    <value>dataGridView1</value>
+  </data>
+  <data name="&gt;&gt;dataGridView1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dataGridView1.Parent" xml:space="preserve">
+    <value>materialCard7</value>
+  </data>
+  <data name="&gt;&gt;dataGridView1.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="materialButton21.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
@@ -749,69 +899,6 @@
   </data>
   <data name="&gt;&gt;materialButton22.ZOrder" xml:space="preserve">
     <value>6</value>
-  </data>
-  <data name="GestionDeventas.ImageKey" xml:space="preserve">
-    <value>ListaIcon2.png</value>
-  </data>
-  <data name="GestionDeventas.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 25</value>
-  </data>
-  <data name="GestionDeventas.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
-  </data>
-  <data name="GestionDeventas.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
-  </data>
-  <data name="GestionDeventas.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1558, 835</value>
-  </data>
-  <data name="GestionDeventas.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="GestionDeventas.Text" xml:space="preserve">
-    <value>Historial de Ventas</value>
-  </data>
-  <data name="&gt;&gt;GestionDeventas.Name" xml:space="preserve">
-    <value>GestionDeventas</value>
-  </data>
-  <data name="&gt;&gt;GestionDeventas.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;GestionDeventas.Parent" xml:space="preserve">
-    <value>Gestion</value>
-  </data>
-  <data name="&gt;&gt;GestionDeventas.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="dataGridView1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="dataGridView1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 14</value>
-  </data>
-  <data name="dataGridView1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 2, 3, 2</value>
-  </data>
-  <data name="dataGridView1.RowHeadersWidth" type="System.Int32, mscorlib">
-    <value>51</value>
-  </data>
-  <data name="dataGridView1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1054, 527</value>
-  </data>
-  <data name="dataGridView1.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;dataGridView1.Name" xml:space="preserve">
-    <value>dataGridView1</value>
-  </data>
-  <data name="&gt;&gt;dataGridView1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;dataGridView1.Parent" xml:space="preserve">
-    <value>materialCard7</value>
-  </data>
-  <data name="&gt;&gt;dataGridView1.ZOrder" xml:space="preserve">
-    <value>0</value>
   </data>
   <data name="&gt;&gt;materialMaskedTextBox6.Name" xml:space="preserve">
     <value>materialMaskedTextBox6</value>
@@ -952,7 +1039,7 @@
     <value>Buscar Por Nombre o codigo</value>
   </data>
   <data name="materialMaskedTextBox6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>552, 29</value>
+    <value>654, 27</value>
   </data>
   <data name="materialMaskedTextBox6.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 4, 4, 4</value>
@@ -964,7 +1051,7 @@
     <value>No</value>
   </data>
   <data name="materialMaskedTextBox6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1040, 48</value>
+    <value>830, 48</value>
   </data>
   <data name="materialMaskedTextBox6.TabIndex" type="System.Int32, mscorlib">
     <value>31</value>
@@ -988,13 +1075,13 @@
     <value>NoControl</value>
   </data>
   <data name="materialButton25.Location" type="System.Drawing.Point, System.Drawing">
-    <value>837, 759</value>
+    <value>998, 764</value>
   </data>
   <data name="materialButton25.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>5, 7, 5, 7</value>
   </data>
   <data name="materialButton25.Size" type="System.Drawing.Size, System.Drawing">
-    <value>138, 36</value>
+    <value>166, 36</value>
   </data>
   <data name="materialButton25.TabIndex" type="System.Int32, mscorlib">
     <value>26</value>
@@ -1021,13 +1108,13 @@
     <value>NoControl</value>
   </data>
   <data name="materialButton17.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1378, 759</value>
+    <value>1238, 764</value>
   </data>
   <data name="materialButton17.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>5, 7, 5, 7</value>
   </data>
   <data name="materialButton17.Size" type="System.Drawing.Size, System.Drawing">
-    <value>161, 36</value>
+    <value>189, 36</value>
   </data>
   <data name="materialButton17.TabIndex" type="System.Int32, mscorlib">
     <value>25</value>
@@ -1057,7 +1144,7 @@
     <value>62</value>
   </data>
   <data name="CarritoDecompras_dg.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1040, 160</value>
+    <value>998, 160</value>
   </data>
   <data name="CarritoDecompras_dg.TabIndex" type="System.Int32, mscorlib">
     <value>24</value>
@@ -1075,7 +1162,7 @@
     <value>3</value>
   </data>
   <data name="ListadoDeProductosDisponibles_dg.Location" type="System.Drawing.Point, System.Drawing">
-    <value>552, 85</value>
+    <value>556, 101</value>
   </data>
   <data name="ListadoDeProductosDisponibles_dg.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 4, 4, 4</value>
@@ -1084,7 +1171,7 @@
     <value>62</value>
   </data>
   <data name="ListadoDeProductosDisponibles_dg.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1037, 437</value>
+    <value>998, 437</value>
   </data>
   <data name="ListadoDeProductosDisponibles_dg.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -1108,7 +1195,7 @@
     <value>True</value>
   </data>
   <data name="materialLabel11.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 14px</value>
+    <value>Roboto, 14px</value>
   </data>
   <data name="materialLabel11.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -1381,7 +1468,7 @@
     <value>True</value>
   </data>
   <data name="materialLabel21.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 14px</value>
+    <value>Roboto, 14px</value>
   </data>
   <data name="materialLabel21.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -1417,7 +1504,7 @@
     <value>True</value>
   </data>
   <data name="TotalDelCarrito.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 14px</value>
+    <value>Roboto, 14px</value>
   </data>
   <data name="TotalDelCarrito.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -1561,7 +1648,7 @@
     <value>True</value>
   </data>
   <data name="PrecioPorUnidadDelProducto_txt.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 14px</value>
+    <value>Roboto, 14px</value>
   </data>
   <data name="PrecioPorUnidadDelProducto_txt.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -1597,7 +1684,7 @@
     <value>True</value>
   </data>
   <data name="materialLabel17.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 14px</value>
+    <value>Roboto, 14px</value>
   </data>
   <data name="materialLabel17.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -1633,7 +1720,7 @@
     <value>True</value>
   </data>
   <data name="UnidadDeMedidaDelProducto.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 14px</value>
+    <value>Roboto, 14px</value>
   </data>
   <data name="UnidadDeMedidaDelProducto.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -1669,7 +1756,7 @@
     <value>True</value>
   </data>
   <data name="materialLabel15.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 14px</value>
+    <value>Roboto, 14px</value>
   </data>
   <data name="materialLabel15.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -1705,7 +1792,7 @@
     <value>True</value>
   </data>
   <data name="materialLabel14.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 14px</value>
+    <value>Roboto, 14px</value>
   </data>
   <data name="materialLabel14.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -1741,7 +1828,7 @@
     <value>True</value>
   </data>
   <data name="materialLabel13.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 14px</value>
+    <value>Roboto, 14px</value>
   </data>
   <data name="materialLabel13.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -1882,7 +1969,7 @@
     <value>NoControl</value>
   </data>
   <data name="materialButton20.Location" type="System.Drawing.Point, System.Drawing">
-    <value>552, 759</value>
+    <value>740, 764</value>
   </data>
   <data name="materialButton20.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>5, 7, 5, 7</value>
@@ -2122,7 +2209,7 @@
     <value>True</value>
   </data>
   <data name="materialLabel9.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 14px</value>
+    <value>Roboto, 14px</value>
   </data>
   <data name="materialLabel9.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -2155,7 +2242,7 @@
     <value>True</value>
   </data>
   <data name="materialLabel10.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 14px</value>
+    <value>Roboto, 14px</value>
   </data>
   <data name="materialLabel10.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -2557,7 +2644,7 @@
     <value>True</value>
   </data>
   <data name="materialLabel7.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 14px</value>
+    <value>Roboto, 14px</value>
   </data>
   <data name="materialLabel7.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -2590,7 +2677,7 @@
     <value>True</value>
   </data>
   <data name="materialLabel8.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 14px</value>
+    <value>Roboto, 14px</value>
   </data>
   <data name="materialLabel8.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -3037,7 +3124,7 @@
     <value>True</value>
   </data>
   <data name="materialLabel5.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 14px</value>
+    <value>Roboto, 14px</value>
   </data>
   <data name="materialLabel5.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -3070,7 +3157,7 @@
     <value>True</value>
   </data>
   <data name="materialLabel6.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 14px</value>
+    <value>Roboto, 14px</value>
   </data>
   <data name="materialLabel6.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -3469,7 +3556,7 @@
     <value>True</value>
   </data>
   <data name="materialLabel3.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 14px</value>
+    <value>Roboto, 14px</value>
   </data>
   <data name="materialLabel3.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -3502,7 +3589,7 @@
     <value>True</value>
   </data>
   <data name="materialLabel4.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 14px</value>
+    <value>Roboto, 14px</value>
   </data>
   <data name="materialLabel4.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -3901,7 +3988,7 @@
     <value>True</value>
   </data>
   <data name="materialLabel2.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 14px</value>
+    <value>Roboto, 14px</value>
   </data>
   <data name="materialLabel2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -3934,7 +4021,7 @@
     <value>True</value>
   </data>
   <data name="materialLabel1.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 14px</value>
+    <value>Roboto, 14px</value>
   </data>
   <data name="materialLabel1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -3985,7 +4072,7 @@
     <value>13, 14, 13, 14</value>
   </data>
   <data name="materialCard1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1532, 521</value>
+    <value>1465, 521</value>
   </data>
   <data name="materialCard1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -4003,7 +4090,7 @@
     <value>7</value>
   </data>
   <data name="Usuarios_DataGrid.Location" type="System.Drawing.Point, System.Drawing">
-    <value>62, 14</value>
+    <value>16, 14</value>
   </data>
   <data name="Usuarios_DataGrid.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 2, 3, 2</value>
@@ -4012,7 +4099,7 @@
     <value>51</value>
   </data>
   <data name="Usuarios_DataGrid.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1406, 494</value>
+    <value>1433, 494</value>
   </data>
   <data name="Usuarios_DataGrid.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -4176,6 +4263,252 @@
   <data name="&gt;&gt;PerfilDelUsuario.ZOrder" xml:space="preserve">
     <value>9</value>
   </data>
+  <data name="&gt;&gt;materialCard11.Name" xml:space="preserve">
+    <value>materialCard11</value>
+  </data>
+  <data name="&gt;&gt;materialCard11.Type" xml:space="preserve">
+    <value>MaterialSkin.Controls.MaterialCard, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;materialCard11.Parent" xml:space="preserve">
+    <value>GestionAjustes</value>
+  </data>
+  <data name="&gt;&gt;materialCard11.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="GestionAjustes.ImageKey" xml:space="preserve">
+    <value>ajuste.png</value>
+  </data>
+  <data name="GestionAjustes.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 25</value>
+  </data>
+  <data name="GestionAjustes.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="GestionAjustes.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1558, 835</value>
+  </data>
+  <data name="GestionAjustes.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="GestionAjustes.Text" xml:space="preserve">
+    <value>Ajustes</value>
+  </data>
+  <data name="&gt;&gt;GestionAjustes.Name" xml:space="preserve">
+    <value>GestionAjustes</value>
+  </data>
+  <data name="&gt;&gt;GestionAjustes.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GestionAjustes.Parent" xml:space="preserve">
+    <value>Gestion</value>
+  </data>
+  <data name="&gt;&gt;GestionAjustes.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="materialButton36.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="materialButton36.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="materialButton36.Location" type="System.Drawing.Point, System.Drawing">
+    <value>296, 735</value>
+  </data>
+  <data name="materialButton36.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 6, 4, 6</value>
+  </data>
+  <data name="materialButton36.Size" type="System.Drawing.Size, System.Drawing">
+    <value>264, 36</value>
+  </data>
+  <data name="materialButton36.TabIndex" type="System.Int32, mscorlib">
+    <value>27</value>
+  </data>
+  <data name="materialButton36.Text" xml:space="preserve">
+    <value>Aceptar e imprimir factura</value>
+  </data>
+  <data name="&gt;&gt;materialButton36.Name" xml:space="preserve">
+    <value>materialButton36</value>
+  </data>
+  <data name="&gt;&gt;materialButton36.Type" xml:space="preserve">
+    <value>MaterialSkin.Controls.MaterialButton, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;materialButton36.Parent" xml:space="preserve">
+    <value>GestionDeCaja</value>
+  </data>
+  <data name="&gt;&gt;materialButton36.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="materialLabel27.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="materialLabel27.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Roboto, 14px</value>
+  </data>
+  <data name="materialLabel27.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="materialLabel27.Location" type="System.Drawing.Point, System.Drawing">
+    <value>274, 692</value>
+  </data>
+  <data name="materialLabel27.Size" type="System.Drawing.Size, System.Drawing">
+    <value>65, 19</value>
+  </data>
+  <data name="materialLabel27.TabIndex" type="System.Int32, mscorlib">
+    <value>26</value>
+  </data>
+  <data name="materialLabel27.Text" xml:space="preserve">
+    <value>Acciones</value>
+  </data>
+  <data name="&gt;&gt;materialLabel27.Name" xml:space="preserve">
+    <value>materialLabel27</value>
+  </data>
+  <data name="&gt;&gt;materialLabel27.Type" xml:space="preserve">
+    <value>MaterialSkin.Controls.MaterialLabel, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;materialLabel27.Parent" xml:space="preserve">
+    <value>GestionDeCaja</value>
+  </data>
+  <data name="&gt;&gt;materialLabel27.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="materialMaskedTextBox7.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="materialMaskedTextBox7.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 16px</value>
+  </data>
+  <data name="materialMaskedTextBox7.Hint" xml:space="preserve">
+    <value>Buscar por nombre del cliente</value>
+  </data>
+  <data name="materialMaskedTextBox7.Location" type="System.Drawing.Point, System.Drawing">
+    <value>365, 78</value>
+  </data>
+  <data name="materialMaskedTextBox7.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="materialMaskedTextBox7.PrefixSuffixText" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="materialMaskedTextBox7.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
+  </data>
+  <data name="materialMaskedTextBox7.Size" type="System.Drawing.Size, System.Drawing">
+    <value>797, 48</value>
+  </data>
+  <data name="materialMaskedTextBox7.TabIndex" type="System.Int32, mscorlib">
+    <value>25</value>
+  </data>
+  <data name="&gt;&gt;materialMaskedTextBox7.Name" xml:space="preserve">
+    <value>materialMaskedTextBox7</value>
+  </data>
+  <data name="&gt;&gt;materialMaskedTextBox7.Type" xml:space="preserve">
+    <value>MaterialSkin.Controls.MaterialMaskedTextBox, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;materialMaskedTextBox7.Parent" xml:space="preserve">
+    <value>GestionDeCaja</value>
+  </data>
+  <data name="&gt;&gt;materialMaskedTextBox7.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="materialLabel26.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="materialLabel26.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Roboto, 14px</value>
+  </data>
+  <data name="materialLabel26.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="materialLabel26.Location" type="System.Drawing.Point, System.Drawing">
+    <value>361, 39</value>
+  </data>
+  <data name="materialLabel26.Size" type="System.Drawing.Size, System.Drawing">
+    <value>181, 19</value>
+  </data>
+  <data name="materialLabel26.TabIndex" type="System.Int32, mscorlib">
+    <value>24</value>
+  </data>
+  <data name="materialLabel26.Text" xml:space="preserve">
+    <value>Listado de ventas en caja</value>
+  </data>
+  <data name="&gt;&gt;materialLabel26.Name" xml:space="preserve">
+    <value>materialLabel26</value>
+  </data>
+  <data name="&gt;&gt;materialLabel26.Type" xml:space="preserve">
+    <value>MaterialSkin.Controls.MaterialLabel, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;materialLabel26.Parent" xml:space="preserve">
+    <value>GestionDeCaja</value>
+  </data>
+  <data name="&gt;&gt;materialLabel26.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;dataGridView2.Name" xml:space="preserve">
+    <value>dataGridView2</value>
+  </data>
+  <data name="&gt;&gt;dataGridView2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dataGridView2.Parent" xml:space="preserve">
+    <value>materialCard12</value>
+  </data>
+  <data name="&gt;&gt;dataGridView2.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="materialCard12.Location" type="System.Drawing.Point, System.Drawing">
+    <value>132, 144</value>
+  </data>
+  <data name="materialCard12.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>13, 14, 13, 14</value>
+  </data>
+  <data name="materialCard12.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>13, 14, 13, 14</value>
+  </data>
+  <data name="materialCard12.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1291, 521</value>
+  </data>
+  <data name="materialCard12.TabIndex" type="System.Int32, mscorlib">
+    <value>23</value>
+  </data>
+  <data name="&gt;&gt;materialCard12.Name" xml:space="preserve">
+    <value>materialCard12</value>
+  </data>
+  <data name="&gt;&gt;materialCard12.Type" xml:space="preserve">
+    <value>MaterialSkin.Controls.MaterialCard, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;materialCard12.Parent" xml:space="preserve">
+    <value>GestionDeCaja</value>
+  </data>
+  <data name="&gt;&gt;materialCard12.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="GestionDeCaja.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 25</value>
+  </data>
+  <data name="GestionDeCaja.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="GestionDeCaja.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1558, 835</value>
+  </data>
+  <data name="GestionDeCaja.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="GestionDeCaja.Text" xml:space="preserve">
+    <value>Caja</value>
+  </data>
+  <data name="&gt;&gt;GestionDeCaja.Name" xml:space="preserve">
+    <value>GestionDeCaja</value>
+  </data>
+  <data name="&gt;&gt;GestionDeCaja.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GestionDeCaja.Parent" xml:space="preserve">
+    <value>Gestion</value>
+  </data>
+  <data name="&gt;&gt;GestionDeCaja.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
   <data name="Gestion.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
@@ -4186,8 +4519,8 @@
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
-        ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAABs
-        EgAAAk1TRnQBSQFMAgEBCgEAAdABAQHQAQEBEAEAARABAAT/AQkBAAj/AUIBTQE2AQQGAAE2AQQCAAEo
+        ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAAAA
+        FAAAAk1TRnQBSQFMAgEBCwEAASgBAgEoAQIBEAEAARABAAT/AQkBAAj/AUIBTQE2AQQGAAE2AQQCAAEo
         AwABQAMAATADAAEBAQABCAYAAQwYAAGAAgABgAMAAoABAAGAAwABgAEAAYABAAKAAgADwAEAAcAB3AHA
         AQAB8AHKAaYBAAEzBQABMwEAATMBAAEzAQACMwIAAxYBAAMcAQADIgEAAykBAANVAQADTQEAA0IBAAM5
         AQABgAF8Af8BAAJQAf8BAAGTAQAB1gEAAf8B7AHMAQABxgHWAe8BAAHWAucBAAGQAakBrQIAAf8BMwMA
@@ -4215,57 +4548,64 @@
         AcwBAAH/AZkB/wEAAf8BzAIAAf8BzAEzAQAB/wHMAWYBAAH/AcwBmQEAAf8CzAEAAf8BzAH/AQAC/wEz
         AQABzAH/AWYBAAL/AZkBAAL/AcwBAAJmAf8BAAFmAf8BZgEAAWYC/wEAAf8CZgEAAf8BZgH/AQAC/wFm
         AQABIQEAAaUBAANfAQADdwEAA4YBAAOWAQADywEAA7IBAAPXAQAD3QEAA+MBAAPqAQAD8QEAA/gBAAHw
-        AfsB/wEAAaQCoAEAA4ADAAH/AgAB/wMAAv8BAAH/AwAB/wEAAf8BAAL/AgAD/0IAAW0/AAFtBQAB/woA
-        Af8BBwgAAQcB/yMAAW0QAAH0ARQIAAEUAfQjAAFtEAAB/wEPAf8GAAH/AQ8B/yMAAW0RAAFtAfAGAAHw
-        AW0kAAFtBwAB8wkAAfMBEQHzBAAB8wERAfMkAAFtEgAB8gERAewCvAHsAREB8iUAAW0IAAHsCgAB8gEO
-        AuwBDgHyJgABbQsAAfEGAAH/AUMB8gIAAfIBQwH/JQABbQEAAfIGAAHsAQABEAEAAe8BFAQAAfQBFQQA
-        ARUB9CUAAW0LAAHtAQAB/wQAAf8BDwH/AgAB/wEPAf8lAAFtCQAB9AkAAZIB6wLzAesB9yYAAW0IAAHz
-        CgAB/wEHAuoBBwH/JgABbQcAAfF2AAHtDgcB7QYAAfIB7wIAARARAAHtAe8B7QHwAwAB/wHvAfQFAAH0
-        AfcC7wIHAe8BkgUHAe8BkgIHAfQBkgHvAQcCAAHvBwABDgEAAQcIAAH/B+8BAAHvAgAC/wEHAe0B8QHy
-        AgcB8QH/AvICAAHvAQAB9AHyBQAB9AHxAwAB8gH0AQABDggAARIB/wkAAf8B9wH/AfMB8gH/AgAB7wEA
-        Ae8BAAHyAe8BBwHsAfMBAAP/AfMBBwLyAgAB7wEAAfQB8gUAAfQB8QMAAfIB9AEAAe0OAAEHBAAB7wH0
-        AQcB7QHvAfQBAAHzAe8BAAHvAQAB7wIAAe8HAAH/AfcB6wHtAfEBAAH0AfIBAAHyAQcB8AEAAfQB8QHy
-        Ae8C8gH0FQAB7QHvAvMB8gEHAe8BvAHtAe8B7QHwAe8B9AH/AfcDAALwAwAB8QHzAfcCAAH0Ae0BBwHs
-        Ae8B6wEHAe8B7QHsAe8B7AHtAfQQAAHxBAAB9AH/CgAB/wEHAe8B/wEAAfQBkgLxAZIB9AEAAf8B7wHw
-        AwAB/wG8AwAC8wgAAfAB9AYAAQ8LAAHxA+8B8QcAAfIB/wIAAfAB8wKSAfMB8AIAAf8B8wMAAf8BvAMA
-        Av8BvAQHAe8B9AMAARUDAAG8BAAB9AcAAfQBBwH/AewB/wEHAfQGAAEHAf8CAAHwAfMCkgHzAfACAAH/
-        AQcDAAH/AbwB8QHvAQcC8wEHA/8BAAHyAfMUAAEHAv8B7AH0Af8BBwYAAQcB/wIAAfQBkgLxAZIB9AIA
-        Af8BBwMAAf8C9wHvAZIB7wH0AQcB/wG8AfABAAHyAfQQAAHzAfIBBwHvAewC9wGSAe8B8wG8BgAB8QHz
-        BAAC8AQAAfMB8QoAAQcB/wIHAfEC/wMAAUMMAAHzAfIB7wEAAe0B/wIAAQcB6wH/BgAB/wHvAgAB9AHw
-        AgAC8gIAAe8B/woAAe8B9AIHAfEB8gHzEgAB7wEAAe8DAAHwAZIIAAEHAfQBBwHtAewB7wFtAuwBBwH0
-        AQcJAAH/Ae8B8AEHAe8BBwHxAfIB8wkAAfAIAAHvAQAB7wH/AfQB/wHwAZIIAAH/AfMB7wMAAe8CAAHv
-        AfMB/wkAAfMB8QH3AfMB7wIAAfIB8wQAAfELAAHwAe8B6wHvAW0B7wHrAe8B7AG8CgAB8AHyAgAB7wEH
-        AZIBBwsAAfQBvAH/AfEBkgIHAe8B/wcAAf8NAAH/ARIB8QHsCgAB9AHvAwAB7wFtAZIB/wwAAgcB7wHz
-        GgAB9AHvAfELAAHwA+8B7RMAAe0B7wHtAfABAAH/DPIB/wEAAQcO7wEHBQABkgQHAZIKAAH/B+8BAAHv
-        AgABFAwAARQBAAHsA/QB7AT0AfMB9AHsA/QB7AH/AZIDBwH3BAAB9wMHAZIB/wQAAf8B9wH/AfMB8gH/
-        AgAB7wEAAe8GAAESAewCQwHsARIFAAHtAf8CAAHvAfMCAAH/AewB8QHvAgAB/wHtAf8BBwMAAQcB/wIA
-        Af8BBwMAAQcB/wQAAe8B9AEHAe0B7wH0AQAB8wHvAQAB7wYAARAE7QEQBQAB9AHsAgcC7AP0AfIC7AIH
-        AewB9AEAAe8DAAH0AW0C7wFtAfQDAAHvBQAB7QHvAvMB8gEHAe8BvAHtAe8B7QHwAQABvAzvAfACAAHz
-        ARMBbQL/Ae8C7AHvAv8BbQETAfMCAAHzAe8BBwPvAv8D7wEHAe8B8wUAAfQB/wsAAfIBAAFDAW0BAAFt
-        AkMBbQEAAW0BQwEAAfICAAHsAf8B9AGSAf8B9wKSAfcB/wGSAfQB/wHsAwAB7wH/AfQBvAHvAv8B7wG8
-        AfQB/wHvBwAB8QPvAfEHAAHyAQABQwFtAQABbQJDAW0BAAFtAUMBAAHyAgAB7AEAAf8B7QHxAfACAAHw
-        AfEB7QH/AQAB7AMAAe8BAAH/AQcB/wLvAf8BBwH/AQAB7wYAAfQBBwH/AewB/wEHAfQGAAHyAQAB6gHv
-        AQAB7wLqAe8BAAHvAeoBAAHyAgAB8ALsAfMBBwH0AgAB9AEHAfMC7AHwAwAB8QEHAe8B/wHxAgcB8QH/
-        Ae8BBwHxBgABBwL/AewB9AH/AQcGAAHyDAAB8gYAAfMB7wIAAe8B8woAAe8B8gK8AfIB7wUAAfMB8gEH
-        Ae8B7AL3AZIB7wHzAbwGAAHyAQABvAPvAbwBFAPvAesBAAHyAgABBwGSAesCAAHwAu0B8AIAAesBkgEH
-        BQAC8gH3Av8B9wLyBAAB8wHyAe8BAAHtAf8CAAEHAesB/wYAAfMBAAHvAwAB7wYAAfMBAAH/Ae0B8gHs
-        Af8BAAH0Av8B9AEAAf8B7AHyAZIFAAEHAfEB9ALvAfQB8QEHBgAB7wEAAe8DAAHwAZIHAAH/AZIBBwMA
-        AQcF6wGSAf8BAAH/Ae0C6wHyAQABkgLrAfcBAAHxAusBkgH/BAABBwHyAfEB7QG8AfMB8gEHBgAB7wEA
-        Ae8B/wH0Af8B8AGSCQAB8gMAAfIB7QTrAfIEAAEHAf8CAAHtAvQBkgIAAf8BBwYAAfQBBwEUAvEB7wHw
-        AfQEAAHwAe8B6wHvAW0B7wHrAe8B7AG8CQAB8gMAAfIFAAHvBwAB8QEUAvEBFAHxCAAB8wHvAeoBBwLy
-        AbwB8AoAAf8BEgHxAewKAAHyAQ4BAAEOAfIB7QTrAfIIAAH/Au0B/wgAAf8B7AEHAe8B9AK8AfQMAAH0
-        Ae8B8QoAAv8B9AL/DwAC9AsAAewB/woAAUIBTQE+BwABPgMAASgDAAFAAwABMAMAAQEBAAEBBQABgAEB
-        FgAD/wEAAYABDwL/BAABvwP/BAABvgH/Ac8B8wQAAb8BfwHPAfMEAAGuAb8BxwHjBAABvwF/AucEAAK/
-        AeMBxwQAAa8B7wHwAQ8EAAG/AdcB+AEfBAABuAFpAfEBjwQAAagBFAHzAc8EAAG/AfoB8QGPBAABvwHq
-        AfgBHwQAAb8B3wH4AR8EAAK/Av8EAAT/BgAB4AEfAf8B8AHjAeACAAGfAcEB+AEFAYABBgGfATkBfwGe
-        AfABNQEEAQYBnwE5AX8BtgHwASUBbwHgAZEBAQH/AasB8AEAAQ4BcQGAAQEBvwG8AfMB/wEIAREBzgF/
-        AZ8BvgH4AT8BmAEZAc4BAAHMAcEB8AEfAZgBGQHAAQQB8wE/AfABHwGYARkBwAEEAfcBvwEAAR8BngF5
-        Af8BgAHvAb8BEwEfApkB/wGAAe8B/wHXAT8BwAEDAf4BAAHvAb8B0AE/AccBYwH+AQwB9wG/AQABPwHz
-        AQ8B/gEAAfIBfwH4AX8B5wEPAf8BDwL/AfwBfwHwAX8B/wHwAYABAQIAAfgBHwH4AQUBgAEBAgABAwHA
-        AfABNQGAAQEBMwEMATkBnAHwASUBgAEBAgABuAEdAfABAAGAAQEBgAEBAYABAQHzAf8BgAEBAYABAQHA
-        AQMB+AE/AYABAQGhAYUB0AELAfABHwGAAQECgQHAAQMB8AEfAYABAQH5AZ8B+AEfAQABHwGAAQEBjAEx
-        AfABDwETAR8BgAEBAQQBIQHwAQ8B1wE/AYABAQEEASAB8AEPAdABPwHgAQMBzAEzAfABDwEAAT8B4AED
-        AfgBHwHgAR8B+AF/AeABAwH8AT8BwAE/AfwBfwHgAf8B/gF/AfMB/ws=
+        AfsB/wEAAaQCoAEAA4ADAAH/AgAB/wMAAv8BAAH/AwAB/wEAAf8BAAL/AgAD/yYAAfIBDgIAAQ4B8hYA
+        AW0jAAHtAesC8gHrAe0WAAFtBQAB/woAAf8BBwgAAQcB/wMAAf8B7AGSAfABEAG8AgABvAEQAfABkgHs
+        Af8SAAFtEAAB9AEUCAABFAH0AwAB7QEUAesBEQGSAf8CAAH/AZIBEQHrARQB7RIAAW0QAAH/AQ8B/wYA
+        Af8BDwH/AgAB8wEAAfMEAAL/BAAB8wEAAfMRAAFtEQABbQHwBgAB8AFtAwAC7AMAAf8B7AIAAewB/wMA
+        AuwRAAFtBwAB8wkAAfMBEQHzBAAB8wERAfMDAAEHAQ4B8AIAAewBFALyARQB7AIAAfABDgEHEQABbRIA
+        AfIBEQHsArwB7AERAfIFAAHvAUMBAAH/AQAB8gIAAfIBAAH/AQABQwHvEgABbQgAAewKAAHyAQ4C7AEO
+        AfIGAAHvAUMBAAH/AQAB8gIAAfIBAAH/AQABQwHvEgABbQsAAfEGAAH/AUMB8gIAAfIBQwH/BAABBwEO
+        AfACAAHsARQC8gEUAewCAAHwAQ4BBxEAAW0BAAHyBgAB7AEAARABAAHvARQEAAH0ARUEAAEVAfQEAALs
+        AwAB/wHsAgAB7AH/AwAC7BEAAW0LAAHtAQAB/wQAAf8BDwH/AgAB/wEPAf8EAAHzAQAB8wQAAv8EAAHz
+        AQAB8xEAAW0JAAH0CQABkgHrAvMB6wH3BgAB7QEUAesBEQGSAf8CAAH/AZIBEQHrARQB7RIAAW0IAAHz
+        CgAB/wEHAuoBBwH/BgAB/wHsAZIB8AEQAbwCAAG8ARAB8AGSAewB/xIAAW0HAAHxGwAB7QHrAvIB6wHt
+        OgAB8gEOAgABDgHyFQAB7Q4HAe0GAAHyAe8CAAEQEQAB7QHvAe0B8AMAAf8B7wH0BQAB9AH3Au8CBwHv
+        AZIFBwHvAZICBwH0AZIB7wEHAgAB7wcAAQ4BAAEHCAAB/wfvAQAB7wIAAv8BBwHtAfEB8gIHAfEB/wLy
+        AgAB7wEAAfQB8gUAAfQB8QMAAfIB9AEAAQ4IAAESAf8JAAH/AfcB/wHzAfIB/wIAAe8BAAHvAQAB8gHv
+        AQcB7AHzAQAD/wHzAQcC8gIAAe8BAAH0AfIFAAH0AfEDAAHyAfQBAAHtDgABBwQAAe8B9AEHAe0B7wH0
+        AQAB8wHvAQAB7wEAAe8CAAHvBwAB/wH3AesB7QHxAQAB9AHyAQAB8gEHAfABAAH0AfEB8gHvAvIB9BUA
+        Ae0B7wLzAfIBBwHvAbwB7QHvAe0B8AHvAfQB/wH3AwAC8AMAAfEB8wH3AgAB9AHtAQcB7AHvAesBBwHv
+        Ae0B7AHvAewB7QH0EAAB8QQAAfQB/woAAf8BBwHvAf8BAAH0AZIC8QGSAfQBAAH/Ae8B8AMAAf8BvAMA
+        AvMIAAHwAfQGAAEPCwAB8QPvAfEHAAHyAf8CAAHwAfMCkgHzAfACAAH/AfMDAAH/AbwDAAL/AbwEBwHv
+        AfQDAAEVAwABvAQAAfQHAAH0AQcB/wHsAf8BBwH0BgABBwH/AgAB8AHzApIB8wHwAgAB/wEHAwAB/wG8
+        AfEB7wEHAvMBBwP/AQAB8gHzFAABBwL/AewB9AH/AQcGAAEHAf8CAAH0AZIC8QGSAfQCAAH/AQcDAAH/
+        AvcB7wGSAe8B9AEHAf8BvAHwAQAB8gH0EAAB8wHyAQcB7wHsAvcBkgHvAfMBvAYAAfEB8wQAAvAEAAHz
+        AfEKAAEHAf8CBwHxAv8DAAFDDAAB8wHyAe8BAAHtAf8CAAEHAesB/wYAAf8B7wIAAfQB8AIAAvICAAHv
+        Af8KAAHvAfQCBwHxAfIB8xIAAe8BAAHvAwAB8AGSCAABBwH0AQcB7QHsAe8BbQLsAQcB9AEHCQAB/wHv
+        AfABBwHvAQcB8QHyAfMJAAHwCAAB7wEAAe8B/wH0Af8B8AGSCAAB/wHzAe8DAAHvAgAB7wHzAf8JAAHz
+        AfEB9wHzAe8CAAHyAfMEAAHxCwAB8AHvAesB7wFtAe8B6wHvAewBvAoAAfAB8gIAAe8BBwGSAQcLAAH0
+        AbwB/wHxAZICBwHvAf8HAAH/DQAB/wESAfEB7AoAAfQB7wMAAe8BbQGSAf8MAAIHAe8B8xoAAfQB7wHx
+        CwAB8APvAe0TAAHtAe8B7QHwAQAB/wzyAf8BAAEHDu8BBwUAAZIEBwGSCgAB/wfvAQAB7wIAARQMAAEU
+        AQAB7AP0AewE9AHzAfQB7AP0AewB/wGSAwcB9wQAAfcDBwGSAf8EAAH/AfcB/wHzAfIB/wIAAe8BAAHv
+        BgABEgHsAkMB7AESBQAB7QH/AgAB7wHzAgAB/wHsAfEB7wIAAf8B7QH/AQcDAAEHAf8CAAH/AQcDAAEH
+        Af8EAAHvAfQBBwHtAe8B9AEAAfMB7wEAAe8GAAEQBO0BEAUAAfQB7AIHAuwD9AHyAuwCBwHsAfQBAAHv
+        AwAB9AFtAu8BbQH0AwAB7wUAAe0B7wLzAfIBBwHvAbwB7QHvAe0B8AEAAbwM7wHwAgAB8wETAW0C/wHv
+        AuwB7wL/AW0BEwHzAgAB8wHvAQcD7wL/A+8BBwHvAfMFAAH0Af8LAAHyAQABQwFtAQABbQJDAW0BAAFt
+        AUMBAAHyAgAB7AH/AfQBkgH/AfcCkgH3Af8BkgH0Af8B7AMAAe8B/wH0AbwB7wL/Ae8BvAH0Af8B7wcA
+        AfED7wHxBwAB8gEAAUMBbQEAAW0CQwFtAQABbQFDAQAB8gIAAewBAAH/Ae0B8QHwAgAB8AHxAe0B/wEA
+        AewDAAHvAQAB/wEHAf8C7wH/AQcB/wEAAe8GAAH0AQcB/wHsAf8BBwH0BgAB8gEAAeoB7wEAAe8C6gHv
+        AQAB7wHqAQAB8gIAAfAC7AHzAQcB9AIAAfQBBwHzAuwB8AMAAfEBBwHvAf8B8QIHAfEB/wHvAQcB8QYA
+        AQcC/wHsAfQB/wEHBgAB8gwAAfIGAAHzAe8CAAHvAfMKAAHvAfICvAHyAe8FAAHzAfIBBwHvAewC9wGS
+        Ae8B8wG8BgAB8gEAAbwD7wG8ARQD7wHrAQAB8gIAAQcBkgHrAgAB8ALtAfACAAHrAZIBBwUAAvIB9wL/
+        AfcC8gQAAfMB8gHvAQAB7QH/AgABBwHrAf8GAAHzAQAB7wMAAe8GAAHzAQAB/wHtAfIB7AH/AQAB9AL/
+        AfQBAAH/AewB8gGSBQABBwHxAfQC7wH0AfEBBwYAAe8BAAHvAwAB8AGSBwAB/wGSAQcDAAEHBesBkgH/
+        AQAB/wHtAusB8gEAAZIC6wH3AQAB8QLrAZIB/wQAAQcB8gHxAe0BvAHzAfIBBwYAAe8BAAHvAf8B9AH/
+        AfABkgkAAfIDAAHyAe0E6wHyBAABBwH/AgAB7QL0AZICAAH/AQcGAAH0AQcBFALxAe8B8AH0BAAB8AHv
+        AesB7wFtAe8B6wHvAewBvAkAAfIDAAHyBQAB7wcAAfEBFALxARQB8QgAAfMB7wHqAQcC8gG8AfAKAAH/
+        ARIB8QHsCgAB8gEOAQABDgHyAe0E6wHyCAAB/wLtAf8IAAH/AewBBwHvAfQCvAH0DAAB9AHvAfEKAAL/
+        AfQC/w8AAvQLAAHsAf8KAAFCAU0BPgcAAT4DAAEoAwABQAMAATADAAEBAQABAQUAAYABARYAA/8BAAGA
+        AQ8C/wH4AR8CAAG/A/8B+AEfAgABvgH/Ac8B8wKBAgABvwF/Ac8B8wKBAgABrgG/AccB4wEeAXgCAAG/
+        AX8C5wE4ARwCAAK/AeMBxwIYAgABrwHvAfABDwGRAYkCAAG/AdcB+AEfAZEBiQIAAbgBaQHxAY8CGAIA
+        AagBFAHzAc8BOAEcAgABvwH6AfEBjwEeAXgCAAG/AeoB+AEfAoECAAG/Ad8B+AEfAoECAAK/Av8B+AEf
+        AgAE/wH4AR8EAAHgAR8B/wHwAeMB4AIAAZ8BwQH4AQUBgAEGAZ8BOQF/AZ4B8AE1AQQBBgGfATkBfwG2
+        AfABJQFvAeABkQEBAf8BqwHwAQABDgFxAYABAQG/AbwB8wH/AQgBEQHOAX8BnwG+AfgBPwGYARkBzgEA
+        AcwBwQHwAR8BmAEZAcABBAHzAT8B8AEfAZgBGQHAAQQB9wG/AQABHwGeAXkB/wGAAe8BvwETAR8CmQH/
+        AYAB7wH/AdcBPwHAAQMB/gEAAe8BvwHQAT8BxwFjAf4BDAH3Ab8BAAE/AfMBDwH+AQAB8gF/AfgBfwHn
+        AQ8B/wEPAv8B/AF/AfABfwH/AfABgAEBAgAB+AEfAfgBBQGAAQECAAEDAcAB8AE1AYABAQEzAQwBOQGc
+        AfABJQGAAQECAAG4AR0B8AEAAYABAQGAAQEBgAEBAfMB/wGAAQEBgAEBAcABAwH4AT8BgAEBAaEBhQHQ
+        AQsB8AEfAYABAQKBAcABAwHwAR8BgAEBAfkBnwH4AR8BAAEfAYABAQGMATEB8AEPARMBHwGAAQEBBAEh
+        AfABDwHXAT8BgAEBAQQBIAHwAQ8B0AE/AeABAwHMATMB8AEPAQABPwHgAQMB+AEfAeABHwH4AX8B4AED
+        AfwBPwHAAT8B/AF/AeAB/wH+AX8B8wH/Cw==
 </value>
   </data>
   <data name="Gestion.Location" type="System.Drawing.Point, System.Drawing">
@@ -4362,7 +4702,7 @@
     <value>True</value>
   </data>
   <data name="materialLabel23.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 14px</value>
+    <value>Roboto, 14px</value>
   </data>
   <data name="materialLabel23.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -4395,7 +4735,7 @@
     <value>True</value>
   </data>
   <data name="materialLabel22.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 14px</value>
+    <value>Roboto, 14px</value>
   </data>
   <data name="materialLabel22.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -4437,7 +4777,7 @@
     <value>0</value>
   </data>
   <data name="materialCard9.Location" type="System.Drawing.Point, System.Drawing">
-    <value>151, 162</value>
+    <value>125, 162</value>
   </data>
   <data name="materialCard9.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>13, 14, 13, 14</value>
@@ -4503,7 +4843,7 @@
     <value>Buscar Por Nombre</value>
   </data>
   <data name="materialMaskedTextBox5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>247, 85</value>
+    <value>198, 85</value>
   </data>
   <data name="materialMaskedTextBox5.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 4, 4, 4</value>
@@ -4683,7 +5023,7 @@
     <value>True</value>
   </data>
   <data name="CargoEmpleadoPerilTxt.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 14px</value>
+    <value>Roboto, 14px</value>
   </data>
   <data name="CargoEmpleadoPerilTxt.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -4719,7 +5059,7 @@
     <value>True</value>
   </data>
   <data name="materialLabel25.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 14px</value>
+    <value>Roboto, 14px</value>
   </data>
   <data name="materialLabel25.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -4788,7 +5128,7 @@
     <value>True</value>
   </data>
   <data name="materialLabel24.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 14px</value>
+    <value>Roboto, 14px</value>
   </data>
   <data name="materialLabel24.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -5048,6 +5388,171 @@
   <data name="&gt;&gt;NombreDelUsuarioSecion.ZOrder" xml:space="preserve">
     <value>9</value>
   </data>
+  <data name="&gt;&gt;ActualizarNCF.Name" xml:space="preserve">
+    <value>ActualizarNCF</value>
+  </data>
+  <data name="&gt;&gt;ActualizarNCF.Type" xml:space="preserve">
+    <value>MaterialSkin.Controls.MaterialButton, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;ActualizarNCF.Parent" xml:space="preserve">
+    <value>materialCard11</value>
+  </data>
+  <data name="&gt;&gt;ActualizarNCF.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;materialLabel12.Name" xml:space="preserve">
+    <value>materialLabel12</value>
+  </data>
+  <data name="&gt;&gt;materialLabel12.Type" xml:space="preserve">
+    <value>MaterialSkin.Controls.MaterialLabel, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;materialLabel12.Parent" xml:space="preserve">
+    <value>materialCard11</value>
+  </data>
+  <data name="&gt;&gt;materialLabel12.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;NCF_txt.Name" xml:space="preserve">
+    <value>NCF_txt</value>
+  </data>
+  <data name="&gt;&gt;NCF_txt.Type" xml:space="preserve">
+    <value>MaterialSkin.Controls.MaterialMaskedTextBox, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;NCF_txt.Parent" xml:space="preserve">
+    <value>materialCard11</value>
+  </data>
+  <data name="&gt;&gt;NCF_txt.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="materialCard11.Location" type="System.Drawing.Point, System.Drawing">
+    <value>17, 95</value>
+  </data>
+  <data name="materialCard11.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>14, 14, 14, 14</value>
+  </data>
+  <data name="materialCard11.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>14, 14, 14, 14</value>
+  </data>
+  <data name="materialCard11.Size" type="System.Drawing.Size, System.Drawing">
+    <value>460, 245</value>
+  </data>
+  <data name="materialCard11.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;materialCard11.Name" xml:space="preserve">
+    <value>materialCard11</value>
+  </data>
+  <data name="&gt;&gt;materialCard11.Type" xml:space="preserve">
+    <value>MaterialSkin.Controls.MaterialCard, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;materialCard11.Parent" xml:space="preserve">
+    <value>GestionAjustes</value>
+  </data>
+  <data name="&gt;&gt;materialCard11.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="ActualizarNCF.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="ActualizarNCF.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ActualizarNCF.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 189</value>
+  </data>
+  <data name="ActualizarNCF.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 6, 4, 6</value>
+  </data>
+  <data name="ActualizarNCF.Size" type="System.Drawing.Size, System.Drawing">
+    <value>189, 36</value>
+  </data>
+  <data name="ActualizarNCF.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="ActualizarNCF.Text" xml:space="preserve">
+    <value>Actualizar El NCF</value>
+  </data>
+  <data name="&gt;&gt;ActualizarNCF.Name" xml:space="preserve">
+    <value>ActualizarNCF</value>
+  </data>
+  <data name="&gt;&gt;ActualizarNCF.Type" xml:space="preserve">
+    <value>MaterialSkin.Controls.MaterialButton, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;ActualizarNCF.Parent" xml:space="preserve">
+    <value>materialCard11</value>
+  </data>
+  <data name="&gt;&gt;ActualizarNCF.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="materialLabel12.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="materialLabel12.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Roboto, 14px</value>
+  </data>
+  <data name="materialLabel12.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="materialLabel12.Location" type="System.Drawing.Point, System.Drawing">
+    <value>17, 26</value>
+  </data>
+  <data name="materialLabel12.Size" type="System.Drawing.Size, System.Drawing">
+    <value>106, 19</value>
+  </data>
+  <data name="materialLabel12.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="materialLabel12.Text" xml:space="preserve">
+    <value>Actualizar NCF</value>
+  </data>
+  <data name="&gt;&gt;materialLabel12.Name" xml:space="preserve">
+    <value>materialLabel12</value>
+  </data>
+  <data name="&gt;&gt;materialLabel12.Type" xml:space="preserve">
+    <value>MaterialSkin.Controls.MaterialLabel, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;materialLabel12.Parent" xml:space="preserve">
+    <value>materialCard11</value>
+  </data>
+  <data name="&gt;&gt;materialLabel12.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="NCF_txt.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="NCF_txt.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 16px</value>
+  </data>
+  <data name="NCF_txt.Hint" xml:space="preserve">
+    <value>NCF</value>
+  </data>
+  <data name="NCF_txt.Location" type="System.Drawing.Point, System.Drawing">
+    <value>17, 100</value>
+  </data>
+  <data name="NCF_txt.PrefixSuffixText" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="NCF_txt.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
+  </data>
+  <data name="NCF_txt.Size" type="System.Drawing.Size, System.Drawing">
+    <value>426, 48</value>
+  </data>
+  <data name="NCF_txt.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;NCF_txt.Name" xml:space="preserve">
+    <value>NCF_txt</value>
+  </data>
+  <data name="&gt;&gt;NCF_txt.Type" xml:space="preserve">
+    <value>MaterialSkin.Controls.MaterialMaskedTextBox, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;NCF_txt.Parent" xml:space="preserve">
+    <value>materialCard11</value>
+  </data>
+  <data name="&gt;&gt;NCF_txt.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
   <metadata name="usuarioMostrarDtoBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>321, 21</value>
   </metadata>
@@ -5063,6 +5568,138 @@
   <metadata name="proveedorBindingSource1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>1148, 21</value>
   </metadata>
+  <metadata name="ventasBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>1518, 21</value>
+  </metadata>
+  <data name="idDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
+    <value>Codigo unico de la venta</value>
+  </data>
+  <data name="idDataGridViewTextBoxColumn.MinimumWidth" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="idDataGridViewTextBoxColumn.Width" type="System.Int32, mscorlib">
+    <value>125</value>
+  </data>
+  <data name="descuentoDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
+    <value>Descuento de la venta</value>
+  </data>
+  <data name="descuentoDataGridViewTextBoxColumn.MinimumWidth" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="descuentoDataGridViewTextBoxColumn.Width" type="System.Int32, mscorlib">
+    <value>125</value>
+  </data>
+  <data name="totalEnteroDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
+    <value>Total de la venta</value>
+  </data>
+  <data name="totalEnteroDataGridViewTextBoxColumn.MinimumWidth" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="totalEnteroDataGridViewTextBoxColumn.Width" type="System.Int32, mscorlib">
+    <value>125</value>
+  </data>
+  <data name="idClienteDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
+    <value>Codigo del cliente</value>
+  </data>
+  <data name="idClienteDataGridViewTextBoxColumn.MinimumWidth" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="idClienteDataGridViewTextBoxColumn.Width" type="System.Int32, mscorlib">
+    <value>125</value>
+  </data>
+  <data name="montoDescontadoDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
+    <value>Monto descontado</value>
+  </data>
+  <data name="montoDescontadoDataGridViewTextBoxColumn.MinimumWidth" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="montoDescontadoDataGridViewTextBoxColumn.Width" type="System.Int32, mscorlib">
+    <value>125</value>
+  </data>
+  <data name="totalConElDescuentoDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
+    <value>Total con el descuento</value>
+  </data>
+  <data name="totalConElDescuentoDataGridViewTextBoxColumn.MinimumWidth" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="totalConElDescuentoDataGridViewTextBoxColumn.Width" type="System.Int32, mscorlib">
+    <value>125</value>
+  </data>
+  <data name="fechaCreacionDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
+    <value>Fecha de Creacion</value>
+  </data>
+  <data name="fechaCreacionDataGridViewTextBoxColumn.MinimumWidth" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="fechaCreacionDataGridViewTextBoxColumn.Width" type="System.Int32, mscorlib">
+    <value>125</value>
+  </data>
+  <data name="tipoDeVentaDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
+    <value>Tipo de salida</value>
+  </data>
+  <data name="tipoDeVentaDataGridViewTextBoxColumn.MinimumWidth" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="tipoDeVentaDataGridViewTextBoxColumn.Width" type="System.Int32, mscorlib">
+    <value>125</value>
+  </data>
+  <data name="pagoDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
+    <value>Tipo de pago</value>
+  </data>
+  <data name="pagoDataGridViewTextBoxColumn.MinimumWidth" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="pagoDataGridViewTextBoxColumn.Width" type="System.Int32, mscorlib">
+    <value>125</value>
+  </data>
+  <data name="rNCDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
+    <value>RNC</value>
+  </data>
+  <data name="rNCDataGridViewTextBoxColumn.MinimumWidth" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="rNCDataGridViewTextBoxColumn.Width" type="System.Int32, mscorlib">
+    <value>125</value>
+  </data>
+  <data name="nFCDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
+    <value>NFC</value>
+  </data>
+  <data name="nFCDataGridViewTextBoxColumn.MinimumWidth" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="nFCDataGridViewTextBoxColumn.Width" type="System.Int32, mscorlib">
+    <value>125</value>
+  </data>
+  <data name="dataGridView2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="dataGridView2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 14</value>
+  </data>
+  <data name="dataGridView2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 2, 3, 2</value>
+  </data>
+  <data name="dataGridView2.RowHeadersWidth" type="System.Int32, mscorlib">
+    <value>51</value>
+  </data>
+  <data name="dataGridView2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1265, 493</value>
+  </data>
+  <data name="dataGridView2.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;dataGridView2.Name" xml:space="preserve">
+    <value>dataGridView2</value>
+  </data>
+  <data name="&gt;&gt;dataGridView2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dataGridView2.Parent" xml:space="preserve">
+    <value>materialCard12</value>
+  </data>
+  <data name="&gt;&gt;dataGridView2.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -5074,9 +5711,6 @@
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>1572, 930</value>
-  </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
   </data>
   <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 2, 3, 2</value>
@@ -5125,6 +5759,78 @@
   </data>
   <data name="&gt;&gt;proveedorBindingSource1.Type" xml:space="preserve">
     <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ventasBindingSource.Name" xml:space="preserve">
+    <value>ventasBindingSource</value>
+  </data>
+  <data name="&gt;&gt;ventasBindingSource.Type" xml:space="preserve">
+    <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;idDataGridViewTextBoxColumn.Name" xml:space="preserve">
+    <value>idDataGridViewTextBoxColumn</value>
+  </data>
+  <data name="&gt;&gt;idDataGridViewTextBoxColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;descuentoDataGridViewTextBoxColumn.Name" xml:space="preserve">
+    <value>descuentoDataGridViewTextBoxColumn</value>
+  </data>
+  <data name="&gt;&gt;descuentoDataGridViewTextBoxColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;totalEnteroDataGridViewTextBoxColumn.Name" xml:space="preserve">
+    <value>totalEnteroDataGridViewTextBoxColumn</value>
+  </data>
+  <data name="&gt;&gt;totalEnteroDataGridViewTextBoxColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;idClienteDataGridViewTextBoxColumn.Name" xml:space="preserve">
+    <value>idClienteDataGridViewTextBoxColumn</value>
+  </data>
+  <data name="&gt;&gt;idClienteDataGridViewTextBoxColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;montoDescontadoDataGridViewTextBoxColumn.Name" xml:space="preserve">
+    <value>montoDescontadoDataGridViewTextBoxColumn</value>
+  </data>
+  <data name="&gt;&gt;montoDescontadoDataGridViewTextBoxColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;totalConElDescuentoDataGridViewTextBoxColumn.Name" xml:space="preserve">
+    <value>totalConElDescuentoDataGridViewTextBoxColumn</value>
+  </data>
+  <data name="&gt;&gt;totalConElDescuentoDataGridViewTextBoxColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;fechaCreacionDataGridViewTextBoxColumn.Name" xml:space="preserve">
+    <value>fechaCreacionDataGridViewTextBoxColumn</value>
+  </data>
+  <data name="&gt;&gt;fechaCreacionDataGridViewTextBoxColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tipoDeVentaDataGridViewTextBoxColumn.Name" xml:space="preserve">
+    <value>tipoDeVentaDataGridViewTextBoxColumn</value>
+  </data>
+  <data name="&gt;&gt;tipoDeVentaDataGridViewTextBoxColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pagoDataGridViewTextBoxColumn.Name" xml:space="preserve">
+    <value>pagoDataGridViewTextBoxColumn</value>
+  </data>
+  <data name="&gt;&gt;pagoDataGridViewTextBoxColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rNCDataGridViewTextBoxColumn.Name" xml:space="preserve">
+    <value>rNCDataGridViewTextBoxColumn</value>
+  </data>
+  <data name="&gt;&gt;rNCDataGridViewTextBoxColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;nFCDataGridViewTextBoxColumn.Name" xml:space="preserve">
+    <value>nFCDataGridViewTextBoxColumn</value>
+  </data>
+  <data name="&gt;&gt;nFCDataGridViewTextBoxColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>Main</value>

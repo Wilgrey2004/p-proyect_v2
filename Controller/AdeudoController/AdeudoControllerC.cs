@@ -4,14 +4,47 @@ using p_proyect.Modules.Entidades;
 using p_proyect.Modules.Entidades.dtos.dtoAdeudos;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace p_proyect.Controller.AdeudoController
 {
     public class AdeudoControllerC
     {
+
+        private async Task<List<AdeudoMostrarDto>> AumentarAdeudoPorTiempo(List<AdeudoMostrarDto> Lista, decimal cantidad)
+        {
+            using (var context = new AppDbContext(new DbContextOptions<AppDbContext>()))
+            {
+                DateTime fechaActual = DateTime.Now;
+
+                foreach (var adeudo in Lista)
+                {
+                    // Verificar si la deuda tiene más de 30 días
+                    TimeSpan diferencia = (TimeSpan)(fechaActual - adeudo.FechaCreacion);
+                    if (diferencia.Days < 30)
+                        continue; // si no tiene más de 30 días, no aumenta
+
+                    // Calcular el porcentaje
+                    decimal porciento = adeudo.MontoRestanteDelAdeudo * (cantidad / 100);
+
+                    // Actualizar el DTO
+                    adeudo.MontoTotalDelAdeudo += porciento;
+
+                    // Buscar en BD y actualizar
+                    var adeudoEntidad = await context.Adeudos.FirstOrDefaultAsync(a => a.Id == adeudo.Id);
+                    if (adeudoEntidad != null)
+                    {
+                        adeudoEntidad.MontoTotalDelAdeudo = adeudo.MontoTotalDelAdeudo;
+                        context.Adeudos.Update(adeudoEntidad);
+                    }
+                }
+
+                await context.SaveChangesAsync();
+                return Lista;
+            }
+        }
+
+
         public async Task<List<AdeudoMostrarDto>> ObtenerTodosLosAdeudosAsync()
         {
             using (var context = new AppDbContext(new DbContextOptions<AppDbContext>()))
@@ -34,6 +67,8 @@ namespace p_proyect.Controller.AdeudoController
                     listadoConvertido.Add(AdeudoMapper.ToMostrarDto(item));
                 }
 
+                await AumentarAdeudoPorTiempo(listadoConvertido, 10);
+
                 return listadoConvertido;
             }
         }
@@ -51,7 +86,7 @@ namespace p_proyect.Controller.AdeudoController
                 var compra = await context.Compras
                     .FirstOrDefaultAsync(c => c.Id == dto.IdCompra);
 
-                if (compra == null) 
+                if (compra == null)
                     throw new Exception("La compra asociada no existe.");
 
                 var nuevoAdeudo = new Adeudo
@@ -118,7 +153,7 @@ namespace p_proyect.Controller.AdeudoController
             using (var context = new AppDbContext(new DbContextOptions<AppDbContext>()))
             {
                 return await context.Adeudos
-                   // .Include(a => a.Compra_)
+                    // .Include(a => a.Compra_)
                     .FirstOrDefaultAsync(a => a.Id == id);
             }
         }

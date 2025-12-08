@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using p_proyect.Controller.AdeudoController;
 using p_proyect.Controller.ClienteEspecialController;
 using p_proyect.Controller.ClienteNormalController;
+using p_proyect.Controller.NFCController;
 using p_proyect.Controller.ProductosController;
 using p_proyect.Controller.ProveedorController;
 using p_proyect.Controller.UsuarioController;
@@ -138,7 +139,8 @@ namespace p_proyect
                         GestionDeClientesEspeciales,
                         GestionDeventas,
                         GestionDeCompras,
-                        GestionDeAdeudos
+                        GestionDeAdeudos,
+                        GestionAjustes
                     );
                     break;
 
@@ -152,14 +154,15 @@ namespace p_proyect
                         GestionDeInventario,
                         GestionDeClientesEspeciales,
                         GestionDeventas,
-                        GestionDeCompras
+                        GestionDeCompras,
+                        GestionAjustes
 
                     );
                     break;
 
                 case UserRole.Empleado:
 
-                    RemoverPestanas(GestionUsers);
+                    RemoverPestanas(GestionUsers, GestionAjustes);
                     break;
             }
         }
@@ -694,16 +697,14 @@ namespace p_proyect
             }
 
             MessageBox.Show("Se ha realizado correctamente la eliminacion!");
+
             await CargarListadoDeClientesEspeciales();
-
-
-
-
         }
 
         private async void materialButton11_Click(object sender, EventArgs e)
         {
             PausaTimer(sender, e);
+
             ReportesHelperForm reportesHelperForm = new ReportesHelperForm();
 
             reportesHelperForm.ListadoParaImprimirClienteEspecial = listadoDeClientesEspecialesMostrar;
@@ -711,10 +712,10 @@ namespace p_proyect
             reportesHelperForm.ShowDialog();
 
             await CargarListadoDeClientesEspeciales();
+
             ReanudarTimer(sender, e);
 
         }
-
 
         private async void CargarTablaSegunIndice_Admin()
         {
@@ -750,7 +751,6 @@ namespace p_proyect
                     Text = "Gestion de Ventas";
                     await CargarListaDeVentas();
                     break;
-
                 case 7:
                     this.Text = "Gestion de adeudos";
                     await CargarAdeudos();
@@ -763,21 +763,16 @@ namespace p_proyect
                     Text = "Perfil";
                     CargarInformacionDelUsuario();
                     break;
-
                 default:
                     Text = string.Empty;
                     break;
-
             }
         }
+
         private async void CargarTablaSegunIndice_Empleado()
         {
             switch (Gestion.SelectedIndex)
             {
-                //case 0:
-                //    this.Text = "Gestión de Usuarios";
-                //    await CargarTablaDeUsuarios();
-                //    break;
 
                 case 0:
                     this.Text = "Gestión de Productos";
@@ -1351,8 +1346,8 @@ namespace p_proyect
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al convertir el carrito a lista de compras: " + ex.Message);
-                return null;
+                throw new Exception("Error al mapear el carrito a la lista de compras: " + ex.Message);
+                
             }
 
 
@@ -1429,7 +1424,7 @@ namespace p_proyect
         }
 
 
-        private void CrearVenta(Ventas venta, List<CarritoCompraDto> carrito)
+        private async void CrearVenta(Ventas venta, List<CarritoCompraDto> carrito)
         {
 
             try
@@ -1448,6 +1443,7 @@ namespace p_proyect
             venta.MontoDescontado = ventaActualAlDetalle.CaluclarMontoDescontado();
             venta.TotalConElDescuento = ventaActualAlDetalle.CalcularTotalConElDescuento();
             venta.FechaCreacion = DateTime.Now;
+            //venta.NFC = await new NFCController_().TraerparaImprimirNFC();
         }
         RncLookupResult InfoRnc = new RncLookupResult();
 
@@ -1461,15 +1457,10 @@ namespace p_proyect
                 return;
 
 
-            //if (!MessagesHelpers.MensajeDeConfirmacion("Estas aseguro de realizar esta venta?", " Confirmar La venta",MessageBoxIcon.Question))
-            //{
-            //    return;
-            //}
-
             if (MessagesHelpers.MensajeDeConfirmacion("¿El cliente quiere comprobante fiscal?", "Comprobante Fiscal", MessageBoxIcon.Question))
             {
                 RNCFormHelper rNCFormHelper = new RNCFormHelper();
-
+                NFCController_ nFCController_ = new NFCController_();
                 rNCFormHelper.ShowDialog();
 
                 InfoRnc = rNCFormHelper.InfoRnc;
@@ -1479,13 +1470,31 @@ namespace p_proyect
                 {
                     MessageBox.Show("No se pudo obtener la información del RNC.");
                     ventaActualAlDetalle.RNC = "000000000";
+                    ventaActualAlDetalle.NFC = "No aplica";
                     return;
                 }
 
                 ventaActualAlDetalle.RNC = InfoRnc.Rnc;
+                // ventaActualAlDetalle.NFC = await nFCController_.TraerparaImprimirNFC();
+            }
+            else
+            {
+                ventaActualAlDetalle.RNC = "000000000";
+                //ventaActualAlDetalle.NFC = "No aplica";
             }
 
-            CrearVenta(ventaActualAlDetalle, CarritoDeCompras);
+             CrearVenta(ventaActualAlDetalle, CarritoDeCompras);
+
+            NotificacionDeVenta nuevaNotificacion = new NotificacionDeVenta
+            {
+                NombreDelCliente = ventaActualAlDetalle.RNC,
+                CarritoDeCompras = ventaActualAlDetalle.ListadoDeCompras,
+                RNCInfo = InfoRnc,
+                Venta = ventaActualAlDetalle,
+                ImprimirRecibo = true,
+                FechaCreacion = DateTime.Now
+            };
+
 
 
             using (var context = new AppDbContext(new DbContextOptions<AppDbContext>()))
@@ -1526,17 +1535,19 @@ namespace p_proyect
 
         }
 
-        public void ImprimirReciboDeVenta(List<CarritoCompraDto> carritoList, RncLookupResult infoRnc, Ventas venta)
+        public async void ImprimirReciboDeVenta(List<CarritoCompraDto> carritoList, RncLookupResult infoRnc, Ventas venta)
         {
             if (infoRnc != null)
             {
                 ImpresionRecibo recibo1 = new ImpresionRecibo(carritoList, infoRnc, venta);
+                await recibo1.PrepararDatosAsync();
                 recibo1.Imprimir();
                 return;
             }
 
 
             ImpresionRecibo recibo = new ImpresionRecibo(carritoList);
+            await recibo.PrepararDatosAsync();
             recibo.Imprimir();
         }
 
@@ -1575,14 +1586,25 @@ namespace p_proyect
 
         private async Task CargarListaDeVentas()
         {
-            lisatdoDeVentas.Clear();
-            dataGridView1.DataSource = null;
-            using (var context = new AppDbContext(new DbContextOptions<AppDbContext>()))
-            {
-                lisatdoDeVentas = await context.Ventas.ToListAsync();
-            }
-            dataGridView1.DataSource = lisatdoDeVentas;
+            
 
+            try
+            {
+                lisatdoDeVentas.Clear();
+                dataGridView1.DataSource = null;
+                using (var context = new AppDbContext(new DbContextOptions<AppDbContext>()))
+                {
+                    lisatdoDeVentas = await context.Ventas.ToListAsync();
+                }
+                dataGridView1.DataSource = lisatdoDeVentas;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al cargar la lista de ventas: " + ex.Message);
+                return;
+            }
+            
         }
 
         Ventas VentaSeleccionadaDelDatagrid = new Ventas();
@@ -1926,11 +1948,15 @@ namespace p_proyect
 
         private async void materialButton31_Click(object sender, EventArgs e)
         {
+
+
+
             if (VentaSeleccionadaDelDatagrid == null)
                 return;
+
             RncLookupResult rncLookupResult = RncHelper.LookupRnc(VentaSeleccionadaDelDatagrid.RNC);
 
-            ImprimirReciboDeVenta(await RegresarListaDeProductosDeUnaVenta(VentaSeleccionadaDelDatagrid) , rncLookupResult, VentaSeleccionadaDelDatagrid);
+            ImprimirReciboDeVenta(await RegresarListaDeProductosDeUnaVenta(VentaSeleccionadaDelDatagrid), rncLookupResult, VentaSeleccionadaDelDatagrid);
         }
 
         private async Task<List<CarritoCompraDto>> RegresarListaDeProductosDeUnaVenta(Ventas venta)
@@ -1958,7 +1984,7 @@ namespace p_proyect
                 foreach (var item in ListadoDeProductos)
                 {
                     CompraEntity compraAMappear = RegresarCompraCreada(item);
-                   CarritoDeComprasParaEstaFactura.Add(CompraMapper.MapCompraToCarrito(compraAMappear));
+                    CarritoDeComprasParaEstaFactura.Add(CompraMapper.MapCompraToCarrito(compraAMappear));
                 }
 
 
@@ -1966,6 +1992,56 @@ namespace p_proyect
             }
 
             //return null;
+        }
+
+        private void materialMaskedTextBox7_TextChanged(object sender, EventArgs e)
+        {
+            if (NCF_txt.Text.Length > 11)
+            {
+                MessageBox.Show("Los NCF no puede tener más de 11 caracteres.");
+                NCF_txt.Text = NCF_txt.Text.Substring(0, 11);
+                NCF_txt.SelectionStart = NCF_txt.Text.Length;
+                return;
+            }
+
+
+        }
+
+        private async void ActualizarNCF_Click(object sender, EventArgs e)
+        {
+            if (NCF_txt.Text.Length != 11)
+            {
+                MessageBox.Show("El NCF debe tener exactamente 11 caracteres.");
+                return;
+            }
+
+            NFCController_ nFCController_ = new NFCController_();
+
+           
+
+            var TraerElUltimoNCF = await nFCController_.TraerElUltimoNFC();
+
+            if (TraerElUltimoNCF == null)
+            {
+                NCF nuevoNCF;
+                nuevoNCF = new NCF(NCF_txt.Text.Trim());
+
+                var CrearNFCAsync = await nFCController_.CrearNuevoNFCAsync(nuevoNCF);
+
+                MessageBox.Show("NCF creado con exito.");
+                return;
+            }
+
+            await nFCController_.ActualizarNFC(TraerElUltimoNCF);
+            MessageBox.Show("NCF Actualizado con exito");
+
+
+
+        }
+
+        private void materialMaskedTextBox7_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
