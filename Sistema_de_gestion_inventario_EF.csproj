@@ -296,6 +296,14 @@
     <Compile Include="Migrations\20251208152447_NotificacionesDeventas.Designer.cs">
       <DependentUpon>20251208152447_NotificacionesDeventas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\20251208182708_updateNotificaciones.cs" />
+    <Compile Include="Migrations\20251208182708_updateNotificaciones.Designer.cs">
+      <DependentUpon>20251208182708_updateNotificaciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20251208210822_updateNotificvacion.cs" />
+    <Compile Include="Migrations\20251208210822_updateNotificvacion.Designer.cs">
+      <DependentUpon>20251208210822_updateNotificvacion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\AppDbContextModelSnapshot.cs" />
     <Compile Include="Modules\AppDbContext.cs" />
     <Compile Include="Modules\AppDbContextFactory.cs" />
@@ -381,6 +389,12 @@
     <Compile Include="Modules\Entidades\Formularios\ProductosForms\AgregarEditarProductos.Designer.cs">
       <DependentUpon>AgregarEditarProductos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modules\Entidades\Formularios\ProductosForms\PreciosAlDetalleHelper.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\Entidades\Formularios\ProductosForms\PreciosAlDetalleHelper.Designer.cs">
+      <DependentUpon>PreciosAlDetalleHelper.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modules\Entidades\Formularios\ProveedorForms\AgregarEditarProveedor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -406,6 +420,8 @@
       <DependentUpon>VentaResumenForms.cs</DependentUpon>
     </Compile>
     <Compile Include="Modules\Entidades\NCF.cs" />
+    <Compile Include="Modules\Entidades\PreciosAlDetalle.cs" />
+    <Compile Include="Modules\Entidades\ProductoAlDetalle.cs" />
     <Compile Include="Modules\Entidades\Proveedor.cs" />
     <Compile Include="Modules\Entidades\Usuarios.cs" />
     <Compile Include="Modules\Entidades\Ventas.cs" />
@@ -415,7 +431,7 @@
     <Compile Include="Modules\Enums\UnidadMedida.cs" />
     <Compile Include="Modules\Enums\UserRole.cs" />
     <Compile Include="Modules\Entidades\Producto.cs" />
-    <Compile Include="Modules\NotificacionDeVenta.cs" />
+    <Compile Include="Modules\Entidades\NotificacionDeVenta.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utils\MessagesHelpers.cs" />
@@ -473,6 +489,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Modules\Entidades\Formularios\ProductosForms\AgregarEditarProductos.resx">
       <DependentUpon>AgregarEditarProductos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Entidades\Formularios\ProductosForms\PreciosAlDetalleHelper.resx">
+      <DependentUpon>PreciosAlDetalleHelper.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modules\Entidades\Formularios\ProveedorForms\AgregarEditarProveedor.resx">
       <DependentUpon>AgregarEditarProveedor.cs</DependentUpon>

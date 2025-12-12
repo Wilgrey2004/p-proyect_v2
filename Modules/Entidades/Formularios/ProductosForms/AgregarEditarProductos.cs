@@ -159,6 +159,15 @@ namespace p_proyect.Modules.Entidades.Formularios.ProductosForms
 
             if(producto != null)
             {
+
+                //if(producto.TipoDeDeSalida == TipoDeVenta.VentaAlDetalle)
+                //{
+                //    PreciosAlDetalle rpeciosAlDetalle = new PreciosAlDetalle();
+
+
+                //}
+
+
                 MessageBox.Show("Producto agrgeado con exito!!");
                 Close();
                 return;

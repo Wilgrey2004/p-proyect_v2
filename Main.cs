@@ -112,7 +112,7 @@ namespace p_proyect
 
 
 
-        private void RemoverSegunUsuario(Usuarios SecionActual)
+        private async void RemoverSegunUsuario(Usuarios SecionActual)
         {
             // Mensaje para roles inválidos
             if (SecionActual.Rol == UserRole.None)
@@ -144,6 +144,22 @@ namespace p_proyect
                     );
                     break;
 
+                case UserRole.GestorDeCaja:
+                    RemoverPestanas(
+                        GestionDeClientesEspeciales,  // comentado según tu estructura actual
+                        GestionDeClientesNormales,
+                        GestionVentaAlDetalle,
+                        GestionUsers,
+                        GestionDeProveedores,
+                        GestionDeInventario,
+                        GestionDeClientesEspeciales,
+                        GestionDeventas,
+                        GestionDeCompras,
+                        GestionDeAdeudos,
+                        GestionAjustes
+                    );
+                    break;
+
                 case UserRole.Vendedor:
                     RemoverPestanas(
                         GestionDeClientesEspeciales,  // comentado según tu estructura actual
@@ -165,6 +181,8 @@ namespace p_proyect
                     RemoverPestanas(GestionUsers, GestionAjustes);
                     break;
             }
+
+            await CargarListaDeNotificaciones();
         }
 
         private void RemoverPestanas(params TabPage[] paginas)
@@ -210,6 +228,12 @@ namespace p_proyect
                 return;
             }
 
+            if(SecionActual.Rol == UserRole.GestorDeCaja)
+            {
+                await CargarListaDeNotificaciones();
+                return;
+            }
+
         }
         List<AdeudoMostrarDto> ListaDeAdeudos = new List<AdeudoMostrarDto>();
         AdeudoControllerC AdeudocontrollerC_ = new AdeudoControllerC();
@@ -229,7 +253,7 @@ namespace p_proyect
             Codigo_Del_Producto_txt.Text = string.Empty;
             Nombre_Del_Producto_txt.Text = string.Empty;
             UnidadDeMedidaDelProducto.Text = string.Empty;
-            PrecioPorUnidadDelProducto_txt.Text = string.Empty;
+            PrecioPorUnidadDelProducto_txt_1.Text = string.Empty;
             numCantidadProducto.Value = 1;
             ProductoAComprarVenta = -1;
             TotalDelCarrito.Text = "0.00";
@@ -763,6 +787,11 @@ namespace p_proyect
                     Text = "Perfil";
                     CargarInformacionDelUsuario();
                     break;
+                case 11:
+                    Text = "Caja";
+                    //MessageBox.Show("Bienvenido a caja");
+                    await CargarListaDeNotificaciones();
+                    break;
                 default:
                     Text = string.Empty;
                     break;
@@ -812,6 +841,10 @@ namespace p_proyect
                     Text = "Perfil";
                     CargarInformacionDelUsuario();
                     break;
+                case 10:
+                    Text = "Caja";
+                    await CargarListaDeNotificaciones();
+                    break;
 
                 default:
                     Text = string.Empty;
@@ -836,6 +869,9 @@ namespace p_proyect
                 case UserRole.Empleado:
                     CargarTablaSegunIndice_Empleado();
                     break;
+                case UserRole.GestorDeCaja:
+                    CargarTablaSegunIndice_Caja();
+                    break;
 
             }
 
@@ -852,6 +888,23 @@ namespace p_proyect
                     Text = "Perfil";
                     CargarInformacionDelUsuario();
                     break;
+            }
+        }
+        private async void CargarTablaSegunIndice_Caja()
+        {
+            switch (Gestion.SelectedIndex)
+            {
+                case 0:
+                    Text = "Perfil";
+                    CargarInformacionDelUsuario();
+                    break;
+                case 1:
+
+                    Text = "Caja";
+                    await CargarListaDeNotificaciones();
+                    break;
+
+               
             }
         }
         private async void CargarTablaSegunIndice_Vendedor()
@@ -1166,7 +1219,7 @@ namespace p_proyect
             Codigo_Del_Producto_txt.Text = cargar.CodigoBarra;
             Nombre_Del_Producto_txt.Text = cargar.Nombre;
             UnidadDeMedidaDelProducto.Text = cargar.unidadMedida.ToString();
-            PrecioPorUnidadDelProducto_txt.Text = cargar.Precio.ToString();
+            PrecioPorUnidadDelProducto_txt_1.Text = cargar.Precio.ToString();
         }
         Ventas ventaActualAlDetalle = new Ventas();
         CompraEntity compraActuial = new CompraEntity();
@@ -1182,18 +1235,22 @@ namespace p_proyect
             if (ProductoAComprarVenta == -1)
             {
                 var producto = await productoController.TraerProductoPorElCodigo_(Codigo_Del_Producto_txt.Text.Trim());
+
+                producto.PrecioVenta = decimal.Parse(PrecioPorUnidadDelProducto_txt_1.Text);
+
                 CompraEntity compraAMappear = RegresarCompraCreada(producto);
-                AgregarProductoAlCarrito(compraAMappear);
+                AgregarProductoAlCarrito(compraAMappear, decimal.Parse(PrecioPorUnidadDelProducto_txt_1.Text));
                 return;
             }
 
-            AgregarProductoAlCarrito(RegresarCompraCreada());
+            AgregarProductoAlCarrito(RegresarCompraCreada(),decimal.Parse(PrecioPorUnidadDelProducto_txt_1.Text));
 
 
         }
 
-        private void AgregarProductoAlCarrito(CompraEntity compraEntity)
+        private void AgregarProductoAlCarrito(CompraEntity compraEntity, decimal Precio)
         {
+            compraEntity.PrecioUnitario = Precio;
 
             CarritoDeCompras.Add(CompraMapper.MapCompraToCarrito(compraEntity));
 
@@ -1214,7 +1271,7 @@ namespace p_proyect
             compraActuial.CantidadDelProducto = Convert.ToInt32(numCantidadProducto.Value);
             compraActuial.IdProducto = ProductoAComprarVenta;
             compraActuial.ListaDeproductos = producto == null ? null : producto;
-            compraActuial.PrecioUnitario = producto.PrecioVenta;
+            compraActuial.PrecioUnitario = decimal.Parse(PrecioPorUnidadDelProducto_txt_1.Text);
 
             return compraActuial;
         }
@@ -1240,7 +1297,7 @@ namespace p_proyect
             compraActuial.IdProducto = producto.Id;
 
             compraActuial.ListaDeproductos = producto;
-            compraActuial.PrecioUnitario = producto.PrecioVenta;
+            compraActuial.PrecioUnitario = decimal.Parse(PrecioPorUnidadDelProducto_txt_1.Text);
             compraActuial.IdVenta = UltimaVenta.Id + 1;
 
 
@@ -1347,14 +1404,44 @@ namespace p_proyect
             catch (Exception ex)
             {
                 throw new Exception("Error al mapear el carrito a la lista de compras: " + ex.Message);
-                
+
             }
 
 
         }
 
+        public List<CarritoCompraDto> RegresarUnaListDeCarritoDto(List<CompraEntity> listado)
+        {
+            try
+            {
+                if (listado == null || listado.Count == 0)
+                {
+                    MessageBox.Show("La lista de compras está vacía.");
+                    return null;
+                }
+                var lista = new List<CarritoCompraDto>();
+                foreach (var item in listado)
+                {
+                    var carrito = CompraMapper.MapCompraToCarrito(item);
+                    lista.Add(carrito);
+                }
+                return lista;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al mapear la lista de compras al carrito: " + ex.Message);
+            }
+
+        }
+
         public bool ConfirmarCompra(Ventas ventas)
         {
+            if (ventas == null)
+            {
+                MessageBox.Show("Error: La venta no puede ser nula.");
+                return false;
+            }
+
             VentaResumenForms ventaResumenForms = new VentaResumenForms();
 
             ventaResumenForms.VentaActual = ventas;
@@ -1446,6 +1533,7 @@ namespace p_proyect
             //venta.NFC = await new NFCController_().TraerparaImprimirNFC();
         }
         RncLookupResult InfoRnc = new RncLookupResult();
+        string RNCNoValido = "000000000";
 
         private async void materialButton20_Click(object sender, EventArgs e)
         {
@@ -1469,7 +1557,7 @@ namespace p_proyect
                 if (InfoRnc == null)
                 {
                     MessageBox.Show("No se pudo obtener la información del RNC.");
-                    ventaActualAlDetalle.RNC = "000000000";
+                    ventaActualAlDetalle.RNC = RNCNoValido;
                     ventaActualAlDetalle.NFC = "No aplica";
                     return;
                 }
@@ -1479,50 +1567,38 @@ namespace p_proyect
             }
             else
             {
-                ventaActualAlDetalle.RNC = "000000000";
+                ventaActualAlDetalle.RNC = RNCNoValido;
                 //ventaActualAlDetalle.NFC = "No aplica";
             }
 
-             CrearVenta(ventaActualAlDetalle, CarritoDeCompras);
+            CrearVenta(ventaActualAlDetalle, CarritoDeCompras);
+
+            if (NombreDelClienteParaLaFactura_txt.Text =="" && ventaActualAlDetalle.RNC == RNCNoValido)
+            {
+                MessageBox.Show("Es necesario un nombre par el cliente o un rnc","Es necesario un nombre para el cliente",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                return;
+            }
 
             NotificacionDeVenta nuevaNotificacion = new NotificacionDeVenta
             {
-                NombreDelCliente = ventaActualAlDetalle.RNC,
+                NombreDelCliente = NombreDelClienteParaLaFactura_txt.Text == "" ? ventaActualAlDetalle.RNC : NombreDelClienteParaLaFactura_txt.Text,
                 CarritoDeCompras = ventaActualAlDetalle.ListadoDeCompras,
-                RNCInfo = InfoRnc,
+                Rnc = InfoRnc.Rnc == "" ? RNCNoValido : InfoRnc.Rnc,
                 Venta = ventaActualAlDetalle,
                 ImprimirRecibo = true,
                 FechaCreacion = DateTime.Now
             };
 
 
-
             using (var context = new AppDbContext(new DbContextOptions<AppDbContext>()))
             {
-                try
-                {
-                    if (ConfirmarCompra(ventaActualAlDetalle) == false)
-                    {
 
-                        return;
-                    }
-                    RestarStock(RegresarUnaListaDeComprasEntity(CarritoDeCompras));
-                    // Guardar todo en un solo SaveChanges
-                    context.Ventas.Add(ventaActualAlDetalle);
-                    await context.SaveChangesAsync();
-
-                    // naqui va
-
-                    //ImprimirReciboDeVenta(CarritoDeCompras, InfoRnc);
-                    ImprimirReciboDeVenta(CarritoDeCompras, InfoRnc, ventaActualAlDetalle);
-                    LimpiarCamposDeVenta();
-                    //MessageBox.Show("");
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Ha ocurrido un error al guardar la venta \n" + ex.Message);
-                }
+                context.Add(ventaActualAlDetalle);
+                await context.SaveChangesAsync();
+                context.NotificacionesDeVentas.Add(nuevaNotificacion);
+                await context.SaveChangesAsync();
             }
+
 
             CarritoDeCompras.Clear();
 
@@ -1553,20 +1629,27 @@ namespace p_proyect
 
         private void RestarStock(List<CompraEntity> listado)
         {
-            using (var context = new AppDbContext(new DbContextOptions<AppDbContext>()))
+            try
             {
-                for (int i = 0; i < listado.Count; i++)
+                using (var context = new AppDbContext(new DbContextOptions<AppDbContext>()))
                 {
-                    var producto = context.Productos.FirstOrDefault(x => x.Id == listado[i].IdProducto);
-                    if (producto == null) { continue; }
+                    for (int i = 0; i < listado.Count; i++)
+                    {
+                        var producto = context.Productos.FirstOrDefault(x => x.Id == listado[i].IdProducto);
+                        if (producto == null) { continue; }
 
-                    producto.Cantidad -= listado[i].CantidadDelProducto;
+                        producto.Cantidad -= listado[i].CantidadDelProducto;
 
-                    context.Productos.Update(producto);
-                    context.SaveChanges();
+                        context.Productos.Update(producto);
+                        context.SaveChanges();
+
+                    }
 
                 }
-
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al restar el stock: " + ex.Message);
             }
         }
 
@@ -1586,7 +1669,7 @@ namespace p_proyect
 
         private async Task CargarListaDeVentas()
         {
-            
+
 
             try
             {
@@ -1604,7 +1687,7 @@ namespace p_proyect
                 MessageBox.Show("Error al cargar la lista de ventas: " + ex.Message);
                 return;
             }
-            
+
         }
 
         Ventas VentaSeleccionadaDelDatagrid = new Ventas();
@@ -2017,7 +2100,7 @@ namespace p_proyect
 
             NFCController_ nFCController_ = new NFCController_();
 
-           
+
 
             var TraerElUltimoNCF = await nFCController_.TraerElUltimoNFC();
 
@@ -2042,6 +2125,107 @@ namespace p_proyect
         private void materialMaskedTextBox7_Click(object sender, EventArgs e)
         {
 
+        }
+
+        List<NotificacionDeVenta> ListaDeNotificaciones = new List<NotificacionDeVenta>();
+        private async Task CargarListaDeNotificaciones()
+        {
+            using (var context = new AppDbContext(new DbContextOptions<AppDbContext>()))
+            {
+                ListaDeNotificaciones = await context.NotificacionesDeVentas.Where(x => x.ImprimirRecibo == true).ToListAsync();
+
+                dataGridView2.DataSource = null;
+
+                dataGridView2.DataSource = ListaDeNotificaciones;
+            }
+
+        }
+
+        private async void materialButton36_Click(object sender, EventArgs e)
+        {
+
+            if (Notificacion == null)
+            {
+                MessageBox.Show("No has seleccionado ninguna notificacion de venta", "No Seleccionado", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+
+
+            using (var context = new AppDbContext(new DbContextOptions<AppDbContext>()))
+            {
+
+                Notificacion.Venta = await context.Ventas.FirstOrDefaultAsync(x => x.Id == Notificacion.VentaId);
+
+                Notificacion.Venta.ListadoDeCompras = await context.ComprasEntity
+                                                                       .Where(
+                                                                                x =>
+                                                                                x.IdVenta == Notificacion.Venta.Id
+                                                                        ).ToListAsync();
+
+                try
+                {
+                    if (ConfirmarCompra(Notificacion.Venta) == false)
+                    {
+
+                        return;
+                    }
+
+                    RestarStock(Notificacion.Venta.ListadoDeCompras);
+                    
+                    context.Ventas.Update(Notificacion.Venta);
+                    await context.SaveChangesAsync();
+
+                  
+
+
+                    var CarritoConvertido = RegresarUnaListDeCarritoDto(Notificacion.Venta.ListadoDeCompras);
+
+
+                    RncLookupResult rncInformacion = RncHelper.LookupRnc(Notificacion.Venta.RNC);
+                    
+                    ImprimirReciboDeVenta(CarritoConvertido, rncInformacion, Notificacion.Venta);
+
+                    Notificacion.ImprimirRecibo = false;
+
+                    context.NotificacionesDeVentas.Update(Notificacion);
+                    await context.SaveChangesAsync();
+
+                    await CargarListaDeNotificaciones();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Ha ocurrido un error al guardar la venta \n" + ex.Message);
+                }
+            }
+        }
+
+        int idNotificacionDeventa = -1;
+        NotificacionDeVenta Notificacion = new NotificacionDeVenta();
+        private void dataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            idNotificacionDeventa = DataGridHelper.ObtenerIdSeleccionado(dataGridView2, e);
+
+
+
+            using (var context = new AppDbContext(new DbContextOptions<AppDbContext>()))
+            {
+                Notificacion = context.NotificacionesDeVentas.FirstOrDefault(x => x.Id == idNotificacionDeventa);
+                if (Notificacion == null)
+                {
+                    MessageBox.Show("No se encontro la notificacion", "No encontrado", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                else
+                {
+                    MessageBox.Show($"has seleccionado la notificacion con el id {Notificacion.Id}; con el comprador {Notificacion.NombreDelCliente}; Con el id De Venta {Notificacion.VentaId}");
+                }
+            }
+        }
+
+        private void materialMaskedTextBox7_TextChanged_1(object sender, EventArgs e)
+        {
+            FindForNameHelper.BuscarPorNombre<NotificacionDeVenta>(sender, e, ListaDeNotificaciones, dataGridView2);
         }
     }
 }

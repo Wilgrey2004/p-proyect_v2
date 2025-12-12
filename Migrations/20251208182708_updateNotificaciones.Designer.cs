@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using p_proyect.Modules;
 
 namespace p_proyect.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20251208182708_updateNotificaciones")]
+    partial class updateNotificaciones
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -309,7 +311,7 @@ namespace p_proyect.Migrations
                             Cedula = "No porta",
                             Contrasena = "admin123",
                             Correo = "Apro24470@gmail.com",
-                            FechaCreacion = new DateTime(2025, 12, 8, 17, 8, 21, 735, DateTimeKind.Local).AddTicks(7925),
+                            FechaCreacion = new DateTime(2025, 12, 8, 14, 27, 7, 656, DateTimeKind.Local).AddTicks(4519),
                             FechaEdicion = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Nombre = "Admin",
                             Rol = 1,
@@ -375,13 +377,15 @@ namespace p_proyect.Migrations
                     b.Property<string>("NombreDelCliente")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Rnc")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<string>("RNCInfoRnc")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<int>("VentaId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("RNCInfoRnc");
 
                     b.HasIndex("VentaId");
 
@@ -470,6 +474,25 @@ namespace p_proyect.Migrations
                     b.ToTable("Productos");
                 });
 
+            modelBuilder.Entity("p_proyect.Utils.Rnc.RncLookupResult", b =>
+                {
+                    b.Property<string>("Rnc")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("ErrorMessage")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Nombre")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("Success")
+                        .HasColumnType("bit");
+
+                    b.HasKey("Rnc");
+
+                    b.ToTable("RncLookupResult");
+                });
+
             modelBuilder.Entity("p_proyect.Modules.Entidades.Adeudo", b =>
                 {
                     b.HasOne("p_proyect.Modules.Entidades.Ventas", "Venta")
@@ -497,6 +520,10 @@ namespace p_proyect.Migrations
 
             modelBuilder.Entity("p_proyect.Modules.NotificacionDeVenta", b =>
                 {
+                    b.HasOne("p_proyect.Utils.Rnc.RncLookupResult", "RNCInfo")
+                        .WithMany()
+                        .HasForeignKey("RNCInfoRnc");
+
                     b.HasOne("p_proyect.Modules.Entidades.Ventas", "Venta")
                         .WithMany()
                         .HasForeignKey("VentaId")

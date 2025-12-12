@@ -49,7 +49,7 @@ namespace p_proyect.Modules.Entidades.Formularios.VentaForms
             MontoDescontadodeLaCantidadTotal.Text = VentaActual.MontoDescontado.ToString();
             TotalDescontado.Text = VentaActual.TotalConElDescuento.ToString();
             FechaDeLaventa.Text = VentaActual.FechaCreacion.ToString();
-            CantidadDelProducto.Text = VentaActual.ListadoDeCompras.Count.ToString();
+            CantidadDelProducto.Text = VentaActual.ListadoDeCompras.Count.ToString() == null? "0" : VentaActual.ListadoDeCompras.Count.ToString();
         }
 
         public bool Confirmacion = false;

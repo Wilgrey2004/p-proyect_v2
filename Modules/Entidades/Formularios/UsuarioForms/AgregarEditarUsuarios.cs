@@ -170,7 +170,7 @@ namespace p_proyect.Modules.Entidades.Formularios.UsuarioForms
             {
                 MessageBox.Show("La cédula no puede tener más de 11 caracteres.");
                 Cedula_text.Text = Cedula_text.Text.Substring(0, 11);
-                Cedula_text.SelectionStart = Cedula_text.Text.Length; // Mover el cursor al final
+                Cedula_text.SelectionStart = Cedula_text.Text.Length; 
             }
         }
     }

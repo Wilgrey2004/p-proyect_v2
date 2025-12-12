@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
@@ -22,6 +23,11 @@ namespace p_proyect.Modules.Enums
         Vendedor = 3,
 
         [Display(Name = "Gestor de Inventario")]
-        GestorDeInventario = 4
+        GestorDeInventario = 4,
+
+        [Display(Name ="Gestor De Cajas")]
+        GestorDeCaja = 5,
+
+
     }
 }
